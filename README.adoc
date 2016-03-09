@@ -1,6 +1,2 @@
-link:pubfont.jpg[] is a snap of a page from the
-asciidoctor-epub3-created mobi of the sample document, as viewed
-on a Kindle Paperwhite, using the Publisher Font.
-
-link:futura.jpg[] is a snap of the same page after setting the
-typeface to Futura using the Paperwhite `Aa` menu.
+link:footnote-eating-bottom-margin.png[] — screenshot showing
+lack of bottom margin following footnotes.
