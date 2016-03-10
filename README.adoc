@@ -2,7 +2,10 @@ link:footnote-eating-bottom-margin.png[] — screenshot showing
 lack of bottom margin following footnotes. (Chrome extension
 viewing of `.adoc` file.)
 
-link:html-with-no-footer.png[] — screenshot of HTML file
-containing footnotes made by
-Asciidoctor with the `-a nofooter` option. Chrome extension not
-used.
+link:html-with-footnotes-and-nofooter.png[] — screenshot of HTML file
+containing footnotes. Chrome extension not used. Made by
+Asciidocor with `-a nofooter`.
+
+link:html-without-footnotes-and-nofooter.png[] — screenshot of
+HTML file with no footnotes. Chrome extension not used. Made by
+Asciidocor with `-a nofooter`.
