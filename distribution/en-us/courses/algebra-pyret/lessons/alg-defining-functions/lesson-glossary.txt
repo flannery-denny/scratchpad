@@ -1,0 +1,7 @@
+"contract"
+"definitions area"
+"design recipe"
+"example"
+"function"
+"Number"
+"syntax"

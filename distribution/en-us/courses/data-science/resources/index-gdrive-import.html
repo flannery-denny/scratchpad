@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Teacher Resources</title>
+<style>
+/* Overall document font */
+* {font-family: Lato, Arial, Helvetica, sans-serif;}
+
+/* document headings */
+h1,.lesson-section-1 {color: #75328A;}
+h1{font-size: 32px; font-family: sans-serif;}
+table.section-heading *, .lesson-section-1 h2{font-size: 32px; font-weight: 100;}
+table.section-heading{width: 100%;}
+table.section-heading td:last-child{text-align: right; color: #d9d2e9;}
+
+/* preamble section */
+table.preamble td {padding: 10px;}
+table.preamble td:first-child{background: #b7d893; width: 25%;}
+table.preamble td:first-child p {font-weight: bold; margin: 5px;}
+
+/* content used throughout the body */
+table{ border-collapse: collapse; border: none; }
+table.grid-all.frame-all {border: solid 1px black;}
+table.grid-none.frame-none {border-width: 0px;}
+
+.big {font-size: 30pt;}
+.vocab{font-weight: bold; font-style: italic;}
+.right{text-align: right;}
+.acknowledgment {
+  border-top: solid 1px black; 
+  font-style: italic; 
+  font-size: 8pt;
+}
+.lesson-point {
+  border-top: solid 1px black; 
+  border-bottom: solid 1px black; 
+  color: black;
+  font-weight: bold;
+}
+
+.web-page-only, #footer { display: none; visibility: hidden; }
+
+/* Callout boxes */
+.strategy-box, .notice-box {
+  background: #efefef;
+  border: solid 5px !important;
+  margin: 15px auto;
+  width: 100%;
+}
+.strategy-box { border-color: #1a73b5 !important; }
+.notice-box   { border-color: #7747a5 !important; }
+.strategy-box td, .notice-box td{ padding: 10px; }
+.strategy-box .title, .notice-box .title{
+  width: 100%;
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+  clear: both;
+  margin: 100px;
+}
+.strategy-box p.tableblock:first-child, .notice-box p.tableblock:first-child{
+  text-align: center;
+  padding-bottom: 15px;
+}
+.strategy-box .title { color: #1a73b5; }
+.notice-box   .title { color: #7747a5; }
+.strategy-box a, .notice-box a { color: blue; text-decoration: underline; }
+
+/* "Tables" of Evaluation */
+.operator{border-bottom: solid 1px black; text-align: center;}
+.operator * {text-align: center;}
+td {padding: 0px 10px; font-size: 14px;}
+table.expression {
+    font-family:"Courier New", Monaco, monospace;
+    border:     solid 1px black;
+    font-size:  1px;
+    max-width:  400px;
+    color:      #666666;
+    display:    inline-block;
+}
+table.args {border: none; text-align: center;}
+
+.wescheme-string,     .cm-scheme-string    {color: green;}
+.wescheme-number,     .cm-scheme-number    {color: blue;}
+.wescheme-boolean,    .cm-scheme-boolean   {color: darkred;}
+.wescheme-character,  .cm-scheme-character {color: orange;}
+.wescheme-symbol,     .cm-scheme-symbol    {color: steelblue;}
+.wescheme-comment,    .cm-scheme-comment   {color: orange; }
+
+.racket, .pyret, .studentAnswerCode, .studentAnswer, .pyretkeyword, .keyword_only {
+    font-family:"Courier New", Monaco, monospace !important; 
+    color: black;
+}
+
+/* Design Recipe */
+.recipe_instructions { font-style: italic; }
+table.recipe_title {
+  color:              white;
+  background:         gray;
+  display:            block;
+  padding:            0px;
+  font-size:          1.1rem;
+  font-weight:        bold;
+}</style>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:window.location.href,
+    filename:"Teacher Resources",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article pyret" onload="renderSaveToDrive()">
+<span id="body" onload="renderSaveToDrive()">
+<span id="header">
+<h1>Teacher Resources</h1>
+
+  <span id="savetodrive-div"></span>
+
+</span>
+<span id="content">
+<span id="preamble_disabled">
+<span class="sectionbody">
+<span class="ulist">
+<ul>
+<li>
+<p><strong>Teacher Workbook</strong> [<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/resources/./protected/workbook-sols.pdf">PDF</a>] - A
+downloadable and printable copy of the workbook with solutions for all
+exercises.</p>
+</li>
+<li>
+<p><strong>PD Workbook</strong> [<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/resources/./protected/pd-workbook.pdf">PDF</a>] - A downloadable and
+printable copy of the student workbook including lesson plans.</p>
+</li>
+<li>
+<p><strong>Online Community</strong> [<a href="https://discourse.bootstrapworld.org/" target="_blank" rel="noopener">link</a>] - Want to ask a question or pose a lesson idea for other Bootstrap teachers? Want to be kept up-to-date about Bootstrap events, workshops, and curricular changes? Our new discussion forum is the place to do it.</p>
+</li>
+<li>
+<p><strong>What&#8217;s Going on in this Graph?</strong> [<a href="https://www.nytimes.com/column/whats-going-on-in-this-graph" target="_blank" rel="noopener">nytimes.com</a>] - Once a month, the NYTimes posts an interesting data visualization. This is a great resource to spark the curiosity of young data scientists, and make for a perfect Notice &amp; Wonder activity!</p>
+</li>
+<li>
+<p><strong>The Pudding</strong> [<a href="https://pudding.cool/" target="_blank" rel="noopener">link</a>] - Terrific deep dives into data analysis for interesting topics. Another wonderful resource for students, with great animations showing the transformation of how data is visualized as the research questions evolve.</p>
+</li>
+</ul>
+</span>
+</span>
+</span>
+<span class="sect1">
+<h2 id="_exercises_and_solutions">Exercises and Solutions</h2>
+<span class="sectionbody">
+
+</span>
+</span>
+<span class="sect1">
+<h2 id="_project_files">Project Files</h2>
+<span class="sectionbody">
+<span class="paragraph">
+<p>Every student (or, ideally, every <em>pair</em> of students) will need to save a copy of the <a href="https://docs.google.com/document/d/1_ZEIgM4zvxI7JizViVFZojnpd3Yr2rYe8puPk8pjOcs/copy" target="_blank" rel="noopener">Blank Research Paper</a>. A <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/resources/pages/final-paper-rubric.html" target="_blank" rel="noopener">Grading Rubric</a> is also available for the research paper.</p>
+</span>
+<span class="paragraph">
+<p><span class="vspace" style="height: 2ex"></span></p>
+</span>
+<span class="openblock TwoColumnDD_DT">
+<span class="content">
+<span class="dlist">
+<dl>
+<dt class="hdlist1"><br/>Movies</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1ldK-Xte5xCAPd6hz2wreBaJzuw-voe4q6ui9QkFGz8w" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1xke6yN2gkn_q-Bf2yC7772i6NNezyjbk" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Schools</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1XeeyAuF_mtpeCw2HVCKjvwW1rreNvztoQ3WeBlEaDl" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1Xu0ket-eDCeU-Uuxl82OCCGJQRW_ghWV" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>US Income</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1cIxBSQebGejWK7S_Iy6cDFSIpD-60x8oG7IvrfCtHbw" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1qSK5KX7cfwM4c6XtJFg5gPcVp9OBSbOU" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>US Presidents</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1Frt37-nBHHxvJVBKzKLRD3kbjPLhc8CYUaIlNeNWl94" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1prkKxnGrGJJAab7XBXTqiysRli0xFEbL" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Countries of the World</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/19VoYxPw0tmuSViN1qFIkyUoepjNSRsuQCe0TZZDmrZs" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1wEHqx0f9VOxmRUVqDjnPCECOmvPWyQdS" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Music</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1Yzo8GuGhMDVNyAI5OacmKZ53xJplZbXF5FT6Lwitp0w" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1UIYszUXHA0gx7jmFhEitvKxqa7MDmcxO" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>NYC Restaurant Health Inspections</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1inK0kq8bNeN1vYbx0HpNZ8xHOp5pmP2FoLcfK9pQhJI" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1LMziboHPlgtATfwpOUEDJzMPW2MVIp6o" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Pokemon Characters</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1S8jf4Qf94TJKGLCcTA-Fqn4YXE7dGf_PIxv5MUeUPVo" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1Nxhiw46EFfNhmMBvUQK0NosbFnaBCQJy" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>IGN Video Game Reviews</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1Ss221kjz2WJUsTlxK7TcnsXLPoSbnfUKv-JP8gCiGRw" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1IVnp6-NCuvbk1cQH6CRly_6I6-OEBOVI" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>2016 Presidential Primary Election</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1fgIREXT5lAaAPWqrNP3S191ID_ecoXDjBe_gAC00-M4" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1pPF0KjcjM7C82wpShDmQ5D_CD39lE7AE" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>US Cancer Rates</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1deL-6Xh9WUN2fTcV95V7RLseAcplGNA6BHTnpHCMgME" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1qJxOMxULihXhtrIVaLPboFtYpUiLnFct" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>US State Demographics</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1AwoBUlqGbrE77gdjd8tOIPrVO9Vmzs6YB1zLVmJkM7M" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1IzvOGVQdhi-QMKJdl7IBpM1vGSjaV_P_" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Sodas</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/15n0dLqBWffE2JNOmYHcvavqMwvHXpy5_UyZfT3Q7pfs" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=12AFxlJuNjmxYTUV0FWa7z3D5CHRYBXoG" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Cereals</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1y3AoywSnyGpu-QmmEwKvW-xstZ6B9JhH5gTUx5XYTo4" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1syDC8qoFjO4EdqycRAfWlKMHanzrqTSH" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Summer Olympic Medals</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1ee30kHpV35zAO5MNQKk_nXP6iym2mX-bv_cgt-8q_oo" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1bkI_WiWZvLlS5x3A0vx6C-m-fJonIPW4" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Winter Olympic Medals</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1-xYW4C0IRB7cDI2K8dMyVTlsQjFmB_Z4XBsHsB-TAbs" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1kFV_BmSDTSAbNDdm-IFZrGdI1I6K4-aL" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>MLB Hitting Stats</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1xjC1XZWACvQtfwHdGk_BlE2jm4aleMADHTt6PEocCjg" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1X80kXcexm4kriNFTJXLVr_8m2TZOvhzr" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Spotify Top Songs</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/18Yb3zWIIensRdz1C1iqqtZ4aXjbKOD7z2SSL09Zm1Xc" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1x6-ckp0F1nN2SwoXtqYyxRKbT8ZgRfs9" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+</dl>
+</span>
+</span>
+</span>
+<span class="paragraph">
+<p>Students can also import their data into a <a href="https://code.pyret.org/editor#share=12v7kzbxHt2LaSe2uI2d_OnssxtTNF0A8" target="_blank" rel="noopener">Blank Starter File</a>. They will need to modify this file for use with their dataset, and <a href="https://www.youtube.com/watch?v=K4n9hTSqcyw" target="_blank" rel="noopener">this tutorial video</a> can walk them through it.</p>
+</span>
+</span>
+</span>
+<span class="sect1">
+<h2 id="_workshop_files">Workshop Files</h2>
+<span class="sectionbody">
+<span class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLScaKOQ1L0Ni-sVuMY9tRhbAFcAcSFLA28lqPXQAJ03cUkSYYg/viewform" target="_blank" rel="noopener">Pre-PD Survey</a> - Please fill out this survey prior to your first day.</p>
+</li>
+<li>
+<p><a href="https://docs.google.com/spreadsheets/d/19m1bUCQo3fCzmSEmWMjTfnmsNIMqiByLytHE0JYtnQM" target="_blank" rel="noopener">Animals Dataset</a></p>
+</li>
+<li>
+<p><a href="https://code.pyret.org/editor#share=1Z8ncVGKqWiED_wHl8TlNF3D9AGBb7awm&v=9dc9cc4" target="_blank" rel="noopener">Animals Starter File</a></p>
+</li>
+<li>
+<p><a href="https://code.pyret.org/editor#share=1PTPxKGyUfsMpy4GzFtYS_JGntiHOL0Yu" target="_blank" rel="noopener">Animals Starter File - Part 2</a></p>
+</li>
+<li>
+<p><a href="https://code.pyret.org/editor#share=1VVz4l0P6GLwbcpYyAGYJuRgBxj69R52Z" target="_blank" rel="noopener">the Trust-but-Verify Starter File</a></p>
+</li>
+<li>
+<p><a href="https://www.geogebra.org/m/ZcVIxKtF" target="_blank" rel="noopener">Playing with Predictors</a></p>
+</li>
+<li>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfj24nCBA18zvjK19OwS_DZfwFZpHoPtPcd-2ADiUDfevkaSA/viewform" target="_blank" rel="noopener"><em>Homework Submission</em></a></p>
+</li>
+<li>
+<p><a href="https://docs.google.com/forms/d/1Jawbr4NMpSTAb6O-Bn-dPL17_0uZt55NZqf8Z9C555E/viewform" target="_blank" rel="noopener">Post-PD Survey</a> - Give us some feedback!</p>
+</li>
+</ul>
+</span>
+<span class="openblock acknowledgment"><hr/>
+<span class="content">
+<span class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/resources/mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+<span id="footer">
+<span id="footer-text">
+Last updated 2020-08-19 20:39:49 -0400
+</span>
+</span>
+</span>
+</body>
+</html>

@@ -1,0 +1,8 @@
+"circle of evaluation"
+"definitions area"
+"editor"
+"error message"
+"expression"
+"function"
+"interactions area"
+"value"

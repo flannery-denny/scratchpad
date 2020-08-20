@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Histograms</title>
+<link rel="stylesheet" href="./../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="../../../../lib/bootstraplesson.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Histograms",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article LessonPlan pyret" onload="renderSaveToDrive()">
+<!--#include virtual="/menubar.ssi"-->
+<!-- Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46088504-1', 'bootstrapworld.org');
+ga('send', 'pageview');
+
+</script>
+<div id="body" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Histograms</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div id="preamble_disabled">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Students explore new visualizations in Pyret, this time focusing on the distribution in a quantitative dataset. Students are introduced to Histograms by comparing them to bar charts, and learn to construct them by hand and in Pyret.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-none stretch left-header preamble">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Prerequisites</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../../lessons/ds-defining-table-functions/index.shtml">Defining Table Functions</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><script>
+function showStandardsAlignment() {
+  const selectTag = document.getElementsByClassName('standardsAlignmentSelect')[0];
+  const options = selectTag && selectTag.options;
+  const stdTables = document.getElementsByClassName('alignedStandards');
+  const intro = document.getElementsByClassName('alignedStandardsIntro')[0];
+  let introNeeded = true;
+  for (let i = 0; i < stdTables.length; i++) {
+    const stdTable = stdTables[i];
+    stdTable.style.display = 'none';
+  }
+  for (let i = 0; i < options.length; i++) {
+    const opt = options[i];
+    if (opt.selected) {
+      const optStd = opt.value;
+      for (let j = 0; j < stdTables.length; j++) {
+        const stdTable = stdTables[j];
+        if (stdTable.classList.contains(optStd)) {
+          stdTable.style.display = 'block';
+          introNeeded = false;
+        }
+      }
+    }
+  }
+  intro.style.display = introNeeded ? 'block' : 'none';
+}
+</script>
+<div class="paragraph">
+<p>Relevant Standards<select class="standardsAlignmentSelect"  multiple onchange="showStandardsAlignment()" style="height: 150px"><option value="standards-K12CS">K12CS</option><option value="standards-CSTA">CSTA</option><option value="standards-NGSS">NGSS</option><option value="standards-CC-Math">CC-Math</option></select></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph alignedStandardsIntro">
+<p><em>Select one or more standards from the menu on the left (⌘-click on Mac, Ctrl-click elsewhere).</em></p>
+</div>
+<div class="dlist alignedStandards standards-CC-Math standards-hierarchical-table">
+<div class="title">Common Core Math Standards</div>
+<dl>
+<dt class="hdlist1">HSS.ID.A.1</dt>
+<dd>
+<p>Represent data with plots on the real number line (dot plots, histograms, and box plots).</p>
+</dd>
+<dt class="hdlist1">HSS.ID.A.2</dt>
+<dd>
+<p>Use statistics appropriate to the shape of the data distribution to compare center (median, mean) and spread (interquartile range, standard deviation) of two or more different data sets.</p>
+</dd>
+<dt class="hdlist1">HSS.ID.A.3</dt>
+<dd>
+<p>Interpret differences in shape, center, and spread in the context of the data sets, accounting for possible effects of extreme data points (outliers).</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-CSTA standards-hierarchical-table">
+<div class="title">CSTA Standards</div>
+<dl>
+<dt class="hdlist1">3A-DA-11</dt>
+<dd>
+<p>Create interactive data visualizations using software tools to help others better understand real-world phenomena.</p>
+</dd>
+<dt class="hdlist1">3B-AP-14</dt>
+<dd>
+<p>Construct solutions to problems using student-created components, such as procedures, modules and/or objects.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-K12CS standards-hierarchical-table">
+<div class="title">K-12CS Standards</div>
+<dl>
+<dt class="hdlist1">P5</dt>
+<dd>
+<p>Creating Computational Artifacts</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-NGSS standards-hierarchical-table">
+<div class="title">Next-Gen Science Standards</div>
+<dl>
+<dt class="hdlist1">HS-SEP2-1</dt>
+<dd>
+<p>Evaluate merits and limitations of two different models of the same proposed tool, process, mechanism, or system in order to select or revise a model that best fits the evidence or design criteria.</p>
+</dd>
+</dl>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Lesson Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Students will be able to&#8230;&#8203;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>create histograms using the Animals Dataset</p>
+</li>
+<li>
+<p>visualizations of frequency using their chosen dataset, and write up their findings</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Student-facing Lesson Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Let&#8217;s use histograms to talk about data.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Materials</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Lesson Slides (<a href="https://docs.google.com/presentation/d/1SSGffPVHeQ30HwhwvRAUw_VhQcbDJrl_9sLF84WJf28/" target="_blank" rel="noopener">Google Slides</a>)</p>
+</li>
+<li>
+<p>Computer for each student (or pair), with access to the internet</p>
+</li>
+<li>
+<p><a href="../..//workbook/workbook.pdf">Student workbook</a>, and something to write with</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Preparation</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Make sure all materials have been gathered</p>
+</li>
+<li>
+<p>Decide how students will be grouped in pairs</p>
+</li>
+<li>
+<p>All students should log into <a href="https://code.pyret.org" target="_blank" rel="noopener">CPO</a> and open the "Animals Starter File" they saved from the prior lesson. If they don&#8217;t have the file, they can <a href="https://code.pyret.org/editor#share=1ZupMVPWvVUOM0HCWyA7cRBghSLKxPWv1" target="_blank" rel="noopener">open a new one</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Supplemental Resources</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Language Table</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><table class="tableblock frame-all grid-all stretch lang-features-table">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 66.6666%;">
+<col style="width: 16.6668%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Types</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Functions</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Values</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Number</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>num-sqrt, num-sqr</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>4, -1.2, 2/3</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>String</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>string-repeat, string-contains</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>"hello", "91"</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Boolean</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>==, &lt;, &lt;=, &gt;=, string-equal</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>true, false</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Image</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>triangle, circle, star, rectangle, ellipse, square, text, overlay, bar-chart, pie-chart, bar-chart-summarized, pie-chart-summarized</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>🔵🔺🔶</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Table</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>count, .row-n, .order-by, .filter, .build-column, random-rows</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist glossary">
+<div class="title">Glossary</div>
+<dl>
+<dt class="hdlist1">bar chart</dt>
+<dd>
+<p>a display of categorical data that uses bars positioned over category values; each bar’s height reflects the count or percentage of data values in that category</p>
+</dd>
+<dt class="hdlist1">frequency</dt>
+<dd>
+<p>how often a particular value appears in a data set</p>
+</dd>
+<dt class="hdlist1">histogram</dt>
+<dd>
+<p>a display of quantitative data that uses vertical bars positioned over bins (sub-intervals); each bar’s height reflects the count or percentage of data values in that bin.</p>
+</dd>
+<dt class="hdlist1">shape</dt>
+<dd>
+<p>The aspect of a dataset that tells which values are more or less common</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_review_duration_20_minutes_"><span class="section-link"><a href="#_review_duration_20_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Review <span class="duration">20 minutes</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Have students open their Animals Starter File, and click “Run”. (If they do not have this file, or if something has happened to it, they can always make a <a href="https://code.pyret.org/editor#share=1ZupMVPWvVUOM0HCWyA7cRBghSLKxPWv1" target="_blank" rel="noopener">new copy</a>.)</p>
+</div>
+<div class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Turn to <a href="../../lessons/ds-histograms/pages/design-recipe.html" target="_blank" rel="noopener">The Design Recipe (Page 51)</a>, and write the functions you see there. When you’re ready, type the contracts, purpose statements, examples and definitions into the Definitions Area.</p>
+</li>
+<li>
+<p>Use the <code><tt class="pyret">.build-column</tt></code> method to add a new column to the animals table, showing the weight of every animal in kilograms.</p>
+</li>
+<li>
+<p>Use the <code><tt class="pyret">image-scatter-plot</tt></code> function to plot all of the animals, putting`age` on the x-axis, number of <code><tt class="pyret">weeks</tt></code> in the shelter on the y-axis, and <code><tt class="pyret">smart-dot</tt></code> as our function.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_introducing_histograms_duration_20_minutes_"><span class="section-link"><a href="#_introducing_histograms_duration_20_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Introducing Histograms <span class="duration">20 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview">Overview</h3>
+<div class="paragraph">
+<p>Students look at a bar chart and a histogram, compare/contrast them, and make observations about what they have in common and how they are different. Then they learn a more formal explanation of histograms.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch">Launch</h3>
+<div class="paragraph lesson-instruction">
+<p>Have students complete <a href="../../lessons/ds-histograms/pages/summarizing-columns.html" target="_blank" rel="noopener">Summarizing Columns (Page 52)</a>.</p>
+</div>
+<div class="paragraph">
+<p>The display on the left side of that page is a <span class="vocab">Bar chart</span>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The x-axis lists the values of a categorical variable (<code><tt class="pyret">species</tt></code>).</p>
+</li>
+<li>
+<p>The y-axis shows the <span class="vocab">frequency</span> of categorical values in the dataset.</p>
+</li>
+<li>
+<p>This chart happens to show the categorical values in alphabetical order from left to right, but it would be fine to re-order them any way we wish. The bar for “dogs” could have been drawn before the one for “cats”, without changing the meaning of the display. <em>It never makes sense to talk about the “shape” of a categorical data set</em>, since that shape holds no meaning.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The display on the right side is called a <span class="vocab">histogram</span>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Histograms show the distribution of <em>quantitative</em> data.</p>
+</li>
+<li>
+<p>Since quantitative data must follow a natural order, these bars <em>cannot</em> be re-ordered.</p>
+</li>
+<li>
+<p>Histograms allow us to see the shape of a data set.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate">Investigate</h3>
+<div class="paragraph">
+<p>To build a histogram, we start by sorting all of the numbers in our column from smallest to largest, marking our x-axis from the smallest value (or a bit below) to the largest value (or a bit above) and dividing into equally-sized intervals, or “bins”. For example, if our values ranged from 3 to 53 we might mark our x-axis from 0 to 60 and divide it into bins of width 10. If they range from 22 to 41 we might mark our x-axis from 20 to 45 and divide it into bins of width 5. Once we have our bins, we put each value in our dataset into the bin where it belongs, and then count how many values fall in each bin. This count determines the height of the bars on our y-axis.</p>
+</div>
+<div class="paragraph lesson-instruction">
+<p>Turn to <a href="../../lessons/ds-histograms/pages/making-histograms.html" target="_blank" rel="noopener">Making Histograms (Page 53)</a>, and try drawing a histogram from a dataset.</p>
+</div>
+<div class="sect3 lesson-section-3">
+<h4 id="_possible_misconceptions">Possible Misconceptions</h4>
+<div class="paragraph">
+<p>Note that intervals on this display include the left endpoint but not the right. If we included the right endpoint and someone had 0 teeth, we’d have to add on a bar from -5 to 0, which would be awfully strange!</p>
+</div>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_synthesize">Synthesize</h3>
+<div class="paragraph">
+<p>Review: How are histograms and bar charts different?</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_choosing_the_right_bin_size_duration_15_minutes_"><span class="section-link"><a href="#_choosing_the_right_bin_size_duration_15_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Choosing the Right Bin Size <span class="duration">15 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview_2">Overview</h3>
+<div class="paragraph">
+<p>Students make histograms from the animals-dataset, and explore different bin sizes.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch_2">Launch</h3>
+<div class="paragraph">
+<p><strong>The size of the bins matters a lot!</strong> Bins that are too small will hide the shape of the data by breaking it into too many short bars. Bins that are too large will hide the shape by squeezing the data into just a few tall bars. In this workbook exercise, the bins were provided for you. But how do you choose a good bin-size?</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate_2">Investigate</h3>
+<div class="paragraph">
+<p>A display of how long it takes animals to get adopted can make it easier to get an idea of what adoption times were most common, and if there were any unusually long or short times that it took for an animal to be adopted.</p>
+</div>
+<div class="openblock lesson-instruction">
+<div class="content">
+<div class="paragraph">
+<p>Suppose we want to know how long it takes for animals from the shelter to be adopted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Find the contract for the <code><tt class="pyret">histogram</tt></code> function.</p>
+</li>
+<li>
+<p>Make a histogram for the <code><tt class="pyret">"weeks"</tt></code> column in the <code><tt class="pyret">animals-table</tt></code>, using a bin size of 10.</p>
+</li>
+<li>
+<p>How many took between 0 and 10 weeks? Between 10 and 20?</p>
+</li>
+<li>
+<p>Try some other bin sizes (be sure to experiment with bigger and smaller bins!) - what shapes emerge? What bin size gives you the best picture of the distribution?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph lesson-instruction">
+<p>Look at the histogram and count how many animals took between 0 and 5 weeks to be adopted. How many took between 5 and 10 weeks? What else do you Notice? What do you Wonder?</p>
+</div>
+<div class="paragraph">
+<p>Some observations you can share with the class, to get them started:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>We see most of the histogram’s area under the two bars between 0 and 10 weeks, so we can say it was most common for an animal to be adopted in 10 weeks or less.</p>
+</li>
+<li>
+<p>We see a small amount of the histogram’s area trailing out to unusually high values, so we can say that a couple of animals took an unusually long time to be adopted: one took even more than 30 weeks.</p>
+</li>
+<li>
+<p>More than half of the animals (17 out of 31) took just 5 weeks or less to be adopted. But those few unusually long adoption times pulled the average up to 5.8 weeks. We’ll talk more about Shape of a histogram in the next lesson, and about its effect on average (the mean) in the lesson after that.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If someone asked what was a typical adoption time, we could say: “Almost all of the animals were adopted in 10 weeks or less, but a couple of animals took an unusually long time to be adopted&#8201;&#8212;&#8201;even more than 20 or 30 weeks!” Without looking at the histogram’s shape, we could not have drawn this conclusion.</p>
+</div>
+<div class="paragraph lesson-instruction">
+<p>What would the histogram look like if most of the animals took more than 20 weeks to be adopted, but a couple of them were adopted in fewer than 5 weeks?</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_synthesize_2">Synthesize</h3>
+<div class="paragraph">
+<p><strong>Have students talk about the bin sizes the tried</strong>. Encourage open discussion as much as possible here, so that students can make their own meaning about bin sizes before moving on to the next point.</p>
+</div>
+<div class="paragraph lesson-point">
+<p>Rule of thumb: a histogram should have between 5–10 bins.</p>
+</div>
+<div class="paragraph">
+<p>Histograms are a powerful way to display a data set and assess its <span class="vocab">shape</span>. Choosing the right bin size for a column has a lot to do with how data is distributed between the smallest and largest values in that column! With the right bin size, we can see the <em>shape</em> of a quantitative column. But how do we talk about or describe that shape, and what does the shape actually tell is? The next lesson addresses all of these.</p>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:34:24 -0400
+</div>
+</div>
+</div>
+</body>
+</html>

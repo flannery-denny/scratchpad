@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>The Design Recipe</title>
+<link rel="stylesheet" href="./../../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="../../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="../../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="../../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/bootstraplesson.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"The Design Recipe",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article wescheme" onload="renderSaveToDrive()">
+<div id="header">
+<h1>The Design Recipe</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div class="paragraph">
+<p><span class="web-page-only">Referenced from lesson <a href="../../../lessons/alg-restating-the-problem/index.shtml">Restating the Problem</a></p>
+</div>
+<div class="paragraph">
+<p></span></p>
+</div>
+<style>
+.recipe_word_problem {margin: 1ex 0ex; }
+</style>
+<div class="paragraph recipe_word_problem">
+<p><strong>Directions</strong>: Write a function <tt class="racket">rect-perimeter</tt> that takes in the length and width of a rectangle and returns the perimeter of that rectangle.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contract and Purpose Statement</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Every contract has three parts&#8230;&#8203;</p>
+</div>
+<div class="paragraph recipe recipe_contract">
+<p>&#x3b; <span class="studentAnswer studentAnswerCode solution recipe_name">rect-perimeter</span>:<span class="studentAnswer studentAnswerCode solution recipe_domain"> Number Number</span>-&gt;<span class="studentAnswer studentAnswerCode solution recipe_range">Number</span></p>
+</div>
+<div class="paragraph recipe recipe_purpose_statement">
+<p><span class="purpose_comment">;</span> <span class="studentAnswer solution recipe_purpose">Takes in 2 numbers, length and width, and returns the double of the sum of both numbers</span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Examples</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write some examples, then circle and label what changes&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="bigparen">(</span>EXAMPLE <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_name">rect-perimeter</span> <span class="studentAnswer studentAnswerCode solution recipe_example_inputs"> 10 20</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="studentAnswer studentAnswerCode solution recipe_example_body">(* 2 (+ 10 20))</span></span><span class="bigparen">)</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="bigparen">(</span>EXAMPLE <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_name">rect-perimeter</span> <span class="studentAnswer studentAnswerCode solution recipe_example_inputs"> 200 350</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="studentAnswer studentAnswerCode solution recipe_example_body">(* 2 (+ 200 350))</span></span><span class="bigparen">)</span></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definition</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write the definition, giving variable names to all your input values&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="bigparen">(</span>define <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_name">rect-perimeter</span> <span class="studentAnswer studentAnswerCode solution recipe_variables"> length width</span><span class="bigparen">)</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_definition_body">(* 2 (+ length width))</span><span class="bigparen">)</span></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="sectionbreak"></span></p>
+</div>
+<div class="paragraph recipe_word_problem">
+<p><strong>Directions</strong>: Write a function <tt class="racket">rectprism-vol</tt> that takes in the length, width, and height of a rectangular prism and returns the Volume of a rectangular prism.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contract and Purpose Statement</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Every contract has three parts&#8230;&#8203;</p>
+</div>
+<div class="paragraph recipe recipe_contract">
+<p>&#x3b; <span class="studentAnswer studentAnswerCode solution recipe_name">rectprism-vol</span>:<span class="studentAnswer studentAnswerCode solution recipe_domain"> Number Number Number</span>-&gt;<span class="studentAnswer studentAnswerCode solution recipe_range">Number</span></p>
+</div>
+<div class="paragraph recipe recipe_purpose_statement">
+<p><span class="purpose_comment">;</span> <span class="studentAnswer solution recipe_purpose">Takes in 3 numbers, length, width, and height, and multiplies them to return that value</span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Examples</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write some examples, then circle and label what changes&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="bigparen">(</span>EXAMPLE <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_name">rectprism-vol</span> <span class="studentAnswer studentAnswerCode solution recipe_example_inputs"> 10 20 30</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="studentAnswer studentAnswerCode solution recipe_example_body">(* 10 (* 20 30))</span></span><span class="bigparen">)</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="bigparen">(</span>EXAMPLE <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_name">rectprism-vol</span> <span class="studentAnswer studentAnswerCode solution recipe_example_inputs"> 100 250 350</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="studentAnswer studentAnswerCode solution recipe_example_body">(* 100 (* 250 350))</span></span><span class="bigparen">)</span></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definition</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write the definition, giving variable names to all your input values&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="bigparen">(</span>define <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_name">rectprism-vol</span> <span class="studentAnswer studentAnswerCode solution recipe_variables"> length width height</span><span class="bigparen">)</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_definition_body">(* length (* width height))</span><span class="bigparen">)</span></p>
+</div>
+</div>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Algebra by Emmanuel Schanzer, Jen Poole, Ed Campos Jr, Flannery Denny, and Dorai Sitaram
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:11:10 -0400
+</div>
+</div>
+</body>
+</html>

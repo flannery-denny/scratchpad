@@ -1,0 +1,4 @@
+"categorical data"
+"contract"
+"method"
+"quantitative data"

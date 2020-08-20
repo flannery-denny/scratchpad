@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Scatter Plots</title>
+<style>
+/* Overall document font */
+* {font-family: Lato, Arial, Helvetica, sans-serif;}
+
+/* document headings */
+h1,.lesson-section-1 {color: #75328A;}
+h1{font-size: 32px; font-family: sans-serif;}
+table.section-heading *, .lesson-section-1 h2{font-size: 32px; font-weight: 100;}
+table.section-heading{width: 100%;}
+table.section-heading td:last-child{text-align: right; color: #d9d2e9;}
+
+/* preamble section */
+table.preamble td {padding: 10px;}
+table.preamble td:first-child{background: #b7d893; width: 25%;}
+table.preamble td:first-child p {font-weight: bold; margin: 5px;}
+
+/* content used throughout the body */
+table{ border-collapse: collapse; border: none; }
+table.grid-all.frame-all {border: solid 1px black;}
+table.grid-none.frame-none {border-width: 0px;}
+
+.big {font-size: 30pt;}
+.vocab{font-weight: bold; font-style: italic;}
+.right{text-align: right;}
+.acknowledgment {
+  border-top: solid 1px black; 
+  font-style: italic; 
+  font-size: 8pt;
+}
+.lesson-point {
+  border-top: solid 1px black; 
+  border-bottom: solid 1px black; 
+  color: black;
+  font-weight: bold;
+}
+
+.web-page-only, #footer { display: none; visibility: hidden; }
+
+/* Callout boxes */
+.strategy-box, .notice-box {
+  background: #efefef;
+  border: solid 5px !important;
+  margin: 15px auto;
+  width: 100%;
+}
+.strategy-box { border-color: #1a73b5 !important; }
+.notice-box   { border-color: #7747a5 !important; }
+.strategy-box td, .notice-box td{ padding: 10px; }
+.strategy-box .title, .notice-box .title{
+  width: 100%;
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+  clear: both;
+  margin: 100px;
+}
+.strategy-box p.tableblock:first-child, .notice-box p.tableblock:first-child{
+  text-align: center;
+  padding-bottom: 15px;
+}
+.strategy-box .title { color: #1a73b5; }
+.notice-box   .title { color: #7747a5; }
+.strategy-box a, .notice-box a { color: blue; text-decoration: underline; }
+
+/* "Tables" of Evaluation */
+.operator{border-bottom: solid 1px black; text-align: center;}
+.operator * {text-align: center;}
+td {padding: 0px 10px; font-size: 14px;}
+table.expression {
+    font-family:"Courier New", Monaco, monospace;
+    border:     solid 1px black;
+    font-size:  1px;
+    max-width:  400px;
+    color:      #666666;
+    display:    inline-block;
+}
+table.args {border: none; text-align: center;}
+
+.wescheme-string,     .cm-scheme-string    {color: green;}
+.wescheme-number,     .cm-scheme-number    {color: blue;}
+.wescheme-boolean,    .cm-scheme-boolean   {color: darkred;}
+.wescheme-character,  .cm-scheme-character {color: orange;}
+.wescheme-symbol,     .cm-scheme-symbol    {color: steelblue;}
+.wescheme-comment,    .cm-scheme-comment   {color: orange; }
+
+.racket, .pyret, .studentAnswerCode, .studentAnswer, .pyretkeyword, .keyword_only {
+    font-family:"Courier New", Monaco, monospace !important; 
+    color: black;
+}
+
+/* Design Recipe */
+.recipe_instructions { font-style: italic; }
+table.recipe_title {
+  color:              white;
+  background:         gray;
+  display:            block;
+  padding:            0px;
+  font-size:          1.1rem;
+  font-weight:        bold;
+}</style>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:window.location.href,
+    filename:"Scatter Plots",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article LessonPlan pyret" onload="renderSaveToDrive()">
+<!-- Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46088504-1', 'bootstrapworld.org');
+ga('send', 'pageview');
+
+</script>
+<span id="body" onload="renderSaveToDrive()">
+<span id="header">
+<h1>Scatter Plots</h1>
+
+  <span id="savetodrive-div"></span>
+
+</span>
+<span id="content">
+<span id="preamble_disabled">
+<span class="sectionbody">
+<span class="paragraph">
+<p>Students investigate scatter plots as a method of visualizing the relationship between two quantitative variables.</p>
+</span>
+<table class="tableblock frame-all grid-all stripes-none stretch left-header preamble">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Prerequisites</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-scatter-plots/../../lessons/ds-plotting/index.shtml">Displaying Categorical Data</a></p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><script>
+function showStandardsAlignment() {
+  const selectTag = document.getElementsByClassName('standardsAlignmentSelect')[0];
+  const options = selectTag && selectTag.options;
+  const stdTables = document.getElementsByClassName('alignedStandards');
+  const intro = document.getElementsByClassName('alignedStandardsIntro')[0];
+  let introNeeded = true;
+  for (let i = 0; i < stdTables.length; i++) {
+    const stdTable = stdTables[i];
+    stdTable.style.display = 'none';
+  }
+  for (let i = 0; i < options.length; i++) {
+    const opt = options[i];
+    if (opt.selected) {
+      const optStd = opt.value;
+      for (let j = 0; j < stdTables.length; j++) {
+        const stdTable = stdTables[j];
+        if (stdTable.classList.contains(optStd)) {
+          stdTable.style.display = 'block';
+          introNeeded = false;
+        }
+      }
+    }
+  }
+  intro.style.display = introNeeded ? 'block' : 'none';
+}
+</script>
+<span class="paragraph">
+<p>Standards</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph ">
+</span>
+<span class="dlist standards-CC-Math standards-hierarchical-table">
+<span class="title">Common Core Math Standards</span>
+<dl>
+<dt class="hdlist1"><br/>8.SP.A.1</dt>
+<dd>
+<p>Construct and interpret scatter plots for bivariate measurement data to investigate patterns of association between two quantities. Describe patterns such as clustering, outliers, positive or negative association, linear association, and nonlinear association.</p>
+</dd>
+<dt class="hdlist1"><br/>8.SP.A.2</dt>
+<dd>
+<p>Know that straight lines are widely used to model relationships between two quantitative variables. For scatter plots that suggest a linear association, informally fit a straight line, and informally assess the model fit by judging the closeness of the data points to the line.</p>
+</dd>
+<dt class="hdlist1"><br/>HSS.ID.B.6</dt>
+<dd>
+<p>Represent data on two quantitative variables on a scatter plot, and describe how the variables are related.</p>
+</dd>
+<dt class="hdlist1"><br/>HSS.ID.C.8</dt>
+<dd>
+<p>Compute (using technology) and interpret the correlation coefficient of a linear fit.</p>
+</dd>
+</dl>
+</span>
+<span class="dlist standards-CSTA standards-hierarchical-table">
+<span class="title">CSTA Standards</span>
+<dl>
+<dt class="hdlist1"><br/>3A-DA-11</dt>
+<dd>
+<p>Create interactive data visualizations using software tools to help others better understand real-world phenomena.</p>
+</dd>
+<dt class="hdlist1"><br/>3B-NI-05</dt>
+<dd>
+<p>Use data analysis tools and techniques to identify patterns in data representing complex systems</p>
+</dd>
+</dl>
+</span>
+<span class="dlist standards-K12CS standards-hierarchical-table">
+<span class="title">K-12CS Standards</span>
+<dl>
+<dt class="hdlist1"><br/>6-8.Data and Analysis.Visualization and Transformation</dt>
+<dd>
+<p>Computer models can be used to simulate events, examine theories and inferences, or make predictions with either few or millions of data points. Computer models are abstractions that represent phenomena and use data and algorithms to emphasize key features and relationships within a system. As more data is automatically collected, models can be refined.</p>
+</dd>
+<dt class="hdlist1"><br/>9-12.Data and Analysis.Visualization and Transformation</dt>
+<dd>
+<p>Data can be transformed to remove errors, highlight or expose relationships, and/or make it easier for computers to process.</p>
+</dd>
+<dt class="hdlist1"><br/>P5</dt>
+<dd>
+<p>Creating Computational Artifacts</p>
+</dd>
+</dl>
+</span>
+<span class="dlist standards-NGSS standards-hierarchical-table">
+<span class="title">Next-Gen Science Standards</span>
+<dl>
+<dt class="hdlist1"><br/>HS-SEP6-1</dt>
+<dd>
+<p>Make a quantitative and/or qualitative claim regarding the relationship between dependent and independent variables.</p>
+</dd>
+</dl>
+</span>
+<span class="dlist standards-OK standards-hierarchical-table">
+<span class="title">Oklahoma Standards</span>
+<dl>
+<dt class="hdlist1"><br/>OK.L1.DA.IM.01</dt>
+<dd>
+<p>Show the relationships between collected data elements using computational models.</p>
+</dd>
+<dt class="hdlist1"><br/>OK.PA.D.1.3</dt>
+<dd>
+<p>Collect, display and interpret data using scatterplots. Use the shape of the scatterplot to informally estimate a line of best fit, make statements about average rate of change, and make predictions about values not in the original data set. Use appropriate titles, labels and units.</p>
+</dd>
+</dl>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Lesson Goals</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Students will be able to&#8230;&#8203;</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>consider explanatory and response roles of variables​</p>
+</li>
+<li>
+<p>make scatter plots by hand, given a list of (x,y) pairs</p>
+</li>
+<li>
+<p>make scatter plots using Pyret</p>
+</li>
+<li>
+<p>identify a possible linear relationship by looking at a point cloud</p>
+</li>
+<li>
+<p>Consider unusual observations in a scatter plot</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Student-facing Lesson Goals</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Let&#8217;s use Pyret to create scatter plots of data.</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Materials</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Lesson Slides (<a href="https://docs.google.com/presentation/d/1RgRT61h69EHUDvpUKMPlnbjFv9D3rB7DZCqDWQ4CqiQ/" target="_blank" rel="noopener">Google Slides</a>)</p>
+</li>
+<li>
+<p>Computer for each student (or pair), with access to the internet</p>
+</li>
+<li>
+<p><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-scatter-plots/../..//workbook/workbook.pdf">Student workbook</a>, and something to write with</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Preparation</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Make sure all materials have been gathered</p>
+</li>
+<li>
+<p>Decide how students will be grouped in pairs</p>
+</li>
+<li>
+<p>All students should log into <a href="https://code.pyret.org" target="_blank" rel="noopener">CPO</a> and open the "Animals Starter File" they saved from the prior lesson. If they don&#8217;t have the file, they can <a href="https://code.pyret.org/editor#share=1ZupMVPWvVUOM0HCWyA7cRBghSLKxPWv1" target="_blank" rel="noopener">open a new one</a></p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Supplemental Resources</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Language Table</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><table class="tableblock frame-all grid-all stretch lang-features-table">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 66.6666%;">
+<col style="width: 16.6668%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Types</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Functions</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Values</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Number</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>num-sqrt, num-sqr, mean, median, modes</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>4, -1.2, 2/3</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>String</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>string-repeat, string-contains</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>"hello", "91"</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Boolean</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>==, &lt;, &lt;=, &gt;=, string-equal</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>true, false</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Image</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>triangle, circle, star, rectangle, ellipse, square, text, overlay, bar-chart, pie-chart, bar-chart-summarized, pie-chart-summarized, histogram</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>🔵🔺🔶</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Table</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>count, .row-n, .order-by, .filter, .build-column</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"></span></td>
+</tr>
+</tbody>
+</table></span></td>
+</tr>
+</tbody>
+</table>
+<span class="dlist glossary">
+<span class="title">Glossary</span>
+<dl>
+<dt class="hdlist1"><br/>explanatory variable</dt>
+<dd>
+<p>the variable in a relationship that is presumed to impact the other variable</p>
+</dd>
+<dt class="hdlist1"><br/>response variable</dt>
+<dd>
+<p>the variable in a relationship that is presumed to be affected by the other variable</p>
+</dd>
+<dt class="hdlist1"><br/>scatter plot</dt>
+<dd>
+<p>a display of the relationship between two quantitative variables, graphing each explanatory value on the x axis and the accompanying response on the y axis</p>
+</dd>
+</dl>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%"> Columns </td><td width="35%">15 minutes</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview">Overview</h3>
+<span class="paragraph">
+<p>Students are finally introduced to <em>Relate Questions</em>, which ask about the relationship between one quantitative column and another.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch">Launch</h3>
+<span class="paragraph">
+<p>Can animals' weights help explain why some are adopted quickly while others take a long time? What other factors explain why one pet gets adopted right away, and others wait months?</p>
+</span>
+<div class="paragraph lesson-point">
+<p>Theory 1: Smaller animals get adopted faster because they’re easier to care for.</p>
+</div>
+<span class="paragraph">
+<p>How could we test that theory? Bar and pie charts are great for showing us frequencies or percentages in a categorical column. Histograms and box plots are great for showing us the shape, center, and spread of a single quantitative column. But none of these displays will help us see connections between <strong>two</strong> quantitative columns.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate">Investigate</h3>
+<span class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Take a few minutes to look through the whole dataset, and see if you agree with Theory 1.</p>
+</li>
+<li>
+<p>Could any of our visualizations or summaries provide evidence for or against the theory?</p>
+</li>
+<li>
+<p>Write down your hypothesis on <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-scatter-plots/../../lessons/ds-scatter-plots/pages/disproving-claim.html" target="_blank" rel="noopener">(Dis)Proving a Claim (Page 71)</a>, as well as a theory about how we could use this dataset to see if you’re right.</p>
+</li>
+</ul>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize">Synthesize</h3>
+<span class="paragraph">
+<p>We’ve got a lot of tools in our toolkit that help us think about an entire <em>column</em> of a dataset:</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>We have ways to find measures of center and spread for a given quantitative column.</p>
+</li>
+<li>
+<p>We have visualizations that let us see the shape of values in a quantitative column.</p>
+</li>
+<li>
+<p>We have visualizations that let us see frequencies or percentages in a categorical column.</p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p>What columns is this question asking about?</p>
+</span>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">Making Scatter Plots </td><td width="35%">20 minutes</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview_2">Overview</h3>
+<span class="paragraph">
+<p>Students are introduced to <span class="vocab">scatter plots</span>, which are visualizations tailored to Relate Questions about quantitative variables. They learn how to construct scatter plots by hand, and in Pyret.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch_2">Launch</h3>
+<span class="paragraph">
+<p>This question is asking about <em>two columns</em> in our dataset. Specifically, it’s asking <strong>if there is a relationship</strong> between <code><span class="pyret">pounds</tt></code> and <code><tt class="pyret">weeks</span></code>.</p>
+</span>
+<span class="paragraph">
+<p>Before we can draw a <span class="vocab">scatter plot</span>, we have to make an important decision: which variable is <span class="vocab">explanatory</span> and which is <span class="vocab">response</span>? In this case, are we suspecting that an animal’s weight can explain how long it takes to be adopted, or that how long it takes to be adopted can explain how much an animal weighs?</p>
+</span>
+<span class="paragraph">
+<p>The first of these makes sense, and reflects our suspicion that weight plays a role in adoption time. The convention is to use the horizontal axis for our explanatory variable and the vertical axis for the response. Thus, <code><span class="pyret">pounds</tt></code> will be x and <code><tt class="pyret">weeks</span></code> will be y.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate_2">Investigate</h3>
+<span class="paragraph">
+<p>We will produce our scatter plot by graphing each animal’s <code><span class="pyret">pounds</tt></code> and <code><tt class="pyret">weeks</span></code> values as a point on the x and y axes.</p>
+</span>
+<span class="paragraph lesson-instruction">
+<p>Complete <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-scatter-plots/../../lessons/ds-scatter-plots/pages/creating-scatterplot.html" target="_blank" rel="noopener">Creating a Scatter Plot (Page 72)</a> in your Student Workbook.</p>
+</span>
+<table class="tableblock frame-all grid-none stripes-none stretch strategy-box">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="title">Teaching Tip</span></p>
+<p class="tableblock">Divide the full table up into sub-lists, and have a few students plot 3-4 animals on the board. This can be done collaboratively, resulting in a whole-class scatterplot!</p></td>
+</tr>
+</tbody>
+</table>
+<span class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Open your “Animals Starter File”. (If you do not have this file, or if something has happened to it, you can always make a <a href="https://code.pyret.org/editor#share=1ZupMVPWvVUOM0HCWyA7cRBghSLKxPWv1" target="_blank" rel="noopener">new copy</a>.)</p>
+</li>
+<li>
+<p>Make a scatter plot that displays the relationship between weight and adoption time.</p>
+</li>
+<li>
+<p>Are there any patterns or trends that you see here?</p>
+</li>
+<li>
+<p>Try making a few other scatter plots, looking for relationships between other columns in the <code><span class="pyret">animals-table</span></code>.</p>
+</li>
+</ul>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize_2">Synthesize</h3>
+<span class="paragraph">
+<p>Have students share their observations. What trends do they see? Are there any points that seem unusual? Why?</p>
+</span>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">Looking for Trends </td><td width="35%">20 minutes</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview_3">Overview</h3>
+<span class="paragraph">
+<p>Students are asked to identify patterns in their scatter plots. This activity builds towards the idea of <em>linear associations</em>, but does not go into depth (as the following lesson does).</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch_3">Launch</h3>
+<span class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Can you see a “cloud” around which the points are clustered?</p>
+</li>
+<li>
+<p>Does the number of weeks to adoption seem to go up or down as the weight increases?</p>
+</li>
+<li>
+<p>Are there any points that “stray from the pack”? Which ones?</p>
+</li>
+</ul>
+</span>
+<table class="tableblock frame-all grid-none stripes-none stretch strategy-box">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="title">Teaching Tip</span></p>
+<p class="tableblock">Project the scatter plot at the front of the room, and have students come up to the plot to point out their patterns.</p></td>
+</tr>
+</tbody>
+</table>
+<span class="paragraph">
+<p><span class="right"><span class="centered-image"><span class="image"><img src="../../lessons/ds-scatter-plots/images/visualizing-relationships-1.png" alt="" width="400"></span><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-scatter-plots/images/visualizing-relationships-1.png" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span></span>
+A straight-line pattern in the cloud of scatter plot points suggests that there is a linear relationship between two columns. If we can pinpoint a line around which the points cluster (as we’ll do in a future lesson), it would be useful for making predictions. For example, our line might predict how many <code><span class="pyret">weeks</tt></code> a new dog would wait to be adopted, if the dog weighs 68 <code><tt class="pyret">pounds</span></code>.</p>
+</span>
+<span class="paragraph">
+<p>Do any data points seem unusually far away from the main cloud of points? Which animals are those? These points are called <strong>unusual observations</strong>. Unusual observations in a scatter plot are like outliers in a histogram, but more complicated because it’s the <em>combination</em> of x and y values that makes them stand apart from the rest of the cloud.</p>
+</span>
+<div class="paragraph lesson-point">
+<p>Unusual observations are <em>always</em> worth thinking about</p>
+</div>
+<span class="ulist">
+<ul>
+<li>
+<p>Sometimes they’re just random. Felix seems to have been adopted quickly, considering how much he weighs. Maybe he just met the right family early, or maybe we find out he lives nearby, got lost and his family came to get him. In that case, we might need to do some deep thinking about whether or not it’s appropriate to remove him from our dataset.</p>
+</li>
+<li>
+<p>Sometimes they can give you a deeper insight into your data. Maybe Felix is a special, popular (and heavy!) breed of cat, and we discover that our dataset is missing an important column for breed!</p>
+</li>
+<li>
+<p>Sometimes unusual observations are the points we are looking for! What if we wanted to know which restaurants are a good value, and which are rip-offs? We could make a scatter plot of restaurant reviews vs. prices, and look for an observation that’s high above the rest of the points. That would be a restaurant whose reviews are <em>unusually good</em> for the price. An observation way below the cloud would be a really bad deal.</p>
+</li>
+</ul>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate_3">Investigate</h3>
+<span class="openblock lesson-instruction">
+<span class="content">
+<span class="paragraph">
+<p>For practice, try making scatter plots for each of the following relationships, always expressed as “response variable vs explanatory variable”. If you see any <strong>unusual observations</strong>, try to explain them!</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>The <code><span class="pyret">pounds</tt></code> of an animal vs its <code><tt class="pyret">age</span></code></p>
+</li>
+<li>
+<p>The number of <code><span class="pyret">weeks</tt></code> for an animal to be adopted vs its number of <code><tt class="pyret">legs</span></code></p>
+</li>
+<li>
+<p>The number of <code><span class="pyret">legs</tt></code> vs the <code><tt class="pyret">age</span></code> of an animal.</p>
+</li>
+<li>
+<p>Do you see a linear (straight-line) relationship in any of these, evidenced by a cloud of points that’s clearly rising or falling from left to right? Are there any unusual observations?</p>
+</li>
+</ul>
+</span>
+</span>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize_3">Synthesize</h3>
+<span class="paragraph">
+<p>Debrief, showing the plots on the board. Make sure students see plots for which there is no relationship, like the last one!</p>
+</span>
+<div class="paragraph lesson-point">
+<p>Theory 2: Younger animals get adopted faster because they are cuter.</p>
+</div>
+<span class="paragraph">
+<p>It might be tempting to go straight into making a scatter plot to explore how weeks to adoption may be affected by age. But different animals have very different lifespans! A 5-year-old tarantula is still really young, while a 5-year-old rabbit is fully grown. With differences like this, it doesn’t make sense to put them all on the same scatter plot. By mixing them together, we may be <em>hiding</em> a real relationship, or creating the illusion of a relationship that isn’t really there! So it’s probably best to make several displays, one for each species.</p>
+</span>
+<span class="openblock acknowledgment"><hr/>
+<span class="content">
+<span class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-scatter-plots/mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+<span id="footer">
+<span id="footer-text">
+Last updated 2020-08-19 20:34:25 -0400
+</span>
+</span>
+</span>
+</body>
+</html>

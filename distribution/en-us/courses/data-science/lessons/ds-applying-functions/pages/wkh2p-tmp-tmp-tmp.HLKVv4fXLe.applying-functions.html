@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Applying Functions</title>
+<link rel="stylesheet" href="./../../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="../../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="../../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="../../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/bootstraplesson.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Applying Functions",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article pyret" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Applying Functions</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div id="preamble_disabled">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="web-page-only">Referenced from lesson <a href="../../../lessons/ds-applying-functions/index.shtml">Applying Functions</a></p>
+</div>
+<div class="paragraph">
+<p></span>
+Type this line of code into the interactions area and hit "Enter":  <tt class="pyret">triangle(50, "solid", "red")</tt></p>
+</div>
+<table class="tableblock frame-none grid-all stretch">
+<colgroup>
+<col style="width: 3.8461%;">
+<col style="width: 57.6923%;">
+<col style="width: 38.4616%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">What is the name of this function?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="fitb" style="width: 45ex"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">What did the expression evaluate to?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="fitb" style="width: 45ex"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">How many arguments does <tt class="pyret">triangle</tt> expect?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="fitb" style="width: 45ex"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">What does the <tt class="pyret">triangle</tt> function produce? (Numbers? Strings? Booleans?)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="fitb" style="width: 45ex"></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_catching_bugs">Catching Bugs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following lines of code are all BUGGY! Can you spot the mistake? If you have time, type in the buggy code and see if Pyret agrees with you!</p>
+</div>
+<table class="tableblock frame-none grid-none stripes-none stretch">
+<colgroup>
+<col style="width: 3.8461%;">
+<col style="width: 57.6923%;">
+<col style="width: 38.4616%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">triangle(20, "solid" "red")</tt></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can you spot the mistake?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="right"><span class="fitb" style="width: 60ex"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">What error message does Pyret return?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="right"><span class="fitb" style="width: 60ex"><span class="vspace" style="height: 1ex"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">triangle(20, "solid")</tt></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can you spot the mistake?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="right"><span class="fitb" style="width: 60ex"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">What error message does Pyret return?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="right"><span class="fitb" style="width: 60ex"><span class="vspace" style="height: 1ex"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">triangle(20, 10, "solid", "red")</tt></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can you spot the mistake?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="right"><span class="fitb" style="width: 60ex"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">What error message does Pyret return?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="right"><span class="fitb" style="width: 60ex"><span class="vspace" style="height: 1ex"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">triangle (20, "solid", "red")</tt></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can you spot the mistake?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="right"><span class="fitb" style="width: 60ex"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">What error message does Pyret return?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="right"><span class="fitb" style="width: 60ex"><span class="vspace" style="height: 1ex"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">triangle 20, "solid", "red")</tt></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can you spot the mistake?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="right"><span class="fitb" style="width: 60ex"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">What error message does Pyret return?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="right"><span class="fitb" style="width: 60ex"><span class="vspace" style="height: 1ex"></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:28:49 -0400
+</div>
+</div>
+</body>
+</html>

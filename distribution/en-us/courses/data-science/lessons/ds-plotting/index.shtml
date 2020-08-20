@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Displaying Categorical Data</title>
+<link rel="stylesheet" href="./../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="../../../../lib/bootstraplesson.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Displaying Categorical Data",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article LessonPlan pyret" onload="renderSaveToDrive()">
+<!--#include virtual="/menubar.ssi"-->
+<!-- Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46088504-1', 'bootstrapworld.org');
+ga('send', 'pageview');
+
+</script>
+<div id="body" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Displaying Categorical Data</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div id="preamble_disabled">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Students learn to apply functions to entire Tables, generating pie charts and bar charts. They then explore other plotting and display functions that are part of the Data Science library.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-none stretch left-header preamble">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Prerequisites</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../../lessons/ds-applying-functions/index.shtml">Applying Functions</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><script>
+function showStandardsAlignment() {
+  const selectTag = document.getElementsByClassName('standardsAlignmentSelect')[0];
+  const options = selectTag && selectTag.options;
+  const stdTables = document.getElementsByClassName('alignedStandards');
+  const intro = document.getElementsByClassName('alignedStandardsIntro')[0];
+  let introNeeded = true;
+  for (let i = 0; i < stdTables.length; i++) {
+    const stdTable = stdTables[i];
+    stdTable.style.display = 'none';
+  }
+  for (let i = 0; i < options.length; i++) {
+    const opt = options[i];
+    if (opt.selected) {
+      const optStd = opt.value;
+      for (let j = 0; j < stdTables.length; j++) {
+        const stdTable = stdTables[j];
+        if (stdTable.classList.contains(optStd)) {
+          stdTable.style.display = 'block';
+          introNeeded = false;
+        }
+      }
+    }
+  }
+  intro.style.display = introNeeded ? 'block' : 'none';
+}
+</script>
+<div class="paragraph">
+<p>Relevant Standards<select class="standardsAlignmentSelect"  multiple onchange="showStandardsAlignment()" style="height: 150px"><option value="standards-OK">OK</option><option value="standards-K12CS">K12CS</option><option value="standards-CSTA">CSTA</option></select></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph alignedStandardsIntro">
+<p><em>Select one or more standards from the menu on the left (⌘-click on Mac, Ctrl-click elsewhere).</em></p>
+</div>
+<div class="dlist alignedStandards standards-CSTA standards-hierarchical-table">
+<div class="title">CSTA Standards</div>
+<dl>
+<dt class="hdlist1">2-DA-07</dt>
+<dd>
+<p>Represent data using multiple encoding schemes.</p>
+</dd>
+<dt class="hdlist1">2-DA-08</dt>
+<dd>
+<p>Collect data using computational tools and transform the data to make it more useful and reliable.</p>
+</dd>
+<dt class="hdlist1">3A-DA-11</dt>
+<dd>
+<p>Create interactive data visualizations using software tools to help others better understand real-world phenomena.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-K12CS standards-hierarchical-table">
+<div class="title">K-12CS Standards</div>
+<dl>
+<dt class="hdlist1">P5</dt>
+<dd>
+<p>Creating Computational Artifacts</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-OK standards-hierarchical-table">
+<div class="title">Oklahoma Standards</div>
+<dl>
+<dt class="hdlist1">OK.8.DA.S.01</dt>
+<dd>
+<p>Analyze multiple methods of representing data and choose the most appropriate method for representing data.</p>
+</dd>
+</dl>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Lesson Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Students will be able to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Read pie and bar charts</p>
+</li>
+<li>
+<p>Explain the difference between pie and bar charts</p>
+</li>
+<li>
+<p>Generate pie and bar charts (among others) from the Animals Dataset</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Student-facing Lesson Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Let&#8217;s use functions to create graphs from data.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Materials</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Lesson slides (<a href="https://docs.google.com/presentation/d/1qwYj6_Ch2TfcIsTNZc6YnnyUjSHA3sG3-yUO0l8R1uo/" target="_blank" rel="noopener">Google Slides</a>)</p>
+</li>
+<li>
+<p>Computer for each student (or pair), with access to the internet</p>
+</li>
+<li>
+<p><a href="../..//workbook/workbook.pdf">Student workbook</a>, and something to write with</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Preparation</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Make sure all materials have been gathered</p>
+</li>
+<li>
+<p>Decide how students will be grouped in pairs</p>
+</li>
+<li>
+<p>All students should log into <a href="https://code.pyret.org" target="_blank" rel="noopener">CPO</a> and open the "Animals Starter File" they saved from the prior lesson. If they don&#8217;t have the file, they can <a href="https://code.pyret.org/editor#share=1ZupMVPWvVUOM0HCWyA7cRBghSLKxPWv1" target="_blank" rel="noopener">open a new one</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Supplemental Resources</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Language Table</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><table class="tableblock frame-all grid-all stretch lang-features-table">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 66.6666%;">
+<col style="width: 16.6668%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Types</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Functions</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Values</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Number</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>num-sqrt, num-sqr</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>4, -1.2, 2/3</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>String</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>string-repeat, string-contains</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>"hello", "91"</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Boolean</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>==, &lt;, &lt;=, &gt;=, string-equal</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>true, false</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Image</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>triangle, circle, star, rectangle, ellipse, square, text, overlay</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>🔵🔺🔶</p>
+</div></div></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist glossary">
+<div class="title">Glossary</div>
+<dl>
+<dt class="hdlist1">bar chart</dt>
+<dd>
+<p>a display of categorical data that uses bars positioned over category values; each bar’s height reflects the count or percentage of data values in that category</p>
+</dd>
+<dt class="hdlist1">contract</dt>
+<dd>
+<p>a statement of the name, domain, and range of a function</p>
+</dd>
+<dt class="hdlist1">domain</dt>
+<dd>
+<p>the type or set of inputs that a function expects</p>
+</dd>
+<dt class="hdlist1">pie chart</dt>
+<dd>
+<p>a display that uses areas of a circular pie&#8217;s slices to show percentages in each category</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_displaying_categorical_variables_duration_10_minutes_"><span class="section-link"><a href="#_displaying_categorical_variables_duration_10_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Displaying Categorical Variables <span class="duration">10 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview">Overview</h3>
+<div class="paragraph">
+<p>Students extend their understanding of Contracts and function application, learning new functions that consume Tables and produce displays and plots.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch">Launch</h3>
+<div class="paragraph">
+<p>Have students ever seen any <em>pictures</em> created from tables of data? Can they think of a situation when they&#8217;d want to consume a <em>Table</em>, and use that to produce an image? The library included at the top of the file includes some helper functions that are useful for Data Science, which we will use throughout this course. Here is the <span class="vocab">Contract</span> for a function that makes <span class="vocab">pie charts</span>, and an example of using it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><tt class="pyret"># pie-chart :: (t :: Table, col :: String) -&gt; Image
+pie-chart(animals-table, "legs")</tt></pre>
+</div>
+</div>
+<div class="ulist lesson-instruction">
+<ul>
+<li>
+<p>What is the Name of this function?</p>
+</li>
+<li>
+<p>How many inputs are in its <span class="vocab">Domain</span>?</p>
+</li>
+<li>
+<p>In the Interactions Area, type <code><tt class="pyret">pie-chart(animals-table, "legs")</tt></code> and hit Enter. What happens?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="right"><span class="tooltip"><span class="tooltiptext">300</span>
+<span class="image"><img src="../../lessons/ds-plotting/images/legs-pie-chart.png" alt="300"></span><a href="images/legs-pie-chart.png" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span></span></p>
+</div>
+<div class="paragraph">
+<p>Hovering over a pie slice reveals the label, as well as the count and the percentage of the whole. In this example we see that there is one three-legged animal, representing 3.2% of the population.</p>
+</div>
+<div class="paragraph">
+<p>We can also resize the window by dragging its borders. This allows us to experiment with the data before closing the window and generating the final, non-interactive image.</p>
+</div>
+<div class="paragraph">
+<p>The function <code><tt class="pyret">pie-chart</tt></code> consumes a Table of data, along with the <em>name of a <strong>categorical</strong> column you want to display</em>. The computer goes through the column, counting the number of times that each value appears. Then it draws a pie slice for each value, with the size of the slice being the percentage of times it appears.  In this example, we used our <code><tt class="pyret">animals-table</tt></code> table as our dataset, and made a pie chart showing the distribution of <code><tt class="pyret">legs</tt></code> across the shelter.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate">Investigate</h3>
+<div class="paragraph">
+<p>Here is the <span class="vocab">Contract</span> for another function, which makes <span class="vocab">bar charts</span>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><tt class="pyret"># bar-chart :: (t :: Table, col :: String) -&gt; Image</tt></pre>
+</div>
+</div>
+<div class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Which column of the animals table tells us how many legs an animal has?</p>
+</li>
+<li>
+<p>Use <code><tt class="pyret">bar-chart</tt></code> to make a display showing how many animals have each number of legs.</p>
+</li>
+<li>
+<p>Experiment with pie and bar charts, passing in different column names. If you get an error message, <em>read it carefully!</em></p>
+</li>
+<li>
+<p>What do you think are the rules for what kinds of columns can be used by <em>bar-chart</em> and <em>pie-chart</em>?</p>
+</li>
+<li>
+<p>When would you want to use one chart instead of another?</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_possible_misconceptions">Possible Misconceptions</h3>
+<div class="paragraph">
+<p>Pie charts and bar charts may show counts or percentages (in Pyret, pie charts show percentages and bar charts show counts). Bar charts look a lot like histograms, which are actually quite different because they display quantitative data, not categorical. Also, a pie chart can only display one categorical variable but a bar chart might be used to display two or more categorical variables.</p>
+</div>
+<div class="sect3 lesson-section-3">
+<h4 id="_synthesize">Synthesize</h4>
+<div class="paragraph">
+<p>Pie and Bar Charts display what portion of a sample that belongs to each category. If they are based on sample data from a larger population, we use them to <em>infer</em> the proportion of a whole population that might belong to each category.</p>
+</div>
+<div class="paragraph lesson-point">
+<p>Pie charts and bar charts are mostly used to <em>display categorical columns</em>.</p>
+</div>
+<div class="paragraph">
+<p>While bars in some bar charts should follow some logical order (alphabetical, small-medium-large, etc), the pie slices and bars can technically be placed in <em>any</em> order, without changing the meaning of the chart.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_exploring_other_displays_duration_30_minutes_"><span class="section-link"><a href="#_exploring_other_displays_duration_30_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Exploring other Displays <span class="duration">30 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview_2">Overview</h3>
+<div class="paragraph">
+<p>Students freely explore the Data Science display library. In doing so, they experiment with new charts, practice reading <span class="vocab">Contracts</span> and error messages, and develop better intuition for the programming constructs they&#8217;ve seen before.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch_2">Launch</h3>
+<div class="paragraph">
+<p>There are <em>lots</em> of other functions, for all different kinds of charts and plots. Even if you don’t know what these plots are for yet, see if you can use your knowledge of Contracts to figure out how to use them.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate_2">Investigate</h3>
+<div class="paragraph lesson-instruction">
+<p>Complete <a href="../../lessons/ds-plotting/pages/exploring-displays-1.html" target="_blank" rel="noopener">Exploring Displays (Page 14)</a> and <a href="../../lessons/ds-plotting/pages/exploring-displays-2.html" target="_blank" rel="noopener">(More) Exploring Displays (Page 15)</a>.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_possible_misconceptions_2">Possible Misconceptions</h3>
+<div class="paragraph">
+<p>There are <em>many</em> possible misconceptions about displays that students may encounter here. <strong>But that&#8217;s ok!</strong> Understanding all those other plots is <em>not</em> a learning goal for this lesson. Rather, the goal is to have them develop some loose familiarity, and to get more practice reading Contracts.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_synthesize_2">Synthesize</h3>
+<div class="paragraph">
+<p>Today you’ve added more functions to your toolbox. Functions like <code><tt class="pyret">pie-chart</tt></code> and <code><tt class="pyret">bar-chart</tt></code> can be used to visually display data, and even transform entire tables!</p>
+</div>
+<div class="paragraph">
+<p>You will have many opportunities to use these concepts in this course, by writing programs to answer data science questions.</p>
+</div>
+<table class="tableblock frame-all grid-none stripes-none stretch strategy-box">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="title">Extension Activity</span></p>
+<p class="tableblock">Sometimes we want to summarize a categorical column in a Table, rather than a pie chart. For example, it might be handy to have a table that has a row for dogs, cats, lizards, and rabbits, and then the count of how many of each type there are. Pyret has a function that does exactly this! Try typing this code into the Interactions Area: <code><tt class="pyret">count(animals-table, "species")</tt></code></p>
+<p class="tableblock">What did we get back? <code><tt class="pyret">count</tt></code> is a function that consumes a table and the name of a categorical column, and produces a <em>new table</em> with exactly the columns we want: the name of the category and the number of times that category occurs in the dataset. What are the names of the columns in this new table?</p>
+<p class="tableblock">- Use the <code><tt class="pyret">count</tt></code> function to make a table showing the number of animals that are <code><tt class="pyret">fixed</tt></code> (or not) from the shelter.</p>
+<p class="tableblock">- Use the <code><tt class="pyret">count</tt></code> function to make a table showing the number of animals of each <code><tt class="pyret">sex</tt></code> from the shelter.</p>
+<p class="tableblock">Sometimes the dataset we have is <em>already</em> summarized in a table like this, and we want to make a chart from <em>that</em>. In this situation, we want to base our display on the summary table: the size of the pie slice or bar is taken directly from the count column, and the label is taken directly from the value column. When we want to use summarized data to produce a pie chart, we have another function:</p>
+<p class="tableblock"><code><tt class="pyret"># pie-chart-summarized :: (t :: Table, label :: String, data :: String) -&gt; Image</tt></code>
+<code><tt class="pyret">pie-chart-summarized(count(animals-table,"species"), "value", "count")</tt></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_additional_exercises"><span class="section-link"><a href="#_additional_exercises"><span class="section-link-symbol">&#128279;</span></a></span>Additional Exercises:</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="../../lessons/ds-plotting/pages/plot-practice.html" target="_blank" rel="noopener">Practice Plotting</a></p>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:34:24 -0400
+</div>
+</div>
+</div>
+</body>
+</html>

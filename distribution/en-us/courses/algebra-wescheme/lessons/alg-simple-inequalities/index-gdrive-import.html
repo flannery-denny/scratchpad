@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Simple Inequalities</title>
+<style>
+/* Overall document font */
+* {font-family: Lato, Arial, Helvetica, sans-serif;}
+
+/* document headings */
+h1,.lesson-section-1 {color: #75328A;}
+h1{font-size: 32px; font-family: sans-serif;}
+table.section-heading *, .lesson-section-1 h2{font-size: 32px; font-weight: 100;}
+table.section-heading{width: 100%;}
+table.section-heading td:last-child{text-align: right; color: #d9d2e9;}
+
+/* preamble section */
+table.preamble td {padding: 10px;}
+table.preamble td:first-child{background: #b7d893; width: 25%;}
+table.preamble td:first-child p {font-weight: bold; margin: 5px;}
+
+/* content used throughout the body */
+table{ border-collapse: collapse; border: none; }
+table.grid-all.frame-all {border: solid 1px black;}
+table.grid-none.frame-none {border-width: 0px;}
+
+.big {font-size: 30pt;}
+.vocab{font-weight: bold; font-style: italic;}
+.right{text-align: right;}
+.acknowledgment {
+  border-top: solid 1px black; 
+  font-style: italic; 
+  font-size: 8pt;
+}
+.lesson-point {
+  border-top: solid 1px black; 
+  border-bottom: solid 1px black; 
+  color: black;
+  font-weight: bold;
+}
+
+.web-page-only, #footer { display: none; visibility: hidden; }
+
+/* Callout boxes */
+.strategy-box, .notice-box {
+  background: #efefef;
+  border: solid 5px !important;
+  margin: 15px auto;
+  width: 100%;
+}
+.strategy-box { border-color: #1a73b5 !important; }
+.notice-box   { border-color: #7747a5 !important; }
+.strategy-box td, .notice-box td{ padding: 10px; }
+.strategy-box .title, .notice-box .title{
+  width: 100%;
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+  clear: both;
+  margin: 100px;
+}
+.strategy-box p.tableblock:first-child, .notice-box p.tableblock:first-child{
+  text-align: center;
+  padding-bottom: 15px;
+}
+.strategy-box .title { color: #1a73b5; }
+.notice-box   .title { color: #7747a5; }
+.strategy-box a, .notice-box a { color: blue; text-decoration: underline; }
+
+/* "Tables" of Evaluation */
+.operator{border-bottom: solid 1px black; text-align: center;}
+.operator * {text-align: center;}
+td {padding: 0px 10px; font-size: 14px;}
+table.expression {
+    font-family:"Courier New", Monaco, monospace;
+    border:     solid 1px black;
+    font-size:  1px;
+    max-width:  400px;
+    color:      #666666;
+    display:    inline-block;
+}
+table.args {border: none; text-align: center;}
+
+.wescheme-string,     .cm-scheme-string    {color: green;}
+.wescheme-number,     .cm-scheme-number    {color: blue;}
+.wescheme-boolean,    .cm-scheme-boolean   {color: darkred;}
+.wescheme-character,  .cm-scheme-character {color: orange;}
+.wescheme-symbol,     .cm-scheme-symbol    {color: steelblue;}
+.wescheme-comment,    .cm-scheme-comment   {color: orange; }
+
+.racket, .pyret, .studentAnswerCode, .studentAnswer, .pyretkeyword, .keyword_only {
+    font-family:"Courier New", Monaco, monospace !important; 
+    color: black;
+}
+
+/* Design Recipe */
+.recipe_instructions { font-style: italic; }
+table.recipe_title {
+  color:              white;
+  background:         gray;
+  display:            block;
+  padding:            0px;
+  font-size:          1.1rem;
+  font-weight:        bold;
+}</style>
+      <script type="text/javascript" src="../../../../lib/MathJax-2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2Clocal%2Fmathjaxlocal.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:window.location.href,
+    filename:"Simple Inequalities",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article LessonPlan wescheme" onload="renderSaveToDrive()">
+<!-- Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46088504-1', 'bootstrapworld.org');
+ga('send', 'pageview');
+
+</script>
+<span id="body" onload="renderSaveToDrive()">
+<span id="header">
+<h1>Simple Inequalities</h1>
+
+  <span id="savetodrive-div"></span>
+
+</span>
+<span id="content">
+<span id="preamble_disabled">
+<span class="sectionbody">
+<span class="paragraph">
+<p><span class="other-proglang"><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/../../../algebra-pyret/lessons/alg-simple-inequalities/index.shtml">(Also available for Pyret)</a></span></p>
+</span>
+<span class="paragraph">
+<p>Students discover the Boolean data type, and apply knowledge of inequalities to simple programming problems.</p>
+</span>
+<table class="tableblock frame-all grid-all stripes-none stretch left-header preamble">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Prerequisites</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/../../lessons/alg-problem-decomposition/index.shtml">Problem Decomposition</a></p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><script>
+function showStandardsAlignment() {
+  const selectTag = document.getElementsByClassName('standardsAlignmentSelect')[0];
+  const options = selectTag && selectTag.options;
+  const stdTables = document.getElementsByClassName('alignedStandards');
+  const intro = document.getElementsByClassName('alignedStandardsIntro')[0];
+  let introNeeded = true;
+  for (let i = 0; i < stdTables.length; i++) {
+    const stdTable = stdTables[i];
+    stdTable.style.display = 'none';
+  }
+  for (let i = 0; i < options.length; i++) {
+    const opt = options[i];
+    if (opt.selected) {
+      const optStd = opt.value;
+      for (let j = 0; j < stdTables.length; j++) {
+        const stdTable = stdTables[j];
+        if (stdTable.classList.contains(optStd)) {
+          stdTable.style.display = 'block';
+          introNeeded = false;
+        }
+      }
+    }
+  }
+  intro.style.display = introNeeded ? 'block' : 'none';
+}
+</script>
+<span class="paragraph">
+<p>Standards</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph ">
+</span>
+<span class="dlist standards-CC-Math standards-hierarchical-table">
+<span class="title">Common Core Math Standards</span>
+<dl>
+<dt class="hdlist1"><br/>7.EE.B.4</dt>
+<dd>
+<p>Use variables to represent quantities in a real-world or mathematical problem, and construct simple equations and inequalities to solve problems by reasoning about the quantities.</p>
+</dd>
+<dt class="hdlist1"><br/>HSF.IF.A.2</dt>
+<dd>
+<p>Use function notation, evaluate functions for inputs in their domains, and interpret statements that use function notation in terms of a context.</p>
+</dd>
+<dt class="hdlist1"><br/>MP.1</dt>
+<dd>
+<p>Make sense of problems and persevere in solving them</p>
+</dd>
+<dt class="hdlist1"><br/>MP.4</dt>
+<dd>
+<p>Model with mathematics</p>
+</dd>
+</dl>
+</span>
+<span class="dlist standards-OK standards-hierarchical-table">
+<span class="title">Oklahoma Standards</span>
+<dl>
+<dt class="hdlist1"><br/>OK.PA.A.4.3</dt>
+<dd>
+<p>Represent real-world situations using equations and inequalities involving one variable.</p>
+</dd>
+</dl>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Lesson Goals</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Students will be able to:</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>Describe the solution set of a simple inequality</p>
+</li>
+<li>
+<p>Explain the 'Boolean' datatype</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Student-Facing Lesson Goals</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>I can use two or more inequalities together and describe the area they enclose.</p>
+</li>
+<li>
+<p>I can explain to someone else what a Boolean is.</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Materials</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Lesson slides (<a href="https://docs.google.com/presentation/d/1jaMxaWc7XHlR7jf3RMPHU1mSsCetBmxp-52XiZq7HGo/edit?usp=sharing" target="_blank" rel="noopener">Google Slides</a>)</p>
+</li>
+<li>
+<p>Sam the Butterfly Starter File (<a href="https://www.wescheme.org/view?publicId=AR6ndpC5s9" target="_blank" rel="noopener">WeScheme</a>)</p>
+</li>
+<li>
+<p>Inequalities Launch worksheet (<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/../../lessons/alg-simple-inequalities/pages/booleans-intro.html" target="_blank" rel="noopener">original (Page 42)</a>, <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/solution-pages/booleans-intro.html" target="_blank" rel="noopener">solutions</a>)</p>
+</li>
+<li>
+<p>Inequalities Explore worksheet (<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/../../lessons/alg-simple-inequalities/pages/sam-intro.html" target="_blank" rel="noopener">original (Page 43)</a>, <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/solution-pages/sam-intro.html" target="_blank" rel="noopener">solutions</a>)</p>
+</li>
+<li>
+<p>Left-and-Right (<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/../../lessons/alg-simple-inequalities/pages/left-and-right.html" target="_blank" rel="noopener">original (Page 44)</a>, <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/solution-pages/left-and-right.html" target="_blank" rel="noopener">solution</a>)</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Preparation</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Make sure all materials have been gathered</p>
+</li>
+<li>
+<p>Decide how students will be grouped in pairs</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Supplemental Resources</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Booleans Review (<a href="https://quizizz.com/admin/quiz/5d9919516dbee7001e08a4a0" target="_blank" rel="noopener">Quizizz</a>)</p>
+</li>
+<li>
+<p>Booleans Activity (<a href="https://teacher.desmos.com/activitybuilder/custom/5d991ac49b9b292020c18108" target="_blank" rel="noopener">Desmos Activity</a>)</p>
+</li>
+<li>
+<p>Inequalities Bundle (<a href="https://teacher.desmos.com/inequalities" target="_blank" rel="noopener">Desmos Activities</a>)</p>
+</li>
+<li>
+<p>Inequalities &amp; Graphing Inequalities (<a href="https://quizizz.com/admin/quiz/56cf6ac2bb56dfc267b35f94/inequalities-and-graphing-inequali" target="_blank" rel="noopener">Quizizz</a>)</p>
+</li>
+<li>
+<p>Inequality Graph Illustrator (<a href="https://www.geogebra.org/m/Huq24Spq" target="_blank" rel="noopener">Geogebra</a>)</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Key Points for the Facilitator</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>A <span class="vocab">Boolean</span> is just another <span class="vocab">data type</span>, like Number, or Image, but unlike the others there are only two values: <code><span class="racket">true</tt></code> and <code><tt class="racket">false</span></code>. While simple to explain, this different behavior can be confusing for some students.</p>
+</li>
+<li>
+<p>Functions that produce Booleans are typically questions, so the names of the functions in this lesson read like questions.</p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p>For example, <code><span class="racket">safe-left?</tt></code>, <code><tt class="racket">onscreen?</span></code> are both functions that are asking if a condition, such as an image being on the screen, is true or false.
+* Role-playing can help students understand the jobs of <code><span class="racket">safe-left?</tt></code> and <code><tt class="racket">safe-right?</span></code>.</p>
+</span></span></td>
+</tr>
+</tbody>
+</table>
+<span class="paragraph old-materials">
+<p>For a textbook-like version of materials similar to these, you may wish to see the <a href="https://www.bootstrapworld.org/materials/spring2020/courses/algebra/en-us/units/unit6/index.html" target="_blank" rel="noopener">prior unit-based version</a></p>
+</span>
+<span class="dlist glossary">
+<span class="title">Glossary</span>
+<dl>
+<dt class="hdlist1"><br/>Boolean</dt>
+<dd>
+<p>a type of data with two values: true and false</p>
+</dd>
+<dt class="hdlist1"><br/>coordinate</dt>
+<dd>
+<p>a number or set of numbers describing an object&#8217;s location</p>
+</dd>
+<dt class="hdlist1"><br/>datatypes</dt>
+<dd>
+<p>a way of classifying values, such as: Number, String, Image, Boolean, or any user-defined data structure</p>
+</dd>
+<dt class="hdlist1"><br/>expression</dt>
+<dd>
+<p>a computation written in the rules of some language (such as arithmetic, code, or a Circle of Evaluation)</p>
+</dd>
+</dl>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<h2 id="_warmup"><span class="section-link"><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/#_warmup"><span class="section-link-symbol">&#128279;</span></a></span>Warmup</h2>
+<span class="sectionbody">
+<span class="paragraph">
+<p>Students should have their workbook, pencil, and be logged into
+ <a href="https://www.wescheme.org" target="_blank" rel="noopener">WeScheme</a>
+and have their workbooks with a pen or pencil.</p>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">Introducing Booleans </td><td width="35%">15 minutes</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview">Overview</h3>
+<span class="paragraph">
+<p>Students discover the concept of inequalities (or apply it, if they&#8217;ve seen it before) in programming, and extend their knowledge of data types, Contracts, and Circles of Evaluation.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch">Launch</h3>
+<span class="paragraph">
+<p>Ask students to evaluate Circles of Evaluation for simple expressions they&#8217;ve seen before, and ask them to convert them into code.</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&#43;</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">1</span></td><td class="arg"><span class="value wescheme-number">2</span></td></tr></table></td></tr></table><!--<span class="begin-ignore-for-gdrive"></span><span class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&#43;</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">1</span><span class="hspace">&#160;</span><span class="value wescheme-number">2</span><span class="rParen">)</span></span></span><span class="end-ignore-for-gdrive"></span>--></p>
+</li>
+<li>
+<p><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&#8203;-</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">4</span></td><td class="arg"><span class="value wescheme-number">5</span></td></tr></table></td></tr></table><!--<span class="begin-ignore-for-gdrive"></span><span class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&#8203;-</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">4</span><span class="hspace">&#160;</span><span class="value wescheme-number">5</span><span class="rParen">)</span></span></span><span class="end-ignore-for-gdrive"></span>--></p>
+</li>
+<li>
+<p><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&#8203;*</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">8</span></td><td class="arg"><span class="value wescheme-number">0</span></td></tr></table></td></tr></table><!--<span class="begin-ignore-for-gdrive"></span><span class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&#8203;*</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">8</span><span class="hspace">&#160;</span><span class="value wescheme-number">0</span><span class="rParen">)</span></span></span><span class="end-ignore-for-gdrive"></span>--></p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p>Then show them unfamiliar Circles of Evaluation, and ask them to hypothesize what they think they means, what they will evaluate to, and what the code would look like.</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&gt;</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">1</span></td><td class="arg"><span class="value wescheme-number">2</span></td></tr></table></td></tr></table><!--<span class="begin-ignore-for-gdrive"></span><span class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&gt;</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">1</span><span class="hspace">&#160;</span><span class="value wescheme-number">2</span><span class="rParen">)</span></span></span><span class="end-ignore-for-gdrive"></span>--></p>
+</li>
+<li>
+<p><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&lt;</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">4</span></td><td class="arg"><span class="value wescheme-number">5</span></td></tr></table></td></tr></table><!--<span class="begin-ignore-for-gdrive"></span><span class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&lt;</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">4</span><span class="hspace">&#160;</span><span class="value wescheme-number">5</span><span class="rParen">)</span></span></span><span class="end-ignore-for-gdrive"></span>--></p>
+</li>
+<li>
+<p><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">=</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">8</span></td><td class="arg"><span class="value wescheme-number">0</span></td></tr></table></td></tr></table><!--<span class="begin-ignore-for-gdrive"></span><span class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">=</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">8</span><span class="hspace">&#160;</span><span class="value wescheme-number">0</span><span class="rParen">)</span></span></span><span class="end-ignore-for-gdrive"></span>--></p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p>Have student type in these expressions. What did they get?</p>
+</span>
+<span class="paragraph">
+<p>Values like <code><span class="racket">true</tt></code> and <code><tt class="racket">false</span></code> obviously aren&#8217;t Numbers or Images. But they also aren&#8217;t Strings, or else they would have quotes around them. We&#8217;ve found a <em>new datatype</em>, called a <span class="vocab">Boolean</span>. Booleans are the answers to any yes-or-no question (for example: "Is five greater than two?", "Did a character hit a wall?", etc.)</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate">Investigate</h3>
+<span class="paragraph lesson-instruction">
+<p>Have students open to the <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/../../lessons/alg-simple-inequalities/pages/booleans-intro.html" target="_blank" rel="noopener">Inequalities&#8201;&#8212;&#8201;Launch (Page 42)</a> worksheet and complete with a partner.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize">Synthesize</h3>
+<span class="ulist">
+<ul>
+<li>
+<p>Students will see functions on the worksheet that they&#8217;ve never encountered before! But instead of answering their questions, encourage them to make a <em>guess</em> about they do, and then type it in to discover for themselves.</p>
+</li>
+<li>
+<p>Explicitly point out that <em>everything they know still works!</em> They can use their reasoning about Circles of Evaluation and Contracts to figure things out.</p>
+</li>
+</ul>
+</span>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">Introducing Sam </td><td width="35%">30 minutes</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview_2">Overview</h3>
+<span class="paragraph">
+<p>Students are introduced to Sam the Butterfly: a simple activity in which they must write 1-step inequalities to detect when Sam has gone too far in one dimension.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch_2">Launch</h3>
+<span class="paragraph">
+<p>Have students open the
+ <a href="https://www.wescheme.org/view?publicId=AR6ndpC5s9" target="_blank" rel="noopener">Sam The Butterfly starter file</a>  and click "Save."</p>
+</span>
+<span class="paragraph">
+<p>Have students turn to the <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/../../lessons/alg-simple-inequalities/pages/sam-intro.html" target="_blank" rel="noopener">Introducing Sam (Page 43)</a> and investigate the program with their partner.</p>
+</span>
+<span class="paragraph">
+<p><em>Let students figure out that they need to press "Run" to see what the program does, and that the arrow keys control Sam.</em></p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p><strong>What is something you noticed about this program?</strong>
+<em>Sam can be moved with the arrow keys, the <span class="vocab">coordinates</span> are displayed at the top of the screen, the coordinates are all in the 1st quadrant, etc.</em></p>
+</li>
+<li>
+<p><strong>What do you see when Sam is at (0,0)?  Why is that?</strong>
+<em>You only see part of Sam&#8217;s wing.  Sam&#8217;s position is based on the center of Sam&#8217;s image.</em></p>
+</li>
+<li>
+<p><strong>How far can Sam go to the left and stay on the screen?</strong>
+<em>Up to, but not beyond, an x of -40.</em></p>
+</li>
+<li>
+<p><strong>How could we write this as an <span class="vocab">expression</span>?</strong>
+<span class="gdrive-only">x &ge; -40</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle x \geq -40</script><span class="end-ignore-for-gdrive"></span>-->, or <span class="gdrive-only">x &gt; -50</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle x \gt -50</script><span class="end-ignore-for-gdrive"></span>--></p>
+</li>
+</ul>
+</span>
+<div class="paragraph lesson-point">
+<p>Every time Sam moves, we want to check and see if Sam is safe.</p>
+</div>
+<span class="ulist">
+<ul>
+<li>
+<p>There are three functions defined in this file. What are they?</p>
+</li>
+</ul>
+</span>
+<span class="paragraph lesson-instruction">
+<p><strong>Note:</strong> In this programming language, question marks are prounced "huh?". So <code><span class="racket">safe-left?</span></code> would be prounounced "safe left huh?" This can be a source of some amusement for students!</p>
+</span>
+<span class="paragraph">
+<p><strong>Optional: For extra scaffolding&#8230;&#8203;</strong></p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p><strong>What <em>should</em> our left-checking function do?</strong>
+<em>Check to see if x is greater than -50</em></p>
+</li>
+<li>
+<p><strong>What <em>should</em> our right-checking function do?</strong>
+<em>Check to see if x is less than 490</em></p>
+</li>
+<li>
+<p><strong>What should <code><span class="racket">onscreen?</span></code> do?</strong>
+<em>Answers may vary, let students drive the discussion, and don&#8217;t give away the answer</em></p>
+</li>
+</ul>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate_2">Investigate</h3>
+<span class="paragraph">
+<p>With their partners, students complete <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/../../lessons/alg-simple-inequalities/pages/left-and-right.html" target="_blank" rel="noopener">Left and Right (Page 44)</a>.  Once finished, students can fix the corresponding functions in their Sam the Butterly file, and test them out.</p>
+</span>
+<span class="paragraph">
+<p>Students will notice that fixing <code><span class="racket">safe-left?</tt></code> keeps Sam from disappearing off the left, but fixing <code><tt class="racket">safe-right?</span></code> doesn&#8217;t seem to keep Sam from disappearing off the right side!  When students encounter this, encourage them to look through the code to try and figure out why. The answer will be revealed in the next lesson.</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>Recruit three new student volunteers to roleplay those same functions, which have now been <em>corrected</em>. Make sure students provide correct answers, testing both <code><span class="racket">true</tt></code> and <code><tt class="racket">false</span></code> conditions using coordinates where Sam is onscreen and offscreen.</p>
+</li>
+</ul>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_common_misconceptions">Common Misconceptions</h3>
+<span class="ulist">
+<ul>
+<li>
+<p>Many students - especially traditionally high-achieving ones - will be very concerned about writing examples that are "wrong." The misconception here is that an expression that produces <code><span class="racket">false</span></code> is somehow <em>incorrect</em>. You can preempt this in advance, by explaining that our Boolean-producing functions <em>should sometimes return false</em>, such as when Sam is offscreen.</p>
+</li>
+<li>
+<p>Push students to think carefully about corner-cases, such as when Sam is <em>exactly</em> at -50 or 690.</p>
+</li>
+</ul>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize_2">Synthesize</h3>
+<span class="ulist">
+<ul>
+<li>
+<p>Recruit three student volunteers to roleplay the functions <code><span class="racket">safe-left?</tt></code>, <code><tt class="racket">safe-right?</tt></code> and <code><tt class="racket">onscreen?</span></code>. Give them 1 minute to read the contract and code, as written in the program.</p>
+</li>
+<li>
+<p>For each of them, ask the volunteers what their name, Domain and Range are, and then test them out by calling out their name, followed by a number. (For example, "(safe-left? 20)!", "(safe-right? -100)!") <strong>Note:</strong> Do not ask <code><span class="racket">onscreen?</span></code> to roleplay beyond their contract! They&#8217;ll get involved in the next lesson&#8230;&#8203;</p>
+</li>
+</ul>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_additional_exercises">Additional Exercises</h3>
+<span class="ulist">
+<ul>
+<li>
+<p>Keeping Ninjacat in the Game
+(<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/../../lessons/alg-simple-inequalities/pages/keeping-ninjacat-in-the-game.html" target="_blank" rel="noopener">original</a> ,
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/../../lessons/alg-simple-inequalities/solution-pages/keeping-ninjacat-in-the-game.html" target="_blank" rel="noopener">answers</a>)</p>
+</li>
+<li>
+<p>Converting Circles of Evaluation with Booleans to Code
+(<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/../../lessons/alg-simple-inequalities/pages/boolean-coe-to-code1.html" target="_blank" rel="noopener">original</a> ,
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/../../lessons/alg-simple-inequalities/solution-pages/boolean-coe-to-code1.html" target="_blank" rel="noopener">answers</a>)</p>
+</li>
+<li>
+<p>Converting Circles of Evaluation with Booleans to Code
+(<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/../../lessons/alg-simple-inequalities/pages/boolean-coe-to-code2.html" target="_blank" rel="noopener">original</a> ,
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/../../lessons/alg-simple-inequalities/solution-pages/boolean-coe-to-code2.html" target="_blank" rel="noopener">answers</a>)</p>
+</li>
+</ul>
+</span>
+<span class="openblock acknowledgment"><hr/>
+<span class="content">
+<span class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Algebra by Emmanuel Schanzer, Jen Poole, Ed Campos Jr, Flannery Denny, and Dorai Sitaram
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-simple-inequalities/mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+<span id="footer">
+<span id="footer-text">
+Last updated 2020-08-19 20:13:45 -0400
+</span>
+</span>
+</span>
+</body>
+</html>

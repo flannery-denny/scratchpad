@@ -1,0 +1,4 @@
+"categorical data"
+"data science"
+"programming language"
+"quantitative data"

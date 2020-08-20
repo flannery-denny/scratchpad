@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Defining Table Functions</title>
+<link rel="stylesheet" href="./../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="../../../../lib/bootstraplesson.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Defining Table Functions",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article LessonPlan pyret" onload="renderSaveToDrive()">
+<!--#include virtual="/menubar.ssi"-->
+<!-- Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46088504-1', 'bootstrapworld.org');
+ga('send', 'pageview');
+
+</script>
+<div id="body" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Defining Table Functions</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div id="preamble_disabled">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Students continue practicing the Design Recipe, writing helper functions to filter rows and build columns in the Animals Dataset, using Methods.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-none stretch left-header preamble">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Prerequisites</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../../lessons/ds-table-methods/index.shtml">Table Methods</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><script>
+function showStandardsAlignment() {
+  const selectTag = document.getElementsByClassName('standardsAlignmentSelect')[0];
+  const options = selectTag && selectTag.options;
+  const stdTables = document.getElementsByClassName('alignedStandards');
+  const intro = document.getElementsByClassName('alignedStandardsIntro')[0];
+  let introNeeded = true;
+  for (let i = 0; i < stdTables.length; i++) {
+    const stdTable = stdTables[i];
+    stdTable.style.display = 'none';
+  }
+  for (let i = 0; i < options.length; i++) {
+    const opt = options[i];
+    if (opt.selected) {
+      const optStd = opt.value;
+      for (let j = 0; j < stdTables.length; j++) {
+        const stdTable = stdTables[j];
+        if (stdTable.classList.contains(optStd)) {
+          stdTable.style.display = 'block';
+          introNeeded = false;
+        }
+      }
+    }
+  }
+  intro.style.display = introNeeded ? 'block' : 'none';
+}
+</script>
+<div class="paragraph">
+<p>Relevant Standards<select class="standardsAlignmentSelect"  multiple onchange="showStandardsAlignment()" style="height: 150px"><option value="standards-OK">OK</option><option value="standards-K12CS">K12CS</option><option value="standards-CSTA">CSTA</option><option value="standards-NGSS">NGSS</option></select></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph alignedStandardsIntro">
+<p><em>Select one or more standards from the menu on the left (⌘-click on Mac, Ctrl-click elsewhere).</em></p>
+</div>
+<div class="dlist alignedStandards standards-CSTA standards-hierarchical-table">
+<div class="title">CSTA Standards</div>
+<dl>
+<dt class="hdlist1">2-AP-13</dt>
+<dd>
+<p>Decompose problems and subproblems into parts to facilitate the design, implementation, and review of programs</p>
+</dd>
+<dt class="hdlist1">2-AP-14</dt>
+<dd>
+<p>Create procedures with parameters to organize code and make it easier to reuse.</p>
+</dd>
+<dt class="hdlist1">2-AP-17</dt>
+<dd>
+<p>Systematically test and refine programs using a range of test cases</p>
+</dd>
+<dt class="hdlist1">2-AP-19</dt>
+<dd>
+<p>Document programs in order to make them easier to follow, test, and debug.</p>
+</dd>
+<dt class="hdlist1">3A-AP-17</dt>
+<dd>
+<p>Decompose problems into smaller components through systematic analysis, using constructs such as procedures, modules, and/or objects.</p>
+</dd>
+<dt class="hdlist1">3A-AP-18</dt>
+<dd>
+<p>Create artifacts by using procedures within a program, combinations of data and procedures, or independent but interrelated programs.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-K12CS standards-hierarchical-table">
+<div class="title">K-12CS Standards</div>
+<dl>
+<dt class="hdlist1">6-8.Algorithms and Programming.Modularity</dt>
+<dd>
+<p>Programs use procedures to organize code, hide implementation details, and make code easier to reuse. Procedures can be repurposed in new programs. Defining parameters for procedures can generalize behavior and increase reusability.</p>
+</dd>
+<dt class="hdlist1">9-12.Algorithms and Programming.Modularity</dt>
+<dd>
+<p>Complex programs are designed as systems of interacting modules, each with a specific role, coordinating for a common overall purpose. These modules can be procedures within a program; combinations of data and procedures; or independent, but interrelated, programs. Modules allow for better management of complex tasks.</p>
+</dd>
+<dt class="hdlist1">P4</dt>
+<dd>
+<p>Developing and Using Abstractions</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-NGSS standards-hierarchical-table">
+<div class="title">Next-Gen Science Standards</div>
+<dl>
+<dt class="hdlist1">HS-SEP5-3</dt>
+<dd>
+<p>Apply techniques of algebra and functions to represent and solve scientific and engineering problems.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-OK standards-hierarchical-table">
+<div class="title">Oklahoma Standards</div>
+<dl>
+<dt class="hdlist1">OK.L1.AP.M.01</dt>
+<dd>
+<p>Break down a solution into procedures using systematic analysis and design.</p>
+</dd>
+</dl>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Lesson Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Students will be able to&#8230;&#8203;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>write custom helper functions to filter the animals table</p>
+</li>
+<li>
+<p>write custom helper functions to build on the animals table</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Student-facing Lesson Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Let&#8217;s practice writing functions to filter and expand our tables.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Materials</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Lesson Slides (<a href="https://docs.google.com/presentation/d/1axaJ184_1dFnHLkJd3kifWoadd8LWbfUitstW2kpRvo/" target="_blank" rel="noopener">Google Slides</a>)</p>
+</li>
+<li>
+<p>Computer for each student (or pair), with access to the internet</p>
+</li>
+<li>
+<p><a href="../..//workbook/workbook.pdf">Student workbook</a>, and something to write with</p>
+</li>
+<li>
+<p>All students should log into <a href="https://code.pyret.org" target="_blank" rel="noopener">CPO</a> and open the "Table Methods Starter File" they saved from the prior lesson. If they don&#8217;t have the file, they can <a href="https://code.pyret.org/editor#share=1Fm3bSkeWZ5f4VwZ24TtOkZ3Pu0CPkJT2" target="_blank" rel="noopener">open a new one</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Preparation</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Make sure all materials have been gathered</p>
+</li>
+<li>
+<p>Decide how students will be grouped in pairs</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Supplemental Resources</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Language Table</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><table class="tableblock frame-all grid-all stretch lang-features-table">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 66.6666%;">
+<col style="width: 16.6668%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Types</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Functions</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Values</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Number</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>num-sqrt, num-sqr</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>4, -1.2, 2/3</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>String</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>string-repeat, string-contains</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>"hello", "91"</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Boolean</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>==, &lt;, &lt;=, &gt;=, string-equal</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>true, false</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Image</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>triangle, circle, star, rectangle, ellipse, square, text, overlay, bar-chart, pie-chart, bar-chart-summarized, pie-chart-summarized</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>🔵🔺🔶</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Table</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>count, .row-n, .order-by, .filter, .build-column</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_defining_lookup_functions_duration_25_minutes_"><span class="section-link"><a href="#_defining_lookup_functions_duration_25_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Defining Lookup Functions <span class="duration">25 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview">Overview</h3>
+<div class="paragraph">
+<p>Students continue practicing the Design Recipe, by writing functions to answer <strong>Lookup Questions</strong>.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch">Launch</h3>
+<div class="paragraph lesson-instruction">
+<p>Take two minutes to find all the fixed animals by hand. Turn to
+<a href="../ds-intro/pages/animals-dataset.pdf" target="_blank" rel="noopener">The Animals Dataset</a>, and walk down the table one row at a time, putting a check next to each animal that is fixed.</p>
+</div>
+<div class="paragraph">
+<p>To do this activity, what kind of question were you asking of each animal? Was it a <strong>Lookup</strong>, <strong>Compute</strong>, or <strong>Relate</strong> question?</p>
+</div>
+<div class="paragraph">
+<p>You went through the table one row at a time, and for <strong>each row</strong> you did a lookup on the <code><tt class="pyret">fixed</tt></code> column.</p>
+</div>
+<div class="paragraph lesson-instruction">
+<p>Have students type the code that will look up if <code><tt class="pyret">animalX</tt></code> is fixed or not, then do the same with <code><tt class="pyret">animalY</tt></code>. Suppose we wanted to do this for every animal in the table? This seems really repetitive, doesn’t it? We would keep typing the same thing over and over, but all that’s really changing is the animal. Wouldn’t it be great if Pyret had a function called <code><tt class="pyret">lookup-fixed</tt></code>, that would do this for us?</p>
+</div>
+<div class="paragraph">
+<p>Fortunately, we already know how to define functions using the Design Recipe!</p>
+</div>
+<div class="paragraph lesson-instruction">
+<p>Turn to <a href="../../lessons/ds-defining-table-functions/pages/design-recipe-1.html" target="_blank" rel="noopener">The Design Recipe (Page 28)</a> in your Student Workbook.</p>
+</div>
+<div class="paragraph lesson-point">
+<p>Step 1: Contract and Purpose</p>
+</div>
+<div class="paragraph">
+<p>The first thing we do is write a Contract for this function. You already know a lot about contracts: they tell us the Name, Domain and Range of the function. Our function is named lookup-fixed, and it consumes a row from the animals table. It looks up the value in the fixed column, which will always be a Boolean. A Purpose Statement is a description of what the function does:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><tt class="pyret"># lookup-fixed :: (r :: Row) -&gt; Boolean
+# Consumes an animal, and lookup the value in the fixed column</tt></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Since the contract and purpose statement are notes for humans, we add the # symbol at the front of the line to turn it into a comment. Note that we used "lookup" in the purpose statement!</p>
+</div>
+<div class="paragraph">
+<p>Be sure to check students’ contracts and purpose statements before having them move on.</p>
+</div>
+<div class="paragraph lesson-point">
+<p>Step 2: Write Examples</p>
+</div>
+<div class="paragraph">
+<p>Writing examples for Lookup questions is really simple: all we have to do is look up the correct value in the table, and then write the answer!</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><tt class="pyret"># lookup-fixed :: (r :: Row) -&gt; Boolean
+# Consumes an animal, and looks up the value in the fixed column
+examples:
+  lookup-fixed(animalX) is true
+  lookup-fixed(animalY) is false
+end</tt></pre>
+</div>
+</div>
+<div class="paragraph lesson-point">
+<p>Step 3: Define the Function</p>
+</div>
+<div class="paragraph">
+<p>When defining the function, we replace the answer with the lookup code.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><tt class="pyret"># lookup-fixed :: (animal :: Row) -&gt; Boolean
+# Consumes an animal, and looks up the value in the fixed column
+examples:
+  lookup-fixed(animalX) is true
+  lookup-fixed(animalY) is false
+end
+fun lookup-fixed(r): r["fixed"]
+end</tt></pre>
+</div>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate">Investigate</h3>
+<div class="paragraph">
+<p>For practice, try using the Design Recipe to define another lookup function.</p>
+</div>
+<div class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Use the Design Recipe to solve the word problem at the bottom of <a href="../../lessons/ds-defining-table-functions/pages/design-recipe-1.html" target="_blank" rel="noopener">The Design Recipe (Page 28)</a>.</p>
+</li>
+<li>
+<p>Type in the Contract, Purpose Statement, Examples and Definition into the Definitions Area.</p>
+</li>
+<li>
+<p>Click “Run”, and make sure all your examples pass!</p>
+</li>
+<li>
+<p>Type <code><tt class="pyret">lookup-sex(animalX)</tt></code> into the Interactions Area.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_defining_compute_functions_duration_25_minutes_"><span class="section-link"><a href="#_defining_compute_functions_duration_25_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Defining Compute Functions <span class="duration">25 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview_2">Overview</h3>
+<div class="paragraph">
+<p>Students define functions that answer <strong>Compute Questions</strong>, again practicing the Design Recipe.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch_2">Launch</h3>
+<div class="paragraph">
+<p>We&#8217;ve only been writing <strong>Lookup Functions</strong>: they consume a Row, look up one column from that row, and produce the result as-is. And as long as that row contains Boolean values, we can use that function with the <code><tt class="pyret">.filter</tt></code> method.</p>
+</div>
+<div class="paragraph">
+<p>But what if we want to filter by a Boolean expression? For example, what if we want to find out specifically whether or not an animal is a cat, or whether it’s young? Let’s walk through an example of a Compute Function using the Design Recipe, by turning to <a href="../../lessons/ds-defining-table-functions/pages/design-recipe-2.html" target="_blank" rel="noopener">The Design Recipe (Page 29)</a>.</p>
+</div>
+<div class="paragraph">
+<p>Suppose we want to define a function called <code><tt class="pyret">is-cat</tt></code>, which consumes a row from the <code><tt class="pyret">animals-table</tt></code> and returns true if the animal is a cat.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Is this a Lookup, Compute or Relate question?</p>
+</li>
+<li>
+<p>What is the name of this function? What are its Domain and Range?</p>
+</li>
+<li>
+<p>Is Sasha a cat? <em>What did you do to get that answer?</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To find out if an animal is a cat, we look-up the species column and check to see if that value is <em>equal</em> to <code><tt class="pyret">"cat"</tt></code>. Suppose <code><tt class="pyret">animalX</tt></code> is a cat and <code><tt class="pyret">animalY</tt></code> is a dog. What should our examples look like? <strong>Remember: we replace any lookup with the actual value, and check to see if it is equal to <code><tt class="pyret">"cat"</tt></code>.</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><tt class="pyret"># is-cat :: (r :: Row) -&gt; Boolean
+# Consumes an animal, and compute whether the species is "cat"
+examples:
+  is-cat(animalX) is "cat" == "cat"
+  is-cat(animalY) is "dog" == "cat"
+end</tt></pre>
+</div>
+</div>
+<div class="paragraph lesson-instruction">
+<p>Write two examples for your defined animals. Make sure one is a cat and one isn’t!</p>
+</div>
+<div class="paragraph">
+<p>As before, we’ll use the pattern from our examples to come up with our definition.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><tt class="pyret"># is-cat :: (r :: Row) -&gt; Boolean
+# Consumes an animal, and compute whether the species is "cat"
+examples:
+  is-cat(animalX) is "cat" == "cat"
+  is-cat(animalY) is "dog" == "cat"
+end
+fun is-cat(r): r["species"] == "cat"
+end</tt></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Don&#8217;t forget to include the lookup code in the function definition! We only write the actual value for our examples!</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate_2">Investigate</h3>
+<div class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Type this definition&#8201;&#8212;&#8201;and its examples!&#8201;&#8212;&#8201;into the Definitions Area, then click “Run” and try using it to filter the <code><tt class="pyret">animals-table</tt></code>.</p>
+</li>
+<li>
+<p>For practice, try solving the word problem for <code><tt class="pyret">is-young</tt></code> at the bottom of <a href="../../lessons/ds-defining-table-functions/pages/design-recipe-2.html" target="_blank" rel="noopener">The Design Recipe (Page 29)</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_synthesize">Synthesize</h3>
+<div class="paragraph">
+<p>Debrief as a class. Ask students to brainstorm some other functions they could write?</p>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:34:25 -0400
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Contracts</title>
+<link rel="stylesheet" href="./../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="./../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="./../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="./../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="./../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="./../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="./../../../../lib/bootstraplesson.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Contracts",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article landscape pyret" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Contracts</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<style>
+#content > .paragraph {padding: 0px 5px;}
+</style>
+<div class="paragraph">
+<p>Contracts tell us how to use a function. For example: <code><tt class="pyret">num-min :: (a :: Number, b :: Number) -&gt; Number</tt></code> tells us that the name of the function is  <code><tt class="pyret">num-min</tt></code>, it takes two inputs (both Numbers), and it evaluates to a  <code><tt class="pyret">Number</tt></code>. From the contract, we know  <code><tt class="pyret">num-min(4, 6)</tt></code> will evaluate to a  <code><tt class="pyret">Number</tt></code>. <strong>Use the blank line under each contract for notes or sample code for that function!</strong></p>
+</div>
+<style>
+td {padding: .1em .625em !important; height: 20pt;}
+</style>
+<table class="tableblock frame-all grid-rows stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 5.5555%;">
+<col style="width: 55.5555%;">
+<col style="width: 5.5555%;">
+<col style="width: 11.1113%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Domain</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">string-repeat</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">::</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">(text :: String, repeat :: Number)</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">-&gt;</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">String</tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><code><tt class="pyret"><em>string-repeat("cheetah ", 5)</em></tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">string-contains</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">::</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">(text :: String, search-for :: String)</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">-&gt;</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">Boolean</tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><code><tt class="pyret"><em>string-contains("rockstar", "star")</em></tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">num-sqr</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">::</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">(n :: Number)</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">-&gt;</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">Number</tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><code><tt class="pyret"><em>num-sqr(9)</em></tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">num-sqrt</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">::</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">(n :: Number)</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">-&gt;</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">Number</tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><code><tt class="pyret"><em>num-sqrt(25)</em></tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">num-min</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">::</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">(a :: Number, b:: Number)</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">-&gt;</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">Number</tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><code><tt class="pyret"><em>num-min(80, 20)</em></tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">num-max</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">::</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">(a :: Number, b:: Number)</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">-&gt;</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">Number</tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><code><tt class="pyret"><em>num-max(80, 20)</em></tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">count</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">::</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">(t :: Table, col :: String)</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">-&gt;</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">Table</tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><code><tt class="pyret"><em>count(animals-table, "species")</em></tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">mean</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">::</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">(t :: Table, col :: String)</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">-&gt;</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">Number</tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><code><tt class="pyret"><em>mean(animals-table, "age")</em></tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">median</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">::</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">(t :: Table, col :: String)</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">-&gt;</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">Number</tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><code><tt class="pyret"><em>median(animals-table, "age")</em></tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">modes</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">::</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">(t :: Table, col :: String)</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">-&gt;</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">List&lt;Number&gt;</tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><code><tt class="pyret"><em>modes(animals-table, "age")</em></tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">bar-chart</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">::</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">(t :: Table, col :: String)</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">-&gt;</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">Image</tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><code><tt class="pyret"><em>bar-chart(animals-table, "legs"</em></tt></code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">pie-chart</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">::</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">(t :: Table, col :: String)</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">-&gt;</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">Image</tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><code><tt class="pyret"><em>pie-chart(animals-table, "species"</em></tt></code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">histogram</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">::</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">(t :: Table, values :: String, bin-width :: Number)</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">-&gt;</tt></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><tt class="pyret">Image</tt></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><code><tt class="pyret"><em>histogram(animals-table, "age", 2)</em></tt></code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="./../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:33:58 -0400
+</div>
+</div>
+</body>
+</html>

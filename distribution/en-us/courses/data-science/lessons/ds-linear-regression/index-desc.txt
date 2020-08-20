@@ -1,0 +1,1 @@
+Students compute the “line of best fit” using linear regression, and summarize linear relationships in a dataset.

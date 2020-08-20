@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Choosing Your Dataset</title>
+<style>
+/* Overall document font */
+* {font-family: Lato, Arial, Helvetica, sans-serif;}
+
+/* document headings */
+h1,.lesson-section-1 {color: #75328A;}
+h1{font-size: 32px; font-family: sans-serif;}
+table.section-heading *, .lesson-section-1 h2{font-size: 32px; font-weight: 100;}
+table.section-heading{width: 100%;}
+table.section-heading td:last-child{text-align: right; color: #d9d2e9;}
+
+/* preamble section */
+table.preamble td {padding: 10px;}
+table.preamble td:first-child{background: #b7d893; width: 25%;}
+table.preamble td:first-child p {font-weight: bold; margin: 5px;}
+
+/* content used throughout the body */
+table{ border-collapse: collapse; border: none; }
+table.grid-all.frame-all {border: solid 1px black;}
+table.grid-none.frame-none {border-width: 0px;}
+
+.big {font-size: 30pt;}
+.vocab{font-weight: bold; font-style: italic;}
+.right{text-align: right;}
+.acknowledgment {
+  border-top: solid 1px black; 
+  font-style: italic; 
+  font-size: 8pt;
+}
+.lesson-point {
+  border-top: solid 1px black; 
+  border-bottom: solid 1px black; 
+  color: black;
+  font-weight: bold;
+}
+
+.web-page-only, #footer { display: none; visibility: hidden; }
+
+/* Callout boxes */
+.strategy-box, .notice-box {
+  background: #efefef;
+  border: solid 5px !important;
+  margin: 15px auto;
+  width: 100%;
+}
+.strategy-box { border-color: #1a73b5 !important; }
+.notice-box   { border-color: #7747a5 !important; }
+.strategy-box td, .notice-box td{ padding: 10px; }
+.strategy-box .title, .notice-box .title{
+  width: 100%;
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+  clear: both;
+  margin: 100px;
+}
+.strategy-box p.tableblock:first-child, .notice-box p.tableblock:first-child{
+  text-align: center;
+  padding-bottom: 15px;
+}
+.strategy-box .title { color: #1a73b5; }
+.notice-box   .title { color: #7747a5; }
+.strategy-box a, .notice-box a { color: blue; text-decoration: underline; }
+
+/* "Tables" of Evaluation */
+.operator{border-bottom: solid 1px black; text-align: center;}
+.operator * {text-align: center;}
+td {padding: 0px 10px; font-size: 14px;}
+table.expression {
+    font-family:"Courier New", Monaco, monospace;
+    border:     solid 1px black;
+    font-size:  1px;
+    max-width:  400px;
+    color:      #666666;
+    display:    inline-block;
+}
+table.args {border: none; text-align: center;}
+
+.wescheme-string,     .cm-scheme-string    {color: green;}
+.wescheme-number,     .cm-scheme-number    {color: blue;}
+.wescheme-boolean,    .cm-scheme-boolean   {color: darkred;}
+.wescheme-character,  .cm-scheme-character {color: orange;}
+.wescheme-symbol,     .cm-scheme-symbol    {color: steelblue;}
+.wescheme-comment,    .cm-scheme-comment   {color: orange; }
+
+.racket, .pyret, .studentAnswerCode, .studentAnswer, .pyretkeyword, .keyword_only {
+    font-family:"Courier New", Monaco, monospace !important; 
+    color: black;
+}
+
+/* Design Recipe */
+.recipe_instructions { font-style: italic; }
+table.recipe_title {
+  color:              white;
+  background:         gray;
+  display:            block;
+  padding:            0px;
+  font-size:          1.1rem;
+  font-weight:        bold;
+}</style>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:window.location.href,
+    filename:"Choosing Your Dataset",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article LessonPlan pyret" onload="renderSaveToDrive()">
+<!-- Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46088504-1', 'bootstrapworld.org');
+ga('send', 'pageview');
+
+</script>
+<span id="body" onload="renderSaveToDrive()">
+<span id="header">
+<h1>Choosing Your Dataset</h1>
+
+  <span id="savetodrive-div"></span>
+
+</span>
+<span id="content">
+<span id="preamble_disabled">
+<span class="sectionbody">
+<span class="paragraph">
+<p>Students summarize their dataset by exploring the data and identifying categorical and quantitative columns, datatypes, and more. They also define a few sample rows, random subsets, and logical subsets.</p>
+</span>
+<table class="tableblock frame-all grid-all stripes-none stretch left-header preamble">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Prerequisites</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-choosing-your-dataset/../../lessons/ds-grouped-samples/index.shtml">Grouped Samples</a></p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><script>
+function showStandardsAlignment() {
+  const selectTag = document.getElementsByClassName('standardsAlignmentSelect')[0];
+  const options = selectTag && selectTag.options;
+  const stdTables = document.getElementsByClassName('alignedStandards');
+  const intro = document.getElementsByClassName('alignedStandardsIntro')[0];
+  let introNeeded = true;
+  for (let i = 0; i < stdTables.length; i++) {
+    const stdTable = stdTables[i];
+    stdTable.style.display = 'none';
+  }
+  for (let i = 0; i < options.length; i++) {
+    const opt = options[i];
+    if (opt.selected) {
+      const optStd = opt.value;
+      for (let j = 0; j < stdTables.length; j++) {
+        const stdTable = stdTables[j];
+        if (stdTable.classList.contains(optStd)) {
+          stdTable.style.display = 'block';
+          introNeeded = false;
+        }
+      }
+    }
+  }
+  intro.style.display = introNeeded ? 'block' : 'none';
+}
+</script>
+<span class="paragraph">
+<p>Standards</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph ">
+</span>
+<span class="dlist standards-CSTA standards-hierarchical-table">
+<span class="title">CSTA Standards</span>
+<dl>
+<dt class="hdlist1"><br/>3A-AP-16</dt>
+<dd>
+<p>Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue by using events to initiate instructions.</p>
+</dd>
+<dt class="hdlist1"><br/>3A-AP-23</dt>
+<dd>
+<p>Document design decisions using text, graphics, presentations, and/or demonstrations in the development of complex programs.</p>
+</dd>
+<dt class="hdlist1"><br/>3B-AP-14</dt>
+<dd>
+<p>Construct solutions to problems using student-created components, such as procedures, modules and/or objects.</p>
+</dd>
+</dl>
+</span>
+<span class="dlist standards-K12CS standards-hierarchical-table">
+<span class="title">K-12CS Standards</span>
+<dl>
+<dt class="hdlist1"><br/>P7</dt>
+<dd>
+<p>Communicating About Computing</p>
+</dd>
+</dl>
+</span>
+<span class="dlist standards-NGSS standards-hierarchical-table">
+<span class="title">Next-Gen Science Standards</span>
+<dl>
+<dt class="hdlist1"><br/>HS-SEP1-3</dt>
+<dd>
+<p>Ask questions to determine relationships, including quantitative relationships, between independent and dependent variables.</p>
+</dd>
+</dl>
+</span>
+<span class="dlist standards-OK standards-hierarchical-table">
+<span class="title">Oklahoma Standards</span>
+<dl>
+<dt class="hdlist1"><br/>OK.L1.DA.CVT.01</dt>
+<dd>
+<p>Use tools and techniques to locate, collect, and create visualizations of small- and largescale data sets (e.g., paper surveys and online data sets).</p>
+</dd>
+</dl>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Lesson Goals</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Students will be able to&#8230;&#8203;</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>Explain why they chose their dataset</p>
+</li>
+<li>
+<p>Describe their dataset</p>
+</li>
+<li>
+<p>Make subsets from their dataset</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Student-facing Lesson Goals</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Let&#8217;s all choose an interesting dataset to investigate.</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Materials</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Lesson Slides (<a href="https://docs.google.com/presentation/d/1SRZ9xk69gfUrKvreqX7hf8BiYEmr7ZyuUHIk779fieU/" target="_blank" rel="noopener">Google Slides</a>)</p>
+</li>
+<li>
+<p>Computer for each student (or pair), with access to the internet</p>
+</li>
+<li>
+<p><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-choosing-your-dataset/../..//workbook/workbook.pdf">Student workbook</a>, and something to write with</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Preparation</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Make sure all materials have been gathered</p>
+</li>
+<li>
+<p>Decide how students will be grouped in pairs</p>
+</li>
+<li>
+<p>All students should log into <a href="https://code.pyret.org" target="_blank" rel="noopener">CPO</a> and open the "Animals Starter File" they saved from the prior lesson. If they don&#8217;t have the file, they can <a href="https://code.pyret.org/editor#share=1ZupMVPWvVUOM0HCWyA7cRBghSLKxPWv1" target="_blank" rel="noopener">open a new one</a></p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Supplemental Resources</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Language Table</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><table class="tableblock frame-all grid-all stretch lang-features-table">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 66.6666%;">
+<col style="width: 16.6668%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Types</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Functions</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Values</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Number</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>num-sqrt, num-sqr</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>4, -1.2, 2/3</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>String</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>string-repeat, string-contains</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>"hello", "91"</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Boolean</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>==, &lt;, &lt;=, &gt;=, string-equal</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>true, false</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Image</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>triangle, circle, star, rectangle, ellipse, square, text, overlay, bar-chart, pie-chart, bar-chart-summarized, pie-chart-summarized</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>🔵🔺🔶</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Table</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>count, .row-n, .order-by, .filter, .build-column, random-rows</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"></span></td>
+</tr>
+</tbody>
+</table></span></td>
+</tr>
+</tbody>
+</table>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">The Data Cycle </td><td width="35%">20 minutes</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview">Overview</h3>
+<span class="paragraph">
+<p>Students learn about the <em>Data Cycle</em>, which helps them get situated in the process of analyzing the datasets they will select in this lesson. They browse through the library of provided datasets, and choose one they want to work with. NOTE: the selection process can also be done as a homework assignment, if all students have internet access at home.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch">Launch</h3>
+<span class="paragraph">
+<p>Zoom out a little and help students reflect on what they&#8217;ve done so far. Students began by exploring the Animals Dataset, formulating questions and exploring them with data displays. This led to further questions, making subsets, and asking more questions.</p>
+</span>
+<span class="paragraph">
+<p><span class="right"><span class="image"><img src="../../lessons/ds-choosing-your-dataset/images/data-cycle.png" alt="" width="400"></span><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-choosing-your-dataset/images/data-cycle.png" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span>
+The Data Cycle[*] is a <em>roadmap</em>, which helps guide us in the process of data analysis.</p>
+</span>
+<span class="paragraph">
+<p>(Step 1) We start by <strong>Asking Questions</strong> - statistical questions that can be answered with data.</p>
+</span>
+<span class="paragraph">
+<p>(Step 2) Then we <strong>Consider Data</strong>. This could be done by conducting a survey, observing and recording data, or finding a dataset that meets our needs.</p>
+</span>
+<span class="paragraph">
+<p>(Step 3) Then it&#8217;s on to <strong>Analyzing the Data</strong>, in which we produce data displays and new tables of filtered or transformed data in order to identify patterns and relationships.</p>
+</span>
+<span class="paragraph">
+<p>(Step 4) Finally, we <strong>Interpret the Data</strong>, in which we answer our questions and summarize the results. As we&#8217;ve already seen from the Animals Dataset, these interpretations often lead to <em>new</em> questions&#8230;&#8203;.and the cycle begins again.</p>
+</span>
+<span class="paragraph">
+<p><span class="clear"></span></p>
+</span>
+<span class="paragraph">
+<p>Explain to students that they will now select a dataset for them to work with for the remainder of the course. Make sure they understand that it genuinely has to be something they are interested in - their engagement with the data is critical to engaging with the class.</p>
+</span>
+<span class="paragraph">
+<p><em>Students can also find their own dataset</em>, and use this (<a href="https://code.pyret.org/editor#share=12v7kzbxHt2LaSe2uI2d_OnssxtTNF0A8" target="_blank" rel="noopener">Blank Starter file</a>). See this <a href="https://youtu.be/K4n9hTSqcyw" target="_blank" rel="noopener">tutorial video</a> for help importing your own data into Pyret.</p>
+</span>
+<div class="paragraph lesson-point">
+<p>Students must have at least 2 questions that are both <em>interesting</em> and <em>answerable</em> using their dataset.</p>
+</div>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate">Investigate</h3>
+<span class="openblock lesson-instruction">
+<span class="content">
+<span class="paragraph">
+<p>Choose a dataset that is interesting to you! You should have at least two questions that the dataset can help you answer. Write these questions down on <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-choosing-your-dataset/../../lessons/ds-choosing-your-dataset/pages/whats-on-your-mind.html" target="_blank" rel="noopener">What’s on your mind? (Page 49)</a>.</p>
+</span>
+<span class="dlist TwoColumnDD_DT">
+<dl>
+<dt class="hdlist1"><br/>Movies</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1ldK-Xte5xCAPd6hz2wreBaJzuw-voe4q6ui9QkFGz8w" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1xke6yN2gkn_q-Bf2yC7772i6NNezyjbk" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Schools</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1XeeyAuF_mtpeCw2HVCKjvwW1rreNvztoQ3WeBlEaDl0/" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1Xu0ket-eDCeU-Uuxl82OCCGJQRW_ghWV" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>US Income</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1cIxBSQebGejWK7S_Iy6cDFSIpD-60x8oG7IvrfCtHbw" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1qSK5KX7cfwM4c6XtJFg5gPcVp9OBSbOU" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>US Presidents</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1Frt37-nBHHxvJVBKzKLRD3kbjPLhc8CYUaIlNeNWl94" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1prkKxnGrGJJAab7XBXTqiysRli0xFEbL" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Countries of the World</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/19VoYxPw0tmuSViN1qFIkyUoepjNSRsuQCe0TZZDmrZs" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1wEHqx0f9VOxmRUVqDjnPCECOmvPWyQdS" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Music</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1Yzo8GuGhMDVNyAI5OacmKZ53xJplZbXF5FT6Lwitp0w" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1UIYszUXHA0gx7jmFhEitvKxqa7MDmcxO" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>NYC Restaurant Health Inspections</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1inK0kq8bNeN1vYbx0HpNZ8xHOp5pmP2FoLcfK9pQhJI" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1LMziboHPlgtATfwpOUEDJzMPW2MVIp6o" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Pokemon Characters</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1S8jf4Qf94TJKGLCcTA-Fqn4YXE7dGf_PIxv5MUeUPVo" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1Nxhiw46EFfNhmMBvUQK0NosbFnaBCQJy" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>IGN Video Game Reviews</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1Ss221kjz2WJUsTlxK7TcnsXLPoSbnfUKv-JP8gCiGRw" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1IVnp6-NCuvbk1cQH6CRly_6I6-OEBOVI" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>2016 Presidential Primary Election</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1fgIREXT5lAaAPWqrNP3S191ID_ecoXDjBe_gAC00-M4" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1pPF0KjcjM7C82wpShDmQ5D_CD39lE7AE" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>US Cancer Rates</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1deL-6Xh9WUN2fTcV95V7RLseAcplGNA6BHTnpHCMgME" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1qJxOMxULihXhtrIVaLPboFtYpUiLnFct" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>US State Demographics</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/14fRmjAiCqGNI5Zr5kGSDjMavln7ILqhSX3N3zGd8CAU/edit" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1IzvOGVQdhi-QMKJdl7IBpM1vGSjaV_P_" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Sodas</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/15n0dLqBWffE2JNOmYHcvavqMwvHXpy5_UyZfT3Q7pfs" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=12AFxlJuNjmxYTUV0FWa7z3D5CHRYBXoG" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Cereals</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1y3AoywSnyGpu-QmmEwKvW-xstZ6B9JhH5gTUx5XYTo4" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1syDC8qoFjO4EdqycRAfWlKMHanzrqTSH" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Summer Olympic Medals</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1ee30kHpV35zAO5MNQKk_nXP6iym2mX-bv_cgt-8q_oo" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1bkI_WiWZvLlS5x3A0vx6C-m-fJonIPW4" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Winter Olympic Medals</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1-xYW4C0IRB7cDI2K8dMyVTlsQjFmB_Z4XBsHsB-TAbs" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1kFV_BmSDTSAbNDdm-IFZrGdI1I6K4-aL" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>MLB Hitting Stats</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/1xjC1XZWACvQtfwHdGk_BlE2jm4aleMADHTt6PEocCjg" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1X80kXcexm4kriNFTJXLVr_8m2TZOvhzr" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+<dt class="hdlist1"><br/>Spotify Top Songs</dt>
+<dd>
+<p><a href="https://docs.google.com/spreadsheets/d/18Yb3zWIIensRdz1C1iqqtZ4aXjbKOD7z2SSL09Zm1Xc" target="_blank" rel="noopener">Dataset</a>
+<a href="https://code.pyret.org/editor#share=1x6-ckp0F1nN2SwoXtqYyxRKbT8ZgRfs9" target="_blank" rel="noopener">Starter File</a></p>
+</dd>
+</dl>
+</span>
+<span class="paragraph">
+<p>Open the <a href="https://docs.google.com/document/d/1_ZEIgM4zvxI7JizViVFZojnpd3Yr2rYe8puPk8pjOcs/copy" target="_blank" rel="noopener">Research Paper template</a>, and save a copy.</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>Students fill in their first and last name(s), the teacher name on the first page of the Research Paper.</p>
+</li>
+<li>
+<p>Students should also copy the link to the dataset (spreadsheet), and paste it into the first page of the Research Paper.</p>
+</li>
+<li>
+<p>Students should click "Publish" in their Pyret Starter File, then copy/paste the resulting link into the first page of the Research Paper.</p>
+</li>
+</ul>
+</span>
+</span>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize">Synthesize</h3>
+<span class="paragraph">
+<p>Have students share their datasets and their questions.</p>
+</span>
+<span class="paragraph">
+<p>For the rest of this course, students will be learning new programming and Data Science skills, practicing them with the Animals Dataset and then applying them to their own data.</p>
+</span>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">Exploring Your Dataset </td><td width="35%">flexible</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview_2">Overview</h3>
+<span class="paragraph">
+<p>Students apply what they&#8217;ve learned about describing and making subsets from the Animals Dataset to their own dataset. <strong>Note: this activity can be done briefly as a homework assignment, but we recommend giving students an <em>additional class period</em> to work on this.</strong></p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch_2">Launch</h3>
+<span class="paragraph">
+<p>By now you&#8217;ve already learned what to do when you approach a new dataset. With the Animals Dataset, you first read the data itself, and wrote down your Notice and Wonders. You described the columns in the Animals Dataset, identifying which were categorical and which were quantitative, and whether they were Numbers, Strings, Booleans, etc. Finally, you used the Design Recipe and table methods to make random and logical subsets.</p>
+</span>
+<span class="paragraph">
+<p>Now, you&#8217;re doing to do the same thing <em>with your own dataset.</em></p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate_2">Investigate</h3>
+<span class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Have students look at the spreadsheet for their dataset. What do they <strong>Notice</strong>? What do they <strong>Wonder</strong>? Have them complete <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-choosing-your-dataset/../../lessons/ds-choosing-your-dataset/pages/my-dataset.html" target="_blank" rel="noopener">My Dataset (Page 45)</a>, making sure to have at least two Lookup Questions, two Compute Questions, and two Relate Questions.</p>
+</li>
+<li>
+<p>In the Definitions Area, students use <code><span class="pyret">random-rows</tt></code> to define <strong>at least three</strong> tables of different sizes: <code><tt class="pyret">tiny-sample</tt></code>, <code><tt class="pyret">small-sample</tt></code>, and <code><tt class="pyret">medium-sample</span></code>.</p>
+</li>
+<li>
+<p>In the Definitions Area, students use <code><span class="pyret">.row-n</span></code> to define <strong>at least three</strong> values, representing different rows in your table.</p>
+</li>
+<li>
+<p>Have students think about subsets that might be useful for their dataset. Name these subsets and write the Pyret code to test an individual row from your dataset on <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-choosing-your-dataset/../../lessons/ds-choosing-your-dataset/pages/samples-from-my-dataset.html" target="_blank" rel="noopener">Samples from My Dataset (Page 46)</a>.</p>
+</li>
+<li>
+<p>Students should fill in <a href="https://docs.google.com/document/d/1_ZEIgM4zvxI7JizViVFZojnpd3Yr2rYe8puPk8pjOcs/edit#heading=h.6cy9t2stox4e" target="_blank" rel="noopener">My Dataset</a> portion of their Research Paper.</p>
+</li>
+<li>
+<p>Students should fill in <a href="https://docs.google.com/document/d/1_ZEIgM4zvxI7JizViVFZojnpd3Yr2rYe8puPk8pjOcs/edit#heading=h.h6dvbsrt7r00" target="_blank" rel="noopener">Categorical Visualizations</a> portion of their Research Paper, by generating pie and bar charts for their dataset and explaining what they show.</p>
+</li>
+</ul>
+</span>
+<span class="paragraph lesson-instruction">
+<p>Turn to <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-choosing-your-dataset/../../lessons/ds-choosing-your-dataset/pages/design-recipe-helper-funs.html" target="_blank" rel="noopener">The Design Recipe (Page 47)</a>, and use the Design Recipe to write the filter functions that you planned out on <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-choosing-your-dataset/../../lessons/ds-choosing-your-dataset/pages/samples-from-my-dataset.html" target="_blank" rel="noopener">Samples from My Dataset (Page 46)</a>. When the teacher has checked your work, type them into the Definitions Area and use the <code><span class="pyret">.filter</span></code> method to define your new sample tables.</p>
+</span>
+<span class="paragraph lesson-instruction">
+<p>Choose one categorical column from your dataset, and try making a bar or pie-chart for the whole table. Now try making the same display for each of your subsets. Which is most representative of the entire column in the table?</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize_2">Synthesize</h3>
+<span class="paragraph">
+<p>Have students share which subsets they created for their datasets.</p>
+</span>
+<span class="paragraph">
+<p>[*] From the <a href="http://introdatascience.org/" target="_blank" rel="noopener">Mobilizing IDS project</a> and <a href="https://www.amstat.org/asa/files/pdfs/GAISE/GAISEPreK12_Intro.pdf" target="_blank" rel="noopener">GAISE</a></p>
+</span>
+<span class="openblock acknowledgment"><hr/>
+<span class="content">
+<span class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-choosing-your-dataset/mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+<span id="footer">
+<span id="footer-text">
+Last updated 2020-08-19 20:34:23 -0400
+</span>
+</span>
+</span>
+</body>
+</html>

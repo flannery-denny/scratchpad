@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Glossary</title>
+<link rel="stylesheet" href="./../../lib/curriculum.css">
+</head>
+<body class="article">
+<!--#include virtual="/menubar.ssi"-->
+<div id="body">
+<div id="header">
+<h1>Glossary</h1>
+</div>
+<div id="content">
+<div class="dlist glossary">
+<dl>
+<dt class="hdlist1">arguments</dt>
+<dd>
+<p>the inputs to a function; expressions for arguments follow the name of a function</p>
+</dd>
+<dt class="hdlist1">bar chart</dt>
+<dd>
+<p>a display of categorical data that uses bars positioned over category values; each bar’s height reflects the count or percentage of data values in that category</p>
+</dd>
+<dt class="hdlist1">box plot</dt>
+<dd>
+<p>the box plot (a.k.a. box-and whisker-plot) is a way of displaying a distribution of data based on the five-number summary: minimum, first quartile, median, third quartile, and maximum</p>
+</dd>
+<dt class="hdlist1">categorical data</dt>
+<dd>
+<p>data whose values are qualities that are not subject to the laws of arithmetic.</p>
+</dd>
+<dt class="hdlist1">contract</dt>
+<dd>
+<p>a statement of the name, domain, and range of a function</p>
+</dd>
+<dt class="hdlist1">data row</dt>
+<dd>
+<p>a structured piece of data in a dataset that typically reports all the information gathered about a given individual</p>
+</dd>
+<dt class="hdlist1">data science</dt>
+<dd>
+<p>the science of collecting, organizing, and drawing general conclusions from data, with the help of computers</p>
+</dd>
+<dt class="hdlist1">definitions area</dt>
+<dd>
+<p>the left-most text box in the Editor where definitions for values and functions are written</p>
+</dd>
+<dt class="hdlist1">design recipe</dt>
+<dd>
+<p>a sequence of steps that helps people document, test, and write functions</p>
+</dd>
+<dt class="hdlist1">domain</dt>
+<dd>
+<p>the type or set of inputs that a function expects</p>
+</dd>
+<dt class="hdlist1">editor</dt>
+<dd>
+<p>software in which you can write and evaluate code</p>
+</dd>
+<dt class="hdlist1">explanatory variable</dt>
+<dd>
+<p>the variable in a relationship that is presumed to impact the other variable</p>
+</dd>
+<dt class="hdlist1">form</dt>
+<dd>
+<p>of a relationship between two quantitative variables: whether the two variables together vary linearly or in some other way</p>
+</dd>
+<dt class="hdlist1">frequency</dt>
+<dd>
+<p>how often a particular value appears in a data set</p>
+</dd>
+<dt class="hdlist1">function</dt>
+<dd>
+<p>a mathematical object that consumes inputs and produces an output</p>
+</dd>
+<dt class="hdlist1">grouped sample</dt>
+<dd>
+<p>a non-random subset of individuals chosen from a larger set, where the individuals belong to a specific group</p>
+</dd>
+<dt class="hdlist1">header</dt>
+<dd>
+<p>the titles of each column of a table, usually shown at the top</p>
+</dd>
+<dt class="hdlist1">histogram</dt>
+<dd>
+<p>a display of quantitative data that uses vertical bars positioned over bins (sub-intervals); each bar’s height reflects the count or percentage of data values in that bin.</p>
+</dd>
+<dt class="hdlist1">identifier column</dt>
+<dd>
+<p>a column of unique values which identify all the individual rows (e.g. - student IDs, SSNs, etc)</p>
+</dd>
+<dt class="hdlist1">interactions area</dt>
+<dd>
+<p>the right-most text box in the Editor, where expressions are entered to evaluate</p>
+</dd>
+<dt class="hdlist1">interquartile range</dt>
+<dd>
+<p>(IQR) is one possible measure of spread, based on dividing a data set into four parts. The values that divide each part are called the first quartile (Q1), the median, and third quartile (Q3). IQR is calculated as Q3 minus Q1.</p>
+</dd>
+<dt class="hdlist1">line of best fit</dt>
+<dd>
+<p>summarizes the relationship (if linear) between two quantitative variables</p>
+</dd>
+<dt class="hdlist1">linear regression</dt>
+<dd>
+<p>modeling the relationship between two quantitative variables using a straight line</p>
+</dd>
+<dt class="hdlist1">mean</dt>
+<dd>
+<p>average, calculated as the sum of values divided by the number of values</p>
+</dd>
+<dt class="hdlist1">median</dt>
+<dd>
+<p>the middle element of a quantitative data set</p>
+</dd>
+<dt class="hdlist1">method</dt>
+<dd>
+<p>a function that is only associated with an instance of a datatype, which consumes inputs and produces an output based on that instance</p>
+</dd>
+<dt class="hdlist1">mode</dt>
+<dd>
+<p>the most commonly appearing categorical or quantitative value or values in a data set</p>
+</dd>
+<dt class="hdlist1">outlier</dt>
+<dd>
+<p>a data point that is unusually far above or below most of the others</p>
+</dd>
+<dt class="hdlist1">pie chart</dt>
+<dd>
+<p>a display that uses areas of a circular pie&#8217;s slices to show percentages in each category</p>
+</dd>
+<dt class="hdlist1">predictor function</dt>
+<dd>
+<p>a function which, given a value from one data set, makes an educated guess at a related value in a different data set</p>
+</dd>
+<dt class="hdlist1">programming language</dt>
+<dd>
+<p>a set of rules for writing code that a computer can evaluate</p>
+</dd>
+<dt class="hdlist1">quantitative data</dt>
+<dd>
+<p>number values for which arithmetic makes sense</p>
+</dd>
+<dt class="hdlist1">quartiles</dt>
+<dd>
+<p>three values that divide a data set into four equal-sized groups</p>
+</dd>
+<dt class="hdlist1">r</dt>
+<dd>
+<p>a number between −1 and 1 that measures the direction and strength of a linear relationship between two quantitative variables (also known as correlation value)</p>
+</dd>
+<dt class="hdlist1">range</dt>
+<dd>
+<p>the type or set of outputs that a function produces</p>
+</dd>
+<dt class="hdlist1">range of a data set</dt>
+<dd>
+<p>the distance between minimum and maximum values</p>
+</dd>
+<dt class="hdlist1">response variable</dt>
+<dd>
+<p>the variable in a relationship that is presumed to be affected by the other variable</p>
+</dd>
+<dt class="hdlist1">scatter plot</dt>
+<dd>
+<p>a display of the relationship between two quantitative variables, graphing each explanatory value on the x axis and the accompanying response on the y axis</p>
+</dd>
+<dt class="hdlist1">shape</dt>
+<dd>
+<p>The aspect of a dataset that tells which values are more or less common</p>
+</dd>
+<dt class="hdlist1">skew</dt>
+<dd>
+<p>lack of balance in a dataset’s shape, arising from more values that are unusually low or high. Such values tend to trail off, rather than be separated by a gap (as with outliers).</p>
+</dd>
+<dt class="hdlist1">skewed left</dt>
+<dd>
+<p>A distribution is skewed left if there are a few values that are fairly low compared to the bulk of data values. A display of the data will show a longer tail to the left.</p>
+</dd>
+<dt class="hdlist1">skewed right</dt>
+<dd>
+<p>A distribution is skewed right if there are a few values that are fairly high compared to the bulk of data values. A display of the data will show a longer tail to the right.</p>
+</dd>
+<dt class="hdlist1">spread</dt>
+<dd>
+<p>the extent to which values in a data set vary, either from one another or from the center</p>
+</dd>
+<dt class="hdlist1">statistical inference</dt>
+<dd>
+<p>using information from a sample to draw conclusions about the larger population from which the sample was taken</p>
+</dd>
+<dt class="hdlist1">symmetric</dt>
+<dd>
+<p>A symmetric distribution has a balanced shape, showing that it&#8217;s just as likely for the variable to take lower values as higher values.</p>
+</dd>
+<dt class="hdlist1">threats to validity</dt>
+<dd>
+<p>factors that can undermine the conclusion of a study</p>
+</dd>
+</dl>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:34:33 -0400
+</div>
+</div>
+</div>
+</body>
+</html>

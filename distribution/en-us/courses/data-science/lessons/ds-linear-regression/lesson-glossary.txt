@@ -1,0 +1,5 @@
+"explanatory variable"
+"line of best fit"
+"linear regression"
+"predictor function"
+"response variable"

@@ -1,0 +1,1 @@
+Students begin to program in Pyret, learning about basic datatypes, operations, and value definitions.

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Solving Word Problems with the Design Recipe</title>
+<link rel="stylesheet" href="./../../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="../../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="../../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="../../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/bootstraplesson.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Solving Word Problems with the Design Recipe",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article pyret" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Solving Word Problems with the Design Recipe</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div class="paragraph">
+<p><span class="web-page-only">Referenced from lesson <a href="../../../lessons/alg-restating-the-problem/index.shtml">Restating the Problem</a></p>
+</div>
+<div class="paragraph">
+<p></span>
+<span class="vspace" style="height: 2ex"></span>
+Use The Design Recipe to create models for the word problems and write the appropriate functions.</p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 2ex"></span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>1) Write a function <tt class="pyret">globo-gym</tt> that takes in a number of months and produces the cost for attending the gym that many months when there is a $150 initiation fee and a monthly fee of $45/month.</p>
+</div>
+<div class="paragraph">
+<p><tt class="pyret">fun globo-gym&#8203;(&#8203;months&#8203;): (&#8203;45 &#8203;* months&#8203;) &#43; 150 end</tt></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>2) Write a function <tt class="pyret">rect-perimeter</tt> that takes in the length and width of a rectangle and returns the perimeter of that rectangle.</p>
+</div>
+<div class="paragraph">
+<p><tt class="pyret">fun rect-perimeter&#8203;(&#8203;l, w&#8203;): 2 &#8203;* (&#8203;l &#43; w&#8203;) end</tt></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>3) Write a function <tt class="pyret">lawn-area</tt> that takes in a length and width of a lawn and returns the area of that rectangular lawn.</p>
+</div>
+<div class="paragraph">
+<p><tt class="pyret">fun lawn-area&#8203;(&#8203;length, width&#8203;): length &#8203;* width end</tt></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>4) Write a function <tt class="pyret">rectprism-vol</tt> that takes in the length, width, and height of a rectangular prism and returns the Volume of a rectangular prism.</p>
+</div>
+<div class="paragraph">
+<p><tt class="pyret">fun rectprism-vol&#8203;(&#8203;l, w, h&#8203;): (&#8203;l &#8203;* w&#8203;) &#8203;* h end</tt></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>5) Write a function <tt class="pyret">rideshare</tt>, that takes in a number of miles and produces the cost of a ride for that many miles at $2.50 plus $1.50/mile.</p>
+</div>
+<div class="paragraph">
+<p><tt class="pyret">fun rideshare&#8203;(&#8203;miles&#8203;): (&#8203;1.5 &#8203;* miles&#8203;) &#43; 2.5 end</tt></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>6) Write a function <tt class="pyret">marquee</tt> that takes in a message and returns that message in large gold letters.</p>
+</div>
+<div class="paragraph">
+<p><tt class="pyret">fun marquee&#8203;(&#8203;message&#8203;): text&#8203;(&#8203;message, 100, "gold"&#8203;) end</tt></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>7) Write a function <tt class="pyret">split-tab</tt> that takes in a cost and the number of people sharing the bill and splits the cost equally.</p>
+</div>
+<div class="paragraph">
+<p><tt class="pyret">fun split-tab&#8203;(&#8203;cost, people&#8203;): cost / people end</tt></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>8) Write a function <tt class="pyret">num-cube</tt> that takes in a number and returns the cube of that number.</p>
+</div>
+<div class="paragraph">
+<p><tt class="pyret">fun num-cube&#8203;(&#8203;n&#8203;): (&#8203;n &#8203;* n&#8203;) &#8203;* n end</tt></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>9) Write a function <tt class="pyret">circle-area</tt> that takes in a radius and returns the area of the circle.</p>
+</div>
+<div class="paragraph">
+<p><tt class="pyret">fun circle-area&#8203;(&#8203;radius&#8203;): 3.14 &#8203;* num-sqr&#8203;(&#8203;radius&#8203;) end</tt></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>10) Write a function <tt class="pyret">tip-calculator</tt> that takes in the cost of a meal and returns the 15% tip of that meal.</p>
+</div>
+<div class="paragraph">
+<p><tt class="pyret">fun tip-calculator&#8203;(&#8203;cost&#8203;): 0.15 &#8203;* cost end</tt></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>11) Write a function <tt class="pyret">minimum-wage</tt>, that takes in a number of hours worked and returns the amount a worker will get paid at $10.25/hr.</p>
+</div>
+<div class="paragraph">
+<p><tt class="pyret">fun minimum-wage&#8203;(&#8203;hours&#8203;): 10.25 &#8203;* hours end</tt></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>12) Write a function <tt class="pyret">moving</tt> that takes in the days and number of miles driven and returns the cost of renting a truck. The truck is $55 per day and each driven mile is 15¢.</p>
+</div>
+<div class="paragraph">
+<p><tt class="pyret">fun moving&#8203;(&#8203;days, mi&#8203;): (&#8203;55 &#8203;* days&#8203;) &#43; (&#8203;0.15 &#8203;* mi&#8203;) end</tt></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Algebra by Emmanuel Schanzer, Jen Poole, Ed Campos Jr, Flannery Denny, and Dorai Sitaram
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:21:13 -0400
+</div>
+</div>
+</body>
+</html>

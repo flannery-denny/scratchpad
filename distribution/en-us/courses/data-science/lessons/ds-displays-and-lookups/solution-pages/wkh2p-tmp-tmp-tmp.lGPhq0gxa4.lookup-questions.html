@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Lookup Questions</title>
+<link rel="stylesheet" href="./../../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="../../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="../../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="../../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/bootstraplesson.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Lookup Questions",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article pyret" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Lookup Questions</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div class="paragraph">
+<p><span class="web-page-only">Referenced from lesson <a href="../../../lessons/ds-displays-and-lookups/index.shtml">Data Displays and Lookups</a></p>
+</div>
+<div class="paragraph">
+<p></span>
+The table below represents four pets at an animal shelter:</p>
+</div>
+<div class="paragraph">
+<p><tt class="pyret">pets-table</tt></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">name</th>
+<th class="tableblock halign-left valign-top">sex</th>
+<th class="tableblock halign-left valign-top">age</th>
+<th class="tableblock halign-left valign-top">pounds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">"Toggle"</tt></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">"female"</tt></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">3</tt></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">48</tt></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">"Fritz"</tt></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">"male"</tt></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">4</tt></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">92</tt></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">"Nori"</tt></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">"female"</tt></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">6</tt></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">35.3</tt></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">"Maple"</tt></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">"female"</tt></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">3</tt></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><tt class="pyret">51.6</tt></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>1) <em>Match</em> each Lookup Question (left) to the code that will give the answer (right).</p>
+</div>
+<table class="tableblock frame-none grid-none stripes-none stretch">
+<colgroup>
+<col style="width: 31.8181%;">
+<col style="width: 4.5454%;">
+<col style="width: 22.7272%;">
+<col style="width: 4.5454%;">
+<col style="width: 36.3639%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-middle"><div class="content"><div class="paragraph">
+<p>“How much does Maple weigh?”</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>1</strong> (E)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>A</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><tt class="pyret">pets-table.row-n(3)</tt></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-middle"><div class="content"><div class="paragraph">
+<p>“Which is the last row in the table?</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>2</strong> (A)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>B</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><tt class="pyret">pets-table.row-n(2)["name"]</tt></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-middle"><div class="content"><div class="paragraph">
+<p>“What is Fritz’s sex?”</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>3</strong> (C)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>C</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><tt class="pyret">pets-table.row-n(1)["sex"]</tt></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-middle"><div class="content"><div class="paragraph">
+<p>“What’s the third animal’s name?”</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>4</strong> (B)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>D</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><tt class="pyret">pets-table.row-n(3)["age"]</tt></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-middle"><div class="content"><div class="paragraph">
+<p>“How much does Nori weigh?”</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>5</strong> (G)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>E</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><tt class="pyret">pets-table.row-n(3)["pounds"]</tt></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-middle"><div class="content"><div class="paragraph">
+<p>“How old is Maple?”</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>6</strong> (D)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>F</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><tt class="pyret">pets-table.row-n(0)</tt></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-middle"><div class="content"><div class="paragraph">
+<p>“What is Toggle’s sex?”</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>7</strong> (H)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>G</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><tt class="pyret">pets-table.row-n(2)["pounds"]</tt></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-middle"><div class="content"><div class="paragraph">
+<p>“What is the first row in the table?”</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>8</strong> (F)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>H</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><tt class="pyret">pets-table.row-n(0)["sex"]</tt></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>2) Fill in the blanks (left) with code that will produce the value (right).</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 1%;">
+<col style="width: 70%;">
+<col style="width: 29%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>a.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="fitb" style="width: 25em"><em>pets-table.row-n(3)["name"]</em></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><tt class="pyret">"Maple"</tt></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>b.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="fitb" style="width: 25em"><em>pets-table.row-n(1)["sex"]</em></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><tt class="pyret">"male"</tt></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>c.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="fitb" style="width: 25em"><em>pets-table.row-n(1)["age"]</em></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><tt class="pyret">4</tt></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>d.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="fitb" style="width: 25em"><em>pets-table.row-n(0)["pounds"]</em></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><tt class="pyret">48</tt></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>e.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="fitb" style="width: 25em"><em>pets-table.row-n(2)["name"]</em></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><tt class="pyret">"Nori"</tt></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:29:25 -0400
+</div>
+</div>
+</body>
+</html>

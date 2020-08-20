@@ -1,0 +1,3 @@
+"explanatory variable"
+"response variable"
+"scatter plot"

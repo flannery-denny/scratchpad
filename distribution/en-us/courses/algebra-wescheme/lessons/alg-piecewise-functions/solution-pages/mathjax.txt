@@ -1,0 +1,1 @@
+      <script type="text/javascript" src="../../../../../lib/MathJax-2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2Clocal%2Fmathjaxlocal.js"></script>

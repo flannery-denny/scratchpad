@@ -1,0 +1,1 @@
+Students discover the Boolean data type, and apply knowledge of inequalities to simple programming problems.

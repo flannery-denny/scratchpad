@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Starting to Program: Order of Operations &amp; Contracts</title>
+<link rel="stylesheet" href="./../../../../../lib/curriculum.css">
+      <script type="text/javascript" src="../../../../../lib/MathJax-2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2Clocal%2Fmathjaxlocal.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Starting to Program: Order of Operations %INSERTGDRIVELESSONTITLEamp; Contracts",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article pyret" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Starting to Program: Order of Operations &amp; Contracts</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div class="paragraph">
+<p><span class="web-page-only">Referenced from lesson <a href="../../../lessons/alg-order-of-operations/index.shtml">Order of Operations</a></p>
+</div>
+<div class="paragraph">
+<p></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>Editor</strong> is a software program we use to write Code. Our Editor allows us to experiment with Code on the right-hand side, in the  <strong>Interactions Area</strong>. For Code that we want to <em>keep</em>, we can put it on the left-hand side in the  <strong>Definitions Area</strong>. Clicking the "Run" button causes the computer to read and load everything in the Definitions Area and erase anything that was typed into the Interactions Area.</p>
+</li>
+<li>
+<p>Our programming language has many types of  <strong>values</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Numbers</strong> can be integers like <tt class="pyret">42</tt>, decimals like <tt class="pyret">0.5</tt>, or even fractions like <tt class="pyret">1/3</tt>. Clicking on a fraction or a decimal will cause it to switch from one to the other.</p>
+</li>
+<li>
+<p><strong>Strings</strong> are anything in quotes, such as <tt class="pyret">"Programming is fun!".</tt>  A Number written in quotes is <em>still a String!</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Our language also has <strong>functions</strong> you&#8217;ve seen before, such as addition (<tt class="pyret">+</tt>), subtraction (<tt class="pyret">-</tt>), multiplication (<tt class="pyret">*</tt>) and division (<tt class="pyret">/</tt>).</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Order of Operations</strong> is incredibly important when programming. To help us organize our math into something we can trust, we can <em>diagram</em> a math expression using the <strong>Circles of Evaluation</strong>. For example, the expression <span class="gdrive-only">(1 - 4) &divide; (10 &times; 7)</span><script type="math/tex">\displaystyle (1 - 4) \div (10 \times 7)</script> can be diagrammed as shown below.
+<table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">/</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&#8203;-</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">1</span></td><td class="arg"><span class="value wescheme-number">4</span></td></tr></table></td></tr></table></td><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&#8203;*</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">10</span></td><td class="arg"><span class="value wescheme-number">7</span></td></tr></table></td></tr></table></td></tr></table></td></tr></table><div class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">/</span></span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&#8203;-</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">1</span><span class="hspace">&#160;</span><span class="value wescheme-number">4</span><span class="rParen">)</span></span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&#8203;*</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">10</span><span class="hspace">&#160;</span><span class="value wescheme-number">7</span><span class="rParen">)</span></span><span class="rParen">)</span></span></div>
+<span class="clear"></span></p>
+</li>
+<li>
+<p>To convert a <strong>Circle of Evaluation</strong> into code, we walk through the circle from outside-in, moving left-to-right. We type an open parenthesis when we <em>start</em> a circle, and a close parenthesis when we <em>end</em> one. Once we&#8217;re in a circle, we write whatever is on the left of the circle, then the <strong>function</strong> at the top, and then whatever is on the right. The circle above, for example, would be programmed as <tt class="pyret">(&#8203;1 &#8203;- 4&#8203;) / (&#8203;10 &#8203;* 7&#8203;)</tt>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Images</strong> are pictures that are produced by functions. The <tt class="pyret">circle</tt> function, for example, takes a Number as the radius, a String to determine if the circle should be <tt class="pyret">"solid"</tt> or <tt class="pyret">"outline"</tt>, and a String to specify the color. You can see the Circle of Evaluation and the Code below:
+<table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">circle</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">50</span></td><td class="arg"><span class="value wescheme-string">"solid"</span></td><td class="arg"><span class="value wescheme-string">"red"</span></td></tr></table></td></tr></table><div class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">circle</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">50</span><span class="hspace">&#160;</span><span class="value wescheme-string">"solid"</span><span class="hspace">&#160;</span><span class="value wescheme-string">"red"</span><span class="rParen">)</span></span></div>
+<tt class="pyret">circle&#8203;(&#8203;50, "solid", "red"&#8203;)</tt>
+<span class="clear"></span></p>
+</li>
+<li>
+<p>There are a <em>lot</em> of functions in this language! We can make many different shapes, manipulate Strings and Numbers, and a whole lot more. Keeping track of what every function takes in and what it gives back is impossible! To help us remember how to use each function, programmers write down something called a  <strong>Contract</strong>. Contracts include the <strong>Name</strong> of the function, what it takes in (called the  <strong>Domain</strong>) and what it gives back (called the  <strong>Range</strong>). You have space at the very back of your workbook to write all the Contracts for functions that you discover!</p>
+</li>
+</ul>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Algebra by Emmanuel Schanzer, Jen Poole, Ed Campos Jr, Flannery Denny, and Dorai Sitaram
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:18:54 -0400
+</div>
+</div>
+</body>
+</html>

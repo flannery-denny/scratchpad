@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Defining Values and Functions</title>
+<style>
+/* Overall document font */
+* {font-family: Lato, Arial, Helvetica, sans-serif;}
+
+/* document headings */
+h1,.lesson-section-1 {color: #75328A;}
+h1{font-size: 32px; font-family: sans-serif;}
+table.section-heading *, .lesson-section-1 h2{font-size: 32px; font-weight: 100;}
+table.section-heading{width: 100%;}
+table.section-heading td:last-child{text-align: right; color: #d9d2e9;}
+
+/* preamble section */
+table.preamble td {padding: 10px;}
+table.preamble td:first-child{background: #b7d893; width: 25%;}
+table.preamble td:first-child p {font-weight: bold; margin: 5px;}
+
+/* content used throughout the body */
+table{ border-collapse: collapse; border: none; }
+table.grid-all.frame-all {border: solid 1px black;}
+table.grid-none.frame-none {border-width: 0px;}
+
+.big {font-size: 30pt;}
+.vocab{font-weight: bold; font-style: italic;}
+.right{text-align: right;}
+.acknowledgment {
+  border-top: solid 1px black; 
+  font-style: italic; 
+  font-size: 8pt;
+}
+.lesson-point {
+  border-top: solid 1px black; 
+  border-bottom: solid 1px black; 
+  color: black;
+  font-weight: bold;
+}
+
+.web-page-only, #footer { display: none; visibility: hidden; }
+
+/* Callout boxes */
+.strategy-box, .notice-box {
+  background: #efefef;
+  border: solid 5px !important;
+  margin: 15px auto;
+  width: 100%;
+}
+.strategy-box { border-color: #1a73b5 !important; }
+.notice-box   { border-color: #7747a5 !important; }
+.strategy-box td, .notice-box td{ padding: 10px; }
+.strategy-box .title, .notice-box .title{
+  width: 100%;
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+  clear: both;
+  margin: 100px;
+}
+.strategy-box p.tableblock:first-child, .notice-box p.tableblock:first-child{
+  text-align: center;
+  padding-bottom: 15px;
+}
+.strategy-box .title { color: #1a73b5; }
+.notice-box   .title { color: #7747a5; }
+.strategy-box a, .notice-box a { color: blue; text-decoration: underline; }
+
+/* "Tables" of Evaluation */
+.operator{border-bottom: solid 1px black; text-align: center;}
+.operator * {text-align: center;}
+td {padding: 0px 10px; font-size: 14px;}
+table.expression {
+    font-family:"Courier New", Monaco, monospace;
+    border:     solid 1px black;
+    font-size:  1px;
+    max-width:  400px;
+    color:      #666666;
+    display:    inline-block;
+}
+table.args {border: none; text-align: center;}
+
+.wescheme-string,     .cm-scheme-string    {color: green;}
+.wescheme-number,     .cm-scheme-number    {color: blue;}
+.wescheme-boolean,    .cm-scheme-boolean   {color: darkred;}
+.wescheme-character,  .cm-scheme-character {color: orange;}
+.wescheme-symbol,     .cm-scheme-symbol    {color: steelblue;}
+.wescheme-comment,    .cm-scheme-comment   {color: orange; }
+
+.racket, .pyret, .studentAnswerCode, .studentAnswer, .pyretkeyword, .keyword_only {
+    font-family:"Courier New", Monaco, monospace !important; 
+    color: black;
+}
+
+/* Design Recipe */
+.recipe_instructions { font-style: italic; }
+table.recipe_title {
+  color:              white;
+  background:         gray;
+  display:            block;
+  padding:            0px;
+  font-size:          1.1rem;
+  font-weight:        bold;
+}</style>
+      <script type="text/javascript" src="../../../../../lib/MathJax-2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2Clocal%2Fmathjaxlocal.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:window.location.href,
+    filename:"Defining Values and Functions",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article pyret" onload="renderSaveToDrive()">
+<span id="header">
+<h1>Defining Values and Functions</h1>
+
+  <span id="savetodrive-div"></span>
+
+</span>
+<span id="content">
+<span class="paragraph">
+<p><span class="web-page-only">Referenced from lesson <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-pyret/lessons/alg-defining-values/pages/../../../lessons/alg-defining-values/index.shtml">Defining Values</a></p>
+</span>
+<span class="paragraph">
+<p></span></p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>We can define values in our program, giving them names that we can refer to later instead of re-typing the same thing over and over. This works the same way it does in math: <span class="gdrive-only">x = 5 + 1</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle x = 5 + 1</script><span class="end-ignore-for-gdrive"></span>--> defines the symbol <span class="gdrive-only">x</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle x</script><span class="end-ignore-for-gdrive"></span>--> to be the number <span class="gdrive-only">6</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 6</script><span class="end-ignore-for-gdrive"></span>-->.</p>
+</li>
+<li>
+<p>In our language, we can define value by writing <span class="pyret">var x = 5 &#43; 1</span>. Here are a few value definitions:</p>
+</li>
+</ul>
+</span>
+<span class="listingblock">
+<span class="content">
+<pre><tt class="pyret">x = 5 + 1
+y = x * 7
+food = "Pizza!"
+dot = circle(y, "solid", "red")</tt></pre>
+</span>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>We can also define new  <strong>functions</strong> in our language, to make it do things it didn&#8217;t do before! To do this, we use a step-by-step process called the <strong>Design Recipe</strong>.</p>
+<span class="ulist">
+<ul>
+<li>
+<p>The first step is to write the  <strong>Contract</strong> for the function you want to build. Remember, a Contract must include the Name, Domain and Range for the function!</p>
+</li>
+<li>
+<p>Then we write a <strong>Purpose Statement</strong>, which is a short note that tells us what the function <em>should do</em>. Professional programmers work hard to write good purpose statements, so that other people can understand the code they wrote!</p>
+</li>
+<li>
+<p>The second step is to write at least two  <strong>Examples</strong>. These are lines of code that show what the function should do for a <em>specific</em> input. Once we see examples of at least two inputs, we can <em>find a pattern</em> and see which parts are changing and which parts aren&#8217;t.</p>
+</li>
+<li>
+<p>Circle the parts that are changing, and label them with a short <strong>variable name</strong> that explains what they do.</p>
+</li>
+<li>
+<p>Finally, the third step is to define the function itself! This is pretty easy after you have some examples to work from: we copy everything that didn&#8217;t change, and replace the changeable stuff with the variable name!</p>
+</li>
+</ul>
+</span>
+</li>
+</ul>
+</span>
+<span class="openblock acknowledgment"><hr/>
+<span class="content">
+<span class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Algebra by Emmanuel Schanzer, Jen Poole, Ed Campos Jr, Flannery Denny, and Dorai Sitaram
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-pyret/lessons/alg-defining-values/pages/mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</span>
+</span>
+</span>
+</span>
+<span id="footer">
+<span id="footer-text">
+Last updated 2020-08-19 20:19:49 -0400
+</span>
+</span>
+</body>
+</html>

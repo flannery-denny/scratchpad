@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>The Distance Formula</title>
+<link rel="stylesheet" href="./../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="../../../../lib/bootstraplesson.js"></script>
+      <script type="text/javascript" src="../../../../lib/MathJax-2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2Clocal%2Fmathjaxlocal.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"The Distance Formula",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article LessonPlan wescheme" onload="renderSaveToDrive()">
+<!--#include virtual="/menubar.ssi"-->
+<!-- Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46088504-1', 'bootstrapworld.org');
+ga('send', 'pageview');
+
+</script>
+<div id="body" onload="renderSaveToDrive()">
+<div id="header">
+<h1>The Distance Formula</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div id="preamble_disabled">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="other-proglang"><a href="../../../algebra-pyret/lessons/alg-distance-formula/index.shtml">(Also available for Pyret)</a></span></p>
+</div>
+<div class="paragraph">
+<p>Students apply their knowledge of the Pythagorean Theorem and Circles of Evaluation to develop a function for the distance formula.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-none stretch left-header preamble">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Prerequisites</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../../lessons/alg-piecewise-functions/index.shtml">Piecewise Functions</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><script>
+function showStandardsAlignment() {
+  const selectTag = document.getElementsByClassName('standardsAlignmentSelect')[0];
+  const options = selectTag && selectTag.options;
+  const stdTables = document.getElementsByClassName('alignedStandards');
+  const intro = document.getElementsByClassName('alignedStandardsIntro')[0];
+  let introNeeded = true;
+  for (let i = 0; i < stdTables.length; i++) {
+    const stdTable = stdTables[i];
+    stdTable.style.display = 'none';
+  }
+  for (let i = 0; i < options.length; i++) {
+    const opt = options[i];
+    if (opt.selected) {
+      const optStd = opt.value;
+      for (let j = 0; j < stdTables.length; j++) {
+        const stdTable = stdTables[j];
+        if (stdTable.classList.contains(optStd)) {
+          stdTable.style.display = 'block';
+          introNeeded = false;
+        }
+      }
+    }
+  }
+  intro.style.display = introNeeded ? 'block' : 'none';
+}
+</script>
+<div class="paragraph">
+<p>Relevant Standards<select class="standardsAlignmentSelect"  multiple onchange="showStandardsAlignment()" style="height: 150px"><option value="standards-OK">OK</option><option value="standards-CC-Math">CC-Math</option></select></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph alignedStandardsIntro">
+<p><em>Select one or more standards from the menu on the left (⌘-click on Mac, Ctrl-click elsewhere).</em></p>
+</div>
+<div class="dlist alignedStandards standards-CC-Math standards-hierarchical-table">
+<div class="title">Common Core Math Standards</div>
+<dl>
+<dt class="hdlist1">8.G.B.7</dt>
+<dd>
+<p>Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.</p>
+</dd>
+<dt class="hdlist1">MP.2</dt>
+<dd>
+<p>Reason abstractly and quantitatively</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-OK standards-hierarchical-table">
+<div class="title">Oklahoma Standards</div>
+<dl>
+<dt class="hdlist1">OK.PA.GM.1.2</dt>
+<dd>
+<p>Use the Pythagorean Theorem to find the distance between any two points in a coordinate plane.</p>
+</dd>
+</dl>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Lesson Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Students will be able to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Explain how the distance formula is related to the Pythagorean theorem.</p>
+</li>
+<li>
+<p>Write a function for the distance formula.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Student-Facing Lesson Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>I can explain how the distance formula is connected to the Pythagorean theorem.</p>
+</li>
+<li>
+<p>I can write a function that takes in 2 points and returns the distance between them.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Materials</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Lesson slides template (<a href="https://docs.google.com/presentation/d/1INT8koAGQcpUelRzGpvThViGSAVMdZYT08LHgqnQAzg/edit?usp=sharing" target="_blank" rel="noopener">Google Slides</a>)</p>
+</li>
+<li>
+<p><a href="../../lessons/alg-distance-formula/pages/Distance-Multiple-Representations.pdf" target="_blank" rel="noopener">Multiple Representations (Page 55)</a> (PDF)</p>
+</li>
+<li>
+<p>Design Recipe: Distance - <a href="../../lessons/alg-distance-formula/pages/distance.html" target="_blank" rel="noopener">Original (Page 56)</a>, <a href="../../lessons/alg-distance-formula/pages/distance.html" target="_blank" rel="noopener">Solution (Page 56)</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Supplemental Resources</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Absolute Value (<a href="https://teacher.desmos.com/activitybuilder/custom/58efa58b999d890619a5663e" target="_blank" rel="noopener">Desmos</a>)</p>
+</li>
+<li>
+<p>Absolute Value Inequality Illustrator (<a href="https://www.geogebra.org/m/rq7uDucY" target="_blank" rel="noopener">Geogebra</a>)</p>
+</li>
+<li>
+<p>Absolute Value (<a href="https://quizizz.com/admin/quiz/581c92bd3fa551e37a438264/absolute-value-preview" target="_blank" rel="noopener">Quizizz</a>)</p>
+</li>
+<li>
+<p>Distance Formula (<a href="https://www.geogebra.org/m/DTeGM5U7" target="_blank" rel="noopener">Geogebra</a>)</p>
+</li>
+<li>
+<p>Distance Formula (<a href="https://quizizz.com/admin/quiz/5876366405dad51d02b1beef/distance-formula" target="_blank" rel="noopener">Quizizz</a>)</p>
+</li>
+<li>
+<p>Pythagorean Theorem (<a href="https://quizizz.com/admin/quiz/5828a9f82627ff7d77818381/pythagorean-theorem" target="_blank" rel="noopener">Quizizz</a>)</p>
+</li>
+<li>
+<p>Pythagorean Theorem (<a href="https://www.geogebra.org/m/jFFERBdd#material/ZFTGX57r" target="_blank" rel="noopener">Geogebra</a>)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Preparation</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Make sure all materials have been gathered</p>
+</li>
+<li>
+<p>Decide how students will be grouped in pairs</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Key Points for the Facilitator</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>The distance formula is an excellent review of <span class="vocab">Circles of Evaluation</span>. Have students work out the expression in small groups to foster discussion.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph old-materials">
+<p>For a textbook-like version of materials similar to these, you may wish to see the <a href="https://www.bootstrapworld.org/materials/spring2020/courses/algebra/en-us/units/unit8/index.html" target="_blank" rel="noopener">prior unit-based version</a></p>
+</div>
+<div class="dlist glossary">
+<div class="title">Glossary</div>
+<dl>
+<dt class="hdlist1">circle of evaluation</dt>
+<dd>
+<p>a diagram of the structure of an expression (arithmetic or code)</p>
+</dd>
+<dt class="hdlist1">coordinate</dt>
+<dd>
+<p>a number or set of numbers describing an object&#8217;s location</p>
+</dd>
+<dt class="hdlist1">interactions area</dt>
+<dd>
+<p>the right-most text box in the Editor, where expressions are entered to evaluate</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_warmup"><span class="section-link"><a href="#_warmup"><span class="section-link-symbol">&#128279;</span></a></span>Warmup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Students should have their workbook, pencil, and be logged into
+ <a href="https://www.wescheme.org" target="_blank" rel="noopener">WeScheme</a>
+on their computer.</p>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_distance_in_1_dimension_duration_15_minutes_"><span class="section-link"><a href="#_distance_in_1_dimension_duration_15_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Distance in 1 Dimension <span class="duration">15 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview">Overview</h3>
+<div class="paragraph">
+<p>Students discover the need for distance calculation (first in one dimension, then in two) in video games.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch">Launch</h3>
+<div class="paragraph lesson-instruction">
+<p>Open your saved Game File, which should have the Target and Danger moving on their own. Your Player should respond to keypresses, and the Target and Danger should re-appear after they leave the screen. It&#8217;s almost fully-playable!</p>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What seems to be missing from this game?</p>
+<div class="paragraph">
+<p><em>The characters aren&#8217;t doing anything when they collide.</em></p>
+</div>
+</li>
+<li>
+<p>What does it mean for characters to 'hit' one another? To collide?</p>
+<div class="paragraph">
+<p><em>They have to be close enough to touch.</em></p>
+</div>
+</li>
+<li>
+<p>How will the computer know when the characters have collided?</p>
+<div class="paragraph">
+<p><em>When the coordinates of the characters are really close to each other.</em></p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="right"><span class="image"><img src="../../lessons/alg-distance-formula/images/screenshot.jpg" alt=""></span><a href="images/screenshot.jpg" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span></p>
+</div>
+<div class="paragraph lesson-instruction">
+<p>Scroll down to the <code><tt class="racket">distances-color</tt></code> definition (look for <code><tt class="racket">; 4. Collisions</tt></code> in the file). Right now this value is defined to be the <em>empty string</em> <code><tt class="racket">""</tt></code>. Change this to a color that will show up on your background, and click "Run".</p>
+</div>
+<div class="paragraph">
+<p>This setting will draw lines from your Player to each of the other characters, and then use those lines as the hypoteneuse of right triangles!</p>
+</div>
+<div class="paragraph">
+<p>The legs of these triangles show the distance in 1 dimension each (on the x- and y-axis). How is this calculated?</p>
+</div>
+<div class="paragraph">
+<p><span class="clear"></p>
+</div>
+<div class="openblock lesson-instruction">
+<div class="content">
+<div class="paragraph">
+<p>Role-Play: Ask a volunteer to help role-play two characters colliding!</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Identify a "number line" on the floor (this can be done just by pointing, or with a visual aid).</p>
+</li>
+<li>
+<p>Make sure that you and your volunteer stand with feet as close together as possible, representing the infinitely small point that identifies your center.</p>
+</li>
+<li>
+<p>Raise your arms to form a "T shape", representing the outer edges of the characters.</p>
+</li>
+<li>
+<p>Emphasize that this represents <em>one dimension</em> (perhaps the x- or y-axis).</p>
+</li>
+<li>
+<p>With the volunteer, stand about 10 steps away from one another and side-step towards each other one step at a time, while asking the class, "True or False? We are colliding!" <em>Be sure to only accept "true" and "false" as responses - not "yes" and "no"!</em></p>
+</li>
+<li>
+<p>Ask the class how far apart you and your volunteer are, and then ask them how they would calculate this if you were standing on a number line and they could see the actual coordinates under your feet.</p>
+</li>
+<li>
+<p>After a few iterations, try switching places and repeating. <em>Point out that students always subtract the smaller number from the larger one, regardless of the character order!</em></p>
+</li>
+<li>
+<p>Do this until students can clearly see it&#8217;s when the two characters are 'touching' or 'overlapping' in some way - NOT when they are 'at the same point.'</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate">Investigate</h3>
+<div class="paragraph">
+<p>Let&#8217;s explore how the program computes the length of these lines&#8230;&#8203;</p>
+</div>
+<div class="paragraph lesson-instruction">
+<p>Have students explore using the <code><tt class="racket">line-length</tt></code> function in the <span class="vocab">Interactions area</span>.</p>
+</div>
+<table class="tableblock frame-all grid-none stripes-none stretch strategy-box">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="title">Extension</span></p>
+<p class="tableblock"><code><tt class="racket">line-length</tt></code> is essentially the way students conceptualize distance in one dimension.</p>
+<p class="tableblock">You can extend this <code><tt class="racket">line-length</tt></code> activity into a lesson on absolute value and have students program <code><tt class="racket">line-length</tt></code> themselves. Computing 1-dimensional distance - and absolute value - are in fact piecewise functions!</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist lesson-instruction">
+<ul>
+<li>
+<p>What does this function <em>do?</em></p>
+</li>
+<li>
+<p>Why does it use conditionals?</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_synthesize">Synthesize</h3>
+<div class="paragraph">
+<p>Make absolutely certain that students understand that this function <em>always returns the positive distance</em> between two points on a number line.</p>
+</div>
+<div class="paragraph">
+<p>What if we have points that are not on the same line? What if instead they differ by both the x- and y-coordinate?</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_distance_in_2_dimensions_duration_30_minutes_"><span class="section-link"><a href="#_distance_in_2_dimensions_duration_30_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Distance in 2 Dimensions <span class="duration">30 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview_2">Overview</h3>
+<div class="paragraph">
+<p>Students extend their understanding of <em>distance</em> from one dimension to two, using a geometric proof of the Pythagorean Theorem to compute the distance between two points.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch_2">Launch</h3>
+<div class="paragraph">
+<p><span class="right"><span class="image"><img src="../../lessons/alg-distance-formula/images/2d-distance.png" alt=""></span><a href="images/2d-distance.png" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span>
+Bring your volunteer (or choose a different one!) back up to the front of the class, and have them squat down on the floor to represent a difference in the y-coordinate between the player and a character. Repeat the role-play activity.</p>
+</div>
+<div class="paragraph lesson-instruction">
+<p>Suppose the Player is at (0, 4), and another game character is at (3, 0). Now there is a difference in both dimensions. How could we calculate distance <em>now?</em></p>
+</div>
+<div class="paragraph">
+<p>Computing the distance in 1-dimension is great, as long as the Player and Danger have the same x- or y-coordinate. In that case, the difference between the coordinates is exactly the distance between the two characters. But how do we compute the distance between two points when both the x- <em>and</em> y-coordinates are different?</p>
+</div>
+<div class="paragraph">
+<p>Have students watch <a href="https://www.youtube.com/watch?v=Ln7myXQx8TM" target="_blank" rel="noopener">video of this problem</a> [Credit: Tova Brown], and try explaining the proof to one another. In our case, the lengths A and B are computed by the <code><tt class="racket">line-length</tt></code> function we already have!</p>
+</div>
+<table class="tableblock frame-all grid-none stripes-none stretch strategy-box">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="title">Why line-length?</span>
+Students learn early on that distance in 1-dimension is computed via <span class="gdrive-only">\lvert x_2 - x_1 \rvert</span><script type="math/tex">\displaystyle \lvert x_2 - x_1 \rvert</script>, and that distance is always a positive value. The Pythagorean Theorem teaches students that the length of the hypoteneuse is computed based on the distance in the x- and y-dimension. However, most math textbooks show the distance formula without connecting back to that formula:</p>
+<p class="tableblock"><span class="gdrive-only">&radic;( ( (x_2 - x_1) )^2 + ( (y_2 - y_1) )^2 )</span><script type="math/tex">\displaystyle \sqrt{{(x_2 - x_1)}^2 + {(y_2 - y_1)}^2}</script></p>
+<p class="tableblock">A student who asks whether it&#8217;s a problem when <span class="gdrive-only">x_2 - x_1</span><script type="math/tex">\displaystyle x_2 - x_1</script> is negative is displaying a deep understanding of what&#8217;s going on. Unfortunately, the response to this student relies on a computational artifact of squaring to force a number to be positive (rather than the purpose of squaring in the Pythagorean Theorem). Using the <code><tt class="racket">line-length</tt></code> function explicitly connects the distance formula back to the 1-dimensional distance students know, allowing them to apply prior knowledge and better connecting back to the Pythagorean Theorem itself. This effectively rewrites the distance formula as:</p>
+<p class="tableblock"><span class="gdrive-only">&radic;( ( \lvert x_2 - x_1 \rvert )^2 + ( \lvert y_2 - y_1 \rvert )^2 )</span><script type="math/tex">\displaystyle \sqrt{{\lvert x_2 - x_1 \rvert}^2 + {\lvert y_2 - y_1 \rvert}^2}</script></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate_2">Investigate</h3>
+<div class="paragraph lesson-instruction">
+<p>Turn to <a href="../../lessons/alg-distance-formula/pages/distance-scaffold.html" target="_blank" rel="noopener">The Distance Between (0&#x2c; 2) and (4&#x2c; 5) (Page 54)</a> in your student workbook. Convert this expression to a Circle of Evaluation, and then to code.</p>
+</div>
+<div class="paragraph">
+<p>Optional: Have students use this <a href="../../lessons/alg-distance-formula/pages/Distance-Multiple-Representations.pdf" target="_blank" rel="noopener">Graphic Organizer (Page 55)</a> to model the distance formula for these coordinates with the Circles of Evaluation.<br>
+empty</span><br></p>
+</div>
+<div class="paragraph lesson-instruction">
+<p>Using <a href="../../lessons/alg-distance-formula/pages/distance.html" target="<em>blank">Word Problem: distance (Page 56)</a>, write a function that takes in two <span class="vocab">coordinate</span> pairs (four numbers) of two characters (x1, y1) and (x2, y2) and returns the distance between those two points. _HINT:</em> the code you wrote in <a href="../../lessons/alg-distance-formula/pages/distance-scaffold.html" target="_blank" rel="noopener">The Distance Between (0&#x2c; 2) and (4&#x2c; 5) (Page 54)</a> can be used to give you your first example!<br>
+<br></p>
+</div>
+<div class="paragraph">
+<p>Students can test their <code><tt class="racket">distance</tt></code> function using <strong>Pythagorean triples</strong>, such as (3, 4, 5) or (5, 12, 13), to make sure the function is calculating the distance correctly.</p>
+</div>
+<div class="paragraph">
+<p>Finally, students fix the broken <code><tt class="racket">distance</tt></code> function in their game files. When they click "Run", the right triangles will appear with proper distances for the hypotenuse.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_common_misconceptions">Common Misconceptions</h3>
+<div class="paragraph">
+<p>It is <em>extremely common</em> for students to put variables in the <strong>wrong order</strong>. In other words, their program looks like
+ <code><tt class="racket">&#8230;&#8203;(sqrt (+ (sqr (line-length x1 y1)) (sqr (line-length x2 y2))))&#8230;&#8203;</tt></code>
+instead of <code><tt class="racket">&#8230;&#8203;(sqrt (+ (sqr (line-length x2 x1)) (sqr (line-length y2 y1))))&#8230;&#8203;</tt></code></p>
+</div>
+<div class="paragraph">
+<p>In this situation, remind student to look back at what they circled and labeled in the examples step. <em>This is why we label!</em></p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_synthesize_2">Synthesize</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_additional_exercises"><span class="section-link"><a href="#_additional_exercises"><span class="section-link-symbol">&#128279;</span></a></span>Additional Exercises:</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://teacher.desmos.com/activitybuilder/custom/5cdcb07bb4b8576069fdcef1" target="_blank" rel="noopener">Bootstrap: Algebra - More Design Recipe Practice</a> (Desmos Activity)</p>
+</li>
+</ul>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Algebra by Emmanuel Schanzer, Jen Poole, Ed Campos Jr, Flannery Denny, and Dorai Sitaram
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:13:45 -0400
+</div>
+</div>
+</div>
+</body>
+</html>

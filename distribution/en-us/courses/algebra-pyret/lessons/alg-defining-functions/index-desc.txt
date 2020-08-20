@@ -1,0 +1,1 @@
+Students discover functions as an abstraction over a programming pattern, and are introduced to a structured approach to building them called the Design Recipe.

@@ -1,0 +1,1 @@
+Students apply their knowledge of piecewise functions to write a function to move the player in their game.

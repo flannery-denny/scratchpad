@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Displaying Data</title>
+<link rel="stylesheet" href="./../../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="../../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="../../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="../../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/bootstraplesson.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Displaying Data",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article pyret" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Displaying Data</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div class="paragraph">
+<p><span class="web-page-only">Referenced from lesson <a href="../../../lessons/ds-grouped-samples/index.shtml">Grouped Samples</a></p>
+</div>
+<div class="paragraph">
+<p></span>
+<span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>Fill in the tables below, then use Pyret to make the following displays. Record the code you used.</p>
+</div>
+<div class="paragraph">
+<p>The first table has been filled in for you.</p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>1) A <code><tt class="pyret">bar-chart</tt></code> showing how many puppies are fixed or not.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">What Rows?</th>
+<th class="tableblock halign-center valign-top">Which Column(s)?</th>
+<th class="tableblock halign-center valign-top">What Display?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>puppies</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>fixed</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>bar-chart</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>code:</strong> <span class="fitb" style="width: 102ex"><code><tt class="pyret">bar-chart(animals-table.filter(is-dog).filter(is-young), "fixed")</tt></code></span></p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>2) A <code><tt class="pyret">pie-chart</tt></code> showing how many heavy dogs are fixed or not.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">What Rows?</th>
+<th class="tableblock halign-center valign-top">Which Column(s)?</th>
+<th class="tableblock halign-center valign-top">What Display?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>heavy dogs</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>fixed</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>pie-chart</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>code:</strong> <span class="fitb" style="width: 102ex"><code><tt class="pyret">pie-chart(animals-table.filter(is-dog).filter(is-heavy), "fixed")</tt></code></span></p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>3) A <code><tt class="pyret">histogram</tt></code> of the number of <code><tt class="pyret">weeks</tt></code> it takes for a random sample of animals to be adopted.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">What Rows?</th>
+<th class="tableblock halign-center valign-top">Which Column(s)?</th>
+<th class="tableblock halign-center valign-top">What Display?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>random sample</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>weeks</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>histogram</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>code:</strong> <span class="fitb" style="width: 102ex"><code><tt class="pyret">histogram(random-rows(animals-table, 50), "weeks")</tt></code></span></p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>4) A <code><tt class="pyret">box-plot</tt></code> of the number of <code><tt class="pyret">pounds</tt></code> that kittens weigh.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">What Rows?</th>
+<th class="tableblock halign-center valign-top">Which Column(s)?</th>
+<th class="tableblock halign-center valign-top">What Display?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>kittens</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>pounds</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>box-plot</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>code:</strong> <span class="fitb" style="width: 102ex"><code><tt class="pyret">box-plot(animals-table.filter(is-cat).filter(is-young), "pounds")</tt></code></span></p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>5) A <code><tt class="pyret">scatter-plot</tt></code> of a random sample using <code><tt class="pyret">species</tt></code> as the labels, <code><tt class="pyret">age</tt></code> as the x-axis, and <code><tt class="pyret">weeks</tt></code> as the y-axis.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">What Rows?</th>
+<th class="tableblock halign-center valign-top">Which Column(s)?</th>
+<th class="tableblock halign-center valign-top">What Display?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>random sample</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>species</em>, <em>weeks</em>, and <em>age</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>scatter-plot</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>code:</strong> <span class="fitb" style="width: 102ex"><code><tt class="pyret">scatter-plot(random-rows(animals-table, 45), "name", "age", "weeks")</tt></code></span></p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>6) A <code><tt class="pyret">scatter-plot</tt></code> of fixed cats, using <code><tt class="pyret">name</tt></code> as the labels, <code><tt class="pyret">pounds</tt></code> as the x-axis, and <code><tt class="pyret">weeks</tt></code> as the y-axis.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">What Rows?</th>
+<th class="tableblock halign-center valign-top">Which Column(s)?</th>
+<th class="tableblock halign-center valign-top">What Display?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>fixed cats</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>name</em>, <em>pounds</em>, and <em>weeks</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>scatter-plot</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>code:</strong> <span class="fitb" style="width: 102ex"><code><tt class="pyret">scatter-plot(animals-table.filter(is-cat).filter(is-fixed), "species", "pounds", "weeks")</tt></code></span></p>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:31:08 -0400
+</div>
+</div>
+</body>
+</html>

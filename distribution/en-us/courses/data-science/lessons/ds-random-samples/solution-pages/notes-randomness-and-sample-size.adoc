@@ -1,0 +1,11 @@
+= Randomness and Sample Size
+
+Computer Scientists may take *samples* that are subsets of a data set. If their sample is well chosen, they can use it to test if their code does what it's supposed to do. However, choosing a good sample can be tricky!
+
+@vspace{2ex}
+
+*Random Samples* are a subset of a population in which each member of the subset has an equal chance of being chosen. A random sample is intended to be a representative subset of the population. The larger the random sample, the more closely it will represent the population and the better our inferences about the population will tend to be.
+
+@vspace{2ex}
+
+*Grouped Samples* are a subset of a population in which each member of the subset was chosen for a specific reason. For example, we might want to look at the difference in trends between two groups ("Is the age of a dog a bigger factor in adoption time v. the age of a cat?"). This would require making grouped samples of __just the dogs__ and __just the cats.__

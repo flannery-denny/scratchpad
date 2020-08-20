@@ -1,0 +1,1 @@
+Students learn to model arithmetic expressions with a visual tool for order of operations, known as "Circles of Evaluation".

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Applying Functions</title>
+<link rel="stylesheet" href="./../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="../../../../lib/bootstraplesson.js"></script>
+      <script type="text/javascript" src="../../../../lib/MathJax-2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2Clocal%2Fmathjaxlocal.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Applying Functions",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article LessonPlan pyret" onload="renderSaveToDrive()">
+<!--#include virtual="/menubar.ssi"-->
+<!-- Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46088504-1', 'bootstrapworld.org');
+ga('send', 'pageview');
+
+</script>
+<div id="body" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Applying Functions</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div id="preamble_disabled">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Students learn how to apply Functions, and how to interpret the information contained in a Contract: Name, Domain and Range. They then use this knowledge to explore more of the Pyret language.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-none stretch left-header preamble">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Prerequisites</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../../lessons/ds-pyret-intro/index.shtml">Starting to Program</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><script>
+function showStandardsAlignment() {
+  const selectTag = document.getElementsByClassName('standardsAlignmentSelect')[0];
+  const options = selectTag && selectTag.options;
+  const stdTables = document.getElementsByClassName('alignedStandards');
+  const intro = document.getElementsByClassName('alignedStandardsIntro')[0];
+  let introNeeded = true;
+  for (let i = 0; i < stdTables.length; i++) {
+    const stdTable = stdTables[i];
+    stdTable.style.display = 'none';
+  }
+  for (let i = 0; i < options.length; i++) {
+    const opt = options[i];
+    if (opt.selected) {
+      const optStd = opt.value;
+      for (let j = 0; j < stdTables.length; j++) {
+        const stdTable = stdTables[j];
+        if (stdTable.classList.contains(optStd)) {
+          stdTable.style.display = 'block';
+          introNeeded = false;
+        }
+      }
+    }
+  }
+  intro.style.display = introNeeded ? 'block' : 'none';
+}
+</script>
+<div class="paragraph">
+<p>Relevant Standards<select class="standardsAlignmentSelect"  multiple onchange="showStandardsAlignment()" style="height: 150px"><option value="standards-OK">OK</option><option value="standards-CC-Math">CC-Math</option></select></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph alignedStandardsIntro">
+<p><em>Select one or more standards from the menu on the left (⌘-click on Mac, Ctrl-click elsewhere).</em></p>
+</div>
+<div class="dlist alignedStandards standards-CC-Math standards-hierarchical-table">
+<div class="title">Common Core Math Standards</div>
+<dl>
+<dt class="hdlist1">HSF.IF.A.2</dt>
+<dd>
+<p>Use function notation, evaluate functions for inputs in their domains, and interpret statements that use function notation in terms of a context.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-OK standards-hierarchical-table">
+<div class="title">Oklahoma Standards</div>
+<dl>
+<dt class="hdlist1">OK.A1.F.1.2</dt>
+<dd>
+<p>Identify the dependent and independent variables as well as the domain and range given a function, equation, or graph. Identify restrictions on the domain and range in real-world contexts.</p>
+</dd>
+</dl>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Lesson Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Students will be able to&#8230;&#8203;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Apply functions to create Images</p>
+</li>
+<li>
+<p>Identify the parts of a Contract, and use it to apply a function</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Student-facing Lesson Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Let&#8217;s use different types of input to create images with functions.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Materials</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Lesson Slides (<a href="https://docs.google.com/presentation/d/1Guoozn2nrzlCF2na8G9VTGXECMo4x2oNQPZptryf0ds/" target="_blank" rel="noopener">Google Slides</a>)</p>
+</li>
+<li>
+<p>Computer for each student (or pair), with access to the
+internet</p>
+</li>
+<li>
+<p><a href="../..//workbook/workbook.pdf">Student workbook</a>, and something to write with</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Preparation</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Make sure all materials have been gathered</p>
+</li>
+<li>
+<p>Decide how students will be grouped in pairs</p>
+</li>
+<li>
+<p>Make sure student computers can access <a href="https://code.pyret.org" target="_blank" rel="noopener">the Pyret IDE (CPO)</a></p>
+</li>
+<li>
+<p>All students should log into <a href="https://code.pyret.org" target="_blank" rel="noopener">CPO</a> and open the "Animals Starter File" they saved from the prior lesson. If they don&#8217;t have the file, they can <a href="https://code.pyret.org/editor#share=1ZupMVPWvVUOM0HCWyA7cRBghSLKxPWv1" target="_blank" rel="noopener">open a new one</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Supplemental Resources</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Language Table</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>No language features in this lesson</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist glossary">
+<div class="title">Glossary</div>
+<dl>
+<dt class="hdlist1">arguments</dt>
+<dd>
+<p>the inputs to a function; expressions for arguments follow the name of a function</p>
+</dd>
+<dt class="hdlist1">contract</dt>
+<dd>
+<p>a statement of the name, domain, and range of a function</p>
+</dd>
+<dt class="hdlist1">domain</dt>
+<dd>
+<p>the type or set of inputs that a function expects</p>
+</dd>
+<dt class="hdlist1">function</dt>
+<dd>
+<p>a mathematical object that consumes inputs and produces an output</p>
+</dd>
+<dt class="hdlist1">range</dt>
+<dd>
+<p>the type or set of outputs that a function produces</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_applying_functions_duration_15_minutes_"><span class="section-link"><a href="#_applying_functions_duration_15_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Applying Functions <span class="duration">15 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview">Overview</h3>
+<div class="paragraph">
+<p>Students learn how to apply functions in Pyret, reinforcing concepts from standard Algebra.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch">Launch</h3>
+<div class="paragraph">
+<p>Students know about Numbers, Strings, Booleans and Operators&#8201;&#8212;&#8201;all of which behave just like they do in math. But what about <span class="vocab">functions</span>? They may remember functions from algebra: <span class="gdrive-only">fx = x²</span><script type="math/tex">\displaystyle f(x) = x²</script>.</p>
+</div>
+<div class="ulist lesson-instruction">
+<ul>
+<li>
+<p>What is the name of this function?</p>
+</li>
+<li>
+<p>The expression <span class="gdrive-only">f2</span><script type="math/tex">\displaystyle f(2)</script> applies the function <span class="gdrive-only">f</span><script type="math/tex">\displaystyle f</script> to the number 2. What will it evaluate to?</p>
+</li>
+<li>
+<p>What will the expression <span class="gdrive-only">f3</span><script type="math/tex">\displaystyle f(3)</script> evaluate to?</p>
+</li>
+<li>
+<p>The values to which we apply a function are called its <span class="vocab">arguments</span>. How many arguments does <span class="gdrive-only">f</span><script type="math/tex">\displaystyle f</script> expect?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="vocab">Arguments</span> (or "inputs") are the values passed into a function. This is different from <em>variables</em>, which are the placeholders that get <em>replaced</em> with input values! Pyret has lots of built-in functions, which we can use to write more interesting programs.</p>
+</div>
+<div class="openblock lesson-instruction">
+<div class="content">
+<div class="paragraph">
+<p>Have students log into <a href="https://code.pyret.org" target="_blank" rel="noopener">CPO</a> and open the "Animals Starter File". If they don&#8217;t have the file, they can <a href="https://code.pyret.org/editor#share=1ZupMVPWvVUOM0HCWyA7cRBghSLKxPWv1" target="_blank" rel="noopener">open a new one</a>. Have students type this line of code into the interactions area and hit Enter: <tt class="pyret">num-sqrt(16)</tt>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What is the name of this function?</p>
+</li>
+<li>
+<p>What do we think the expression <tt class="pyret">num-sqrt(16)</tt> will evaluate to?</p>
+</li>
+<li>
+<p>What did the expression <tt class="pyret">num-sqrt(16)</tt> evaluate to?</p>
+</li>
+<li>
+<p>Does the <tt class="pyret">num-sqrt</tt> function produce Numbers? Strings? Booleans?</p>
+</li>
+<li>
+<p>How many <span class="vocab">arguments</span> does <tt class="pyret">num-sqrt</tt> expect?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Have students type this line of code into the interactions area and hit Enter: <tt class="pyret">num-min(140, 84)</tt>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What is the name of this function?</p>
+</li>
+<li>
+<p>What does the expression <tt class="pyret">num-min(16, 99)</tt> evaluate to?</p>
+</li>
+<li>
+<p>Does the <tt class="pyret">num-min</tt> function produce Numbers? Strings? Booleans?</p>
+</li>
+<li>
+<p>How many <span class="vocab">arguments</span> does <tt class="pyret">num-min</tt> expect?</p>
+</li>
+<li>
+<p>What happens if we forget to include a comma between our numbers?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Just like in math, functions can also be <em>composed</em> with one another. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><tt class="pyret"># take the minimum of 84 and 99, then take the square root of the result
+num-sqrt(num-min(84, 99))</tt></tt></pre>
+</div>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigation">Investigation</h3>
+<div class="paragraph lesson-instruction">
+<p>Have students complete <a href="../../lessons/ds-applying-functions/pages/applying-functions.html" target="_blank" rel="noopener">Applying Functions (Page 9)</a>.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_synthesize">Synthesize</h3>
+<div class="paragraph">
+<p>Debrief the activity with the class. What kind of value was produced by that expression? (An Image! New datatype!) Which error messages were helpful? Which ones weren&#8217;t?</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_contracts_duration_35_minutes_"><span class="section-link"><a href="#_contracts_duration_35_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Contracts <span class="duration">35 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview_2">Overview</h3>
+<div class="paragraph">
+<p>Students learn about <strong>Contracts</strong>, and how they can be used to figure out new functions or diagnose errors in their code. Then they use this knowledge to explore the contracts pages in their workbooks.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch_2">Launch</h3>
+<div class="paragraph">
+<p>When students typed <tt class="pyret">triangle(50, "solid", "red")</tt>, they created an example of a new Datatype, called an <em>Image</em>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What are the types of the arguments <tt class="pyret">triangle</tt> was expecting?</p>
+</li>
+<li>
+<p>How does this output relate to the inputs?</p>
+</li>
+<li>
+<p>Try making different triangles. Change the size and color! Try using <tt class="pyret">"outline"</tt> for the second argument.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <tt class="pyret">triangle</tt> function consumes a Number and two Strings as input, and produces an Image. As you can imagine, there are many other functions for making images, each with a different set of arguments. For each of these functions, we need to keep track of
+three things:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Name</strong>&#8201;&#8212;&#8201;the name of the function, which we type in whenever we want to use it</p>
+</li>
+<li>
+<p><strong>Domain</strong>&#8201;&#8212;&#8201;the type of data we give to the function (names and
+Types!), written between parentheses and separated by commas</p>
+</li>
+<li>
+<p><strong>Range</strong>&#8201;&#8212;&#8201;the type of data the function produces</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Domain and Range are <em>Types</em>, not specific values. As a convention, we <strong>capitalize Types and keep names in lowercase</strong>. <tt class="pyret">triangle</tt> works on many different Numbers, not just the <tt class="pyret">20</tt> we used in the example above!</p>
+</div>
+<div class="paragraph">
+<p>These three parts make up a <span class="vocab">contract</span> for each function. Let’s take a look at the Name, Domain, and Range of the functions we&#8217;ve seen before:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><tt class="pyret"># num-sqrt :: (n :: Number) -&gt; Number
+# num-min :: (a :: Number, b :: Number) -&gt; Boolean
+# triangle :: (side :: Number, mode :: String, color :: String) -&gt; Image</tt></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first part of a contract is the function’s name. In this example, our functions are named <tt class="pyret">num-sqrt</tt>, and <tt class="pyret">triangle</tt>.</p>
+</div>
+<div class="paragraph">
+<p>The second part is the <span class="vocab">Domain</span>, or the names and types of arguments the function expects. <tt class="pyret">triangle</tt> has a Number and two Strings as variables, representing the length of each side, the mode, and the color. We write name-type pairs with double-colons, with commas between each one. Finally, after the arrow goes the type of the <span class="vocab">Range</span>, or the function’s output, which in this case is Image.</p>
+</div>
+<div class="paragraph">
+<p>Contracts tell us a lot about how to use a function. In fact, we can figure out how to use functions we&#8217;ve never seen before, just by looking at the contract! Most of the time, error messages occur when we&#8217;ve accidentally broken a contract.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate">Investigate</h3>
+<div class="openblock lesson-instruction">
+<div class="content">
+<div class="paragraph">
+<p>Turn to the back of your workbook, and get some practice reading and using Contracts! Make sure you try out the following functions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><tt class="pyret">text</tt></p>
+</li>
+<li>
+<p><tt class="pyret">circle</tt></p>
+</li>
+<li>
+<p><tt class="pyret">ellipse</tt></p>
+</li>
+<li>
+<p><tt class="pyret">star</tt></p>
+</li>
+<li>
+<p><tt class="pyret">string-repeat</tt></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When you&#8217;ve figured out the code for each of these, <strong>write it down in the empty line beneath each contract</strong>. These pages will become your reference for the remainder of the class!</p>
+</div>
+<div class="paragraph">
+<p>Here’s an <em>example</em> of another function. Type it into the Interactions Area to see what it does. Can you figure out the contract, based on the example?
+<tt class="pyret">string-contains("apples, pears, milk", "pears")</tt></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_possible_misconceptions">Possible Misconceptions</h3>
+<div class="paragraph">
+<p>Students are <em>very</em> likely to randomly experiment, rather than actually using the Contracts page. You should plan to ask lots of direct questions to make sure students are making this connection, such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>How many items are in this function&#8217;s Domain?</p>
+</li>
+<li>
+<p>What is the <em>name</em> of the 1st item in this function&#8217;s Domain?</p>
+</li>
+<li>
+<p>What is the <em>type</em> of the 1st item in this function&#8217;s Domain?</p>
+</li>
+<li>
+<p>What is the <em>type</em> of the Range?</p>
+</li>
+</ul>
+</div>
+<div class="sect3 lesson-section-3">
+<h4 id="_synthesize_2">Synthesize</h4>
+<div class="paragraph">
+<p>You’ve learned about Numbers, Strings, Booleans, and Images. You’ve learned about operators and functions, and how they can be used to make shapes, strings, and more!</p>
+</div>
+<div class="paragraph">
+<p>One of the other skills you’ll learn in this class is how to diagnose and fix errors. Some of these errors will be <em>syntax errors</em>: a missing comma, an unclosed string, etc. All the other errors are <em>contract errors</em>. If you see an error and you know the syntax is right, ask yourself these two questions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What is the function that is generating that error?</p>
+</li>
+<li>
+<p>What is the contract for that function?</p>
+</li>
+<li>
+<p>Is the function getting what it needs, according to its Domain?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>By learning to use values, operations and functions, you are now familiar with the fundamental concepts needed to write simple programs. You will have many opportunities to use these concepts in this course, by writing programs to answer data science questions.</p>
+</div>
+<div class="paragraph">
+<p>Make sure to save your work, so you can go back to it later!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_additional_exercises"><span class="section-link"><a href="#_additional_exercises"><span class="section-link-symbol">&#128279;</span></a></span>Additional Exercises:</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../lessons/ds-applying-functions/pages/fun-with-images.html" target="_blank" rel="noopener">Fun with Images</a></p>
+</li>
+<li>
+<p><a href="../../lessons/ds-applying-functions/pages/practicing-contracts-2.html" target="_blank" rel="noopener">Reading Contracts</a></p>
+</li>
+<li>
+<p><a href="../../lessons/ds-applying-functions/pages/matching-expressions-2.html" target="_blank" rel="noopener">Matching Expressions and Contracts</a></p>
+</li>
+</ul>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:34:23 -0400
+</div>
+</div>
+</div>
+</body>
+</html>

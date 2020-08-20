@@ -1,0 +1,7 @@
+"circle of evaluation"
+"contract"
+"datatypes"
+"definitions area"
+"function"
+"Image"
+"interactions area"

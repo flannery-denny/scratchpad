@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Booleans</title>
+<link rel="stylesheet" href="./../../../../../lib/curriculum.css">
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Booleans",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article pyret" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Booleans</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div class="paragraph">
+<p><span class="web-page-only">Referenced from lesson <a href="../../../lessons/ds-pyret-intro/index.shtml">Starting to Program</a></p>
+</div>
+<div class="paragraph">
+<p></span>
+Boolean expressions are yes-or-no questions, and will always evaluate to either <tt class="pyret">true</tt> (“yes”) or <tt class="pyret">false</tt> (“no”). What will each of the expressions below evaluate to? Write down the result in the blanks provided, and type them into Pyret if you’re not sure.</p>
+</div>
+<style>
+/** fitb CSS experiment **/
+td:nth-of-type(even) p { display: table; width: 100%; }
+td:nth-of-type(even) .fitb { display: table-cell; width: 90%; }
+</style>
+<table class="tableblock frame-none grid-all stripes-none stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5715%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1) <tt class="pyret">3 &lt;= 4</tt></p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: "><tt class="pyret">true</tt></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7) <tt class="pyret">"a" &gt; "b"</tt></p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: "><tt class="pyret">false</tt></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2) <tt class="pyret">3 == 2</tt></p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: "><tt class="pyret">false</tt></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8) <tt class="pyret">"a" &lt; "b"</tt></p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: "><tt class="pyret">true</tt></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3) <tt class="pyret">2 &lt; 4</tt></p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: "><tt class="pyret">true</tt></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9) <tt class="pyret">"a" == "b"</tt></p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: "><tt class="pyret">false</tt></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4) <tt class="pyret">3 &lt;&gt; 3</tt></p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: "><tt class="pyret">false</tt></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10) <tt class="pyret">"a" &lt;&gt; "b"</tt></p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: "><tt class="pyret">true</tt></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5) <tt class="pyret">5 &gt;= 5</tt></p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: "><tt class="pyret">true</tt></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11) <tt class="pyret">"a" &lt;&gt; "a"</tt></p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: "><tt class="pyret">false</tt></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6) <tt class="pyret">4 &gt;= 6</tt></p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: "><tt class="pyret">false</tt></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12) <tt class="pyret">"a" == "a"</tt></p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: "><tt class="pyret">true</tt></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="vspace" style="height: 5ex"></span><span class="gdrive-only"><p>&#xa0;</p></span></p>
+</div>
+<table class="tableblock frame-none grid-none stripes-none stretch">
+<colgroup>
+<col style="width: 53.8461%;">
+<col style="width: 46.1539%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock">13) In your own words, desribe what &gt; does.</p>
+<p class="tableblock"><span class="vspace" style="height: 2ex"></span></p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: "><em>It takes in two <tt class="pyret">Numbers</tt> and returns <tt class="pyret">true</tt> if the first is larger than the second <strong>OR</strong> It takes in two <tt class="pyret">Strings</tt> and returns <tt class="pyret">true</tt> if the first comes after the second in alphabetical order.</em></span></p>
+<p class="tableblock"><span class="vspace" style="height: 2ex"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock">14) In your own words, describe what <strong>&lt;=</strong> does.</p>
+<p class="tableblock"><span class="vspace" style="height: 2ex"></span></p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: "><em>It takes in two <tt class="pyret">Numbers</tt> and returns true if the first is less than or equal to the second <strong>OR</strong> It takes in two <tt class="pyret">Strings</tt> and returns <tt class="pyret">true</tt> if the first precedes the second in alphabetical order.</em></span></p>
+<p class="tableblock"><span class="vspace" style="height: 2ex"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock">15) In your own words, desribe what <strong>&lt;&gt;</strong> does.</p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: "><em>It takes in two numbers or string and returns <tt class="pyret">true</tt> if they are not equal.</em></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock">16) How many <strong>Numbers</strong> are there in the entire universe?</p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: ">infinite</span></p>
+<p class="tableblock"><span class="vspace" style="height: 2ex"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock">17) How many <strong>Strings</strong> are there in the entire universe?</p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: ">infinite</span> <span class="vspace" style="height: 2ex"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock">18) How many <strong>Images</strong> are there in the entire universe?</p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: ">infinite</span> <span class="vspace" style="height: 2ex"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock">19) How many <strong>Booleans</strong> are there in the entire universe?</p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock"><span class="fitb" style="width: ">two: true and false</span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:28:41 -0400
+</div>
+</div>
+</body>
+</html>

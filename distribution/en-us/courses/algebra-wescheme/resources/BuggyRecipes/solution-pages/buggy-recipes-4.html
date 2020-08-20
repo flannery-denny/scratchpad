@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>What&#8217;s Wrong with these Recipes? 4</title>
+<link rel="stylesheet" href="./../../../../../lib/curriculum.css">
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"What's Wrong with these Recipes? 4",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article wescheme" onload="renderSaveToDrive()">
+<div id="header">
+<h1>What&#8217;s Wrong with these Recipes? 4</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div class="paragraph recipe_word_problem">
+<p><strong>Directions</strong>: You are putting together a list of flowers in your garden based on their color. You have red roses, purple tulips, and yellow daisies. Write a function that takes in the color of a flower and returns the name of the flower.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contract and Purpose Statement</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Every contract has three parts&#8230;&#8203;</p>
+</div>
+<div class="paragraph recipe recipe_contract">
+<p>&#x3b; <span class="studentAnswer studentAnswerCode solution recipe_name">flower-name</span>:<span class="studentAnswer studentAnswerCode solution recipe_domain"> String</span>-&gt;<span class="studentAnswer studentAnswerCode solution recipe_range">String</span></p>
+</div>
+<div class="paragraph recipe recipe_purpose_statement">
+<p><span class="purpose_comment">;</span> <span class="studentAnswer solution recipe_purpose">Takes the name of the flower and returns its color</span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Examples</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write some examples, then circle and label what changes&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="bigparen">(</span>EXAMPLE <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_name">flower-name</span> <span class="studentAnswer studentAnswerCode solution recipe_example_inputs"> "red"</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="studentAnswer studentAnswerCode solution recipe_example_body">"rose"</span></span><span class="bigparen">)</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="bigparen">(</span>EXAMPLE <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_name">flower-name</span> <span class="studentAnswer studentAnswerCode solution recipe_example_inputs"> "tulip"</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="studentAnswer studentAnswerCode solution recipe_example_body">"purple"</span></span><span class="bigparen">)</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="bigparen">(</span>EXAMPLE <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_name">flower-name</span> <span class="studentAnswer studentAnswerCode solution recipe_example_inputs"> "yellow"</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="studentAnswer studentAnswerCode solution recipe_example_body">"daisy"</span></span><span class="bigparen">)</span></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definition</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write the definition, giving variable names to all your input values&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="bigparen">(</span>define <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_name">flower-name</span> <span class="studentAnswer studentAnswerCode solution recipe_variables"> color</span><span class="bigparen">)</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_cond">cond</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line recipe_cond_clause">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;&#x5f;&#x5f;&#x5f;</span><span class="bigparen">[</span><span class="studentAnswer studentAnswerCode solution questions">(string=? color "red")</span> <span class="studentAnswer studentAnswerCode solution answers"> "rose"</span><span class="bigparen">]</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line recipe_cond_clause">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;&#x5f;&#x5f;&#x5f;</span><span class="bigparen">[</span><span class="studentAnswer studentAnswerCode solution questions">(string=? color "purple")</span> <span class="studentAnswer studentAnswerCode solution answers"> "tulip"</span><span class="bigparen">]</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line recipe_cond_clause">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;&#x5f;&#x5f;&#x5f;</span><span class="bigparen">[</span><span class="studentAnswer studentAnswerCode solution questions">(string=? color "yellow")</span> <span class="studentAnswer studentAnswerCode solution answers"> "daisy"</span><span class="bigparen">]</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line recipe_cond_clause">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;&#x5f;&#x5f;&#x5f;</span><span class="bigparen">[</span><span class="studentAnswer studentAnswerCode solution questions">else</span>
+<span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;&#x5f;&#x5f;&#x5f;&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution answers"> "That flower isn&#8217;t in the garden!"</span><span class="bigparen">]</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="bigparen studentAnswer recipe_definition_body">))</span></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="sectionbreak"></span></p>
+</div>
+<div class="paragraph recipe_word_problem">
+<p><strong>Directions</strong>: You will be late to class if you have to walk more than 25 pixels to get there. Write a function that takes in your x-coordinate and y-coordinate and the x-coordinate and y-coordinate of the classroom and returns true if you will be late to class and false if you will be on time.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contract and Purpose Statement</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Every contract has three parts&#8230;&#8203;</p>
+</div>
+<div class="paragraph recipe recipe_contract">
+<p>&#x3b; <span class="studentAnswer studentAnswerCode solution recipe_name">late-to-class?</span>:<span class="studentAnswer studentAnswerCode solution recipe_domain"> Number Number Number Number</span>-&gt;<span class="studentAnswer studentAnswerCode solution recipe_range">Boolean</span></p>
+</div>
+<div class="paragraph recipe recipe_purpose_statement">
+<p><span class="purpose_comment">;</span> <span class="studentAnswer solution recipe_purpose">Takes the coorindates of my location and a classroom and returns true if the distance is more than 25 and false if it is less than 25.</span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Examples</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write some examples, then circle and label what changes&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="bigparen">(</span>EXAMPLE <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_name">late-to-class?</span> <span class="studentAnswer studentAnswerCode solution recipe_example_inputs"> 40 55</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="studentAnswer studentAnswerCode solution recipe_example_body">(&gt; 25 (distance 40 55))</span></span><span class="bigparen">)</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="bigparen">(</span>EXAMPLE <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_name">late-to-class?</span> <span class="studentAnswer studentAnswerCode solution recipe_example_inputs"> 40 55</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="studentAnswer studentAnswerCode solution recipe_example_body">(&lt; 25 (distance 40 55))</span></span><span class="bigparen">)</span></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definition</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write the definition, giving variable names to all your input values&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="bigparen">(</span>define <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_name">late-to-class?</span> <span class="studentAnswer studentAnswerCode solution recipe_variables"> student-x student-y school-x school-y</span><span class="bigparen">)</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_definition_body">&lt; 25 (distance student-x student-y)</span><span class="bigparen">)</span></p>
+</div>
+</div>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Algebra by Emmanuel Schanzer, Jen Poole, Ed Campos Jr, Flannery Denny, and Dorai Sitaram
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:13:25 -0400
+</div>
+</div>
+</body>
+</html>

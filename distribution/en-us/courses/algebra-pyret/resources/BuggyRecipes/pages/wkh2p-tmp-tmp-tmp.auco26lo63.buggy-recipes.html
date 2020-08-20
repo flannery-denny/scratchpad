@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Untitled</title>
+<link rel="stylesheet" href="./../../../../../lib/curriculum.css">
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"buggy-recipes",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article" onload="renderSaveToDrive()">
+<div id="header">
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div class="paragraph recipe_word_problem">
+<p><strong>Directions</strong>: Write a function that takes the target&#8217;s x-coordinate and makes a player leap by returning an x-coordinate that is double the original x-coordinate.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contract and Purpose Statement</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Every contract has three parts&#8230;&#8203;</p>
+</div>
+<div class="paragraph recipe recipe_contract">
+<p>&#x23; <span class="studentAnswer studentAnswerCode solution recipe_name">target-leap</span>::<span class="studentAnswer studentAnswerCode solution recipe_domain">Number</span>-&gt;<span class="studentAnswer studentAnswerCode solution recipe_range">Number</span></p>
+</div>
+<div class="paragraph recipe recipe_purpose_statement">
+<p><span class="purpose_comment">#</span> <span class="studentAnswer solution recipe_purpose">Takes the x-coordinate and returns a new one,
+	    multiplied by 2.</span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Examples</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write some examples, then circle and label what changes&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">examples:</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">target-leap</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">100</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">200</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">target-leap</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">40</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">200</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definition</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write the definition, giving variable names to all your input values&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">fun</span> <span class="studentAnswer studentAnswerCode solution recipe_name">leap</span><span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_variables">x-coor</span><span class="bigparen">)</span>:</p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_definition_body">x * 5</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph recipe_word_problem">
+<p><strong>Directions</strong>: Write a function, is-offscreen, which returns true is Sam the butterfly&#8217;s x-coordinate is less than -50 or greater than 690.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contract and Purpose Statement</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Every contract has three parts&#8230;&#8203;</p>
+</div>
+<div class="paragraph recipe recipe_contract">
+<p>&#x23; <span class="studentAnswer studentAnswerCode solution recipe_name">is-offscreen</span>::<span class="studentAnswer studentAnswerCode solution recipe_domain">Number</span>-&gt;<span class="studentAnswer studentAnswerCode solution recipe_range">Boolean</span></p>
+</div>
+<div class="paragraph recipe recipe_purpose_statement">
+<p><span class="purpose_comment">#</span> <span class="studentAnswer solution recipe_purpose">Given an x-coordinate, returns true if the coordinate is less than -50</span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Examples</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write some examples, then circle and label what changes&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">examples:</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">is-offscreen</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">60</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">true</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">is-offscreen</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">800</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">false</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definition</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write the definition, giving variable names to all your input values&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">fun</span> <span class="studentAnswer studentAnswerCode solution recipe_name">is-off-screen</span><span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_variables">x-coord</span><span class="bigparen">)</span>:</p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_definition_body">(x-coord &lt; -50) and (x-coord &gt; 690)</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph recipe_word_problem">
+<p><strong>Directions</strong>: All students are given five (5) pencils at the beginning of the school year. Write a function called calc-pencils that takes in the number of students in the school and calculates the number of pencils needed for that school.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contract and Purpose Statement</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Every contract has three parts&#8230;&#8203;</p>
+</div>
+<div class="paragraph recipe recipe_contract">
+<p>&#x23; <span class="studentAnswer studentAnswerCode solution recipe_name">calc-pencils</span>::<span class="studentAnswer studentAnswerCode solution recipe_domain">Number</span>-&gt;<span class="studentAnswer studentAnswerCode solution recipe_range">Number</span></p>
+</div>
+<div class="paragraph recipe recipe_purpose_statement">
+<p><span class="purpose_comment">#</span> <span class="studentAnswer solution recipe_purpose">Takes a number of students and gives the number of pencils</span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Examples</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write some examples, then circle and label what changes&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">examples:</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">calc-pencils</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">100</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">100 * 5</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">calc-pencils</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">40</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">40 * 6</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definition</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write the definition, giving variable names to all your input values&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">fun</span> <span class="studentAnswer studentAnswerCode solution recipe_name">calculate-pencils</span><span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_variables">p</span><span class="bigparen">)</span>:</p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_definition_body">p * 5</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph recipe_word_problem">
+<p><strong>Directions</strong>: Write a function that returns the area of a circle given its diameter.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contract and Purpose Statement</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Every contract has three parts&#8230;&#8203;</p>
+</div>
+<div class="paragraph recipe recipe_contract">
+<p>&#x23; <span class="studentAnswer studentAnswerCode solution recipe_name">circle-area</span>::<span class="studentAnswer studentAnswerCode solution recipe_domain">Number</span>-&gt;<span class="studentAnswer studentAnswerCode solution recipe_range">Number</span></p>
+</div>
+<div class="paragraph recipe recipe_purpose_statement">
+<p><span class="purpose_comment">#</span> <span class="studentAnswer solution recipe_purpose">Given the diameter, multiply pi by radius squared to
+	get the area</span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Examples</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write some examples, then circle and label what changes&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">examples:</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">circle-area</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">10</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">num-sqr(10 / 2) * pi</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">circle-area</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">50</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">num-sqr(50 / 2) * pi</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definition</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write the definition, giving variable names to all your input values&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">fun</span> <span class="studentAnswer studentAnswerCode solution recipe_name">circle-area</span><span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_variables">diameter</span><span class="bigparen">)</span>:</p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_definition_body">sqr(diameter) * pi</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph recipe_word_problem">
+<p><strong>Directions</strong>: It is customary to tip 20% on a bill at a restaurant. Write a function that takes the total cost of the food and returns the new total including tip.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contract and Purpose Statement</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Every contract has three parts&#8230;&#8203;</p>
+</div>
+<div class="paragraph recipe recipe_contract">
+<p>&#x23; <span class="studentAnswer studentAnswerCode solution recipe_name">check-total</span>::<span class="studentAnswer studentAnswerCode solution recipe_domain">Number</span>-&gt;<span class="studentAnswer studentAnswerCode solution recipe_range">Number</span></p>
+</div>
+<div class="paragraph recipe recipe_purpose_statement">
+<p><span class="purpose_comment">#</span> <span class="studentAnswer solution recipe_purpose">Returns the total of a check with 20% of the cost
+	added</span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Examples</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write some examples, then circle and label what changes&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">examples:</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">total</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">20</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">20 ((0.2 x 20) + 20)</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">total</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">56.67</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">56.67 ((0.2 x 56.67) + 56.67)</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definition</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write the definition, giving variable names to all your input values&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">fun</span> <span class="studentAnswer studentAnswerCode solution recipe_name">check-total</span><span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_variables">food-total</span><span class="bigparen">)</span>:</p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_definition_body">(0.2 + food-total) * food-total</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph recipe_word_problem">
+<p><strong>Directions</strong>: You have 100 square feet of carpet to put down in your room. Write a function that takes in the length and width of your room and returns true if you have enough carpet and false if you don&#8217;t.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contract and Purpose Statement</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Every contract has three parts&#8230;&#8203;</p>
+</div>
+<div class="paragraph recipe recipe_contract">
+<p>&#x23; <span class="studentAnswer studentAnswerCode solution recipe_name">have-enough-carpet</span>::<span class="studentAnswer studentAnswerCode solution recipe_domain">Number, Number</span>-&gt;<span class="studentAnswer studentAnswerCode solution recipe_range">Number</span></p>
+</div>
+<div class="paragraph recipe recipe_purpose_statement">
+<p><span class="purpose_comment">#</span> <span class="studentAnswer solution recipe_purpose">Given length and width of a room, is the area &lt;= 100
+	sq feet?</span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Examples</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write some examples, then circle and label what changes&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">examples:</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">have-enough-carpet</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">(10 15)</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">(10 * 15) &lt; 100</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">have-enough-carpet</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">(9 10)</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">(9 * 10) &lt; 100</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definition</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write the definition, giving variable names to all your input values&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">fun</span> <span class="studentAnswer studentAnswerCode solution recipe_name">have-enough-carpet</span><span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_variables">length, width</span><span class="bigparen">)</span>:</p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_definition_body">(length * width) &lt; 100</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph recipe_word_problem">
+<p><strong>Directions</strong>: You go to the store with $1.50 in your pocket. Write a function that takes in the price of an item and returns true if you have enough money to buy the item and false if you do not.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contract and Purpose Statement</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Every contract has three parts&#8230;&#8203;</p>
+</div>
+<div class="paragraph recipe recipe_contract">
+<p>&#x23; <span class="studentAnswer studentAnswerCode solution recipe_name">have-enough-cash</span>::<span class="studentAnswer studentAnswerCode solution recipe_domain">String</span>-&gt;<span class="studentAnswer studentAnswerCode solution recipe_range">Boolean</span></p>
+</div>
+<div class="paragraph recipe recipe_purpose_statement">
+<p><span class="purpose_comment">#</span> <span class="studentAnswer solution recipe_purpose">Check to see if the item costs less than 1.50</span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Examples</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write some examples, then circle and label what changes&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">examples:</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">have-enough-cash</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">2.5</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">1.50 &gt;= 2.50</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">have-enough-cash</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">9.0</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">gum &lt; 150</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definition</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write the definition, giving variable names to all your input values&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">fun</span> <span class="studentAnswer studentAnswerCode solution recipe_name">have-enough-cash</span><span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_variables">item</span><span class="bigparen">)</span>:</p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_definition_body">item &lt;= 1.5</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph recipe_word_problem">
+<p><strong>Directions</strong>: Write a function that takes in two strings and returns true if their lengths are equal and false otherwise.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contract and Purpose Statement</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Every contract has three parts&#8230;&#8203;</p>
+</div>
+<div class="paragraph recipe recipe_contract">
+<p>&#x23; <span class="studentAnswer studentAnswerCode solution recipe_name">equal-length</span>::<span class="studentAnswer studentAnswerCode solution recipe_domain">String, String</span>-&gt;<span class="studentAnswer studentAnswerCode solution recipe_range">Boolean</span></p>
+</div>
+<div class="paragraph recipe recipe_purpose_statement">
+<p><span class="purpose_comment">#</span> <span class="studentAnswer solution recipe_purpose">Given two strings, check if they are the same length</span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Examples</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write some examples, then circle and label what changes&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">examples:</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">equal-length</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">"yes", "no"</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">string-length("yes") == string-length("no")</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">equal-length</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">"dog", "cat"</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">string-length("dog") == string-length("cat")</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definition</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write the definition, giving variable names to all your input values&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">fun</span> <span class="studentAnswer studentAnswerCode solution recipe_name">equal-length</span><span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_variables">string1, string2</span><span class="bigparen">)</span>:</p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_definition_body">=</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph recipe_word_problem">
+<p><strong>Directions</strong>: You are putting together a list of flowers in your garden based on their color. You have red roses, purple tulips, and yellow daisies. Write a function that takes in the color of a flower and returns the name of the flower.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contract and Purpose Statement</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Every contract has three parts&#8230;&#8203;</p>
+</div>
+<div class="paragraph recipe recipe_contract">
+<p>&#x23; <span class="studentAnswer studentAnswerCode solution recipe_name">flower-name</span>::<span class="studentAnswer studentAnswerCode solution recipe_domain">String</span>-&gt;<span class="studentAnswer studentAnswerCode solution recipe_range">String</span></p>
+</div>
+<div class="paragraph recipe recipe_purpose_statement">
+<p><span class="purpose_comment">#</span> <span class="studentAnswer solution recipe_purpose">Takes the name of the flower and returns its color</span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Examples</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write some examples, then circle and label what changes&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">examples:</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">flower-name</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">"red"</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">rose</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">flower-name</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">"tulip"</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">purple</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">flower-name</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">"yellow"</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">daisy</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definition</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write the definition, giving variable names to all your input values&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">fun</span> <span class="studentAnswer studentAnswerCode solution recipe_name">flower-name</span><span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_variables">color</span><span class="bigparen">)</span>:</p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="pyretkeyword">ask:</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="pyretkeyword">|</span> <span class="studentAnswer studentAnswerCode solution questions">color == "red"</span> <span class="pyretkeyword">then:</span> <span class="studentAnswer studentAnswerCode solution answers">"rose"</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="pyretkeyword">|</span> <span class="studentAnswer studentAnswerCode solution questions">color == "purple"</span> <span class="pyretkeyword">then:</span> <span class="studentAnswer studentAnswerCode solution answers">"tulip"</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="pyretkeyword">|</span> <span class="studentAnswer studentAnswerCode solution questions">color == "yellow"</span> <span class="pyretkeyword">then:</span> <span class="studentAnswer studentAnswerCode solution answers">"daisy"</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="pyretkeyword">|</span> <span class="pyretkeyword">otherwise:</span> <span class="studentAnswer studentAnswerCode solution answers"> "That flower isn&#8217;t in the garden!"</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswerCode solution"><span class="pyretkeyword">end</span></span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph recipe_word_problem">
+<p><strong>Directions</strong>: Names that are longer than 20 characters are considered long names. Write a function that takes in a person&#8217;s name and returns true if it is a long name and false if it is not.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contract and Purpose Statement</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Every contract has three parts&#8230;&#8203;</p>
+</div>
+<div class="paragraph recipe recipe_contract">
+<p>&#x23; <span class="studentAnswer studentAnswerCode solution recipe_name">is-long-name</span>::<span class="studentAnswer studentAnswerCode solution recipe_domain">String</span>-&gt;<span class="studentAnswer studentAnswerCode solution recipe_range">Boolean</span></p>
+</div>
+<div class="paragraph recipe recipe_purpose_statement">
+<p><span class="purpose_comment">#</span> <span class="studentAnswer solution recipe_purpose">Check if a name is longer than 20 characters</span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Examples</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write some examples, then circle and label what changes&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">examples:</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">is-long-name</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">"\"John Joseph Jingleheimer Schmidt\""</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">string-equal("John Joseph Jingleheimer Schmidt") &gt; 10</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">is-long-name</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">"\"Jos Jaime Juarez\""</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">string-equal("Jos Jaime Juarez") &gt; 10</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definition</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write the definition, giving variable names to all your input values&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">fun</span> <span class="studentAnswer studentAnswerCode solution recipe_name">is-long</span><span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_variables">name</span><span class="bigparen">)</span>:</p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_definition_body">name &lt; 20</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph recipe_word_problem">
+<p><strong>Directions</strong>: Write a function that takes an image and a string, representing what to scale the image by. The function should return a smaller image if the string is 'smaller' and a bigger image if the string is 'bigger'.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contract and Purpose Statement</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Every contract has three parts&#8230;&#8203;</p>
+</div>
+<div class="paragraph recipe recipe_contract">
+<p>&#x23; <span class="studentAnswer studentAnswerCode solution recipe_name">scale-image</span>::<span class="studentAnswer studentAnswerCode solution recipe_domain">Image, String</span>-&gt;<span class="studentAnswer studentAnswerCode solution recipe_range">image</span></p>
+</div>
+<div class="paragraph recipe recipe_purpose_statement">
+<p><span class="purpose_comment">#</span> <span class="studentAnswer solution recipe_purpose">Make the image bigger or smaller, depending on the
+	given string</span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Examples</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write some examples, then circle and label what changes&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">examples:</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">scale-image</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">"circle(5, \"solid\", \"red\")", "\"bigger\""</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">circle(10, "solid", "red")</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">scaleimage</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">"triangle(20, \"solid\", \"blue\")", "\"smaller\""</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">triangle(10, 	"solid", "blue")</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definition</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write the definition, giving variable names to all your input values&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">fun</span> <span class="studentAnswer studentAnswerCode solution recipe_name">scale-image</span><span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_variables">original-image, scale-factor</span><span class="bigparen">)</span>:</p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="pyretkeyword">ask:</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="pyretkeyword">|</span> <span class="studentAnswer studentAnswerCode solution questions">scale-factor == "bigger"</span> <span class="pyretkeyword">then:</span> <span class="studentAnswer studentAnswerCode solution answers">scale(2, original-image)</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="pyretkeyword">|</span> <span class="studentAnswer studentAnswerCode solution questions">scale-factor == "smaller"</span>
+<span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="pyretkeyword">then:</span> <span class="studentAnswer studentAnswerCode solution answers">scale(0.5, original-image)</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="pyretkeyword">|</span> <span class="pyretkeyword">otherwise:</span> <span class="studentAnswer studentAnswerCode solution answers"> original-image</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswerCode solution"><span class="pyretkeyword">end</span></span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph recipe_word_problem">
+<p><strong>Directions</strong>: Some states have different tax rates. New York is 8%, Pennsylvania is 3%, and Delaware is 0%. All other states are 5%. Write a function that takes in the price of an item and returns how much the tax will be on the item.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contract and Purpose Statement</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Every contract has three parts&#8230;&#8203;</p>
+</div>
+<div class="paragraph recipe recipe_contract">
+<p>&#x23; <span class="studentAnswer studentAnswerCode solution recipe_name">state-tax</span>::<span class="studentAnswer studentAnswerCode solution recipe_domain">String</span>-&gt;<span class="studentAnswer studentAnswerCode solution recipe_range">Number</span></p>
+</div>
+<div class="paragraph recipe recipe_purpose_statement">
+<p><span class="purpose_comment">#</span> <span class="studentAnswer solution recipe_purpose">Given the state and an item&#8217;s price, return the tax on that item</span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Examples</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write some examples, then circle and label what changes&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">examples:</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">tax</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">"Delaware"</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">0.0 + price</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">tax</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">"Georgia"</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">0.05 + price</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definition</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write the definition, giving variable names to all your input values&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">fun</span> <span class="studentAnswer studentAnswerCode solution recipe_name">state-tax</span><span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_variables">state price</span><span class="bigparen">)</span>:</p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="pyretkeyword">ask:</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="pyretkeyword">|</span> <span class="studentAnswer studentAnswerCode solution questions">state == "Pennsylvania"</span> <span class="pyretkeyword">then:</span> <span class="studentAnswer studentAnswerCode solution answers">0.03 * price</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="pyretkeyword">|</span> <span class="studentAnswer studentAnswerCode solution questions">state == "New York"</span> <span class="pyretkeyword">then:</span> <span class="studentAnswer studentAnswerCode solution answers">0.08 * price</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="pyretkeyword">|</span> <span class="studentAnswer studentAnswerCode solution questions">state == "Delaware"</span> <span class="pyretkeyword">then:</span> <span class="studentAnswer studentAnswerCode solution answers">0.0 * price</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="pyretkeyword">|</span> <span class="pyretkeyword">otherwise:</span> <span class="studentAnswer studentAnswerCode solution answers"> 0.05 * price</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswerCode solution"><span class="pyretkeyword">end</span></span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph recipe_word_problem">
+<p><strong>Directions</strong>: You will be late to class if you have to walk more than 25 pixels to get there. Write a function that takes in your x-coordinate and y-coordinate and the x-coordinate and y-coordinate of the classroom and returns true if you will be late to class and false if you will be on time.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contract and Purpose Statement</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Every contract has three parts&#8230;&#8203;</p>
+</div>
+<div class="paragraph recipe recipe_contract">
+<p>&#x23; <span class="studentAnswer studentAnswerCode solution recipe_name">late-to-class</span>::<span class="studentAnswer studentAnswerCode solution recipe_domain">Number, Number, Number, Number</span>-&gt;<span class="studentAnswer studentAnswerCode solution recipe_range">Boolean</span></p>
+</div>
+<div class="paragraph recipe recipe_purpose_statement">
+<p><span class="purpose_comment">#</span> <span class="studentAnswer solution recipe_purpose">Takes the coorindates of my location and a classroom and returns true if the distance is more than 25 and false if it is less than 25.</span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Examples</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write some examples, then circle and label what changes&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">examples:</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">late-to-class</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">40, 55</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">25 &gt; distance(40,55)</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_name">late-to-class</span> <span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_example_inputs">40, 55</span><span class="bigparen">)</span><span class="recipe_example_body_wrap"><span class="pyretkeyword">is</span> <span class="studentAnswer studentAnswerCode solution recipe_example_body">25 &lt; distance(40,55)</span></span>
+<span class="clear"> </span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_example_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch recipe_title">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definition</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph recipe recipe_instructions">
+<p>Write the definition, giving variable names to all your input values&#8230;&#8203;</p>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">fun</span> <span class="studentAnswer studentAnswerCode solution recipe_name">late-to-class</span><span class="bigparen">(</span><span class="studentAnswer studentAnswerCode solution recipe_variables">student-x, student-y, school-x, school-y</span><span class="bigparen">)</span>:</p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="studentAnswerCode blank">&#x5f;&#x5f;</span><span class="studentAnswer studentAnswerCode solution recipe_definition_body">(25 &lt; distance(student-x, student-y))</span></p>
+</div>
+</div>
+</div>
+<div class="openblock wrapper recipe recipe_line keyword_only">
+<div class="content">
+<div class="paragraph">
+<p><span class="clear"> </span><span class="pyretkeyword">end</span></p>
+</div>
+</div>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Algebra by Emmanuel Schanzer, Jen Poole, Ed Campos Jr, Flannery Denny, and Dorai Sitaram
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:23:07 -0400
+</div>
+</div>
+</body>
+</html>

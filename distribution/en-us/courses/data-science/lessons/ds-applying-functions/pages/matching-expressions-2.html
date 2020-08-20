@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Matching Expressions and Contracts</title>
+<link rel="stylesheet" href="./../../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="../../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="../../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="../../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/bootstraplesson.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Matching Expressions and Contracts",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article pyret" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Matching Expressions and Contracts</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div class="paragraph">
+<p><span class="web-page-only">Referenced from lesson <a href="../../../lessons/ds-applying-functions/index.shtml">Applying Functions</a></p>
+</div>
+<div class="paragraph">
+<p></span></p>
+</div>
+<style>
+td { height: 150pt; }
+</style>
+<div class="paragraph">
+<p><em>Match</em> the contract (left) with the expression described by the function being used (right).</p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</div>
+<table class="tableblock frame-none grid-none stripes-none stretch">
+<colgroup>
+<col style="width: 51.7241%;">
+<col style="width: 3.4482%;">
+<col style="width: 6.8965%;">
+<col style="width: 3.4482%;">
+<col style="width: 34.483%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-right valign-middle">Contract</th>
+<th class="tableblock halign-center valign-middle"></th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-center valign-middle"></th>
+<th class="tableblock halign-left valign-middle">Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-middle"><div class="content"><div class="paragraph">
+<p>is-capital :: (city :: String, state :: String) -&gt; Boolean</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>1</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>A</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code><tt class="pyret">show-score("Vikings", 41)</tt></code>
+<span class="vspace" style="height: 1ex"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-middle"><div class="content"><div class="paragraph">
+<p>show-score :: (team1 :: String, team2 :: String) -&gt; Number</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>2</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>B</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code><tt class="pyret">is-capital("Philadelphia")</tt></code>
+<span class="vspace" style="height: 1ex"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-middle"><div class="content"><div class="paragraph">
+<p>is-capital :: (city :: String, pop :: Number) -&gt; Boolean</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>3</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>C</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code><tt class="pyret">is-capital("Philadelphia", "PA")</tt></code>
+<span class="vspace" style="height: 1ex"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-middle"><div class="content"><div class="paragraph">
+<p>show-score :: (team :: String, score :: Number) -&gt; Image</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>4</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>D</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code><tt class="pyret">show-score("Seahawks", "Ravens")</tt></code>
+<span class="vspace" style="height: 1ex"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-middle"><div class="content"><div class="paragraph">
+<p>is-capital :: (city :: String) -&gt; Boolean</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>5</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>E</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code><tt class="pyret">is-capital("Austin", 94800)</tt></code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:28:49 -0400
+</div>
+</div>
+</body>
+</html>

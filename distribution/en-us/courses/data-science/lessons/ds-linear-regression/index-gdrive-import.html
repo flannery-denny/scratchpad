@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Linear Regression</title>
+<style>
+/* Overall document font */
+* {font-family: Lato, Arial, Helvetica, sans-serif;}
+
+/* document headings */
+h1,.lesson-section-1 {color: #75328A;}
+h1{font-size: 32px; font-family: sans-serif;}
+table.section-heading *, .lesson-section-1 h2{font-size: 32px; font-weight: 100;}
+table.section-heading{width: 100%;}
+table.section-heading td:last-child{text-align: right; color: #d9d2e9;}
+
+/* preamble section */
+table.preamble td {padding: 10px;}
+table.preamble td:first-child{background: #b7d893; width: 25%;}
+table.preamble td:first-child p {font-weight: bold; margin: 5px;}
+
+/* content used throughout the body */
+table{ border-collapse: collapse; border: none; }
+table.grid-all.frame-all {border: solid 1px black;}
+table.grid-none.frame-none {border-width: 0px;}
+
+.big {font-size: 30pt;}
+.vocab{font-weight: bold; font-style: italic;}
+.right{text-align: right;}
+.acknowledgment {
+  border-top: solid 1px black; 
+  font-style: italic; 
+  font-size: 8pt;
+}
+.lesson-point {
+  border-top: solid 1px black; 
+  border-bottom: solid 1px black; 
+  color: black;
+  font-weight: bold;
+}
+
+.web-page-only, #footer { display: none; visibility: hidden; }
+
+/* Callout boxes */
+.strategy-box, .notice-box {
+  background: #efefef;
+  border: solid 5px !important;
+  margin: 15px auto;
+  width: 100%;
+}
+.strategy-box { border-color: #1a73b5 !important; }
+.notice-box   { border-color: #7747a5 !important; }
+.strategy-box td, .notice-box td{ padding: 10px; }
+.strategy-box .title, .notice-box .title{
+  width: 100%;
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+  clear: both;
+  margin: 100px;
+}
+.strategy-box p.tableblock:first-child, .notice-box p.tableblock:first-child{
+  text-align: center;
+  padding-bottom: 15px;
+}
+.strategy-box .title { color: #1a73b5; }
+.notice-box   .title { color: #7747a5; }
+.strategy-box a, .notice-box a { color: blue; text-decoration: underline; }
+
+/* "Tables" of Evaluation */
+.operator{border-bottom: solid 1px black; text-align: center;}
+.operator * {text-align: center;}
+td {padding: 0px 10px; font-size: 14px;}
+table.expression {
+    font-family:"Courier New", Monaco, monospace;
+    border:     solid 1px black;
+    font-size:  1px;
+    max-width:  400px;
+    color:      #666666;
+    display:    inline-block;
+}
+table.args {border: none; text-align: center;}
+
+.wescheme-string,     .cm-scheme-string    {color: green;}
+.wescheme-number,     .cm-scheme-number    {color: blue;}
+.wescheme-boolean,    .cm-scheme-boolean   {color: darkred;}
+.wescheme-character,  .cm-scheme-character {color: orange;}
+.wescheme-symbol,     .cm-scheme-symbol    {color: steelblue;}
+.wescheme-comment,    .cm-scheme-comment   {color: orange; }
+
+.racket, .pyret, .studentAnswerCode, .studentAnswer, .pyretkeyword, .keyword_only {
+    font-family:"Courier New", Monaco, monospace !important; 
+    color: black;
+}
+
+/* Design Recipe */
+.recipe_instructions { font-style: italic; }
+table.recipe_title {
+  color:              white;
+  background:         gray;
+  display:            block;
+  padding:            0px;
+  font-size:          1.1rem;
+  font-weight:        bold;
+}</style>
+      <script type="text/javascript" src="../../../../lib/MathJax-2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2Clocal%2Fmathjaxlocal.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:window.location.href,
+    filename:"Linear Regression",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article LessonPlan pyret" onload="renderSaveToDrive()">
+<!-- Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46088504-1', 'bootstrapworld.org');
+ga('send', 'pageview');
+
+</script>
+<span id="body" onload="renderSaveToDrive()">
+<span id="header">
+<h1>Linear Regression</h1>
+
+  <span id="savetodrive-div"></span>
+
+</span>
+<span id="content">
+<span id="preamble_disabled">
+<span class="sectionbody">
+<span class="paragraph">
+<p>Students compute the “line of best fit” using linear regression, and summarize linear relationships in a dataset.</p>
+</span>
+<table class="tableblock frame-all grid-all stripes-none stretch left-header preamble">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Prerequisites</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>None</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><script>
+function showStandardsAlignment() {
+  const selectTag = document.getElementsByClassName('standardsAlignmentSelect')[0];
+  const options = selectTag && selectTag.options;
+  const stdTables = document.getElementsByClassName('alignedStandards');
+  const intro = document.getElementsByClassName('alignedStandardsIntro')[0];
+  let introNeeded = true;
+  for (let i = 0; i < stdTables.length; i++) {
+    const stdTable = stdTables[i];
+    stdTable.style.display = 'none';
+  }
+  for (let i = 0; i < options.length; i++) {
+    const opt = options[i];
+    if (opt.selected) {
+      const optStd = opt.value;
+      for (let j = 0; j < stdTables.length; j++) {
+        const stdTable = stdTables[j];
+        if (stdTable.classList.contains(optStd)) {
+          stdTable.style.display = 'block';
+          introNeeded = false;
+        }
+      }
+    }
+  }
+  intro.style.display = introNeeded ? 'block' : 'none';
+}
+</script>
+<span class="paragraph">
+<p>Standards</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph ">
+</span>
+<span class="dlist standards-CC-Math standards-hierarchical-table">
+<span class="title">Common Core Math Standards</span>
+<dl>
+<dt class="hdlist1"><br/>8.SP.A.1</dt>
+<dd>
+<p>Construct and interpret scatter plots for bivariate measurement data to investigate patterns of association between two quantities. Describe patterns such as clustering, outliers, positive or negative association, linear association, and nonlinear association.</p>
+</dd>
+<dt class="hdlist1"><br/>8.SP.A.2</dt>
+<dd>
+<p>Know that straight lines are widely used to model relationships between two quantitative variables. For scatter plots that suggest a linear association, informally fit a straight line, and informally assess the model fit by judging the closeness of the data points to the line.</p>
+</dd>
+<dt class="hdlist1"><br/>8.SP.A.3</dt>
+<dd>
+<p>Use the equation of a linear model to solve problems in the context of bivariate measurement data, interpreting the slope and intercept.</p>
+</dd>
+<dt class="hdlist1"><br/>HSS.ID.B.6.C</dt>
+<dd>
+<p>Fit a linear function for a scatter plot that suggests a linear association.</p>
+</dd>
+<dt class="hdlist1"><br/>HSS.ID.C.7</dt>
+<dd>
+<p>Interpret the slope (rate of change) and the intercept (constant term) of a linear model in the context of the data.</p>
+</dd>
+<dt class="hdlist1"><br/>HSS.ID.C.8</dt>
+<dd>
+<p>Compute (using technology) and interpret the correlation coefficient of a linear fit.</p>
+</dd>
+<dt class="hdlist1"><br/>HSS.ID.C.9</dt>
+<dd>
+<p>Distinguish between correlation and causation.</p>
+</dd>
+</dl>
+</span>
+<span class="dlist standards-CSTA standards-hierarchical-table">
+<span class="title">CSTA Standards</span>
+<dl>
+<dt class="hdlist1"><br/>3A-DA-11</dt>
+<dd>
+<p>Create interactive data visualizations using software tools to help others better understand real-world phenomena.</p>
+</dd>
+<dt class="hdlist1"><br/>3B-NI-05</dt>
+<dd>
+<p>Use data analysis tools and techniques to identify patterns in data representing complex systems</p>
+</dd>
+</dl>
+</span>
+<span class="dlist standards-K12CS standards-hierarchical-table">
+<span class="title">K-12CS Standards</span>
+<dl>
+<dt class="hdlist1"><br/>9-12.Data and Analysis.Inference and Models</dt>
+<dd>
+<p>The accuracy of predictions or inferences depends upon the limitations of the computer model and the data the model is built upon. The amount, quality, and diversity of data and the features chosen can affect the quality of a model and ability to understand a system. Predictions or inferences are tested to validate models.</p>
+</dd>
+</dl>
+</span>
+<span class="dlist standards-NGSS standards-hierarchical-table">
+<span class="title">Next-Gen Science Standards</span>
+<dl>
+<dt class="hdlist1"><br/>HS-SEP3-5</dt>
+<dd>
+<p>Make directional hypotheses that specify what happens to a dependent variable when an independent variable is manipulated.</p>
+</dd>
+</dl>
+</span>
+<span class="dlist standards-OK standards-hierarchical-table">
+<span class="title">Oklahoma Standards</span>
+<dl>
+<dt class="hdlist1"><br/>OK.L1.DA.IM.01</dt>
+<dd>
+<p>Show the relationships between collected data elements using computational models.</p>
+</dd>
+<dt class="hdlist1"><br/>OK.PA.D.1.3</dt>
+<dd>
+<p>Collect, display and interpret data using scatterplots. Use the shape of the scatterplot to informally estimate a line of best fit, make statements about average rate of change, and make predictions about values not in the original data set. Use appropriate titles, labels and units.</p>
+</dd>
+</dl>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Lesson Goals</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Students will be able to&#8230;&#8203;</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>interpret linear regression in the context of the animals table</p>
+</li>
+<li>
+<p>use linear regression to quantify patterns in their chosen dataset, and write up their findings about</p>
+<span class="ulist">
+<ul>
+<li>
+<p>the animal dataset</p>
+</li>
+<li>
+<p>their chosen dataset</p>
+</li>
+</ul>
+</span>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Student-facing Lesson Goals</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Let&#8217;s learn how to determine the strength of data relationships.</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Materials</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Lesson slides (<a href="https://docs.google.com/presentation/d/1WiOCjXiA3ql0kS-76pAVHjpy-oGak3uHRNB3GV0EaDc/" target="_blank" rel="noopener">Google Slides</a>)</p>
+</li>
+<li>
+<p>Computer for each student (or pair), with access to the internet</p>
+</li>
+<li>
+<p><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-linear-regression/../..//workbook/workbook.pdf">Student workbook</a>, and something to write with</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Preparation</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Make sure students can access the <a href="https://www.geogebra.org/m/ZcVIxKtF" target="_blank" rel="noopener">Interactive LR Plot</a></p>
+</li>
+<li>
+<p>Make sure all materials have been gathered</p>
+</li>
+<li>
+<p>Decide how students will be grouped in pairs</p>
+</li>
+<li>
+<p>All students should log into <a href="https://code.pyret.org" target="_blank" rel="noopener">CPO</a> and open the "Animals Starter File" they saved from the prior lesson. If they don&#8217;t have the file, they can <a href="https://code.pyret.org/editor#share=1ZupMVPWvVUOM0HCWyA7cRBghSLKxPWv1" target="_blank" rel="noopener">open a new one</a></p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Supplemental Resources</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Language Table</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><table class="tableblock frame-all grid-all stretch lang-features-table">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 66.6666%;">
+<col style="width: 16.6668%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Types</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Functions</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Values</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Number</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>num-sqrt, num-sqr, mean, median, modes</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>4, -1.2, 2/3</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>String</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>string-repeat, string-contains</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>"hello", "91"</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Boolean</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>==, &lt;, &lt;=, &gt;=, string-equal</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>true, false</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Image</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>triangle, circle, star, rectangle, ellipse, square, text, overlay, bar-chart, pie-chart, bar-chart-summarized, pie-chart-summarized, histogram, scatter-plot</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>🔵🔺🔶</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Table</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>count, .row-n, .order-by, .filter, .build-column</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"></span></td>
+</tr>
+</tbody>
+</table></span></td>
+</tr>
+</tbody>
+</table>
+<span class="dlist glossary">
+<span class="title">Glossary</span>
+<dl>
+<dt class="hdlist1"><br/>explanatory variable</dt>
+<dd>
+<p>the variable in a relationship that is presumed to impact the other variable</p>
+</dd>
+<dt class="hdlist1"><br/>line of best fit</dt>
+<dd>
+<p>summarizes the relationship (if linear) between two quantitative variables</p>
+</dd>
+<dt class="hdlist1"><br/>linear regression</dt>
+<dd>
+<p>modeling the relationship between two quantitative variables using a straight line</p>
+</dd>
+<dt class="hdlist1"><br/>predictor function</dt>
+<dd>
+<p>a function which, given a value from one data set, makes an educated guess at a related value in a different data set</p>
+</dd>
+<dt class="hdlist1"><br/>response variable</dt>
+<dd>
+<p>the variable in a relationship that is presumed to be affected by the other variable</p>
+</dd>
+</dl>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<h2 id="_warmup"><span class="section-link"><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-linear-regression/#_warmup"><span class="section-link-symbol">&#128279;</span></a></span>Warmup</h2>
+<span class="sectionbody">
+<span class="paragraph">
+<p>Have students open their “Animals Dataset” files. (If they do not have this file, or if something has happened to it, they can always make a <a href="https://code.pyret.org/editor#share=1gaYAyYhvlKBm6VJuvJDcnoINBw76pL-L" target="_blank" rel="noopener">new copy</a>.)</p>
+</span>
+<span class="paragraph lesson-instruction">
+<p>Make two scatterplots from the <code><span class="pyret">animals-table</tt></code>, using <code><tt class="pyret">age</tt></code> as the explanatory variable in one plot and <code><tt class="pyret">pounds</tt></code> as the <span class="vocab">explanatory variable</span> in the other. In both plots, use <code><tt class="pyret">weeks</tt></code> as your <span class="vocab">response variable</span> and <code><tt class="pyret">name</tt></code> for the <code><tt class="pyret">labels</span></code>. We will refer to the explanatory column as “xs” and the response column as “ys.”</p>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">Intro to Linear Regression </td><td width="35%">10 minutes</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview">Overview</h3>
+<span class="paragraph">
+<p>Students are introduced to the <em>concept</em> of linear regression, and learn how to interpret the slope and intercept. For teachers who have the need and the bandwidth to go deeper, this is a good opportunity to teach the algorithm behind linear regression.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch">Launch</h3>
+<div class="paragraph lesson-point">
+<p>“Can we <em>predict</em> an animal&#8217;s adoption time based on its size? Its age?”</p>
+</div>
+<span class="paragraph">
+<p>Have students write down what they think on <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-linear-regression/../../lessons/ds-linear-regression/pages/whats-on-your-mind.html" target="_blank" rel="noopener">What’s on your mind? (Page 81)</a>, then quickly survey the class.</p>
+</span>
+<span class="paragraph">
+<span class="image"><img src="../../lessons/ds-linear-regression/images/pounds-v-weeks.gif" alt="weeks-v-pounds scatterplot" width="300"></span><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-linear-regression/images/pounds-v-weeks.gif" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span></span>
+We are asking if we can use an animal’s size or age to predict how long it will take to be adopted. A scatter plot of adoption time versus size does suggest that smaller animals get adopted in a shorter period of time and larger animals take longer. Similarly, younger animals tend to be adopted faster than older ones. Can we be more precise about this, and actually <em>predict</em> how long it will take an animal to be adopted, based on these factors? And which one would give us a better prediction?</p>
+</span>
+<span class="paragraph">
+<p>The mean, median, and mode are three different ways to measure the “center” of a dataset in one dimension. Each represents a different way to collapse a bunch of points on a number line into a single, summary value. If the “center” of points on a <em>one dimensional</em> number line is a single point, what is the “center” of points in a <em>two-dimensional</em> cloud, which cluster around a line?</p>
+</span>
+<span class="paragraph">
+<p>What we need to do is find a <em>line</em>&#8201;&#8212;&#8201;called a <span class="vocab">line of best fit</span>, or a <span class="vocab">regression line</span>&#8201;&#8212;&#8201;that is at the center of this cloud. Each point in our scatter plot “pulls” on the line, with points above the line yanking it up and points below the line dragging it down. Points that are really far away&#8201;&#8212;&#8201;especially influential observations that are far out in the x direction —- pull on the line with more force. This line can be graphed on top of the scatter plot as a function, called the <span class="vocab">predictor function</span>.</p>
+</span>
+<span class="paragraph">
+<p>Given a value on the x-axis, this line allows us to predict what the corresponding value on the y-axis might be. This allows us to make predictions based on our data.</p>
+</span>
+<span class="paragraph">
+<p>Is there only one “best line”? Based on methods of calculus, data scientists know the answer to this question is yes! That justifies us talking about a single “line of best fit.”</p>
+</span>
+<span class="paragraph">
+<p>Data scientists use a statistical method called <span class="vocab">linear regression</span> to pinpoint linear relationships in a dataset. When we draw our <span class="vocab">regression line</span> on a scatter plot, we can imagine a rubber bands stretching vertically between the line itself and each point in the plot&#8201;&#8212;&#8201;every point pulls the line a little “up” or “down”. Linear regression is the math behind the line of best fit.</p>
+</span>
+<table class="tableblock frame-all grid-none stripes-none stretch strategy-box">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="title">Going Deeper</span></p>
+<p class="tableblock">If you want to teach students the algorithm for linear regression, now is the time! However, this algorithm is <em>not</em> a required portion of Bootstrap:Data Science.</p></td>
+</tr>
+</tbody>
+</table>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate">Investigate</h3>
+<span class="openblock lesson-instruction">
+<span class="content">
+<span class="paragraph">
+<p>Have students open this <a href="https://www.geogebra.org/m/ZcVIxKtF" target="_blank" rel="noopener">Interactive LR Plot</a>.</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>Try moving the blue point “P”, and see what effect it has on the red line.</p>
+</li>
+<li>
+<p>Find the number called <span class="gdrive-only">r</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle r</script><span class="end-ignore-for-gdrive"></span>-->. In your own words, explain what this number tells us.</p>
+</li>
+<li>
+<p>What’s the largest <span class="gdrive-only">r</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle r</script><span class="end-ignore-for-gdrive"></span>-->-value you can get? What do you think that number means?</p>
+</li>
+<li>
+<p>Where can you move it so that it is <em>most</em> aligned with the other points?</p>
+</li>
+<li>
+<p>Where can you move it so that it is <em>least</em> aligned with the other points?</p>
+</li>
+<li>
+<p>Could the <span class="vocab">regression line</span> ever be above or below <em>all</em> the points? Why or why not?</p>
+</li>
+</ul>
+</span>
+</span>
+</span>
+<span class="paragraph">
+<p>Let&#8217;s explore scatter plots for weeks-v-pounds and weeks-v-age:</p>
+</span>
+<span class="paragraph">
+<span class="image"><img src="../../lessons/ds-linear-regression/images/pounds-v-weeks.gif" alt="weeks-v-pounds scatterplot" width="400"></span><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-linear-regression/images/pounds-v-weeks.gif" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span></span>
+<span class="image"><img src="../../lessons/ds-linear-regression/images/age-v-weeks.gif" alt="weeks-v-age scatterplot" width="400"></span><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-linear-regression/images/age-v-weeks.gif" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span></span>
+<span class="clear"></p>
+</span>
+<span class="paragraph">
+<p>After looking at the point clouds, we are left with a few questions:</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>Do the relationships appear to be linear for one? Both?</p>
+</li>
+<li>
+<p>If a relationship is linear, what line in particular are the scatter plot points clustering around?</p>
+</li>
+<li>
+<p>What is the <span class="gdrive-only">r</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle r</script><span class="end-ignore-for-gdrive"></span>-->-value for each relationship?</p>
+</li>
+</ul>
+</span>
+<span class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Turn to <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-linear-regression/../../lessons/ds-linear-regression/pages/drawing-predictors.html" target="_blank" rel="noopener">Drawing Predictors (Page 77)</a>.</p>
+</li>
+<li>
+<p>In the first column, draw a <span class="vocab">line of best fit</span> through each of the scatter plots.</p>
+</li>
+<li>
+<p>In the second column, circle whether the slope of the line (which is the same as the <em>direction</em> of the correlation) is positive or negative.</p>
+</li>
+</ul>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize">Synthesize</h3>
+<span class="paragraph">
+<p>Give students some time to experiment, then share back observations. Can they come up with rules or suggestions for how to minimize error?</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>Would it be possible to have a line that is <em>below</em> all the points? (no)</p>
+</li>
+<li>
+<p>Would it be possible to have a line that is <em>above</em> all the points? (no)</p>
+</li>
+<li>
+<p>Would it be possible to have a line with more points on one side than the other? (yes)</p>
+</li>
+</ul>
+</span>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">Linear Regression in Pyret </td><td width="35%">20 minutes</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview_2">Overview</h3>
+<span class="paragraph">
+<p>Students are introduced to the <code><span class="pyret">lr-plot</span></code> function in Pyret, which performs a linear regression and plots the result.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch_2">Launch</h3>
+<span class="paragraph">
+<p>Pyret includes a powerful display, which (1) draws a scatterplot, (2) draws the line of best fit, and (3) even displays the equation for that line:</p>
+</span>
+<span class="listingblock">
+<span class="content">
+<pre><tt class="pyret"># use linear regression to extract a predictor function
+# lr-plot :: (t :: Table, ls :: String, xs :: String, ys :: String) -&gt; Image
+lr-plot(animals-table, "name", "age", "weeks")</tt></pre>
+</span>
+</span>
+<span class="paragraph">
+<p><span class="right"><span class="centered-image"><span class="image"><img src="../../lessons/ds-linear-regression/images/lr-explained.png" alt="" width="400"></span><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-linear-regression/images/lr-explained.png" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span></span>
+<code><span class="pyret">lr-plot</span></code> is a function that takes a Table and the names of <strong>3 columns</strong>:</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p><code><span class="pyret">ls</span></code>&#8201;&#8212;&#8201;the name of the column to use for <em>labels</em> (e.g. “names of pets”)</p>
+</li>
+<li>
+<p><code><span class="pyret">xs</span></code>&#8201;&#8212;&#8201;the name of the column to use for <em>x-coordinates</em> (e.g. “age of each pet”)</p>
+</li>
+<li>
+<p><code><span class="pyret">ys</span></code>&#8201;&#8212;&#8201;the name of the column to use for <em>y-coordinates</em> (e.g. “weeks for each pet to be adopted”)</p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p>Our goal is to use values of the variable on our x-axis to <em>predict</em> values of the variable on our y-axis.</p>
+</span>
+<table class="tableblock frame-all grid-none stripes-none stretch strategy-box">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="title">Pedagogical Note</span></p>
+<p class="tableblock">We prefer the words “explanatory” and “response” in our curriculum, because in other contexts the words “dependent” and “independent” refer to whether or not the variables are related at all, as opposed to what role each plays in the relationship.</p></td>
+</tr>
+</tbody>
+</table>
+<span class="paragraph">
+<p>Have students create an <code><span class="pyret">lr-plot</tt></code> for our <code><tt class="pyret">animals-table</tt></code>, using <code><tt class="pyret">"names"</tt></code> for the labels, <code><tt class="pyret">"age"</tt></code> for the x-axis and <code><tt class="pyret">"weeks"</span></code> for the y-axis.</p>
+</span>
+<span class="paragraph">
+<p>The resulting scatterplot looks like those we’ve seen before, but it has a few important additions. First, we can see the <span class="vocab">line of best fit</span> drawn onto the plot. We can also see the equation for that line (in red), in the form <span class="gdrive-only">y = mx + b</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle y = mx + b</script><span class="end-ignore-for-gdrive"></span>-->. In this plot, we can see that the slope of the line is 0.792, which means that on average, each extra year of age results in an extra 0.792 weeks of waiting to be adopted (about 5 or 6 extra days). By plugging in an animal’s age for <em>x</em>, we can make a <em>prediction</em> about how many weeks it will take to be adopted. For example, we predict a 5-year-old animal to be adopted in <span class="gdrive-only">0.7925 + 2.285 = 6.245</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 0.792(5) + 2.285 = 6.245</script><span class="end-ignore-for-gdrive"></span>--> weeks. That’s the y-value exactly on the line at x=5.</p>
+</span>
+<span class="paragraph">
+<p>The intercept is <code><span class="pyret">2.285</span></code>. This is where the best-fitting line crosses the y-axis. We want to be careful not to interpret this too literally, and say that a newborn animal would be adopted in 2.285 weeks, because none of the animals in our data set was that young. Still, the <span class="vocab">regression line</span> (or <span class="vocab">line of best fit</span>) suggests that a baby animal, whose age is close to 0, would take only about 3 weeks to be adopted.</p>
+</span>
+<span class="paragraph">
+<p>We also see the <span class="gdrive-only">r</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle r</script><span class="end-ignore-for-gdrive"></span>-->-value is +0.442. The sign is positive, consistent with the fact that the scatter plot point cloud, along with the line of best fit, slopes upward. The fact that the magnitude falls well between 0 and 1 tells us that the strength is moderate. This is consistent with the fact that the scatter plot points are somewhere between being really tightly clustered and really loosely scattered.</p>
+</span>
+<table class="tableblock frame-all grid-none stripes-none stretch strategy-box">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="title">Going Deeper</span></p>
+<p class="tableblock">Students may notice another value in the lr-plot, called <span class="gdrive-only">R^2</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle R^2</script><span class="end-ignore-for-gdrive"></span>-->. This value describes the <em>percentage of the variation in the y-variable that is explained by least-squares regression on the x variable</em>. In other words, an <span class="gdrive-only">R^2</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle R^2</script><span class="end-ignore-for-gdrive"></span>--> value of 0.20 could mean that “20% of the variation in adoption time is explained by regressing adoption time on the age of the animal”. Discussion of <span class="gdrive-only">R^2</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle R^2</script><span class="end-ignore-for-gdrive"></span>--> may be appropriate for older students, or in an AP Statistics class.</p></td>
+</tr>
+</tbody>
+</table>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate_2">Investigate</h3>
+<span class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Make another lr-plot, but this time use the animals' weight as our explanatory variable instead of their age.</p>
+</li>
+<li>
+<p>If an animal is 5 years old, how long would our line of best fit predict they would wait to be adopted? What if they were a newborn, just 0 years old?</p>
+</li>
+<li>
+<p>If an animal weighs 21 pounds, how long would our line of best fit predict they would wait to be adopted? What if they weighed 0.1 pounds?</p>
+</li>
+<li>
+<p>Make another lr-plot, comparing the <code><span class="pyret">age</tt></code> v. <code><tt class="pyret">weeks</span></code> columns for <em>only the cats</em>.</p>
+</li>
+</ul>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize_2">Synthesize</h3>
+<span class="paragraph">
+<p>A predictor only <em>makes sense within the range of the data that was used to generate it</em>. Statistical models are just proxies for the real world, drawn from a limited sample of data: they might make a useful prediction in the range of that data, but once we try to extrapolate beyond that data we may quickly get into trouble!</p>
+</span>
+<span class="paragraph">
+<p>Does the linear regression for our sample of the Animals Dataset allow us to <em>make inferences</em> about the behavior of the larger dataset? Why or why not?</p>
+</span>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">Interpreting LR Plots in Pyret </td><td width="35%">20 minutes</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview_3">Overview</h3>
+<span class="paragraph">
+<p>Students learn how to <em>write</em> about the results of a linear regression, using proper statistical terminology and thinking through the many ways this language can be misused.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch_3">Launch</h3>
+<span class="paragraph">
+<p>How well can you interpret the results of a linear regression analysis? Can you write your own?</p>
+</span>
+<span class="ulist lesson-instruction">
+<ul>
+<li>
+<p>What does it mean when a data point is <em>above</em> the line of best fit?</p>
+</li>
+<li>
+<p>What does it mean when a data point is <em>below</em> the line of best fit?</p>
+</li>
+</ul>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate_3">Investigate</h3>
+<span class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Turn to <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-linear-regression/../../lessons/ds-linear-regression/pages/interpreting-regression-lines-n-rvalues.html" target="_blank" rel="noopener">Interpreting Regression Lines &amp; r-Values (Page 78)</a>, and match the write-up on the left with the line of best fit and <span class="gdrive-only">r</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle r</script><span class="end-ignore-for-gdrive"></span>-->-value on the right.</p>
+</li>
+<li>
+<p>Turn to <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-linear-regression/../../lessons/ds-linear-regression/pages/regression-analysis-in-animals-dataset.html" target="_blank" rel="noopener">Regression Analysis in the Animals Dataset (Page 79)</a> to see how Data Scientists would write up the finding involving cats’ age and adoption time. Write up two other findings from the linear regressions you performed on this dataset.</p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p>When looking at a regression for adoption time v. age for just the cats, we saw that the slope of the predictor function was +0.23, meaning that for every year older a cat is, we expect a +0.23-week increase in the time taken to adopt the cat. The <span class="gdrive-only">r</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle r</script><span class="end-ignore-for-gdrive"></span>-->-value was +0.566, confirming that the correlation is positive and indicating moderate strength.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_common_misconceptions">Common Misconceptions</h3>
+<span class="paragraph">
+<p>Students often think it doesn’t matter which variable is assigned to be x and which is y in a regression. It’s true that you’ll get the same correlation either way---for example, <span class="gdrive-only">r=+0.442</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle r=+0.442</script><span class="end-ignore-for-gdrive"></span>--> whether your scatter plot shows <code><span class="pyret">weeks</tt></code> v. <code><tt class="pyret">pounds</tt></code> or <code><tt class="pyret">pounds</tt></code> v. <code><tt class="pyret">weeks</span></code>. <strong>However, the regression line <em>is</em> different, due to the math involved in minimizing <em>vertical</em> distances from the line, not horizontal</strong>.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize_3">Synthesize</h3>
+<span class="paragraph">
+<p>Have students read their text aloud, to get comfortable with the phrasing.</p>
+</span>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">Your Analysis </td><td width="35%">flexible</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview_4">Overview</h3>
+<span class="paragraph">
+<p>Students repeat the previous activity, this time applying it to their own dataset and interpreting their own results. <strong>Note: this activity can be done briefly as a homework assignment, but we recommend giving students an <em>additional class period</em> to work on this.</strong></p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch_4">Launch</h3>
+<span class="paragraph">
+<p>Now that you&#8217;ve gotten some practice performing linear regression on the Animals Dataset, it&#8217;s time to apply that knowledge to your own data!</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate_4">Investigate</h3>
+<span class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Write up your findings by filling out <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-linear-regression/../../lessons/ds-linear-regression/pages/regression-analysis-in-my-dataset.html" target="_blank" rel="noopener">Regression Analysis in Your Dataset (Page 80)</a>.</p>
+</li>
+<li>
+<p>Students should fill in the <a href="https://docs.google.com/document/d/1_ZEIgM4zvxI7JizViVFZojnpd3Yr2rYe8puPk8pjOcs/edit#" target="_blank" rel="noopener">Correlations</a> portion of their Research Paper, using the scatter plots and linear regression plots they&#8217;ve constructed for their dataset and explaining what they show.</p>
+</li>
+</ul>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize_4">Synthesize</h3>
+<span class="paragraph">
+<p>Have students share their findings with the class. Get excited about the connections they are making and the conclusions they are drawing! Encourage students to make suggestions to one another about further analysis.</p>
+</span>
+<span class="paragraph">
+<p><span class="right"><span class="centered-image"><span class="image"><img src="../../lessons/ds-linear-regression/images/lin-reg-2.png" alt="" width="400"></span><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-linear-regression/images/lin-reg-2.png" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span></span></p>
+</span>
+<span class="paragraph">
+<p>You’ve learned how linear regression can be used to fit a line to a linear cloud, and how to determine the direction and strength of that relationship. The word “linear” is important here. In the image on the right, there’s clearly a pattern, but it doesn’t look like a straight line! There are many other kinds of statistical models out there, but all of them work the same way: use a particular kind of mathematical function (linear or otherwise), to figure out how to get the “best fit” for a cloud of data.</p>
+</span>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<h2 id="_additional_exercises"><span class="section-link"><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-linear-regression/#_additional_exercises"><span class="section-link-symbol">&#128279;</span></a></span>Additional Exercises:</h2>
+<span class="sectionbody">
+<span class="ulist">
+<ul>
+<li>
+<p><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-linear-regression/../../lessons/ds-linear-regression/pages/describing-relationships-1.pdf" class="bare" target="_blank" rel="noopener">../../lessons/ds-linear-regression/pages/describing-relationships-1.pdf</a></p>
+</li>
+<li>
+<p><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-linear-regression/../../lessons/ds-linear-regression/pages/describing-relationships-2.pdf" class="bare" target="_blank" rel="noopener">../../lessons/ds-linear-regression/pages/describing-relationships-2.pdf</a></p>
+</li>
+<li>
+<p>Project: <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-linear-regression/../../lessons/ds-linear-regression/pages/olympics-project.html" target="_blank" rel="noopener">Olympic Records</a> - A mini-project in which students use linear regression to find correlations in the improvement of records in a sport of their choice.</p>
+</li>
+</ul>
+</span>
+<span class="openblock acknowledgment"><hr/>
+<span class="content">
+<span class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-linear-regression/mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+<span id="footer">
+<span id="footer-text">
+Last updated 2020-08-19 20:34:25 -0400
+</span>
+</span>
+</span>
+</body>
+</html>

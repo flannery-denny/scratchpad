@@ -1,0 +1,7 @@
+"box plot"
+"interquartile range"
+"median"
+"quartiles"
+"range of a data set"
+"shape"
+"spread"

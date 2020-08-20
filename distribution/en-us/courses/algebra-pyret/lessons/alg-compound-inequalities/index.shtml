@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Compound Inequalities</title>
+<link rel="stylesheet" href="./../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="../../../../lib/bootstraplesson.js"></script>
+      <script type="text/javascript" src="../../../../lib/MathJax-2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2Clocal%2Fmathjaxlocal.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Compound Inequalities",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article LessonPlan pyret" onload="renderSaveToDrive()">
+<!--#include virtual="/menubar.ssi"-->
+<!-- Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46088504-1', 'bootstrapworld.org');
+ga('send', 'pageview');
+
+</script>
+<div id="body" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Compound Inequalities</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div id="preamble_disabled">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="other-proglang"><a href="../../../algebra-wescheme/lessons/alg-compound-inequalities/index.shtml">(Also available for WeScheme)</a></span></p>
+</div>
+<div class="paragraph">
+<p>Students learn to compose inequalities using the concepts of union and intersection, and solve problems using compound inequalities. Finally, they apply what they&#8217;ve learned to set screen boundaries in their game.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-none stretch left-header preamble">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Prerequisites</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../../lessons/alg-simple-inequalities/index.shtml">Simple Inequalities</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><script>
+function showStandardsAlignment() {
+  const selectTag = document.getElementsByClassName('standardsAlignmentSelect')[0];
+  const options = selectTag && selectTag.options;
+  const stdTables = document.getElementsByClassName('alignedStandards');
+  const intro = document.getElementsByClassName('alignedStandardsIntro')[0];
+  let introNeeded = true;
+  for (let i = 0; i < stdTables.length; i++) {
+    const stdTable = stdTables[i];
+    stdTable.style.display = 'none';
+  }
+  for (let i = 0; i < options.length; i++) {
+    const opt = options[i];
+    if (opt.selected) {
+      const optStd = opt.value;
+      for (let j = 0; j < stdTables.length; j++) {
+        const stdTable = stdTables[j];
+        if (stdTable.classList.contains(optStd)) {
+          stdTable.style.display = 'block';
+          introNeeded = false;
+        }
+      }
+    }
+  }
+  intro.style.display = introNeeded ? 'block' : 'none';
+}
+</script>
+<div class="paragraph">
+<p>Relevant Standards<select class="standardsAlignmentSelect"  multiple onchange="showStandardsAlignment()" style="height: 150px"><option value="standards-OK">OK</option><option value="standards-CC-Math">CC-Math</option></select></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph alignedStandardsIntro">
+<p><em>Select one or more standards from the menu on the left (⌘-click on Mac, Ctrl-click elsewhere).</em></p>
+</div>
+<div class="dlist alignedStandards standards-CC-Math standards-hierarchical-table">
+<div class="title">Common Core Math Standards</div>
+<dl>
+<dt class="hdlist1">7.EE.B.4</dt>
+<dd>
+<p>Use variables to represent quantities in a real-world or mathematical problem, and construct simple equations and inequalities to solve problems by reasoning about the quantities.</p>
+</dd>
+<dt class="hdlist1">HSF.IF.A.2</dt>
+<dd>
+<p>Use function notation, evaluate functions for inputs in their domains, and interpret statements that use function notation in terms of a context.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-OK standards-hierarchical-table">
+<div class="title">Oklahoma Standards</div>
+<dl>
+<dt class="hdlist1">OK.PA.A.4.3</dt>
+<dd>
+<p>Represent real-world situations using equations and inequalities involving one variable.</p>
+</dd>
+</dl>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Lesson Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Students will be able to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Describe how functions can work together.</p>
+</li>
+<li>
+<p>Describe the solution set of a compound inequality</p>
+</li>
+<li>
+<p>Make mathematical adjustments relevant to their game.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Student-Facing Lesson Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>I can use two or more inequalities together and describe the area they enclose.</p>
+</li>
+<li>
+<p>I can tell someone else how two or more <span class="vocab">function</span>s work together.</p>
+</li>
+<li>
+<p>I can make adjustments to a program based on how the program behaves.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Materials</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Lesson slides template (<a href="https://docs.google.com/presentation/d/1_PdCxPiY7j8X5FGyJXVIo1eNJqsCrNIMn9_WgocSblM/" target="_blank" rel="noopener">Google Slides</a>)</p>
+</li>
+<li>
+<p>Inequalities Explore worksheet (<a href="../../lessons/alg-compound-inequalities/pages/and-or.html" target="_blank" rel="noopener">original (Page 45)</a>, <a href="solution-pages/and-or.html" target="_blank" rel="noopener">solutions</a>)</p>
+</li>
+<li>
+<p>Design Recipe: onscreen? (<a href="../../lessons/alg-compound-inequalities/pages/onscreen.html" target="_blank" rel="noopener">original (Page 46)</a>, <a href="solution-pages/onscreen.html" target="_blank" rel="noopener">solution</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Bootstrap Formative Assessments</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Booleans Review (<a href="https://quizizz.com/admin/quiz/5d9919516dbee7001e08a4a0" target="_blank" rel="noopener">Quizizz</a>, <a href="https://teacher.desmos.com/activitybuilder/custom/5d991ac49b9b292020c18108" target="_blank" rel="noopener">Desmos Activity</a>)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Preparation</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Make sure all materials have been gathered</p>
+</li>
+<li>
+<p>Decide how students will be grouped in pairs</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Supplemental Resources</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Desmos Inequalities Bundle (<a href="https://teacher.desmos.com/inequalities" target="_blank" rel="noopener">Desmos Activities</a>)</p>
+</li>
+<li>
+<p>Inequalities &amp; Graphing Inequalities (<a href="https://quizizz.com/admin/quiz/56cf6ac2bb56dfc267b35f94/inequalities-and-graphing-inequali" target="_blank" rel="noopener">Quizizz</a>)</p>
+</li>
+<li>
+<p>Inequality Graph Illustrator (<a href="https://www.geogebra.org/m/Huq24Spq" target="_blank" rel="noopener">Geogebra</a>)</p>
+</li>
+<li>
+<p>Graphing Compound Inequalities (<a href="https://quizizz.com/admin/quiz/5846cda05c74a6041c47566b/graphing-compound-inequalities" target="_blank" rel="noopener">Quizizz</a>)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Key Points for the Facilitator</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Role-playing can help students understand the job of <code><tt class="pyret">is-onscreen</tt></code>, and how it relates to <code><tt class="pyret">is-safe-left</tt></code> and <code><tt class="pyret">is-safe-right</tt></code>.</p>
+</li>
+<li>
+<p>If a student&#8217;s <code><tt class="pyret">TARGET</tt></code> and <code><tt class="pyret">DANGER</tt></code> image seem to be "getting stuck" on the edge of the screen, the student may have to adjust the side boundaries depending on the size of their images.</p>
+</li>
+<li>
+<p>The code for the boundary functions in the game is <em>exactly the same</em> as in Sam the Butterfly.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph old-materials">
+<p>For a textbook-like version of materials similar to these, you may wish to see the <a href="https://www.bootstrapworld.org/materials/spring2020/courses/algebra/en-us/units/unit6/index.html" target="_blank" rel="noopener">prior unit-based version</a></p>
+</div>
+<div class="dlist glossary">
+<div class="title">Glossary</div>
+<dl>
+<dt class="hdlist1">coordinate</dt>
+<dd>
+<p>a number or set of numbers describing an object&#8217;s location</p>
+</dd>
+<dt class="hdlist1">function</dt>
+<dd>
+<p>a mathematical object that consumes inputs and produces an output</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_warmup"><span class="section-link"><a href="#_warmup"><span class="section-link-symbol">&#128279;</span></a></span>Warmup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Students should have their computer, contracts page, and pencil and be logged in to
+    <a href="https://code.pyret.org" target="_blank" rel="noopener">code.pyret.org</a>
+with their Game Project file open.</p>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_compound_inequalities_duration_10_minutes_"><span class="section-link"><a href="#_compound_inequalities_duration_10_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Compound Inequalities <span class="duration">10 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview">Overview</h3>
+<div class="paragraph">
+<p>Students consider the need to <em>compose</em> inequalities, and think about how to write them.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch">Launch</h3>
+<div class="paragraph">
+<p>We use inequalities for lots of things:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Is it hot out? (<span class="gdrive-only">temperature &gt; 80°</span><script type="math/tex">\displaystyle temperature \gt 80°</script>)</p>
+</li>
+<li>
+<p>Did I get paid enough for painting that fence? (<span class="gdrive-only">temperature &lt; $100</span><script type="math/tex">\displaystyle temperature \lt $100</script>)</p>
+</li>
+<li>
+<p>Are the cookies finished baking? (<span class="gdrive-only">timer = 0</span><script type="math/tex">\displaystyle timer = 0</script>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Have students come up with other examples.</p>
+</div>
+<div class="paragraph">
+<p>But many times we need to <em>combine</em> inequalities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Should I go to the beach? (<span class="gdrive-only">temperature &gt; 80°</span><script type="math/tex">\displaystyle temperature \gt 80°</script> and <span class="gdrive-only">weather = "sunny"</span><script type="math/tex">\displaystyle weather = "sunny"</script>)</p>
+</li>
+<li>
+<p>Was this burrito worth the price? (<span class="gdrive-only">taste = "delicious"</span><script type="math/tex">\displaystyle taste = "delicious"</script> and <span class="gdrive-only">price &le; $20</span><script type="math/tex">\displaystyle price \leq $20</script>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Have students come up with other examples.</p>
+</div>
+<div class="paragraph">
+<p>Guide students through other examples of <code><tt class="pyret">and</tt></code> and <code><tt class="pyret">or</tt></code> with various statements, such as "I&#8217;m wearing a red shirt AND I&#8217;m a math teacher, true or false?" or "I&#8217;m an NBA basketball star OR I&#8217;m having pizza for lunch, true or false?". This can make for a good sit-down, stand-up activity, where students take turns saying compound boolean statements and everyone stands if that statement is true for them.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate">Investigate</h3>
+<div class="paragraph">
+<p>Both mathematics and programming have ways of combining - or <em>composing</em> - inequalities.</p>
+</div>
+<div class="paragraph">
+<p>Have students complete <a href="../../lessons/alg-compound-inequalities/pages/and-or.html" target="_blank" rel="noopener">Inequalities&#8201;&#8212;&#8201;Practice (Page 45)</a>.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_synthesize">Synthesize</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Be really careful to check for understanding here. <em>Expresions using <code><tt class="pyret">and</tt></code> only produce <code><tt class="pyret">true</tt></code> if both of their sub-expressions are <code><tt class="pyret">true</tt></code>. Expresions using <code><tt class="pyret">or</tt></code> produce <code><tt class="pyret">true</tt></code> if <strong>either</strong> of their sub-expressions are <code><tt class="pyret">true</tt></code>.</em></p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-none stripes-none stretch strategy-box">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="title">Strategies for English Language Learners</span></p>
+<p class="tableblock">When describing compound inequalities, be careful not to use "english shortcuts". For example, we might say "I am holding a marker <em>and</em> an eraser" instead of "I am holding a marker <em>and</em> I am holding an eraser." These sentences mean the same thing, but the first one obscures the fact that "and" joins two complete phrases. For ELL/ESL students, this is unecessarily adds to cognitive load!</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_protecting_sam_on_both_sides_duration_30_minutes_"><span class="section-link"><a href="#_protecting_sam_on_both_sides_duration_30_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Protecting Sam on Both Sides <span class="duration">30 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview_2">Overview</h3>
+<div class="paragraph">
+<p>Students solve a word problem involving compound inequalities, using <code><tt class="pyret">and</tt></code> to compose the simpler boundary-checking functions from the previous lesson.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch_2">Launch</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Recruit three student volunteers to roleplay the functions <code><tt class="pyret">safe-left?</tt></code>, <code><tt class="pyret">safe-right?</tt></code> and <code><tt class="pyret">onscreen?</tt></code>. Give them 1 minute to read the contract and code, as written in the program.</p>
+</li>
+<li>
+<p>As in the previous lesson, ask the volunteers what their name, Domain and Range are, and then test them out by calling out their name, followed by a number. (For example, "(safe-left? 20)!", "(safe-right? -100)!", "(onscreen? 829)!") <strong>Note"</strong> the code for <code><tt class="pyret">onscreen</tt></code> <em>calls the safe-left function!</em>. So the student roleplaying <code><tt class="pyret">onscreen</tt></code> should turn to <code><tt class="pyret">safe-left</tt></code> and give the input to them.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Facilitator</strong>: "is-onscreen 70"</p>
+</li>
+<li>
+<p><strong>is-onscreen</strong> (turns to is-safe-left): "is-safe-left 70"</p>
+</li>
+<li>
+<p><strong>is-safe-left</strong>: "true"</p>
+</li>
+<li>
+<p><strong>is-onscreen</strong> (turns back to facilitator): "true"<br>
+<br></p>
+</li>
+<li>
+<p><strong>Facilitator</strong>: "onscreen-huh -100"</p>
+</li>
+<li>
+<p><strong>is-onscreen</strong> (turns to is-safe-left): "safe-left-huh -100"</p>
+</li>
+<li>
+<p><strong>is-safe-left</strong>: "false"</p>
+</li>
+<li>
+<p><strong>is-onscreen</strong> (turns back to facilitator): "false"<br>
+<br></p>
+</li>
+<li>
+<p><strong>Facilitator</strong>: "onscreen-huh 900"</p>
+</li>
+<li>
+<p><strong>is-onscreen</strong> (turns to is-safe-left): "safe-left-huh 900"</p>
+</li>
+<li>
+<p><strong>is-safe-left</strong>: "true"</p>
+</li>
+<li>
+<p><strong>is-onscreen</strong> (turns back to facilitator): "true"<br>
+<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Ask the rest of the class-</strong><br>
+* What is the problem with <code><tt class="pyret">is-onscreen</tt></code>?</p>
+</div>
+<div class="paragraph">
+<p>+
+<em>It&#8217;s only talking to <code><tt class="pyret">is-safe-left</tt></code>, it&#8217;s not checking with <code><tt class="pyret">is-safe-right</tt></code></em>
+* How can <code><tt class="pyret">is-onscreen</tt></code> check with both?</p>
+</div>
+<div class="paragraph">
+<p>+
+<em>It needs to talk to <code><tt class="pyret">is-safe-left</tt></code> AND <code><tt class="pyret">is-safe-right</tt></code></em></p>
+</div>
+<div class="paragraph">
+<p>Have students complete <a href="../../lessons/alg-compound-inequalities/pages/onscreen.html" target="<em>blank">Word Problem: is-onscreen (Page 46)</a>. When this functions is entered into WeScheme, students should now see that Sam is protected on _both</em> sides of the screen.</p>
+</div>
+<table class="tableblock frame-all grid-none stripes-none stretch strategy-box">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="title">Extension Option</span></p>
+<p class="tableblock">What if we wanted to keep Sam safe on the top and bottom edges of the screen as well?  What additional functions would we need?  What functions would need to change?}</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_boundry_detection_in_the_game_duration_10_minutes_"><span class="section-link"><a href="#_boundry_detection_in_the_game_duration_10_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Boundry Detection in the Game <span class="duration">10 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview_3">Overview</h3>
+<div class="paragraph">
+<p>Students identify common patterns between 2-dimensional boundary detection and detecting whether a player is onscreen. They apply the same problem-solving and narrow mathematical concept from the previous lesson to a more general problem.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch_3">Launch</h3>
+<div class="paragraph">
+<p>Have students open their in-progress game file and press Run.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>How are the <code><tt class="pyret">TARGET</tt></code> and <code><tt class="pyret">DANGER</tt></code> behaving right now?<br>
+<em>They move across the screen.</em></p>
+</li>
+<li>
+<p>What do we want to change?<br>
+<em>We want them to come back after they leave one side of the screen.</em></p>
+</li>
+<li>
+<p>How do we know when an image has moved off the screen?<br>
+<em>We can see it.</em></p>
+</li>
+<li>
+<p>How can we make the computer understand when an image has moved off the screen?<br>
+<em>We can teach the computer to compare the image&#8217;s <span class="vocab">coordinates</span> to a numeric boundary, just like we did with Sam the Butterfly!</em></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate_2">Investigate</h3>
+<div class="paragraph">
+<p>Students apply what they learned from Sam the Butterly to fix the <code><tt class="pyret">is-safe-left</tt></code>, <code><tt class="pyret">is-safe-right</tt></code>, and <code><tt class="pyret">is-onscreen</tt></code> functions in their own code.</p>
+</div>
+<div class="paragraph">
+<p>Since the screen dimensions for their game are 640x480, just like Sam, they can use their code from Sam as a starting point.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_common_misconceptions">Common Misconceptions</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Students will need to test their code with their images to see if the boundaries are correct for them.  Students with large images may need to use slightly wider boundaries, or vice versa for small images.  In some cases, students may have to go back and rescale their images if they are too large or too small for the game.</p>
+</li>
+<li>
+<p>Students may be surprised that the same code that "traps Sam" also "resets the <code><tt class="pyret">DANGER</tt></code> and `TARGET`". It&#8217;s critical to explain that these functions do <em>neither</em> of those things! All they do is test if a coordinate is within a certain range on the x-axis. There is other code (hidden in the teachpack) that determines <em>what to do if the coordinate is offscreen</em>. The ability to re-use function is one of the most powerful features of mathematics - and programming!</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_additional_exercises"><span class="section-link"><a href="#_additional_exercises"><span class="section-link-symbol">&#128279;</span></a></span>Additional Exercises:</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../lessons/alg-compound-inequalities/pages/is-hot.html" target="_blank" rel="noopener">Word Problem: is-hot</a></p>
+</li>
+<li>
+<p><a href="../../lessons/alg-compound-inequalities/pages/is-sunny.html" target="_blank" rel="noopener">Word Problem: is-sunny</a></p>
+</li>
+<li>
+<p><a href="../../lessons/alg-compound-inequalities/pages/is-beach-day.html" target="_blank" rel="noopener">Word Problem: is-beach-day</a></p>
+</li>
+</ul>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Algebra by Emmanuel Schanzer, Jen Poole, Ed Campos Jr, Flannery Denny, and Dorai Sitaram
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:23:48 -0400
+</div>
+</div>
+</div>
+</body>
+</html>

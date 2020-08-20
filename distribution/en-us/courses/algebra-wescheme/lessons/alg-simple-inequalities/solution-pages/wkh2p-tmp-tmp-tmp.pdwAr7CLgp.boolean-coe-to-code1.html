@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Converting Circles of Evaluation with Booleans to Code</title>
+<link rel="stylesheet" href="./../../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="../../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="../../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="../../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/bootstraplesson.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Converting Circles of Evaluation with Booleans to Code",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article wescheme" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Converting Circles of Evaluation with Booleans to Code</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div class="paragraph">
+<p><span class="web-page-only">Referenced from lesson <a href="../../../lessons/alg-simple-inequalities/index.shtml">Simple Inequalities</a></p>
+</div>
+<div class="paragraph">
+<p></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Directions</strong>: For each Circle of Evaluation in the left column, write the code that corresponds to the Circle in the right column:</p>
+</div>
+<div class="ulist twoColumnLayout">
+<ul>
+<li>
+<p><div class="leftColumn"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&gt;</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&#43;</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">4</span></td><td class="arg"><span class="value wescheme-number">5</span></td></tr></table></td></tr></table></td><td class="arg"><span class="value wescheme-number">9</span></td></tr></table></td></tr></table><div class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&gt;</span></span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&#43;</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">4</span><span class="hspace">&#160;</span><span class="value wescheme-number">5</span><span class="rParen">)</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">9</span><span class="rParen">)</span></span></div></div>
+<div class="rightColumn"><tt class="racket">(&gt; (+ 4 5) 9)</tt></div></p>
+</li>
+<li>
+<p><div class="leftColumn"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">and</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&lt;</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">5</span></td><td class="arg"><span class="value wescheme-number">10</span></td></tr></table></td></tr></table></td><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&lt;</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">10</span></td><td class="arg"><span class="value wescheme-number">15</span></td></tr></table></td></tr></table></td></tr></table></td></tr></table><div class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">and</span></span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&lt;</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">5</span><span class="hspace">&#160;</span><span class="value wescheme-number">10</span><span class="rParen">)</span></span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&lt;</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">10</span><span class="hspace">&#160;</span><span class="value wescheme-number">15</span><span class="rParen">)</span></span><span class="rParen">)</span></span></div></div>
+<div class="rightColumn"><tt class="racket">(and (&lt; 5 10) (&lt; 10 15))</tt></div></p>
+</li>
+<li>
+<p><div class="leftColumn"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">or</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">string=?</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-symbol">yum</span></td><td class="arg"><span class="value wescheme-string">"apple"</span></td></tr></table></td></tr></table></td><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">string=?</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-symbol">yum</span></td><td class="arg"><span class="value wescheme-string">"banana"</span></td></tr></table></td></tr></table></td></tr></table></td></tr></table><div class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">or</span></span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">string=?</span></span><span class="hspace">&#160;</span><span class="value wescheme-symbol">yum</span><span class="hspace">&#160;</span><span class="value wescheme-string">"apple"</span><span class="rParen">)</span></span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">string=?</span></span><span class="hspace">&#160;</span><span class="value wescheme-symbol">yum</span><span class="hspace">&#160;</span><span class="value wescheme-string">"banana"</span><span class="rParen">)</span></span><span class="rParen">)</span></span></div></div>
+<div class="rightColumn"><tt class="racket">(or (string=? yum "apple") (string=? yum "banana"))</tt></div></p>
+</li>
+<li>
+<p><div class="leftColumn"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&gt;=</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">string-length</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-string">"My Game"</span></td></tr></table></td></tr></table></td><td class="arg"><span class="value wescheme-number">6</span></td></tr></table></td></tr></table><div class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&gt;=</span></span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">string-length</span></span><span class="hspace">&#160;</span><span class="value wescheme-string">"My Game"</span><span class="rParen">)</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">6</span><span class="rParen">)</span></span></div></div>
+<div class="rightColumn"><tt class="racket">(&gt;= (string-length "My Game") 6)</tt></div></p>
+</li>
+<li>
+<p><div class="leftColumn"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">or</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">and</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&lt;</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">1</span></td><td class="arg"><span class="value wescheme-symbol">x</span></td></tr></table></td></tr></table></td><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&lt;</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-symbol">x</span></td><td class="arg"><span class="value wescheme-number">5</span></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">and</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&lt;</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">8</span></td><td class="arg"><span class="value wescheme-symbol">x</span></td></tr></table></td></tr></table></td><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&lt;</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-symbol">x</span></td><td class="arg"><span class="value wescheme-number">10</span></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table><div class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">or</span></span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">and</span></span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&lt;</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">1</span><span class="hspace">&#160;</span><span class="value wescheme-symbol">x</span><span class="rParen">)</span></span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&lt;</span></span><span class="hspace">&#160;</span><span class="value wescheme-symbol">x</span><span class="hspace">&#160;</span><span class="value wescheme-number">5</span><span class="rParen">)</span></span><span class="rParen">)</span></span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">and</span></span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&lt;</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">8</span><span class="hspace">&#160;</span><span class="value wescheme-symbol">x</span><span class="rParen">)</span></span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&lt;</span></span><span class="hspace">&#160;</span><span class="value wescheme-symbol">x</span><span class="hspace">&#160;</span><span class="value wescheme-number">10</span><span class="rParen">)</span></span><span class="rParen">)</span></span><span class="rParen">)</span></span></div></div>
+<div class="rightColumn"><tt class="racket">(or (and (&lt; 1 x) (&lt; x 5)) (and (&lt; 8 x) (&lt; x 10)))</tt></div></p>
+</li>
+</ul>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Algebra by Emmanuel Schanzer, Jen Poole, Ed Campos Jr, Flannery Denny, and Dorai Sitaram
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:11:46 -0400
+</div>
+</div>
+</body>
+</html>

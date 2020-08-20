@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Alice&#8217;s Restaurant - Explore</title>
+<link rel="stylesheet" href="./../../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="../../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="../../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="../../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/bootstraplesson.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Alice's Restaurant - Explore",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article pyret" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Alice&#8217;s Restaurant - Explore</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div class="paragraph">
+<p><span class="web-page-only">Referenced from lesson <a href="../../../lessons/alg-piecewise-functions/index.shtml">Piecewise Functions</a></p>
+</div>
+<div class="paragraph">
+<p></span></p>
+</div>
+<style>
+#content :not(.openblock.acknowledgment) p { line-height: 23pt; }
+</style>
+<div class="paragraph">
+<p>Alice&#8217;s code has some new elements we haven&#8217;t seen before, so let&#8217;s experiment a bit to figure out how it works!  <strong>Open the “Alice&#8217;s Restaurant starter file, click “Run”, and try using the <code><tt class="pyret">cost</tt></code> function in the Interactions window.</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 2ex"></span></p>
+</div>
+<div class="paragraph">
+<p>1) What does <tt class="pyret">cost&#8203;(&#8203;"hamburger"&#8203;)</tt> evaluate to? <span class="fitb" style="width: 30ex"><em>6</em></span></p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>2) What does <tt class="pyret">cost&#8203;(&#8203;"pie"&#8203;)</tt> evaluate to? <span class="fitb" style="width: 30ex"><em>2.25</em></span></p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>3) What if you ask for <tt class="pyret">cost&#8203;(&#8203;"fries"&#8203;)</tt>? <span class="fitb" style="width: 30ex"><em><em>"Sorry, that&#8217;s not on the menu!"</em></em></span></p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>4) Explain what the function is doing in your own words.
+<span class="blankline"></span>
+<span class="blankline"></span>
+<span class="blankline"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>5) What is the function&#8217;s name? <span class="fitb" style="width: 22ex">cost</span> Domain? <span class="fitb" style="width: 22ex">String</span> Range? <span class="fitb" style="width: 22ex">Numner</span></p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>6) What is the name of its variable? <span class="fitb" style="width: 30ex">menu-item</span></p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>7) Alice says onion rings have gone up to $3.75. Change the <code><tt class="pyret">cost</tt></code> function to reflect this.</p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>8) Try adding toppings of your own. What&#8217;s your favorite?</p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>9) For an unknown food item, the function produces a String
+( <code><tt class="pyret">"That&#8217;s not on the menu!"</tt></code>)</p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>Is this a problem? Why or why not?</p>
+</div>
+<div class="paragraph">
+<p><span class="blankline"></span>
+<span class="blankline"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>10) Suppose Alice wants to calculate the price of a hamburger, <em>including a 5% sales tax</em>. Draw a Circle of Evaluation for the expression below.</p>
+</div>
+<div class="paragraph">
+<p><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&#8203;*</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">1.05</span></td><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">cost</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-string">"hamburger"</span></td></tr></table></td></tr></table></td></tr></table></td></tr></table><div class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&#8203;*</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">1.05</span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">cost</span></span><span class="hspace">&#160;</span><span class="value wescheme-string">"hamburger"</span><span class="rParen">)</span></span><span class="rParen">)</span></span></div></p>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Algebra by Emmanuel Schanzer, Jen Poole, Ed Campos Jr, Flannery Denny, and Dorai Sitaram
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:22:08 -0400
+</div>
+</div>
+</body>
+</html>

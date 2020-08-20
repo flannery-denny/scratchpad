@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Visualizing the “Shape” of Data</title>
+<link rel="stylesheet" href="./../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="../../../../lib/bootstraplesson.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Visualizing the \"Shape\" of Data",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article LessonPlan pyret" onload="renderSaveToDrive()">
+<!--#include virtual="/menubar.ssi"-->
+<!-- Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46088504-1', 'bootstrapworld.org');
+ga('send', 'pageview');
+
+</script>
+<div id="body" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Visualizing the “Shape” of Data</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div id="preamble_disabled">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Students explore the concept of "shape", using histograms to determine whether a dataset has skewness, and what the direction of the skewness means. They apply this knowledge to the Animals Dataset, and then to their own.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-none stretch left-header preamble">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Prerequisites</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../../lessons/ds-choosing-your-dataset/index.shtml">Choosing Your Dataset</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><script>
+function showStandardsAlignment() {
+  const selectTag = document.getElementsByClassName('standardsAlignmentSelect')[0];
+  const options = selectTag && selectTag.options;
+  const stdTables = document.getElementsByClassName('alignedStandards');
+  const intro = document.getElementsByClassName('alignedStandardsIntro')[0];
+  let introNeeded = true;
+  for (let i = 0; i < stdTables.length; i++) {
+    const stdTable = stdTables[i];
+    stdTable.style.display = 'none';
+  }
+  for (let i = 0; i < options.length; i++) {
+    const opt = options[i];
+    if (opt.selected) {
+      const optStd = opt.value;
+      for (let j = 0; j < stdTables.length; j++) {
+        const stdTable = stdTables[j];
+        if (stdTable.classList.contains(optStd)) {
+          stdTable.style.display = 'block';
+          introNeeded = false;
+        }
+      }
+    }
+  }
+  intro.style.display = introNeeded ? 'block' : 'none';
+}
+</script>
+<div class="paragraph">
+<p>Relevant Standards<select class="standardsAlignmentSelect"  multiple onchange="showStandardsAlignment()" style="height: 150px"><option value="standards-OK">OK</option><option value="standards-K12CS">K12CS</option><option value="standards-CSTA">CSTA</option><option value="standards-NGSS">NGSS</option><option value="standards-CC-Math">CC-Math</option></select></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph alignedStandardsIntro">
+<p><em>Select one or more standards from the menu on the left (⌘-click on Mac, Ctrl-click elsewhere).</em></p>
+</div>
+<div class="dlist alignedStandards standards-CC-Math standards-hierarchical-table">
+<div class="title">Common Core Math Standards</div>
+<dl>
+<dt class="hdlist1">HSS.ID.A.1</dt>
+<dd>
+<p>Represent data with plots on the real number line (dot plots, histograms, and box plots).</p>
+</dd>
+<dt class="hdlist1">HSS.ID.A.3</dt>
+<dd>
+<p>Interpret differences in shape, center, and spread in the context of the data sets, accounting for possible effects of extreme data points (outliers).</p>
+</dd>
+<dt class="hdlist1">HSS.ID.B.6.A</dt>
+<dd>
+<p>Fit a function to the data; use functions fitted to data to solve problems in the context of the data. Use given functions or choose a function suggested by the context. Emphasize linear, quadratic, and exponential models.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-CSTA standards-hierarchical-table">
+<div class="title">CSTA Standards</div>
+<dl>
+<dt class="hdlist1">3A-DA-11</dt>
+<dd>
+<p>Create interactive data visualizations using software tools to help others better understand real-world phenomena.</p>
+</dd>
+<dt class="hdlist1">3B-AP-14</dt>
+<dd>
+<p>Construct solutions to problems using student-created components, such as procedures, modules and/or objects.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-K12CS standards-hierarchical-table">
+<div class="title">K-12CS Standards</div>
+<dl>
+<dt class="hdlist1">9-12.Data and Analysis.Visualization and Transformation</dt>
+<dd>
+<p>Data can be transformed to remove errors, highlight or expose relationships, and/or make it easier for computers to process.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-NGSS standards-hierarchical-table">
+<div class="title">Next-Gen Science Standards</div>
+<dl>
+<dt class="hdlist1">HS-SEP4-2</dt>
+<dd>
+<p>Apply concepts of statistics and probability (including determining function fits to data, slope, intercept, and correlation coefficient for linear fits) to scientific and engineering questions and problems, using digital tools when feasible.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-OK standards-hierarchical-table">
+<div class="title">Oklahoma Standards</div>
+<dl>
+<dt class="hdlist1">OK.L1.AP.PD.05</dt>
+<dd>
+<p>Evaluate and refine computational artifacts to make them more user-friendly, efficient and/or accessible.</p>
+</dd>
+</dl>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Lesson Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Students will be able to&#8230;&#8203;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create histograms for variables in the Animals Dataset</p>
+</li>
+<li>
+<p>Create visualizations of frequency using their chosen dataset, and write up their findings</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Student-facing Lesson Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Let&#8217;s investigate what the shape of a histogram can tell us about the data.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Materials</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Lesson Slides (<a href="https://docs.google.com/presentation/d/17yo4J7iXELEY8O8RhiTguznKq-87KIJVOwY3y7-0igg/edit?usp=sharing" target="_blank" rel="noopener">Google Slides</a>)</p>
+</li>
+<li>
+<p>Computer for each student (or pair), with access to the internet</p>
+</li>
+<li>
+<p><a href="../..//workbook/workbook.pdf">Student workbook</a>, and something to write with</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Preparation</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Make sure all materials have been gathered</p>
+</li>
+<li>
+<p>Decide how students will be grouped in pairs</p>
+</li>
+<li>
+<p>All students should log into <a href="https://code.pyret.org" target="_blank" rel="noopener">CPO</a> and open the "Animals Starter File" they saved from the prior lesson. If they don&#8217;t have the file, they can <a href="https://code.pyret.org/editor#share=1ZupMVPWvVUOM0HCWyA7cRBghSLKxPWv1" target="_blank" rel="noopener">open a new one</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Supplemental Resources</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Language Table</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><table class="tableblock frame-all grid-all stretch lang-features-table">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 66.6666%;">
+<col style="width: 16.6668%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Types</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Functions</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Values</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Number</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>num-sqrt, num-sqr</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>4, -1.2, 2/3</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>String</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>string-repeat, string-contains</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>"hello", "91"</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Boolean</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>==, &lt;, &lt;=, &gt;=, string-equal</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>true, false</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Image</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>triangle, circle, star, rectangle, ellipse, square, text, overlay, bar-chart, pie-chart, bar-chart-summarized, pie-chart-summarized, histogram</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>🔵🔺🔶</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Table</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>count, .row-n, order-by, .filter, .build-column, random-rows</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist glossary">
+<div class="title">Glossary</div>
+<dl>
+<dt class="hdlist1">shape</dt>
+<dd>
+<p>The aspect of a dataset that tells which values are more or less common</p>
+</dd>
+<dt class="hdlist1">skewed left</dt>
+<dd>
+<p>A distribution is skewed left if there are a few values that are fairly low compared to the bulk of data values. A display of the data will show a longer tail to the left.</p>
+</dd>
+<dt class="hdlist1">skewed right</dt>
+<dd>
+<p>A distribution is skewed right if there are a few values that are fairly high compared to the bulk of data values. A display of the data will show a longer tail to the right.</p>
+</dd>
+<dt class="hdlist1">symmetric</dt>
+<dd>
+<p>A symmetric distribution has a balanced shape, showing that it&#8217;s just as likely for the variable to take lower values as higher values.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_review_duration_15_minutes_"><span class="section-link"><a href="#_review_duration_15_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Review <span class="duration">15 minutes</span></h2>
+<div class="sectionbody">
+<div class="paragraph lesson-instruction">
+<p>Have students turn to <a href="../../lessons/ds-histograms2/pages/reading-histograms.html" target="_blank" rel="noopener">Reading Histograms (Page 54)</a>, and complete the matching activity there.</p>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_describing_shape_duration_20_minutes_"><span class="section-link"><a href="#_describing_shape_duration_20_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Describing Shape <span class="duration">20 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview">Overview</h3>
+<div class="paragraph">
+<p>This activity focuses on <em>describing shape</em> based on a histogram. Students learn about "left skewed", "right skewed", and "symmetric" data, and what those descriptions tell us about a dataset.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch">Launch</h3>
+<div class="paragraph">
+<p><span class="right"><span class="centered-image"><span class="image"><img src="../../lessons/ds-histograms2/images/skew-right.png" alt="" width="300" height=""></span><a href="images/skew-right.png" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span></span></p>
+</div>
+<div class="paragraph">
+<p>Shape is one way to <em>summarize</em> information in a dataset, to quickly describe what values are more or less common.</p>
+</div>
+<div class="paragraph">
+<p>Consider the image on the right: most of the data points are clustered on the left side, and it contains a few unusually high values way off to the right. We might describe this histogram by saying that it is <em>“skewed right, or has high outliers.”</em></p>
+</div>
+<div class="paragraph">
+<p><span class="clear">
+Here are the most common shapes that we see for real-world data sets:</p>
+</div>
+<div class="paragraph lesson-point">
+<p>Symmetric: values are balanced on either side of the middle.</p>
+</div>
+<div class="paragraph">
+<p><span class="right"><span class="image"><img src="../../lessons/ds-histograms2/images/symmetric.png" alt="" width="300"></span><a href="images/symmetric.png" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span>
+In a <span class="vocab">symmetric</span> distribution, it’s just as likely for the variable to take a value a certain distance below the middle as it is to take a value that same distance above the middle. Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Heights of 12-year-olds would have a symmetric shape. It’s just as likely for a 12-year-old to be a certain number of inches below average height as it is to be that number of inches above average height.</p>
+</li>
+<li>
+<p>In a standardized test, most students score fairly close to what’s average. Also, we see just as many students scoring a certain number of points above average as we see scoring that same number of points below average. The shape is symmetric (and bulges in the middle because most students score fairly close to what’s average).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph lesson-point">
+<p>Skewed left, or low outliers.</p>
+</div>
+<div class="paragraph">
+<p><span class="right"><span class="image"><img src="../../lessons/ds-histograms2/images/left.png" alt="" width="300"></span><a href="images/left.png" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span></p>
+</div>
+<div class="paragraph">
+<p>In a distribution that is <span class="vocab">skewed left</span>, values are clumped around what’s typical, but they trail off to the left with a few unusually low values. Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Number of teeth that adults have in their mouths would be skewed left or have low outliers. Most adults will have close to a full set of 32 teeth, but a few of them with serious dental problems would have a very small number of teeth. We won’t get anyone in our data set who has 10 or 20 <em>extra</em> teeth in their mouths!</p>
+</li>
+<li>
+<p>If most students did pretty well on an exam, but a few students performed very badly, then we’d see a shape that has left skewness and/or low outliers.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph lesson-point">
+<p>Skewed right, or high outliers.</p>
+</div>
+<div class="paragraph">
+<p><span class="right"><span class="image"><img src="../../lessons/ds-histograms2/images/right.png" alt="" width="300"></span><a href="images/right.png" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span></p>
+</div>
+<div class="paragraph">
+<p>In a distribution that is <span class="vocab">skewed right</span>, values are clumped around what’s typical, but they trail off to the right with a few unusually high values. We see this shape often in the real world, because there are many variables&#8201;&#8212;&#8201;like “income” or “time spent on the phone”&#8201;&#8212;&#8201;for which a few individuals have unusually high values, which aren’t balanced out by unusually low values (things like “income” and “phone time” can’t be less than zero). Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Age when a woman in the U.S. gives birth would be skewed right or have high outliers. A few women would be unusually old (40+ years), above the average age of 26 (check the tabloids!), but none of them could be even close to 40 years below average to balance things out!</p>
+</li>
+<li>
+<p>A data set of earnings almost always shows right skewness or high outliers, because there are usually a few values that are so far above average, they can’t be balanced out by any values that are so far below average. (Earnings can’t be negative.)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate">Investigate</h3>
+<div class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Make a histogram for the pounds column in the animals table, sorting the animals into 20-pound bins:</p>
+</li>
+<li>
+<p>Would you describe the shape of your histogram as being skewed left, skewed right, or symmetric?</p>
+</li>
+<li>
+<p>Which one of these statements is justified by the histogram’s shape?</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A few of the animals were unusually light.</p>
+</li>
+<li>
+<p>A few of the animals were unusually heavy.</p>
+</li>
+<li>
+<p>It was just as likely for an animal to be a certain amount below or above average weight.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Try bins of 1-pound intervals, then 100-pound intervals. Which of these three histograms best satisfies our rule of thumb?</p>
+</li>
+<li>
+<p>On <a href="../../lessons/ds-histograms2/pages/identifying-shape.html" target="_blank" rel="noopener">Identifying Shape (Page 55)</a>, describe the shape of the histograms you see there.</p>
+</li>
+<li>
+<p>On <a href="../../lessons/ds-histograms2/pages/shape-of-animals-dataset.html" target="_blank" rel="noopener">The Shape of the Animals Dataset (Page 56)</a>, describe the pounds histogram and another one you make yourself. When writing down what you notice, try to use the language Data Scientists use, discussing both skew and outliers.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Challenge Questions:</strong>
+- Compare histograms for the <tt class="pyret">pounds</tt> column of both cats and dogs in the dataset. Are their shapes different? How much overlap is there?
+- Compare histograms for the <tt class="pyret">age</tt> column of both cats and dogs in the dataset. Are their shapes different? How much overlap is there?
+- Can you explain why the amount of overlap between these two distributions different?</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_synthesize">Synthesize</h3>
+<div class="paragraph">
+<p>Discuss as a class, making sure students agree on the description of the shape.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_your_analysis_duration_flexible_"><span class="section-link"><a href="#_your_analysis_duration_flexible_"><span class="section-link-symbol">&#128279;</span></a></span>Your Analysis <span class="duration">flexible</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview_2">Overview</h3>
+<div class="paragraph">
+<p>Students repeat the previous activity, this time applying it to their own dataset and interpreting their own results. <strong>Note: this activity can be done briefly as a homework assignment, but we recommend giving students an <em>additional class period</em> to work on this.</strong></p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch_2">Launch</h3>
+<div class="paragraph">
+<p>Now it&#8217;s time to try looking at the shape of your own dataset! Pick one quantitative column in your dataset, and hypothesize whether you think it will be skewed right, skewed left, or symmetric. What do you think?</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate_2">Investigate</h3>
+<div class="ulist lesson-instruction">
+<ul>
+<li>
+<p>How is your dataset distributed? Choose two quantitative variables and display them with histograms. Explain what you learn by looking at these displays. If you’re looking at a particular subset of the data, make sure you write that up in your findings on <a href="../../lessons/ds-histograms2/pages/shape-of-my-dataset.html" target="_blank" rel="noopener">The Shape of My Dataset (Page 57)</a>.</p>
+</li>
+<li>
+<p>Students should fill in the <a href="https://docs.google.com/document/d/1_ZEIgM4zvxI7JizViVFZojnpd3Yr2rYe8puPk8pjOcs/edit#heading=h.la5n5zbh1y0i" target="_blank" rel="noopener">Quantitative Visualizations</a> portion of their Research Paper, using histograms they&#8217;ve constructed for their dataset and explaining what they show.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_synthesize_2">Synthesize</h3>
+<div class="paragraph">
+<p>Have students share their findings.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_closing"><span class="section-link"><a href="#_closing"><span class="section-link-symbol">&#128279;</span></a></span>Closing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Histograms are a powerful way to display a data set and see its <span class="vocab">shape</span>. But shape is just one of three key aspects that tell us what’s going on with a quantitative data set. In the next unit, we’ll explore the other two: center and spread.</p>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:34:25 -0400
+</div>
+</div>
+</div>
+</body>
+</html>

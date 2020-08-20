@@ -1,0 +1,66 @@
+= Project: Time-Use
+
+== The Issue
+
+There have been many reports lately about people spending a large amount of time interacting with technology and the Internet. This raises some questions about time use:
+
+. How do I spend my time?
+. Is there a difference between how females and males spend their time?
+. Do we spend too much time doing homework?
+. How is my time use similar or different to other Americans?
+
+== Objectives
+
+Upon completing this project, you will have compared yourself to the U.S. population to find whether you are similar in some ways and different in other ways. You will use plots, statistics, and tables to find these similarities and difference.
+
+== Motivation
+
+Search “How Americans Use their Time” to find graphs on different groups and how they spend their time. You will use this to compare to your data.
+
+== Guiding Questions
+. On average, how long do students think they spend on homework?
+. Do males or females take longer to groom themselves?
+. Are there groups of students who spend their time similarly to one another?
+
+== Produce
+
+You will complete a poster where you answer a statistical question based on the time-use data collected. Your poster must include your question, plots, data, tables, and paragraphs answering your question based on data collected. Include comparing your data to others in America as part of your reporting.
+
+== Survey Details
+
+Surveys will be completed four times a day for five days (including 2 weekend days). It is recommended that surveys be completed before school, after school, evening, and before bed. Set reminders on your phone to ensure survey completion.
+
+== Survey Questions
+
+Create a Google Form with the following questions:
+
+- Date
+- In classes at school?
+- Doing homework?	
+- Working at a job?	
+- Grooming yourself?
+- Traveling/commuting?
+- Doing household chores?
+- Online?
+- Watching TV?
+- Playing video games?
+- Playing sports?
+- Reading (not for class)?
+- With friends (out of class)? 
+- How many hours have you slept? 
+- How many minutes have you spent eating/drinking?
+
+Fill out this form *every day* for five days. 
+
+@vspace{1em}
+
+Declare the statistical question you will report on here:
+@span{.blankline}
+
+@span{.blankline}
+
+@span{.blankline}
+
+@span{.blankline}
+
+(Based on the Time Use project from @link{https://www.introdatascience.org/, IDS at UCLA})

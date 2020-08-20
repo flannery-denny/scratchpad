@@ -1,0 +1,1 @@
+Students discover functions as an abstraction over an arithmetic pattern, applying the Design Recipe to traditional word problems.

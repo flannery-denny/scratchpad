@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Introduction to Programming in Pyret</title>
+<style>
+/* Overall document font */
+* {font-family: Lato, Arial, Helvetica, sans-serif;}
+
+/* document headings */
+h1,.lesson-section-1 {color: #75328A;}
+h1{font-size: 32px; font-family: sans-serif;}
+table.section-heading *, .lesson-section-1 h2{font-size: 32px; font-weight: 100;}
+table.section-heading{width: 100%;}
+table.section-heading td:last-child{text-align: right; color: #d9d2e9;}
+
+/* preamble section */
+table.preamble td {padding: 10px;}
+table.preamble td:first-child{background: #b7d893; width: 25%;}
+table.preamble td:first-child p {font-weight: bold; margin: 5px;}
+
+/* content used throughout the body */
+table{ border-collapse: collapse; border: none; }
+table.grid-all.frame-all {border: solid 1px black;}
+table.grid-none.frame-none {border-width: 0px;}
+
+.big {font-size: 30pt;}
+.vocab{font-weight: bold; font-style: italic;}
+.right{text-align: right;}
+.acknowledgment {
+  border-top: solid 1px black; 
+  font-style: italic; 
+  font-size: 8pt;
+}
+.lesson-point {
+  border-top: solid 1px black; 
+  border-bottom: solid 1px black; 
+  color: black;
+  font-weight: bold;
+}
+
+.web-page-only, #footer { display: none; visibility: hidden; }
+
+/* Callout boxes */
+.strategy-box, .notice-box {
+  background: #efefef;
+  border: solid 5px !important;
+  margin: 15px auto;
+  width: 100%;
+}
+.strategy-box { border-color: #1a73b5 !important; }
+.notice-box   { border-color: #7747a5 !important; }
+.strategy-box td, .notice-box td{ padding: 10px; }
+.strategy-box .title, .notice-box .title{
+  width: 100%;
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+  clear: both;
+  margin: 100px;
+}
+.strategy-box p.tableblock:first-child, .notice-box p.tableblock:first-child{
+  text-align: center;
+  padding-bottom: 15px;
+}
+.strategy-box .title { color: #1a73b5; }
+.notice-box   .title { color: #7747a5; }
+.strategy-box a, .notice-box a { color: blue; text-decoration: underline; }
+
+/* "Tables" of Evaluation */
+.operator{border-bottom: solid 1px black; text-align: center;}
+.operator * {text-align: center;}
+td {padding: 0px 10px; font-size: 14px;}
+table.expression {
+    font-family:"Courier New", Monaco, monospace;
+    border:     solid 1px black;
+    font-size:  1px;
+    max-width:  400px;
+    color:      #666666;
+    display:    inline-block;
+}
+table.args {border: none; text-align: center;}
+
+.wescheme-string,     .cm-scheme-string    {color: green;}
+.wescheme-number,     .cm-scheme-number    {color: blue;}
+.wescheme-boolean,    .cm-scheme-boolean   {color: darkred;}
+.wescheme-character,  .cm-scheme-character {color: orange;}
+.wescheme-symbol,     .cm-scheme-symbol    {color: steelblue;}
+.wescheme-comment,    .cm-scheme-comment   {color: orange; }
+
+.racket, .pyret, .studentAnswerCode, .studentAnswer, .pyretkeyword, .keyword_only {
+    font-family:"Courier New", Monaco, monospace !important; 
+    color: black;
+}
+
+/* Design Recipe */
+.recipe_instructions { font-style: italic; }
+table.recipe_title {
+  color:              white;
+  background:         gray;
+  display:            block;
+  padding:            0px;
+  font-size:          1.1rem;
+  font-weight:        bold;
+}</style>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:window.location.href,
+    filename:"Introduction to Programming in Pyret",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article pyret" onload="renderSaveToDrive()">
+<span id="header">
+<h1>Introduction to Programming in Pyret</h1>
+
+  <span id="savetodrive-div"></span>
+
+</span>
+<span id="content">
+<span class="paragraph">
+<p><span class="web-page-only">Referenced from lesson <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-pyret-intro/solution-pages/../../../lessons/ds-pyret-intro/index.shtml">Starting to Program</a></p>
+</span>
+<span class="paragraph">
+<p></span>
+<strong>Programming languages</strong> involve different <em>datatypes</em>, such as Numbers, Strings, and Booleans.</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>Numbers are values like <code><span class="pyret">1</tt></code>, <code><tt class="pyret">0.4</tt></code>, <code><tt class="pyret">1/3</tt></code>, and <code><tt class="pyret">-8261.003</span></code>.</p>
+<span class="ulist">
+<ul>
+<li>
+<p>Numbers are <em>usually</em>  used for quantitative data and other values are <em>usually</em>  used as categorical data.</p>
+</li>
+<li>
+<p>In Pyret, any decimal <em>must</em>  start with a 0. <code><span class="pyret">0.22</tt></code> is valid, but <code><tt class="pyret">.22</span></code> is not.</p>
+</li>
+</ul>
+</span>
+</li>
+<li>
+<p>Strings are values like <code><span class="pyret">"Emma"</tt></code>, <code><tt class="pyret">"Rosanna"</tt></code>, <code><tt class="pyret">"Jen and Ed"</tt></code>, or even <code><tt class="pyret">"08/28/1980"</span></code>.</p>
+<span class="ulist">
+<ul>
+<li>
+<p>In Pyret, all strings <em>must</em> be surrounded in quotation marks.</p>
+</li>
+</ul>
+</span>
+</li>
+<li>
+<p>Booleans are either <code><span class="pyret">true</tt></code> or <code><tt class="pyret">false</span></code>.</p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</span>
+<span class="paragraph">
+<p><strong>Operators</strong> (like <code><span class="pyret">+</tt></code>, <code><tt class="pyret">-</tt></code>, <code><tt class="pyret">*</tt></code>, <code><tt class="pyret">&lt;</span></code>, etc.) work the same way in Pyret that they do in math.</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>Operators are written between values, for example: <code><span class="pyret">4 + 2</span></code>.</p>
+</li>
+<li>
+<p>In Pyret, operators must always have a space around them. <code><span class="pyret">4 + 2</tt></code> is valid, but <code><tt class="pyret">4+2</span></code> is not.</p>
+</li>
+<li>
+<p>If an expression has different operators, parentheses must be used to show order of operations. <code><span class="pyret">4 + 2 + 6</tt></code> and <code><tt class="pyret">4 + (2 * 6)</tt></code> are valid, but <code><tt class="pyret">4 + 2 * 6</span></code> is not.</p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</span>
+<span class="paragraph">
+<p><strong>Applying Functions</strong> also works the way it does in math. The function name is first, followed by a list of <strong>arguments</strong> in parentheses.</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>In math this could look like <code><span class="pyret">f(5)</tt></code> or <code><tt class="pyret">f(g(10, 4))</span></code>.</p>
+</li>
+<li>
+<p>In Pyret this could look like <code><span class="pyret">star(50, "solid", "red")</span></code>.</p>
+</li>
+<li>
+<p>There are many other Pyret functions, for example <code><span class="pyret">num-sqr</tt></code>, <code><tt class="pyret">num-sqrt</tt></code> <code><tt class="pyret">triangle</tt></code>, <code><tt class="pyret">star</tt></code>, <code><tt class="pyret">string-repeat</span></code>, etc.</p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</span>
+<span class="paragraph">
+<p>Functions have <strong>contracts</strong>, which help explain how a function should be used. Every contract has three parts:</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>The <em>Name</em> of the function - literally, what it&#8217;s called.</p>
+</li>
+<li>
+<p>The <em>Domain</em> of the function - what  <em>types of values</em> the function consumes, and in what order.</p>
+</li>
+<li>
+<p>The <em>Range</em> of the function - what  <em>type of value</em> the function produces.</p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p><span class="vspace" style="height: 1ex"></span></p>
+</span>
+<span class="paragraph">
+<p><strong>Value Definitions</strong> (like <code><span class="pyret">x = 4</tt></code>, or <code><tt class="pyret">y = 9 + 6</span></code>) also work the way they do in math. Every value definition starts with a <em>name</em>, followed by an equals sign, and then an expression. Once a value is defined, it can be refered to by name.</p>
+</span>
+<span class="openblock acknowledgment"><hr/>
+<span class="content">
+<span class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-pyret-intro/solution-pages/mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</span>
+</span>
+</span>
+</span>
+<span id="footer">
+<span id="footer-text">
+Last updated 2020-08-19 20:28:41 -0400
+</span>
+</span>
+</body>
+</html>

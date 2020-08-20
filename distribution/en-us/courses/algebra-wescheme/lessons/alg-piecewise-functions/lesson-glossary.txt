@@ -1,0 +1,5 @@
+"conditional"
+"example"
+"function"
+"piecewise function"
+"String"

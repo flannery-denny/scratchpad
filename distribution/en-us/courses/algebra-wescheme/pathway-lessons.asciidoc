@@ -1,0 +1,76 @@
+= Lessons Used in This Pathway
+
+include::pathway-lessons-toc.asciidoc[]
+
+[[alg-game-intro]]
+== The Numbers Inside Video Games
+include::./lessons/alg-game-intro/index.asc[leveloffset=+1,2..-1]
+
+[[alg-coordinates]]
+== Coordinates and Game Design
+include::./lessons/alg-coordinates/index.asc[leveloffset=+1,2..-1]
+
+[[alg-order-of-operations]]
+== Order of Operations
+include::./lessons/alg-order-of-operations/index.asc[leveloffset=+1,2..-1]
+
+[[alg-domain-and-range]]
+== Domain and Range
+include::./lessons/alg-domain-and-range/index.asc[leveloffset=+1,2..-1]
+
+[[alg-function-composition]]
+== Function Composition
+include::./lessons/alg-function-composition/index.asc[leveloffset=+1,2..-1]
+
+[[alg-defining-values]]
+== Defining Values
+include::./lessons/alg-defining-values/index.asc[leveloffset=+1,2..-1]
+
+[[alg-making-game-images]]
+== Making Game Images
+include::./lessons/alg-making-game-images/index.asc[leveloffset=+1,2..-1]
+
+[[alg-defining-functions]]
+== Defining Functions
+include::./lessons/alg-defining-functions/index.asc[leveloffset=+1,2..-1]
+
+[[alg-solving-word-problems]]
+== Solving Word Problems
+include::./lessons/alg-solving-word-problems/index.asc[leveloffset=+1,2..-1]
+
+[[alg-restating-the-problem]]
+== Restating the Problem
+include::./lessons/alg-restating-the-problem/index.asc[leveloffset=+1,2..-1]
+
+[[alg-character-animation]]
+== Character Animation
+include::./lessons/alg-character-animation/index.asc[leveloffset=+1,2..-1]
+
+[[alg-problem-decomposition]]
+== Problem Decomposition
+include::./lessons/alg-problem-decomposition/index.asc[leveloffset=+1,2..-1]
+
+[[alg-simple-inequalities]]
+== Simple Inequalities
+include::./lessons/alg-simple-inequalities/index.asc[leveloffset=+1,2..-1]
+
+[[alg-compound-inequalities]]
+== Compound Inequalities
+include::./lessons/alg-compound-inequalities/index.asc[leveloffset=+1,2..-1]
+
+[[alg-piecewise-functions]]
+== Piecewise Functions
+include::./lessons/alg-piecewise-functions/index.asc[leveloffset=+1,2..-1]
+
+[[alg-player-animation]]
+== Player Animation
+include::./lessons/alg-player-animation/index.asc[leveloffset=+1,2..-1]
+
+[[alg-distance-formula]]
+== The Distance Formula
+include::./lessons/alg-distance-formula/index.asc[leveloffset=+1,2..-1]
+
+[[alg-collision]]
+== Collision Detection
+include::./lessons/alg-collision/index.asc[leveloffset=+1,2..-1]
+

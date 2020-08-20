@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Teacher Resources</title>
+<link rel="stylesheet" href="./../../../lib/curriculum.css">
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Teacher Resources",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article pyret" onload="renderSaveToDrive()">
+<!--#include virtual="/menubar.ssi"-->
+<div id="body" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Teacher Resources</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div id="preamble_disabled">
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Teacher Workbook</strong> [<a href="./protected/workbook-sols.pdf">PDF</a>] - A
+downloadable and printable copy of the workbook with solutions for all
+exercises.</p>
+</li>
+<li>
+<p><strong>PD Workbook</strong> [<a href="./protected/pd-workbook.pdf">PDF</a>] - A downloadable and
+printable copy of the student workbook including lesson plans.</p>
+</li>
+</ul>
+</div>
+<div class="ulist teacher_resources">
+<ul>
+<li>
+<p><strong>Support Forums</strong> [<a href="https://discourse.bootstrapworld.org" target="_blank" rel="noopener">Discourse</a>] - Talk with other Bootstrap teachers, ask questions, and share out ideas!</p>
+</li>
+<li>
+<p><strong>Grading Rubric</strong> [<a href="https://docs.google.com/document/d/10YYUmMbE77VwC3W24yZykZe1I0ELL_jE2_NQyH473MY/edit#" target="_blank" rel="noopener">Google Doc</a>] - A simple grading rubric for Design Recipes.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resource_quick_links">Resource Quick Links</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Blank Fast Functions Worksheet</strong> [<a href="../lessons/alg-defining-functions/pages/FastFunctions.html" target="_blank" rel="noopener">PDF</a>, <a href="https://docs.google.com/document/d/19zlI9LU1u3xOfC7CQ2OHznaiJJNwbWJD9mm-7QtEXVQ/edit?usp=sharing" target="_blank" rel="noopener">Google Doc</a>] - Use for getting started with functions and function drills.</p>
+</li>
+<li>
+<p><strong>Blank Design Recipe Worksheet</strong> [<a href="../back-matter/pages/blank-recipe.pdf" target="_blank" rel="noopener">PDF</a>, <a href="https://docs.google.com/document/d/1B0vXzCMNEUJtPsUnJVeV3Dt13rNuK2T_7ukpfMvv7og/edit?usp=sharing" target="_blank" rel="noopener">Google Doc</a>] - Use alongside story problems for a function development template.</p>
+</li>
+<li>
+<p><strong>Blank Circles of Evaluation Mapping Worksheet</strong> [<a href="../lessons/alg-defining-functions/pages/MappingExamplesWithCoE.html" target="_blank" rel="noopener">HTML</a>, <a href="https://docs.google.com/document/d/1EDLbNC9C62Z-kf9jGZzbaRRRj8Ni_Gbz2f14kp30COU/edit?usp=sharing" target="_blank" rel="noopener">Google Doc</a>] - Use when developing functions to strengthen understanding of how functions work and connections to Circles of Evaluation.</p>
+</li>
+<li>
+<p><strong>Blank Game Template</strong>
+[<a href="https://code.pyret.org/editor#share=0B32bNEogmncOV3JRUkJ2NE1TSHc&v=80ba55b" target="_blank" rel="noopener">Pyret file</a>] - This blank template is used alongside the lessons to create a simple video game.</p>
+</li>
+<li>
+<p><strong>Sample Completed Game</strong> [<a href="https://code.pyret.org/editor#share=128nrfqS9COwTpAhRaRz0GfIbMrlhqEIj&v=f1d3c87" target="_blank" rel="noopener">Pyret file</a>] - This advanced game uses some of the features of the supplemental lessons, including 2d-motion and multiple dangers and targets.</p>
+</li>
+<li>
+<p><strong>Buggy Design Recipes</strong>
+[<a href="BuggyRecipes/pages" target="_blank" rel="noopener">folder</a>] [<a href="BuggyRecipes/solution-pages/answer-key.pdf" target="_blank" rel="noopener">Answer key</a>] - Real examples of common student mistakes. Get some practice grading them, or practice getting students over common misconceptions.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_research">Research</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>As a member of the Bootstrap Community, we invite you and your class to join our research effort!</strong><br>
+You&#8217;ll help us investigate the effectiveness of our curriculum, which helps us improve our existing materials and pedagogy for both students and teachers.<br>
+<br>
+<strong>In exchange for participation, you&#8217;ll receive a choice of a $50 Amazon gift card or up to 50 FREE student workbooks.</strong><br>
+We are in particular need of data from control classes that have not used Bootstrap. If you are able to gather data in a similar class to your Bootstrap class, we can offer an <strong>additional $50 gift card or set of 50 workbooks</strong>.<br>
+<br>
+<strong>Participation is easy: <a href="https://docs.google.com/forms/d/e/1FAIpQLScTUZrMfDuZmfiacCFo_PJ1vfZ9nNIVjFrcc4uJ4Jqj7l4Mhw/viewform?usp=sf_link" target="_blank" rel="noopener">Just fill out this Google Form</a> and you&#8217;ll receive everything you need.  We handle all the grading!</strong><br>
+<br>
+You can also help us evaluate how students react to having built a game by having them fill out <a href="https://docs.google.com/a/bootstrapworld.org/forms/d/1OcZKapL-JQxuqywaveL29D15ArgGQp3q0f4bKqFD6cQ/edit?ts=57e181f5" target="_blank" rel="noopener">this brief (10 minute) anonymous survey</a>.<br>
+We frequently get questions about various aspects of the game project, such as creativity and appeal to students.  Your input helps us assess and answer these questions.  (No compensation for the online survey, but you&#8217;re awesome in our book!)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_videos_for_teachers">Videos for Teachers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Developed in partnership with <a href="https://www.code.org" target="_blank" rel="noopener">Code.org</a></p>
+</div>
+<table class="tableblock frame-all grid-all stripes-none stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Modeling and Coordinates</strong></p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe src="https://www.youtube.com/embed/KSt_3ovWfjk?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Order of Operations</strong></p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe src="https://www.youtube.com/embed/AMFaPKHp3Mg?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Domain and Range</strong></p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe src="https://www.youtube.com/embed/88WhYoMxrGw?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Defining Values</strong></p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe src="https://www.youtube.com/embed/xRUoQO1AdVs?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Introducing The Design Recipe</strong></p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe src="https://www.youtube.com/embed/ZWdLNtPu6PQ?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Using The Design Recipe</strong></p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe src="https://www.youtube.com/embed/SL2zLs2P-mU?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Boolean Logic &amp; Inequalities</strong></p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe src="https://www.youtube.com/embed/5Fe4JMEBXPM?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Piecewise Functions</strong></p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe src="https://www.youtube.com/embed/joF6lOgCN14?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>The Pythagorean Theorem</strong></p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe src="https://www.youtube.com/embed/Bbq0oCmvSmA?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercises_and_solutions">Exercises and Solutions</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_links_to_starter_files">Links to Starter Files</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>NinjaCat demo game (<a href="https://code.pyret.org/editor#share=0B32bNEogmncOQ25ZOHBoR3ZNcUE&v=80ba55b" target="_blank" rel="noopener">Pyret</a>)</p>
+</li>
+<li>
+<p>Blank Game Starter File (<a href="https://code.pyret.org/editor#share=1xL3ZnWb43d5ih_fRib3dz3h8z9d__2om&v=f1d3c87" target="_blank" rel="noopener">Pyret</a>)</p>
+</li>
+<li>
+<p>Sam the Butterfly Starter File (<a href="https://code.pyret.org/editor#share=1B5T5dTyRPb3rKJBZOgbYbQcFcsDeYZAA&v=f1d3c87" target="_blank" rel="noopener">Pyret</a>)</p>
+</li>
+<li>
+<p>Alice&#8217;s Restaurant starter file (<a href="https://code.pyret.org/editor#share=1oeHRCcJhaP2GuKiujU0PRnJzOyWrPWSh&v=8934c12" target="_blank" rel="noopener">Pyret</a>)</p>
+</li>
+<li>
+<p><a href="https://code.pyret.org/editor#share=1g_3AqB4v6Jtq6TzcIHYNTkvlW9B6dLHS&v=882d33a" target="_blank" rel="noopener">Sample game file - no distance lines</a> (Pyret))</p>
+</li>
+<li>
+<p><a href="https://code.pyret.org/editor#share=1y1eWn1YyDDqilj0MFqEpMy4egVh-G81W&v=882d33a" target="_blank" rel="noopener">Sample game file - with distance lines</a> (Pyret))</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_links">Other Links</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLScaKOQ1L0Ni-sVuMY9tRhbAFcAcSFLA28lqPXQAJ03cUkSYYg/viewform" target="_blank" rel="noopener">Pre-PD Survey</a> Registered for a Bootstrap workshop? Please fill out this survey prior to your first day.</p>
+</li>
+<li>
+<p><a href="https://docs.google.com/forms/d/1fyf1xHQElboxDoHy_Voq1YNRy3aRpxIS99ofek5ti8c/viewform" target="_blank" rel="noopener">Sample Homework submission</a></p>
+</li>
+<li>
+<p><a href="https://docs.google.com/a/bootstrapworld.org/forms/d/e/1FAIpQLSdTWp7SxbilC2qaPMgSmtoovQRMsQ1jYrqtxykkBjm6BagB4A/viewform" target="_blank" rel="noopener">Give us some feedback</a> on the workshop</p>
+</li>
+</ul>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Algebra by Emmanuel Schanzer, Jen Poole, Ed Campos Jr, Flannery Denny, and Dorai Sitaram
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:28:14 -0400
+</div>
+</div>
+</div>
+</body>
+</html>

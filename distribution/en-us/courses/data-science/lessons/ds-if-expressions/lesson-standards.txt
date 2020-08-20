@@ -1,0 +1,7 @@
+"9-12.Algorithms and Programming.Control"
+"6-8.Data and Analysis.Inference and Models"
+"P3"
+"3B-NI-05"
+"2-AP-19"
+"2-DA-08"
+"HS-SEP4-5"

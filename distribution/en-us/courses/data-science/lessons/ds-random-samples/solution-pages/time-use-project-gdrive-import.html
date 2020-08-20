@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Project: Time-Use</title>
+<style>
+/* Overall document font */
+* {font-family: Lato, Arial, Helvetica, sans-serif;}
+
+/* document headings */
+h1,.lesson-section-1 {color: #75328A;}
+h1{font-size: 32px; font-family: sans-serif;}
+table.section-heading *, .lesson-section-1 h2{font-size: 32px; font-weight: 100;}
+table.section-heading{width: 100%;}
+table.section-heading td:last-child{text-align: right; color: #d9d2e9;}
+
+/* preamble section */
+table.preamble td {padding: 10px;}
+table.preamble td:first-child{background: #b7d893; width: 25%;}
+table.preamble td:first-child p {font-weight: bold; margin: 5px;}
+
+/* content used throughout the body */
+table{ border-collapse: collapse; border: none; }
+table.grid-all.frame-all {border: solid 1px black;}
+table.grid-none.frame-none {border-width: 0px;}
+
+.big {font-size: 30pt;}
+.vocab{font-weight: bold; font-style: italic;}
+.right{text-align: right;}
+.acknowledgment {
+  border-top: solid 1px black; 
+  font-style: italic; 
+  font-size: 8pt;
+}
+.lesson-point {
+  border-top: solid 1px black; 
+  border-bottom: solid 1px black; 
+  color: black;
+  font-weight: bold;
+}
+
+.web-page-only, #footer { display: none; visibility: hidden; }
+
+/* Callout boxes */
+.strategy-box, .notice-box {
+  background: #efefef;
+  border: solid 5px !important;
+  margin: 15px auto;
+  width: 100%;
+}
+.strategy-box { border-color: #1a73b5 !important; }
+.notice-box   { border-color: #7747a5 !important; }
+.strategy-box td, .notice-box td{ padding: 10px; }
+.strategy-box .title, .notice-box .title{
+  width: 100%;
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+  clear: both;
+  margin: 100px;
+}
+.strategy-box p.tableblock:first-child, .notice-box p.tableblock:first-child{
+  text-align: center;
+  padding-bottom: 15px;
+}
+.strategy-box .title { color: #1a73b5; }
+.notice-box   .title { color: #7747a5; }
+.strategy-box a, .notice-box a { color: blue; text-decoration: underline; }
+
+/* "Tables" of Evaluation */
+.operator{border-bottom: solid 1px black; text-align: center;}
+.operator * {text-align: center;}
+td {padding: 0px 10px; font-size: 14px;}
+table.expression {
+    font-family:"Courier New", Monaco, monospace;
+    border:     solid 1px black;
+    font-size:  1px;
+    max-width:  400px;
+    color:      #666666;
+    display:    inline-block;
+}
+table.args {border: none; text-align: center;}
+
+.wescheme-string,     .cm-scheme-string    {color: green;}
+.wescheme-number,     .cm-scheme-number    {color: blue;}
+.wescheme-boolean,    .cm-scheme-boolean   {color: darkred;}
+.wescheme-character,  .cm-scheme-character {color: orange;}
+.wescheme-symbol,     .cm-scheme-symbol    {color: steelblue;}
+.wescheme-comment,    .cm-scheme-comment   {color: orange; }
+
+.racket, .pyret, .studentAnswerCode, .studentAnswer, .pyretkeyword, .keyword_only {
+    font-family:"Courier New", Monaco, monospace !important; 
+    color: black;
+}
+
+/* Design Recipe */
+.recipe_instructions { font-style: italic; }
+table.recipe_title {
+  color:              white;
+  background:         gray;
+  display:            block;
+  padding:            0px;
+  font-size:          1.1rem;
+  font-weight:        bold;
+}</style>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:window.location.href,
+    filename:"Project: Time-Use",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article pyret" onload="renderSaveToDrive()">
+<span id="header">
+<h1>Project: Time-Use</h1>
+
+  <span id="savetodrive-div"></span>
+
+</span>
+<span id="content">
+<span id="preamble_disabled">
+<span class="sectionbody">
+<span class="paragraph">
+<p><span class="web-page-only">Referenced from lesson <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-random-samples/solution-pages/../../../lessons/ds-random-samples/index.shtml">Randomness and Sample Size</a></p>
+</span>
+<span class="paragraph">
+<p></span></p>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<h2 id="_the_issue">The Issue</h2>
+<span class="sectionbody">
+<span class="paragraph">
+<p>There have been many reports lately about people spending a large amount of time interacting with technology and the Internet. This raises some questions about time use:</p>
+</span>
+<span class="olist arabic">
+<ol class="arabic">
+<li>
+<p>How do I spend my time?</p>
+</li>
+<li>
+<p>Is there a difference between how females and males spend their time?</p>
+</li>
+<li>
+<p>Do we spend too much time doing homework?</p>
+</li>
+<li>
+<p>How is my time use similar or different to other Americans?</p>
+</li>
+</ol>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<h2 id="_objectives">Objectives</h2>
+<span class="sectionbody">
+<span class="paragraph">
+<p>Upon completing this project, you will have compared yourself to the U.S. population to find whether you are similar in some ways and different in other ways. You will use plots, statistics, and tables to find these similarities and difference.</p>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<h2 id="_motivation">Motivation</h2>
+<span class="sectionbody">
+<span class="paragraph">
+<p>Search “How Americans Use their Time” to find graphs on different groups and how they spend their time. You will use this to compare to your data.</p>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<h2 id="_guiding_questions">Guiding Questions</h2>
+<span class="sectionbody">
+<span class="olist arabic">
+<ol class="arabic">
+<li>
+<p>On average, how long do students think they spend on homework?</p>
+</li>
+<li>
+<p>Do males or females take longer to groom themselves?</p>
+</li>
+<li>
+<p>Are there groups of students who spend their time similarly to one another?</p>
+</li>
+</ol>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<h2 id="_produce">Produce</h2>
+<span class="sectionbody">
+<span class="paragraph">
+<p>You will complete a poster where you answer a statistical question based on the time-use data collected. Your poster must include your question, plots, data, tables, and paragraphs answering your question based on data collected. Include comparing your data to others in America as part of your reporting.</p>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<h2 id="_survey_details">Survey Details</h2>
+<span class="sectionbody">
+<span class="paragraph">
+<p>Surveys will be completed four times a day for five days (including 2 weekend days). It is recommended that surveys be completed before school, after school, evening, and before bed. Set reminders on your phone to ensure survey completion.</p>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<h2 id="_survey_questions">Survey Questions</h2>
+<span class="sectionbody">
+<span class="paragraph">
+<p>Create a Google Form with the following questions:</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>Date</p>
+</li>
+<li>
+<p>In classes at school?</p>
+</li>
+<li>
+<p>Doing homework?</p>
+</li>
+<li>
+<p>Working at a job?</p>
+</li>
+<li>
+<p>Grooming yourself?</p>
+</li>
+<li>
+<p>Traveling/commuting?</p>
+</li>
+<li>
+<p>Doing household chores?</p>
+</li>
+<li>
+<p>Online?</p>
+</li>
+<li>
+<p>Watching TV?</p>
+</li>
+<li>
+<p>Playing video games?</p>
+</li>
+<li>
+<p>Playing sports?</p>
+</li>
+<li>
+<p>Reading (not for class)?</p>
+</li>
+<li>
+<p>With friends (out of class)?</p>
+</li>
+<li>
+<p>How many hours have you slept?</p>
+</li>
+<li>
+<p>How many minutes have you spent eating/drinking?</p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p>Fill out this form <strong>every day</strong> for five days.</p>
+</span>
+<span class="paragraph">
+<p><span class="vspace" style="height: 1em"></span><span class="gdrive-only"><p>&#xa0;</p></span><span class="gdrive-only"><p>&#xa0;</p></span></p>
+</span>
+<span class="paragraph">
+<p>Declare the statistical question you will report on here:
+<span class="blankline"></p>
+</span>
+<span class="paragraph">
+<p><span class="blankline"></p>
+</span>
+<span class="paragraph">
+<p><span class="blankline"></p>
+</span>
+<span class="paragraph">
+<p><span class="blankline"></p>
+</span>
+<span class="paragraph">
+<p>(Based on the Time Use project from <a href="https://www.introdatascience.org/">IDS at UCLA</a>)</p>
+</span>
+<span class="openblock acknowledgment"><hr/>
+<span class="content">
+<span class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-random-samples/solution-pages/mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+<span id="footer">
+<span id="footer-text">
+Last updated 2020-08-19 20:30:57 -0400
+</span>
+</span>
+</body>
+</html>

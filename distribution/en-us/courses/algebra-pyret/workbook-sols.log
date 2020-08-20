@@ -1,0 +1,2191 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.24)  19 AUG 2020 20:28
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**workbook-sols.tex
+(./workbook-sols.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2020/01/28 v0.5q Insert pages of external PDF documents (AM)
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count175
+\calc@Bcount=\count176
+\calc@Adimen=\dimen135
+\calc@Bdimen=\dimen136
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count177
+\calc@Cskip=\skip51
+)
+(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
+
+(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen137
+\Gin@req@width=\dimen138
+)
+\AM@pagewidth=\dimen139
+\AM@pageheight=\dimen140
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box45
+\AM@global@opts=\toks15
+\AM@pagecnt=\count178
+\AM@toc@title=\toks16
+\c@AM@survey=\count179
+\AM@templatesizebox=\box46
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip52
+\f@nch@O@elh=\skip53
+\f@nch@O@erh=\skip54
+\f@nch@O@olh=\skip55
+\f@nch@O@orh=\skip56
+\f@nch@O@elf=\skip57
+\f@nch@O@erf=\skip58
+\f@nch@O@olf=\skip59
+\f@nch@O@orf=\skip60
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count180
+\l__pdf_internal_box=\box47
+)
+No file workbook-sols.aux.
+\openout1 = `workbook-sols.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+\AtBeginShipoutBox=\box48
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count181
+\scratchdimen=\dimen141
+\scratchbox=\box49
+\nofMPsegments=\count182
+\nofMParguments=\count183
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count184
+\MPscratchDim=\dimen142
+\MPnumerator=\count185
+\makeMPintoPDFobject=\count186
+\everyMPtoPDFconversion=\toks18
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+<workbook-sols-A.pdf, id=1, 614.295pt x 794.97pt>
+File: workbook-sols-A.pdf Graphic file (type pdf)
+<use workbook-sols-A.pdf>
+Package pdftex.def Info: workbook-sols-A.pdf  used on input line 22.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: workbook-sols-A.pdf Graphic file (type pdf)
+<use workbook-sols-A.pdf>
+Package pdftex.def Info: workbook-sols-A.pdf  used on input line 22.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+<workbook-sols-A.pdf, id=4, page=1, 614.295pt x 794.97pt>
+File: workbook-sols-A.pdf Graphic file (type pdf)
+<use workbook-sols-A.pdf, page 1>
+Package pdftex.def Info: workbook-sols-A.pdf , page1 used on input line 22.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: workbook-sols-A.pdf Graphic file (type pdf)
+<use workbook-sols-A.pdf, page 1>
+Package pdftex.def Info: workbook-sols-A.pdf , page1 used on input line 22.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: workbook-sols-A.pdf Graphic file (type pdf)
+<use workbook-sols-A.pdf, page 1>
+Package pdftex.def Info: workbook-sols-A.pdf , page1 used on input line 22.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: workbook-sols-A.pdf Graphic file (type pdf)
+<use workbook-sols-A.pdf, page 1>
+Package pdftex.def Info: workbook-sols-A.pdf , page1 used on input line 22.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: workbook-sols-A.pdf Graphic file (type pdf)
+<use workbook-sols-A.pdf, page 1>
+Package pdftex.def Info: workbook-sols-A.pdf , page1 used on input line 22.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [1
+
+ <./workbook-sols-A.pdf>]
+<workbook-sols-B.pdf, id=27, 597.23125pt x 845.1575pt>
+File: workbook-sols-B.pdf Graphic file (type pdf)
+<use workbook-sols-B.pdf>
+Package pdftex.def Info: workbook-sols-B.pdf  used on input line 23.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-B.pdf Graphic file (type pdf)
+<use workbook-sols-B.pdf>
+Package pdftex.def Info: workbook-sols-B.pdf  used on input line 23.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-B.pdf, id=30, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-B.pdf Graphic file (type pdf)
+<use workbook-sols-B.pdf, page 1>
+Package pdftex.def Info: workbook-sols-B.pdf , page1 used on input line 23.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-B.pdf Graphic file (type pdf)
+<use workbook-sols-B.pdf, page 1>
+Package pdftex.def Info: workbook-sols-B.pdf , page1 used on input line 23.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-B.pdf Graphic file (type pdf)
+<use workbook-sols-B.pdf, page 1>
+Package pdftex.def Info: workbook-sols-B.pdf , page1 used on input line 23.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-B.pdf Graphic file (type pdf)
+<use workbook-sols-B.pdf, page 1>
+Package pdftex.def Info: workbook-sols-B.pdf , page1 used on input line 23.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-B.pdf Graphic file (type pdf)
+<use workbook-sols-B.pdf, page 1>
+Package pdftex.def Info: workbook-sols-B.pdf , page1 used on input line 23.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [2 <./workbook-sols-B.pdf>]
+<workbook-sols-C.pdf, id=44, 597.23125pt x 845.1575pt>
+File: workbook-sols-C.pdf Graphic file (type pdf)
+<use workbook-sols-C.pdf>
+Package pdftex.def Info: workbook-sols-C.pdf  used on input line 25.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-C.pdf Graphic file (type pdf)
+<use workbook-sols-C.pdf>
+Package pdftex.def Info: workbook-sols-C.pdf  used on input line 25.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-C.pdf, id=47, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-C.pdf Graphic file (type pdf)
+<use workbook-sols-C.pdf, page 1>
+Package pdftex.def Info: workbook-sols-C.pdf , page1 used on input line 25.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-C.pdf Graphic file (type pdf)
+<use workbook-sols-C.pdf, page 1>
+Package pdftex.def Info: workbook-sols-C.pdf , page1 used on input line 25.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-C.pdf Graphic file (type pdf)
+<use workbook-sols-C.pdf, page 1>
+Package pdftex.def Info: workbook-sols-C.pdf , page1 used on input line 25.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-C.pdf Graphic file (type pdf)
+<use workbook-sols-C.pdf, page 1>
+Package pdftex.def Info: workbook-sols-C.pdf , page1 used on input line 25.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-C.pdf Graphic file (type pdf)
+<use workbook-sols-C.pdf, page 1>
+Package pdftex.def Info: workbook-sols-C.pdf , page1 used on input line 25.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [3{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./workbook-sols-C.pdf>]
+<workbook-sols-D.pdf, id=75, 597.23125pt x 845.1575pt>
+File: workbook-sols-D.pdf Graphic file (type pdf)
+<use workbook-sols-D.pdf>
+Package pdftex.def Info: workbook-sols-D.pdf  used on input line 26.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-D.pdf Graphic file (type pdf)
+<use workbook-sols-D.pdf>
+Package pdftex.def Info: workbook-sols-D.pdf  used on input line 26.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-D.pdf, id=78, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-D.pdf Graphic file (type pdf)
+<use workbook-sols-D.pdf, page 1>
+Package pdftex.def Info: workbook-sols-D.pdf , page1 used on input line 26.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-D.pdf Graphic file (type pdf)
+<use workbook-sols-D.pdf, page 1>
+Package pdftex.def Info: workbook-sols-D.pdf , page1 used on input line 26.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-D.pdf Graphic file (type pdf)
+<use workbook-sols-D.pdf, page 1>
+Package pdftex.def Info: workbook-sols-D.pdf , page1 used on input line 26.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-D.pdf Graphic file (type pdf)
+<use workbook-sols-D.pdf, page 1>
+Package pdftex.def Info: workbook-sols-D.pdf , page1 used on input line 26.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-D.pdf Graphic file (type pdf)
+<use workbook-sols-D.pdf, page 1>
+Package pdftex.def Info: workbook-sols-D.pdf , page1 used on input line 26.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [4 <./workbook-sols-D.pdf>]
+<workbook-sols-E.pdf, id=101, 597.23125pt x 845.1575pt>
+File: workbook-sols-E.pdf Graphic file (type pdf)
+<use workbook-sols-E.pdf>
+Package pdftex.def Info: workbook-sols-E.pdf  used on input line 27.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-E.pdf Graphic file (type pdf)
+<use workbook-sols-E.pdf>
+Package pdftex.def Info: workbook-sols-E.pdf  used on input line 27.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-E.pdf, id=104, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-E.pdf Graphic file (type pdf)
+<use workbook-sols-E.pdf, page 1>
+Package pdftex.def Info: workbook-sols-E.pdf , page1 used on input line 27.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-E.pdf Graphic file (type pdf)
+<use workbook-sols-E.pdf, page 1>
+Package pdftex.def Info: workbook-sols-E.pdf , page1 used on input line 27.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-E.pdf Graphic file (type pdf)
+<use workbook-sols-E.pdf, page 1>
+Package pdftex.def Info: workbook-sols-E.pdf , page1 used on input line 27.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-E.pdf Graphic file (type pdf)
+<use workbook-sols-E.pdf, page 1>
+Package pdftex.def Info: workbook-sols-E.pdf , page1 used on input line 27.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-E.pdf Graphic file (type pdf)
+<use workbook-sols-E.pdf, page 1>
+Package pdftex.def Info: workbook-sols-E.pdf , page1 used on input line 27.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [5 <./workbook-sols-E.pdf>]
+<workbook-sols-F.pdf, id=135, 597.23125pt x 845.1575pt>
+File: workbook-sols-F.pdf Graphic file (type pdf)
+<use workbook-sols-F.pdf>
+Package pdftex.def Info: workbook-sols-F.pdf  used on input line 29.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-F.pdf Graphic file (type pdf)
+<use workbook-sols-F.pdf>
+Package pdftex.def Info: workbook-sols-F.pdf  used on input line 29.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-F.pdf, id=138, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-F.pdf Graphic file (type pdf)
+<use workbook-sols-F.pdf, page 1>
+Package pdftex.def Info: workbook-sols-F.pdf , page1 used on input line 29.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-F.pdf Graphic file (type pdf)
+<use workbook-sols-F.pdf, page 1>
+Package pdftex.def Info: workbook-sols-F.pdf , page1 used on input line 29.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-F.pdf Graphic file (type pdf)
+<use workbook-sols-F.pdf, page 1>
+Package pdftex.def Info: workbook-sols-F.pdf , page1 used on input line 29.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-F.pdf Graphic file (type pdf)
+<use workbook-sols-F.pdf, page 1>
+Package pdftex.def Info: workbook-sols-F.pdf , page1 used on input line 29.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-F.pdf Graphic file (type pdf)
+<use workbook-sols-F.pdf, page 1>
+Package pdftex.def Info: workbook-sols-F.pdf , page1 used on input line 29.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [6 <./workbook-sols-F.pdf>]
+<workbook-sols-G.pdf, id=162, 597.23125pt x 845.1575pt>
+File: workbook-sols-G.pdf Graphic file (type pdf)
+<use workbook-sols-G.pdf>
+Package pdftex.def Info: workbook-sols-G.pdf  used on input line 30.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-G.pdf Graphic file (type pdf)
+<use workbook-sols-G.pdf>
+Package pdftex.def Info: workbook-sols-G.pdf  used on input line 30.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-G.pdf, id=165, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-G.pdf Graphic file (type pdf)
+<use workbook-sols-G.pdf, page 1>
+Package pdftex.def Info: workbook-sols-G.pdf , page1 used on input line 30.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-G.pdf Graphic file (type pdf)
+<use workbook-sols-G.pdf, page 1>
+Package pdftex.def Info: workbook-sols-G.pdf , page1 used on input line 30.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-G.pdf Graphic file (type pdf)
+<use workbook-sols-G.pdf, page 1>
+Package pdftex.def Info: workbook-sols-G.pdf , page1 used on input line 30.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-G.pdf Graphic file (type pdf)
+<use workbook-sols-G.pdf, page 1>
+Package pdftex.def Info: workbook-sols-G.pdf , page1 used on input line 30.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-G.pdf Graphic file (type pdf)
+<use workbook-sols-G.pdf, page 1>
+Package pdftex.def Info: workbook-sols-G.pdf , page1 used on input line 30.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [7 <./workbook-sols-G.pdf>]
+<workbook-sols-H.pdf, id=189, 597.23125pt x 845.1575pt>
+File: workbook-sols-H.pdf Graphic file (type pdf)
+<use workbook-sols-H.pdf>
+Package pdftex.def Info: workbook-sols-H.pdf  used on input line 31.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-H.pdf Graphic file (type pdf)
+<use workbook-sols-H.pdf>
+Package pdftex.def Info: workbook-sols-H.pdf  used on input line 31.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-H.pdf, id=192, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-H.pdf Graphic file (type pdf)
+<use workbook-sols-H.pdf, page 1>
+Package pdftex.def Info: workbook-sols-H.pdf , page1 used on input line 31.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-H.pdf Graphic file (type pdf)
+<use workbook-sols-H.pdf, page 1>
+Package pdftex.def Info: workbook-sols-H.pdf , page1 used on input line 31.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-H.pdf Graphic file (type pdf)
+<use workbook-sols-H.pdf, page 1>
+Package pdftex.def Info: workbook-sols-H.pdf , page1 used on input line 31.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-H.pdf Graphic file (type pdf)
+<use workbook-sols-H.pdf, page 1>
+Package pdftex.def Info: workbook-sols-H.pdf , page1 used on input line 31.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-H.pdf Graphic file (type pdf)
+<use workbook-sols-H.pdf, page 1>
+Package pdftex.def Info: workbook-sols-H.pdf , page1 used on input line 31.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+
+[8 <./workbook-sols-H.pdf>]
+<workbook-sols-I.pdf, id=215, 597.23125pt x 845.1575pt>
+File: workbook-sols-I.pdf Graphic file (type pdf)
+<use workbook-sols-I.pdf>
+Package pdftex.def Info: workbook-sols-I.pdf  used on input line 33.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-I.pdf Graphic file (type pdf)
+<use workbook-sols-I.pdf>
+Package pdftex.def Info: workbook-sols-I.pdf  used on input line 33.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-I.pdf, id=218, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-I.pdf Graphic file (type pdf)
+<use workbook-sols-I.pdf, page 1>
+Package pdftex.def Info: workbook-sols-I.pdf , page1 used on input line 33.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-I.pdf Graphic file (type pdf)
+<use workbook-sols-I.pdf, page 1>
+Package pdftex.def Info: workbook-sols-I.pdf , page1 used on input line 33.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-I.pdf Graphic file (type pdf)
+<use workbook-sols-I.pdf, page 1>
+Package pdftex.def Info: workbook-sols-I.pdf , page1 used on input line 33.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-I.pdf Graphic file (type pdf)
+<use workbook-sols-I.pdf, page 1>
+Package pdftex.def Info: workbook-sols-I.pdf , page1 used on input line 33.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-I.pdf Graphic file (type pdf)
+<use workbook-sols-I.pdf, page 1>
+Package pdftex.def Info: workbook-sols-I.pdf , page1 used on input line 33.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [9 <./workbook-sols-I.pdf>]
+<workbook-sols-J.pdf, id=270, 597.23125pt x 845.1575pt>
+File: workbook-sols-J.pdf Graphic file (type pdf)
+<use workbook-sols-J.pdf>
+Package pdftex.def Info: workbook-sols-J.pdf  used on input line 34.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-J.pdf Graphic file (type pdf)
+<use workbook-sols-J.pdf>
+Package pdftex.def Info: workbook-sols-J.pdf  used on input line 34.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-J.pdf, id=273, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-J.pdf Graphic file (type pdf)
+<use workbook-sols-J.pdf, page 1>
+Package pdftex.def Info: workbook-sols-J.pdf , page1 used on input line 34.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-J.pdf Graphic file (type pdf)
+<use workbook-sols-J.pdf, page 1>
+Package pdftex.def Info: workbook-sols-J.pdf , page1 used on input line 34.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-J.pdf Graphic file (type pdf)
+<use workbook-sols-J.pdf, page 1>
+Package pdftex.def Info: workbook-sols-J.pdf , page1 used on input line 34.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-J.pdf Graphic file (type pdf)
+<use workbook-sols-J.pdf, page 1>
+Package pdftex.def Info: workbook-sols-J.pdf , page1 used on input line 34.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-J.pdf Graphic file (type pdf)
+<use workbook-sols-J.pdf, page 1>
+Package pdftex.def Info: workbook-sols-J.pdf , page1 used on input line 34.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [10 <./workbook-sols-J.pdf>]
+<workbook-sols-K.pdf, id=301, 597.23125pt x 845.1575pt>
+File: workbook-sols-K.pdf Graphic file (type pdf)
+<use workbook-sols-K.pdf>
+Package pdftex.def Info: workbook-sols-K.pdf  used on input line 35.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-K.pdf Graphic file (type pdf)
+<use workbook-sols-K.pdf>
+Package pdftex.def Info: workbook-sols-K.pdf  used on input line 35.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-K.pdf, id=304, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-K.pdf Graphic file (type pdf)
+<use workbook-sols-K.pdf, page 1>
+Package pdftex.def Info: workbook-sols-K.pdf , page1 used on input line 35.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-K.pdf Graphic file (type pdf)
+<use workbook-sols-K.pdf, page 1>
+Package pdftex.def Info: workbook-sols-K.pdf , page1 used on input line 35.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-K.pdf Graphic file (type pdf)
+<use workbook-sols-K.pdf, page 1>
+Package pdftex.def Info: workbook-sols-K.pdf , page1 used on input line 35.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-K.pdf Graphic file (type pdf)
+<use workbook-sols-K.pdf, page 1>
+Package pdftex.def Info: workbook-sols-K.pdf , page1 used on input line 35.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-K.pdf Graphic file (type pdf)
+<use workbook-sols-K.pdf, page 1>
+Package pdftex.def Info: workbook-sols-K.pdf , page1 used on input line 35.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [11 <./workbook-sols-K.pdf>]
+<workbook-sols-L.pdf, id=343, 597.23125pt x 845.1575pt>
+File: workbook-sols-L.pdf Graphic file (type pdf)
+<use workbook-sols-L.pdf>
+Package pdftex.def Info: workbook-sols-L.pdf  used on input line 36.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-L.pdf Graphic file (type pdf)
+<use workbook-sols-L.pdf>
+Package pdftex.def Info: workbook-sols-L.pdf  used on input line 36.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-L.pdf, id=346, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-L.pdf Graphic file (type pdf)
+<use workbook-sols-L.pdf, page 1>
+Package pdftex.def Info: workbook-sols-L.pdf , page1 used on input line 36.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-L.pdf Graphic file (type pdf)
+<use workbook-sols-L.pdf, page 1>
+Package pdftex.def Info: workbook-sols-L.pdf , page1 used on input line 36.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-L.pdf Graphic file (type pdf)
+<use workbook-sols-L.pdf, page 1>
+Package pdftex.def Info: workbook-sols-L.pdf , page1 used on input line 36.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-L.pdf Graphic file (type pdf)
+<use workbook-sols-L.pdf, page 1>
+Package pdftex.def Info: workbook-sols-L.pdf , page1 used on input line 36.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-L.pdf Graphic file (type pdf)
+<use workbook-sols-L.pdf, page 1>
+Package pdftex.def Info: workbook-sols-L.pdf , page1 used on input line 36.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [12 <./workbook-sols-L.pdf>]
+<workbook-sols-M.pdf, id=386, 597.23125pt x 845.1575pt>
+File: workbook-sols-M.pdf Graphic file (type pdf)
+<use workbook-sols-M.pdf>
+Package pdftex.def Info: workbook-sols-M.pdf  used on input line 37.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-M.pdf Graphic file (type pdf)
+<use workbook-sols-M.pdf>
+Package pdftex.def Info: workbook-sols-M.pdf  used on input line 37.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-M.pdf, id=389, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-M.pdf Graphic file (type pdf)
+<use workbook-sols-M.pdf, page 1>
+Package pdftex.def Info: workbook-sols-M.pdf , page1 used on input line 37.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-M.pdf Graphic file (type pdf)
+<use workbook-sols-M.pdf, page 1>
+Package pdftex.def Info: workbook-sols-M.pdf , page1 used on input line 37.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-M.pdf Graphic file (type pdf)
+<use workbook-sols-M.pdf, page 1>
+Package pdftex.def Info: workbook-sols-M.pdf , page1 used on input line 37.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-M.pdf Graphic file (type pdf)
+<use workbook-sols-M.pdf, page 1>
+Package pdftex.def Info: workbook-sols-M.pdf , page1 used on input line 37.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-M.pdf Graphic file (type pdf)
+<use workbook-sols-M.pdf, page 1>
+Package pdftex.def Info: workbook-sols-M.pdf , page1 used on input line 37.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [13 <./workbook-sols-M.pdf>]
+<workbook-sols-N.pdf, id=429, 597.23125pt x 845.1575pt>
+File: workbook-sols-N.pdf Graphic file (type pdf)
+<use workbook-sols-N.pdf>
+Package pdftex.def Info: workbook-sols-N.pdf  used on input line 38.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-N.pdf Graphic file (type pdf)
+<use workbook-sols-N.pdf>
+Package pdftex.def Info: workbook-sols-N.pdf  used on input line 38.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-N.pdf, id=432, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-N.pdf Graphic file (type pdf)
+<use workbook-sols-N.pdf, page 1>
+Package pdftex.def Info: workbook-sols-N.pdf , page1 used on input line 38.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-N.pdf Graphic file (type pdf)
+<use workbook-sols-N.pdf, page 1>
+Package pdftex.def Info: workbook-sols-N.pdf , page1 used on input line 38.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-N.pdf Graphic file (type pdf)
+<use workbook-sols-N.pdf, page 1>
+Package pdftex.def Info: workbook-sols-N.pdf , page1 used on input line 38.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-N.pdf Graphic file (type pdf)
+<use workbook-sols-N.pdf, page 1>
+Package pdftex.def Info: workbook-sols-N.pdf , page1 used on input line 38.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-N.pdf Graphic file (type pdf)
+<use workbook-sols-N.pdf, page 1>
+Package pdftex.def Info: workbook-sols-N.pdf , page1 used on input line 38.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [14 <./workbook-sols-N.pdf>]
+<workbook-sols-O.pdf, id=475, 597.23125pt x 845.1575pt>
+File: workbook-sols-O.pdf Graphic file (type pdf)
+<use workbook-sols-O.pdf>
+Package pdftex.def Info: workbook-sols-O.pdf  used on input line 39.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-O.pdf Graphic file (type pdf)
+<use workbook-sols-O.pdf>
+Package pdftex.def Info: workbook-sols-O.pdf  used on input line 39.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-O.pdf, id=478, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-O.pdf Graphic file (type pdf)
+<use workbook-sols-O.pdf, page 1>
+Package pdftex.def Info: workbook-sols-O.pdf , page1 used on input line 39.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-O.pdf Graphic file (type pdf)
+<use workbook-sols-O.pdf, page 1>
+Package pdftex.def Info: workbook-sols-O.pdf , page1 used on input line 39.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-O.pdf Graphic file (type pdf)
+<use workbook-sols-O.pdf, page 1>
+Package pdftex.def Info: workbook-sols-O.pdf , page1 used on input line 39.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-O.pdf Graphic file (type pdf)
+<use workbook-sols-O.pdf, page 1>
+Package pdftex.def Info: workbook-sols-O.pdf , page1 used on input line 39.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-O.pdf Graphic file (type pdf)
+<use workbook-sols-O.pdf, page 1>
+Package pdftex.def Info: workbook-sols-O.pdf , page1 used on input line 39.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [15 <./workbook-sols-O.pdf>]
+<workbook-sols-P.pdf, id=516, 597.23125pt x 845.1575pt>
+File: workbook-sols-P.pdf Graphic file (type pdf)
+<use workbook-sols-P.pdf>
+Package pdftex.def Info: workbook-sols-P.pdf  used on input line 40.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-P.pdf Graphic file (type pdf)
+<use workbook-sols-P.pdf>
+Package pdftex.def Info: workbook-sols-P.pdf  used on input line 40.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-P.pdf, id=519, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-P.pdf Graphic file (type pdf)
+<use workbook-sols-P.pdf, page 1>
+Package pdftex.def Info: workbook-sols-P.pdf , page1 used on input line 40.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-P.pdf Graphic file (type pdf)
+<use workbook-sols-P.pdf, page 1>
+Package pdftex.def Info: workbook-sols-P.pdf , page1 used on input line 40.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-P.pdf Graphic file (type pdf)
+<use workbook-sols-P.pdf, page 1>
+Package pdftex.def Info: workbook-sols-P.pdf , page1 used on input line 40.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-P.pdf Graphic file (type pdf)
+<use workbook-sols-P.pdf, page 1>
+Package pdftex.def Info: workbook-sols-P.pdf , page1 used on input line 40.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-P.pdf Graphic file (type pdf)
+<use workbook-sols-P.pdf, page 1>
+Package pdftex.def Info: workbook-sols-P.pdf , page1 used on input line 40.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+
+[16 <./workbook-sols-P.pdf>]
+<workbook-sols-Q.pdf, id=563, 597.23125pt x 845.1575pt>
+File: workbook-sols-Q.pdf Graphic file (type pdf)
+<use workbook-sols-Q.pdf>
+Package pdftex.def Info: workbook-sols-Q.pdf  used on input line 41.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-Q.pdf Graphic file (type pdf)
+<use workbook-sols-Q.pdf>
+Package pdftex.def Info: workbook-sols-Q.pdf  used on input line 41.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-Q.pdf, id=566, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-Q.pdf Graphic file (type pdf)
+<use workbook-sols-Q.pdf, page 1>
+Package pdftex.def Info: workbook-sols-Q.pdf , page1 used on input line 41.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-Q.pdf Graphic file (type pdf)
+<use workbook-sols-Q.pdf, page 1>
+Package pdftex.def Info: workbook-sols-Q.pdf , page1 used on input line 41.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-Q.pdf Graphic file (type pdf)
+<use workbook-sols-Q.pdf, page 1>
+Package pdftex.def Info: workbook-sols-Q.pdf , page1 used on input line 41.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-Q.pdf Graphic file (type pdf)
+<use workbook-sols-Q.pdf, page 1>
+Package pdftex.def Info: workbook-sols-Q.pdf , page1 used on input line 41.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-Q.pdf Graphic file (type pdf)
+<use workbook-sols-Q.pdf, page 1>
+Package pdftex.def Info: workbook-sols-Q.pdf , page1 used on input line 41.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [17 <./workbook-sols-Q.pdf>]
+<workbook-sols-R.pdf, id=615, 597.23125pt x 845.1575pt>
+File: workbook-sols-R.pdf Graphic file (type pdf)
+<use workbook-sols-R.pdf>
+Package pdftex.def Info: workbook-sols-R.pdf  used on input line 42.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-R.pdf Graphic file (type pdf)
+<use workbook-sols-R.pdf>
+Package pdftex.def Info: workbook-sols-R.pdf  used on input line 42.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-R.pdf, id=618, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-R.pdf Graphic file (type pdf)
+<use workbook-sols-R.pdf, page 1>
+Package pdftex.def Info: workbook-sols-R.pdf , page1 used on input line 42.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-R.pdf Graphic file (type pdf)
+<use workbook-sols-R.pdf, page 1>
+Package pdftex.def Info: workbook-sols-R.pdf , page1 used on input line 42.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-R.pdf Graphic file (type pdf)
+<use workbook-sols-R.pdf, page 1>
+Package pdftex.def Info: workbook-sols-R.pdf , page1 used on input line 42.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-R.pdf Graphic file (type pdf)
+<use workbook-sols-R.pdf, page 1>
+Package pdftex.def Info: workbook-sols-R.pdf , page1 used on input line 42.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-R.pdf Graphic file (type pdf)
+<use workbook-sols-R.pdf, page 1>
+Package pdftex.def Info: workbook-sols-R.pdf , page1 used on input line 42.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [18 <./workbook-sols-R.pdf>]
+<workbook-sols-S.pdf, id=661, 597.23125pt x 845.1575pt>
+File: workbook-sols-S.pdf Graphic file (type pdf)
+<use workbook-sols-S.pdf>
+Package pdftex.def Info: workbook-sols-S.pdf  used on input line 44.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-S.pdf Graphic file (type pdf)
+<use workbook-sols-S.pdf>
+Package pdftex.def Info: workbook-sols-S.pdf  used on input line 44.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-S.pdf, id=664, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-S.pdf Graphic file (type pdf)
+<use workbook-sols-S.pdf, page 1>
+Package pdftex.def Info: workbook-sols-S.pdf , page1 used on input line 44.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-S.pdf Graphic file (type pdf)
+<use workbook-sols-S.pdf, page 1>
+Package pdftex.def Info: workbook-sols-S.pdf , page1 used on input line 44.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-S.pdf Graphic file (type pdf)
+<use workbook-sols-S.pdf, page 1>
+Package pdftex.def Info: workbook-sols-S.pdf , page1 used on input line 44.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-S.pdf Graphic file (type pdf)
+<use workbook-sols-S.pdf, page 1>
+Package pdftex.def Info: workbook-sols-S.pdf , page1 used on input line 44.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-S.pdf Graphic file (type pdf)
+<use workbook-sols-S.pdf, page 1>
+Package pdftex.def Info: workbook-sols-S.pdf , page1 used on input line 44.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [19 <./workbook-sols-S.pdf>]
+<workbook-sols-T.pdf, id=709, 597.23125pt x 845.1575pt>
+File: workbook-sols-T.pdf Graphic file (type pdf)
+<use workbook-sols-T.pdf>
+Package pdftex.def Info: workbook-sols-T.pdf  used on input line 45.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-T.pdf Graphic file (type pdf)
+<use workbook-sols-T.pdf>
+Package pdftex.def Info: workbook-sols-T.pdf  used on input line 45.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-T.pdf, id=712, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-T.pdf Graphic file (type pdf)
+<use workbook-sols-T.pdf, page 1>
+Package pdftex.def Info: workbook-sols-T.pdf , page1 used on input line 45.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-T.pdf Graphic file (type pdf)
+<use workbook-sols-T.pdf, page 1>
+Package pdftex.def Info: workbook-sols-T.pdf , page1 used on input line 45.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-T.pdf Graphic file (type pdf)
+<use workbook-sols-T.pdf, page 1>
+Package pdftex.def Info: workbook-sols-T.pdf , page1 used on input line 45.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-T.pdf Graphic file (type pdf)
+<use workbook-sols-T.pdf, page 1>
+Package pdftex.def Info: workbook-sols-T.pdf , page1 used on input line 45.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-T.pdf Graphic file (type pdf)
+<use workbook-sols-T.pdf, page 1>
+Package pdftex.def Info: workbook-sols-T.pdf , page1 used on input line 45.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [20 <./workbook-sols-T.pdf>]
+<workbook-sols-U.pdf, id=751, 597.23125pt x 845.1575pt>
+File: workbook-sols-U.pdf Graphic file (type pdf)
+<use workbook-sols-U.pdf>
+Package pdftex.def Info: workbook-sols-U.pdf  used on input line 47.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-U.pdf Graphic file (type pdf)
+<use workbook-sols-U.pdf>
+Package pdftex.def Info: workbook-sols-U.pdf  used on input line 47.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-U.pdf, id=754, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-U.pdf Graphic file (type pdf)
+<use workbook-sols-U.pdf, page 1>
+Package pdftex.def Info: workbook-sols-U.pdf , page1 used on input line 47.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-U.pdf Graphic file (type pdf)
+<use workbook-sols-U.pdf, page 1>
+Package pdftex.def Info: workbook-sols-U.pdf , page1 used on input line 47.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-U.pdf Graphic file (type pdf)
+<use workbook-sols-U.pdf, page 1>
+Package pdftex.def Info: workbook-sols-U.pdf , page1 used on input line 47.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-U.pdf Graphic file (type pdf)
+<use workbook-sols-U.pdf, page 1>
+Package pdftex.def Info: workbook-sols-U.pdf , page1 used on input line 47.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-U.pdf Graphic file (type pdf)
+<use workbook-sols-U.pdf, page 1>
+Package pdftex.def Info: workbook-sols-U.pdf , page1 used on input line 47.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [21 <./workbook-sols-U.pdf>]
+<workbook-sols-V.pdf, id=792, 597.23125pt x 845.1575pt>
+File: workbook-sols-V.pdf Graphic file (type pdf)
+<use workbook-sols-V.pdf>
+Package pdftex.def Info: workbook-sols-V.pdf  used on input line 48.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-V.pdf Graphic file (type pdf)
+<use workbook-sols-V.pdf>
+Package pdftex.def Info: workbook-sols-V.pdf  used on input line 48.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-V.pdf, id=795, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-V.pdf Graphic file (type pdf)
+<use workbook-sols-V.pdf, page 1>
+Package pdftex.def Info: workbook-sols-V.pdf , page1 used on input line 48.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-V.pdf Graphic file (type pdf)
+<use workbook-sols-V.pdf, page 1>
+Package pdftex.def Info: workbook-sols-V.pdf , page1 used on input line 48.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-V.pdf Graphic file (type pdf)
+<use workbook-sols-V.pdf, page 1>
+Package pdftex.def Info: workbook-sols-V.pdf , page1 used on input line 48.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-V.pdf Graphic file (type pdf)
+<use workbook-sols-V.pdf, page 1>
+Package pdftex.def Info: workbook-sols-V.pdf , page1 used on input line 48.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-V.pdf Graphic file (type pdf)
+<use workbook-sols-V.pdf, page 1>
+Package pdftex.def Info: workbook-sols-V.pdf , page1 used on input line 48.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [22 <./workbook-sols-V.pdf>]
+<workbook-sols-W.pdf, id=838, 597.23125pt x 845.1575pt>
+File: workbook-sols-W.pdf Graphic file (type pdf)
+<use workbook-sols-W.pdf>
+Package pdftex.def Info: workbook-sols-W.pdf  used on input line 50.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-W.pdf Graphic file (type pdf)
+<use workbook-sols-W.pdf>
+Package pdftex.def Info: workbook-sols-W.pdf  used on input line 50.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-W.pdf, id=841, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-W.pdf Graphic file (type pdf)
+<use workbook-sols-W.pdf, page 1>
+Package pdftex.def Info: workbook-sols-W.pdf , page1 used on input line 50.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-W.pdf Graphic file (type pdf)
+<use workbook-sols-W.pdf, page 1>
+Package pdftex.def Info: workbook-sols-W.pdf , page1 used on input line 50.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-W.pdf Graphic file (type pdf)
+<use workbook-sols-W.pdf, page 1>
+Package pdftex.def Info: workbook-sols-W.pdf , page1 used on input line 50.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-W.pdf Graphic file (type pdf)
+<use workbook-sols-W.pdf, page 1>
+Package pdftex.def Info: workbook-sols-W.pdf , page1 used on input line 50.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-W.pdf Graphic file (type pdf)
+<use workbook-sols-W.pdf, page 1>
+Package pdftex.def Info: workbook-sols-W.pdf , page1 used on input line 50.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [23 <./workbook-sols-W.pdf>]
+<workbook-sols-X.pdf, id=885, 597.23125pt x 845.1575pt>
+File: workbook-sols-X.pdf Graphic file (type pdf)
+<use workbook-sols-X.pdf>
+Package pdftex.def Info: workbook-sols-X.pdf  used on input line 51.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-X.pdf Graphic file (type pdf)
+<use workbook-sols-X.pdf>
+Package pdftex.def Info: workbook-sols-X.pdf  used on input line 51.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-X.pdf, id=888, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-X.pdf Graphic file (type pdf)
+<use workbook-sols-X.pdf, page 1>
+Package pdftex.def Info: workbook-sols-X.pdf , page1 used on input line 51.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-X.pdf Graphic file (type pdf)
+<use workbook-sols-X.pdf, page 1>
+Package pdftex.def Info: workbook-sols-X.pdf , page1 used on input line 51.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-X.pdf Graphic file (type pdf)
+<use workbook-sols-X.pdf, page 1>
+Package pdftex.def Info: workbook-sols-X.pdf , page1 used on input line 51.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-X.pdf Graphic file (type pdf)
+<use workbook-sols-X.pdf, page 1>
+Package pdftex.def Info: workbook-sols-X.pdf , page1 used on input line 51.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-X.pdf Graphic file (type pdf)
+<use workbook-sols-X.pdf, page 1>
+Package pdftex.def Info: workbook-sols-X.pdf , page1 used on input line 51.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+
+[24 <./workbook-sols-X.pdf>]
+<workbook-sols-Y.pdf, id=921, 597.23125pt x 845.1575pt>
+File: workbook-sols-Y.pdf Graphic file (type pdf)
+<use workbook-sols-Y.pdf>
+Package pdftex.def Info: workbook-sols-Y.pdf  used on input line 52.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-Y.pdf Graphic file (type pdf)
+<use workbook-sols-Y.pdf>
+Package pdftex.def Info: workbook-sols-Y.pdf  used on input line 52.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-Y.pdf, id=924, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-Y.pdf Graphic file (type pdf)
+<use workbook-sols-Y.pdf, page 1>
+Package pdftex.def Info: workbook-sols-Y.pdf , page1 used on input line 52.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-Y.pdf Graphic file (type pdf)
+<use workbook-sols-Y.pdf, page 1>
+Package pdftex.def Info: workbook-sols-Y.pdf , page1 used on input line 52.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-Y.pdf Graphic file (type pdf)
+<use workbook-sols-Y.pdf, page 1>
+Package pdftex.def Info: workbook-sols-Y.pdf , page1 used on input line 52.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-Y.pdf Graphic file (type pdf)
+<use workbook-sols-Y.pdf, page 1>
+Package pdftex.def Info: workbook-sols-Y.pdf , page1 used on input line 52.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-Y.pdf Graphic file (type pdf)
+<use workbook-sols-Y.pdf, page 1>
+Package pdftex.def Info: workbook-sols-Y.pdf , page1 used on input line 52.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [25 <./workbook-sols-Y.pdf>]
+<workbook-sols-Z.pdf, id=973, 597.23125pt x 845.1575pt>
+File: workbook-sols-Z.pdf Graphic file (type pdf)
+<use workbook-sols-Z.pdf>
+Package pdftex.def Info: workbook-sols-Z.pdf  used on input line 54.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-Z.pdf Graphic file (type pdf)
+<use workbook-sols-Z.pdf>
+Package pdftex.def Info: workbook-sols-Z.pdf  used on input line 54.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-Z.pdf, id=976, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-Z.pdf Graphic file (type pdf)
+<use workbook-sols-Z.pdf, page 1>
+Package pdftex.def Info: workbook-sols-Z.pdf , page1 used on input line 54.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-Z.pdf Graphic file (type pdf)
+<use workbook-sols-Z.pdf, page 1>
+Package pdftex.def Info: workbook-sols-Z.pdf , page1 used on input line 54.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-Z.pdf Graphic file (type pdf)
+<use workbook-sols-Z.pdf, page 1>
+Package pdftex.def Info: workbook-sols-Z.pdf , page1 used on input line 54.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-Z.pdf Graphic file (type pdf)
+<use workbook-sols-Z.pdf, page 1>
+Package pdftex.def Info: workbook-sols-Z.pdf , page1 used on input line 54.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-Z.pdf Graphic file (type pdf)
+<use workbook-sols-Z.pdf, page 1>
+Package pdftex.def Info: workbook-sols-Z.pdf , page1 used on input line 54.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [26 <./workbook-sols-Z.pdf>]
+<workbook-sols-ZA.pdf, id=999, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZA.pdf Graphic file (type pdf)
+<use workbook-sols-ZA.pdf>
+Package pdftex.def Info: workbook-sols-ZA.pdf  used on input line 56.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZA.pdf Graphic file (type pdf)
+<use workbook-sols-ZA.pdf>
+Package pdftex.def Info: workbook-sols-ZA.pdf  used on input line 56.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZA.pdf, id=1002, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZA.pdf Graphic file (type pdf)
+<use workbook-sols-ZA.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZA.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZA.pdf Graphic file (type pdf)
+<use workbook-sols-ZA.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZA.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZA.pdf Graphic file (type pdf)
+<use workbook-sols-ZA.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZA.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZA.pdf Graphic file (type pdf)
+<use workbook-sols-ZA.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZA.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZA.pdf Graphic file (type pdf)
+<use workbook-sols-ZA.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZA.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [27 <./workbook-sols-ZA.pdf, page is rotated 270 degrees>]
+<workbook-sols-ZB.pdf, id=1040, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZB.pdf Graphic file (type pdf)
+<use workbook-sols-ZB.pdf>
+Package pdftex.def Info: workbook-sols-ZB.pdf  used on input line 57.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZB.pdf Graphic file (type pdf)
+<use workbook-sols-ZB.pdf>
+Package pdftex.def Info: workbook-sols-ZB.pdf  used on input line 57.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZB.pdf, id=1043, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZB.pdf Graphic file (type pdf)
+<use workbook-sols-ZB.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZB.pdf , page1 used on input line 57.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZB.pdf Graphic file (type pdf)
+<use workbook-sols-ZB.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZB.pdf , page1 used on input line 57.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZB.pdf Graphic file (type pdf)
+<use workbook-sols-ZB.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZB.pdf , page1 used on input line 57.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZB.pdf Graphic file (type pdf)
+<use workbook-sols-ZB.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZB.pdf , page1 used on input line 57.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZB.pdf Graphic file (type pdf)
+<use workbook-sols-ZB.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZB.pdf , page1 used on input line 57.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [28 <./workbook-sols-ZB.pdf>]
+<workbook-sols-ZC.pdf, id=1072, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZC.pdf Graphic file (type pdf)
+<use workbook-sols-ZC.pdf>
+Package pdftex.def Info: workbook-sols-ZC.pdf  used on input line 59.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZC.pdf Graphic file (type pdf)
+<use workbook-sols-ZC.pdf>
+Package pdftex.def Info: workbook-sols-ZC.pdf  used on input line 59.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZC.pdf, id=1075, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZC.pdf Graphic file (type pdf)
+<use workbook-sols-ZC.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZC.pdf , page1 used on input line 59.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZC.pdf Graphic file (type pdf)
+<use workbook-sols-ZC.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZC.pdf , page1 used on input line 59.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZC.pdf Graphic file (type pdf)
+<use workbook-sols-ZC.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZC.pdf , page1 used on input line 59.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZC.pdf Graphic file (type pdf)
+<use workbook-sols-ZC.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZC.pdf , page1 used on input line 59.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZC.pdf Graphic file (type pdf)
+<use workbook-sols-ZC.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZC.pdf , page1 used on input line 59.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [29 <./workbook-sols-ZC.pdf>]
+<workbook-sols-ZD.pdf, id=1133, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZD.pdf Graphic file (type pdf)
+<use workbook-sols-ZD.pdf>
+Package pdftex.def Info: workbook-sols-ZD.pdf  used on input line 61.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZD.pdf Graphic file (type pdf)
+<use workbook-sols-ZD.pdf>
+Package pdftex.def Info: workbook-sols-ZD.pdf  used on input line 61.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZD.pdf, id=1136, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZD.pdf Graphic file (type pdf)
+<use workbook-sols-ZD.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZD.pdf , page1 used on input line 61.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZD.pdf Graphic file (type pdf)
+<use workbook-sols-ZD.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZD.pdf , page1 used on input line 61.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZD.pdf Graphic file (type pdf)
+<use workbook-sols-ZD.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZD.pdf , page1 used on input line 61.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZD.pdf Graphic file (type pdf)
+<use workbook-sols-ZD.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZD.pdf , page1 used on input line 61.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZD.pdf Graphic file (type pdf)
+<use workbook-sols-ZD.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZD.pdf , page1 used on input line 61.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [30 <./workbook-sols-ZD.pdf, page is rotated 270 degrees>]
+<workbook-sols-ZE.pdf, id=1159, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZE.pdf Graphic file (type pdf)
+<use workbook-sols-ZE.pdf>
+Package pdftex.def Info: workbook-sols-ZE.pdf  used on input line 62.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZE.pdf Graphic file (type pdf)
+<use workbook-sols-ZE.pdf>
+Package pdftex.def Info: workbook-sols-ZE.pdf  used on input line 62.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZE.pdf, id=1162, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZE.pdf Graphic file (type pdf)
+<use workbook-sols-ZE.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZE.pdf , page1 used on input line 62.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZE.pdf Graphic file (type pdf)
+<use workbook-sols-ZE.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZE.pdf , page1 used on input line 62.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZE.pdf Graphic file (type pdf)
+<use workbook-sols-ZE.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZE.pdf , page1 used on input line 62.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZE.pdf Graphic file (type pdf)
+<use workbook-sols-ZE.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZE.pdf , page1 used on input line 62.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZE.pdf Graphic file (type pdf)
+<use workbook-sols-ZE.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZE.pdf , page1 used on input line 62.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [31 <./workbook-sols-ZE.pdf, page is rotated 270 degrees>]
+<workbook-sols-ZF.pdf, id=1186, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZF.pdf Graphic file (type pdf)
+<use workbook-sols-ZF.pdf>
+Package pdftex.def Info: workbook-sols-ZF.pdf  used on input line 63.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZF.pdf Graphic file (type pdf)
+<use workbook-sols-ZF.pdf>
+Package pdftex.def Info: workbook-sols-ZF.pdf  used on input line 63.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZF.pdf, id=1189, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZF.pdf Graphic file (type pdf)
+<use workbook-sols-ZF.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZF.pdf , page1 used on input line 63.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZF.pdf Graphic file (type pdf)
+<use workbook-sols-ZF.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZF.pdf , page1 used on input line 63.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZF.pdf Graphic file (type pdf)
+<use workbook-sols-ZF.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZF.pdf , page1 used on input line 63.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZF.pdf Graphic file (type pdf)
+<use workbook-sols-ZF.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZF.pdf , page1 used on input line 63.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZF.pdf Graphic file (type pdf)
+<use workbook-sols-ZF.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZF.pdf , page1 used on input line 63.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [32 <./workbook-sols-ZF.pdf>]
+<workbook-sols-ZG.pdf, id=1248, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZG.pdf Graphic file (type pdf)
+<use workbook-sols-ZG.pdf>
+Package pdftex.def Info: workbook-sols-ZG.pdf  used on input line 64.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZG.pdf Graphic file (type pdf)
+<use workbook-sols-ZG.pdf>
+Package pdftex.def Info: workbook-sols-ZG.pdf  used on input line 64.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZG.pdf, id=1251, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZG.pdf Graphic file (type pdf)
+<use workbook-sols-ZG.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZG.pdf , page1 used on input line 64.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZG.pdf Graphic file (type pdf)
+<use workbook-sols-ZG.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZG.pdf , page1 used on input line 64.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZG.pdf Graphic file (type pdf)
+<use workbook-sols-ZG.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZG.pdf , page1 used on input line 64.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZG.pdf Graphic file (type pdf)
+<use workbook-sols-ZG.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZG.pdf , page1 used on input line 64.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZG.pdf Graphic file (type pdf)
+<use workbook-sols-ZG.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZG.pdf , page1 used on input line 64.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [33 <./workbook-sols-ZG.pdf>]
+<workbook-sols-ZH.pdf, id=1309, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZH.pdf Graphic file (type pdf)
+<use workbook-sols-ZH.pdf>
+Package pdftex.def Info: workbook-sols-ZH.pdf  used on input line 65.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZH.pdf Graphic file (type pdf)
+<use workbook-sols-ZH.pdf>
+Package pdftex.def Info: workbook-sols-ZH.pdf  used on input line 65.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZH.pdf, id=1312, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZH.pdf Graphic file (type pdf)
+<use workbook-sols-ZH.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZH.pdf , page1 used on input line 65.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZH.pdf Graphic file (type pdf)
+<use workbook-sols-ZH.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZH.pdf , page1 used on input line 65.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZH.pdf Graphic file (type pdf)
+<use workbook-sols-ZH.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZH.pdf , page1 used on input line 65.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZH.pdf Graphic file (type pdf)
+<use workbook-sols-ZH.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZH.pdf , page1 used on input line 65.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZH.pdf Graphic file (type pdf)
+<use workbook-sols-ZH.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZH.pdf , page1 used on input line 65.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [34 <./workbook-sols-ZH.pdf>]
+<workbook-sols-ZI.pdf, id=1370, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZI.pdf Graphic file (type pdf)
+<use workbook-sols-ZI.pdf>
+Package pdftex.def Info: workbook-sols-ZI.pdf  used on input line 66.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZI.pdf Graphic file (type pdf)
+<use workbook-sols-ZI.pdf>
+Package pdftex.def Info: workbook-sols-ZI.pdf  used on input line 66.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZI.pdf, id=1373, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZI.pdf Graphic file (type pdf)
+<use workbook-sols-ZI.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZI.pdf , page1 used on input line 66.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZI.pdf Graphic file (type pdf)
+<use workbook-sols-ZI.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZI.pdf , page1 used on input line 66.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZI.pdf Graphic file (type pdf)
+<use workbook-sols-ZI.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZI.pdf , page1 used on input line 66.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZI.pdf Graphic file (type pdf)
+<use workbook-sols-ZI.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZI.pdf , page1 used on input line 66.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZI.pdf Graphic file (type pdf)
+<use workbook-sols-ZI.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZI.pdf , page1 used on input line 66.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [35 <./workbook-sols-ZI.pdf>]
+<workbook-sols-ZJ.pdf, id=1432, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZJ.pdf Graphic file (type pdf)
+<use workbook-sols-ZJ.pdf>
+Package pdftex.def Info: workbook-sols-ZJ.pdf  used on input line 67.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZJ.pdf Graphic file (type pdf)
+<use workbook-sols-ZJ.pdf>
+Package pdftex.def Info: workbook-sols-ZJ.pdf  used on input line 67.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZJ.pdf, id=1435, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZJ.pdf Graphic file (type pdf)
+<use workbook-sols-ZJ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZJ.pdf , page1 used on input line 67.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZJ.pdf Graphic file (type pdf)
+<use workbook-sols-ZJ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZJ.pdf , page1 used on input line 67.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZJ.pdf Graphic file (type pdf)
+<use workbook-sols-ZJ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZJ.pdf , page1 used on input line 67.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZJ.pdf Graphic file (type pdf)
+<use workbook-sols-ZJ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZJ.pdf , page1 used on input line 67.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZJ.pdf Graphic file (type pdf)
+<use workbook-sols-ZJ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZJ.pdf , page1 used on input line 67.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [36 <./workbook-sols-ZJ.pdf>]
+<workbook-sols-ZK.pdf, id=1493, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZK.pdf Graphic file (type pdf)
+<use workbook-sols-ZK.pdf>
+Package pdftex.def Info: workbook-sols-ZK.pdf  used on input line 68.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZK.pdf Graphic file (type pdf)
+<use workbook-sols-ZK.pdf>
+Package pdftex.def Info: workbook-sols-ZK.pdf  used on input line 68.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZK.pdf, id=1496, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZK.pdf Graphic file (type pdf)
+<use workbook-sols-ZK.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZK.pdf , page1 used on input line 68.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZK.pdf Graphic file (type pdf)
+<use workbook-sols-ZK.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZK.pdf , page1 used on input line 68.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZK.pdf Graphic file (type pdf)
+<use workbook-sols-ZK.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZK.pdf , page1 used on input line 68.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZK.pdf Graphic file (type pdf)
+<use workbook-sols-ZK.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZK.pdf , page1 used on input line 68.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZK.pdf Graphic file (type pdf)
+<use workbook-sols-ZK.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZK.pdf , page1 used on input line 68.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+
+[37 <./workbook-sols-ZK.pdf>]
+<workbook-sols-ZL.pdf, id=1555, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZL.pdf Graphic file (type pdf)
+<use workbook-sols-ZL.pdf>
+Package pdftex.def Info: workbook-sols-ZL.pdf  used on input line 70.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZL.pdf Graphic file (type pdf)
+<use workbook-sols-ZL.pdf>
+Package pdftex.def Info: workbook-sols-ZL.pdf  used on input line 70.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZL.pdf, id=1558, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZL.pdf Graphic file (type pdf)
+<use workbook-sols-ZL.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZL.pdf , page1 used on input line 70.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZL.pdf Graphic file (type pdf)
+<use workbook-sols-ZL.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZL.pdf , page1 used on input line 70.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZL.pdf Graphic file (type pdf)
+<use workbook-sols-ZL.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZL.pdf , page1 used on input line 70.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZL.pdf Graphic file (type pdf)
+<use workbook-sols-ZL.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZL.pdf , page1 used on input line 70.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZL.pdf Graphic file (type pdf)
+<use workbook-sols-ZL.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZL.pdf , page1 used on input line 70.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [38 <./workbook-sols-ZL.pdf>]
+<workbook-sols-ZM.pdf, id=1617, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZM.pdf Graphic file (type pdf)
+<use workbook-sols-ZM.pdf>
+Package pdftex.def Info: workbook-sols-ZM.pdf  used on input line 72.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZM.pdf Graphic file (type pdf)
+<use workbook-sols-ZM.pdf>
+Package pdftex.def Info: workbook-sols-ZM.pdf  used on input line 72.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZM.pdf, id=1620, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZM.pdf Graphic file (type pdf)
+<use workbook-sols-ZM.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZM.pdf , page1 used on input line 72.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZM.pdf Graphic file (type pdf)
+<use workbook-sols-ZM.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZM.pdf , page1 used on input line 72.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZM.pdf Graphic file (type pdf)
+<use workbook-sols-ZM.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZM.pdf , page1 used on input line 72.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZM.pdf Graphic file (type pdf)
+<use workbook-sols-ZM.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZM.pdf , page1 used on input line 72.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZM.pdf Graphic file (type pdf)
+<use workbook-sols-ZM.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZM.pdf , page1 used on input line 72.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [39 <./workbook-sols-ZM.pdf>]
+<workbook-sols-ZN.pdf, id=1642, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZN.pdf Graphic file (type pdf)
+<use workbook-sols-ZN.pdf>
+Package pdftex.def Info: workbook-sols-ZN.pdf  used on input line 73.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZN.pdf Graphic file (type pdf)
+<use workbook-sols-ZN.pdf>
+Package pdftex.def Info: workbook-sols-ZN.pdf  used on input line 73.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZN.pdf, id=1645, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZN.pdf Graphic file (type pdf)
+<use workbook-sols-ZN.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZN.pdf , page1 used on input line 73.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZN.pdf Graphic file (type pdf)
+<use workbook-sols-ZN.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZN.pdf , page1 used on input line 73.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZN.pdf Graphic file (type pdf)
+<use workbook-sols-ZN.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZN.pdf , page1 used on input line 73.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZN.pdf Graphic file (type pdf)
+<use workbook-sols-ZN.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZN.pdf , page1 used on input line 73.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZN.pdf Graphic file (type pdf)
+<use workbook-sols-ZN.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZN.pdf , page1 used on input line 73.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [40 <./workbook-sols-ZN.pdf>]
+<workbook-sols-ZO.pdf, id=1703, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZO.pdf Graphic file (type pdf)
+<use workbook-sols-ZO.pdf>
+Package pdftex.def Info: workbook-sols-ZO.pdf  used on input line 74.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZO.pdf Graphic file (type pdf)
+<use workbook-sols-ZO.pdf>
+Package pdftex.def Info: workbook-sols-ZO.pdf  used on input line 74.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZO.pdf, id=1706, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZO.pdf Graphic file (type pdf)
+<use workbook-sols-ZO.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZO.pdf , page1 used on input line 74.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZO.pdf Graphic file (type pdf)
+<use workbook-sols-ZO.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZO.pdf , page1 used on input line 74.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZO.pdf Graphic file (type pdf)
+<use workbook-sols-ZO.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZO.pdf , page1 used on input line 74.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZO.pdf Graphic file (type pdf)
+<use workbook-sols-ZO.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZO.pdf , page1 used on input line 74.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZO.pdf Graphic file (type pdf)
+<use workbook-sols-ZO.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZO.pdf , page1 used on input line 74.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [41 <./workbook-sols-ZO.pdf>]
+<workbook-sols-ZP.pdf, id=1765, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZP.pdf Graphic file (type pdf)
+<use workbook-sols-ZP.pdf>
+Package pdftex.def Info: workbook-sols-ZP.pdf  used on input line 75.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZP.pdf Graphic file (type pdf)
+<use workbook-sols-ZP.pdf>
+Package pdftex.def Info: workbook-sols-ZP.pdf  used on input line 75.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZP.pdf, id=1768, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZP.pdf Graphic file (type pdf)
+<use workbook-sols-ZP.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZP.pdf , page1 used on input line 75.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZP.pdf Graphic file (type pdf)
+<use workbook-sols-ZP.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZP.pdf , page1 used on input line 75.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZP.pdf Graphic file (type pdf)
+<use workbook-sols-ZP.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZP.pdf , page1 used on input line 75.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZP.pdf Graphic file (type pdf)
+<use workbook-sols-ZP.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZP.pdf , page1 used on input line 75.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZP.pdf Graphic file (type pdf)
+<use workbook-sols-ZP.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZP.pdf , page1 used on input line 75.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [42 <./workbook-sols-ZP.pdf>]
+<workbook-sols-ZQ.pdf, id=1826, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZQ.pdf Graphic file (type pdf)
+<use workbook-sols-ZQ.pdf>
+Package pdftex.def Info: workbook-sols-ZQ.pdf  used on input line 77.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZQ.pdf Graphic file (type pdf)
+<use workbook-sols-ZQ.pdf>
+Package pdftex.def Info: workbook-sols-ZQ.pdf  used on input line 77.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZQ.pdf, id=1829, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZQ.pdf Graphic file (type pdf)
+<use workbook-sols-ZQ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZQ.pdf , page1 used on input line 77.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZQ.pdf Graphic file (type pdf)
+<use workbook-sols-ZQ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZQ.pdf , page1 used on input line 77.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZQ.pdf Graphic file (type pdf)
+<use workbook-sols-ZQ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZQ.pdf , page1 used on input line 77.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZQ.pdf Graphic file (type pdf)
+<use workbook-sols-ZQ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZQ.pdf , page1 used on input line 77.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZQ.pdf Graphic file (type pdf)
+<use workbook-sols-ZQ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZQ.pdf , page1 used on input line 77.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [43 <./workbook-sols-ZQ.pdf>]
+<workbook-sols-ZR.pdf, id=1872, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZR.pdf Graphic file (type pdf)
+<use workbook-sols-ZR.pdf>
+Package pdftex.def Info: workbook-sols-ZR.pdf  used on input line 78.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZR.pdf Graphic file (type pdf)
+<use workbook-sols-ZR.pdf>
+Package pdftex.def Info: workbook-sols-ZR.pdf  used on input line 78.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZR.pdf, id=1875, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZR.pdf Graphic file (type pdf)
+<use workbook-sols-ZR.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZR.pdf , page1 used on input line 78.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZR.pdf Graphic file (type pdf)
+<use workbook-sols-ZR.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZR.pdf , page1 used on input line 78.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZR.pdf Graphic file (type pdf)
+<use workbook-sols-ZR.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZR.pdf , page1 used on input line 78.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZR.pdf Graphic file (type pdf)
+<use workbook-sols-ZR.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZR.pdf , page1 used on input line 78.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZR.pdf Graphic file (type pdf)
+<use workbook-sols-ZR.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZR.pdf , page1 used on input line 78.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [44 <./workbook-sols-ZR.pdf>]
+<workbook-sols-ZS.pdf, id=1908, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZS.pdf Graphic file (type pdf)
+<use workbook-sols-ZS.pdf>
+Package pdftex.def Info: workbook-sols-ZS.pdf  used on input line 79.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZS.pdf Graphic file (type pdf)
+<use workbook-sols-ZS.pdf>
+Package pdftex.def Info: workbook-sols-ZS.pdf  used on input line 79.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZS.pdf, id=1911, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZS.pdf Graphic file (type pdf)
+<use workbook-sols-ZS.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZS.pdf , page1 used on input line 79.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZS.pdf Graphic file (type pdf)
+<use workbook-sols-ZS.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZS.pdf , page1 used on input line 79.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZS.pdf Graphic file (type pdf)
+<use workbook-sols-ZS.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZS.pdf , page1 used on input line 79.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZS.pdf Graphic file (type pdf)
+<use workbook-sols-ZS.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZS.pdf , page1 used on input line 79.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZS.pdf Graphic file (type pdf)
+<use workbook-sols-ZS.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZS.pdf , page1 used on input line 79.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [45 <./workbook-sols-ZS.pdf>]
+<workbook-sols-ZT.pdf, id=1949, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZT.pdf Graphic file (type pdf)
+<use workbook-sols-ZT.pdf>
+Package pdftex.def Info: workbook-sols-ZT.pdf  used on input line 80.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZT.pdf Graphic file (type pdf)
+<use workbook-sols-ZT.pdf>
+Package pdftex.def Info: workbook-sols-ZT.pdf  used on input line 80.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZT.pdf, id=1952, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZT.pdf Graphic file (type pdf)
+<use workbook-sols-ZT.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZT.pdf , page1 used on input line 80.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZT.pdf Graphic file (type pdf)
+<use workbook-sols-ZT.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZT.pdf , page1 used on input line 80.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZT.pdf Graphic file (type pdf)
+<use workbook-sols-ZT.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZT.pdf , page1 used on input line 80.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZT.pdf Graphic file (type pdf)
+<use workbook-sols-ZT.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZT.pdf , page1 used on input line 80.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZT.pdf Graphic file (type pdf)
+<use workbook-sols-ZT.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZT.pdf , page1 used on input line 80.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [46 <./workbook-sols-ZT.pdf>]
+<workbook-sols-ZU.pdf, id=2010, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZU.pdf Graphic file (type pdf)
+<use workbook-sols-ZU.pdf>
+Package pdftex.def Info: workbook-sols-ZU.pdf  used on input line 82.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZU.pdf Graphic file (type pdf)
+<use workbook-sols-ZU.pdf>
+Package pdftex.def Info: workbook-sols-ZU.pdf  used on input line 82.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZU.pdf, id=2013, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZU.pdf Graphic file (type pdf)
+<use workbook-sols-ZU.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZU.pdf , page1 used on input line 82.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZU.pdf Graphic file (type pdf)
+<use workbook-sols-ZU.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZU.pdf , page1 used on input line 82.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZU.pdf Graphic file (type pdf)
+<use workbook-sols-ZU.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZU.pdf , page1 used on input line 82.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZU.pdf Graphic file (type pdf)
+<use workbook-sols-ZU.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZU.pdf , page1 used on input line 82.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZU.pdf Graphic file (type pdf)
+<use workbook-sols-ZU.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZU.pdf , page1 used on input line 82.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [47 <./workbook-sols-ZU.pdf>]
+<workbook-sols-ZV.pdf, id=2050, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZV.pdf Graphic file (type pdf)
+<use workbook-sols-ZV.pdf>
+Package pdftex.def Info: workbook-sols-ZV.pdf  used on input line 83.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZV.pdf Graphic file (type pdf)
+<use workbook-sols-ZV.pdf>
+Package pdftex.def Info: workbook-sols-ZV.pdf  used on input line 83.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZV.pdf, id=2053, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZV.pdf Graphic file (type pdf)
+<use workbook-sols-ZV.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZV.pdf , page1 used on input line 83.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZV.pdf Graphic file (type pdf)
+<use workbook-sols-ZV.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZV.pdf , page1 used on input line 83.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZV.pdf Graphic file (type pdf)
+<use workbook-sols-ZV.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZV.pdf , page1 used on input line 83.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZV.pdf Graphic file (type pdf)
+<use workbook-sols-ZV.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZV.pdf , page1 used on input line 83.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZV.pdf Graphic file (type pdf)
+<use workbook-sols-ZV.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZV.pdf , page1 used on input line 83.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [48 <./workbook-sols-ZV.pdf>]
+<workbook-sols-ZW.pdf, id=2112, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZW.pdf Graphic file (type pdf)
+<use workbook-sols-ZW.pdf>
+Package pdftex.def Info: workbook-sols-ZW.pdf  used on input line 85.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZW.pdf Graphic file (type pdf)
+<use workbook-sols-ZW.pdf>
+Package pdftex.def Info: workbook-sols-ZW.pdf  used on input line 85.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZW.pdf, id=2115, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZW.pdf Graphic file (type pdf)
+<use workbook-sols-ZW.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZW.pdf , page1 used on input line 85.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZW.pdf Graphic file (type pdf)
+<use workbook-sols-ZW.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZW.pdf , page1 used on input line 85.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZW.pdf Graphic file (type pdf)
+<use workbook-sols-ZW.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZW.pdf , page1 used on input line 85.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZW.pdf Graphic file (type pdf)
+<use workbook-sols-ZW.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZW.pdf , page1 used on input line 85.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZW.pdf Graphic file (type pdf)
+<use workbook-sols-ZW.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZW.pdf , page1 used on input line 85.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [49 <./workbook-sols-ZW.pdf>]
+<workbook-sols-ZX.pdf, id=2154, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZX.pdf Graphic file (type pdf)
+<use workbook-sols-ZX.pdf>
+Package pdftex.def Info: workbook-sols-ZX.pdf  used on input line 86.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZX.pdf Graphic file (type pdf)
+<use workbook-sols-ZX.pdf>
+Package pdftex.def Info: workbook-sols-ZX.pdf  used on input line 86.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZX.pdf, id=2157, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZX.pdf Graphic file (type pdf)
+<use workbook-sols-ZX.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZX.pdf , page1 used on input line 86.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZX.pdf Graphic file (type pdf)
+<use workbook-sols-ZX.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZX.pdf , page1 used on input line 86.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZX.pdf Graphic file (type pdf)
+<use workbook-sols-ZX.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZX.pdf , page1 used on input line 86.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZX.pdf Graphic file (type pdf)
+<use workbook-sols-ZX.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZX.pdf , page1 used on input line 86.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZX.pdf Graphic file (type pdf)
+<use workbook-sols-ZX.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZX.pdf , page1 used on input line 86.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+
+[50 <./workbook-sols-ZX.pdf>]
+<workbook-sols-ZY.pdf, id=2201, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZY.pdf Graphic file (type pdf)
+<use workbook-sols-ZY.pdf>
+Package pdftex.def Info: workbook-sols-ZY.pdf  used on input line 87.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZY.pdf Graphic file (type pdf)
+<use workbook-sols-ZY.pdf>
+Package pdftex.def Info: workbook-sols-ZY.pdf  used on input line 87.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZY.pdf, id=2204, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZY.pdf Graphic file (type pdf)
+<use workbook-sols-ZY.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZY.pdf , page1 used on input line 87.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZY.pdf Graphic file (type pdf)
+<use workbook-sols-ZY.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZY.pdf , page1 used on input line 87.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZY.pdf Graphic file (type pdf)
+<use workbook-sols-ZY.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZY.pdf , page1 used on input line 87.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZY.pdf Graphic file (type pdf)
+<use workbook-sols-ZY.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZY.pdf , page1 used on input line 87.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZY.pdf Graphic file (type pdf)
+<use workbook-sols-ZY.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZY.pdf , page1 used on input line 87.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [51 <./workbook-sols-ZY.pdf>]
+<workbook-sols-ZZ.pdf, id=2257, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZ.pdf Graphic file (type pdf)
+<use workbook-sols-ZZ.pdf>
+Package pdftex.def Info: workbook-sols-ZZ.pdf  used on input line 88.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZ.pdf Graphic file (type pdf)
+<use workbook-sols-ZZ.pdf>
+Package pdftex.def Info: workbook-sols-ZZ.pdf  used on input line 88.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZZ.pdf, id=2260, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZ.pdf Graphic file (type pdf)
+<use workbook-sols-ZZ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZ.pdf , page1 used on input line 88.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZ.pdf Graphic file (type pdf)
+<use workbook-sols-ZZ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZ.pdf , page1 used on input line 88.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZ.pdf Graphic file (type pdf)
+<use workbook-sols-ZZ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZ.pdf , page1 used on input line 88.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZ.pdf Graphic file (type pdf)
+<use workbook-sols-ZZ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZ.pdf , page1 used on input line 88.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZ.pdf Graphic file (type pdf)
+<use workbook-sols-ZZ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZ.pdf , page1 used on input line 88.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [52 <./workbook-sols-ZZ.pdf>]
+<workbook-sols-ZZA.pdf, id=2318, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZA.pdf Graphic file (type pdf)
+<use workbook-sols-ZZA.pdf>
+Package pdftex.def Info: workbook-sols-ZZA.pdf  used on input line 90.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZA.pdf Graphic file (type pdf)
+<use workbook-sols-ZZA.pdf>
+Package pdftex.def Info: workbook-sols-ZZA.pdf  used on input line 90.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZZA.pdf, id=2321, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZA.pdf Graphic file (type pdf)
+<use workbook-sols-ZZA.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZA.pdf , page1 used on input line 90.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZA.pdf Graphic file (type pdf)
+<use workbook-sols-ZZA.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZA.pdf , page1 used on input line 90.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZA.pdf Graphic file (type pdf)
+<use workbook-sols-ZZA.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZA.pdf , page1 used on input line 90.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZA.pdf Graphic file (type pdf)
+<use workbook-sols-ZZA.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZA.pdf , page1 used on input line 90.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZA.pdf Graphic file (type pdf)
+<use workbook-sols-ZZA.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZA.pdf , page1 used on input line 90.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [53 <./workbook-sols-ZZA.pdf>]
+<workbook-sols-ZZB.pdf, id=2379, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZB.pdf Graphic file (type pdf)
+<use workbook-sols-ZZB.pdf>
+Package pdftex.def Info: workbook-sols-ZZB.pdf  used on input line 91.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZB.pdf Graphic file (type pdf)
+<use workbook-sols-ZZB.pdf>
+Package pdftex.def Info: workbook-sols-ZZB.pdf  used on input line 91.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZZB.pdf, id=2382, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZB.pdf Graphic file (type pdf)
+<use workbook-sols-ZZB.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZB.pdf , page1 used on input line 91.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZB.pdf Graphic file (type pdf)
+<use workbook-sols-ZZB.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZB.pdf , page1 used on input line 91.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZB.pdf Graphic file (type pdf)
+<use workbook-sols-ZZB.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZB.pdf , page1 used on input line 91.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZB.pdf Graphic file (type pdf)
+<use workbook-sols-ZZB.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZB.pdf , page1 used on input line 91.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZB.pdf Graphic file (type pdf)
+<use workbook-sols-ZZB.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZB.pdf , page1 used on input line 91.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [54 <./workbook-sols-ZZB.pdf>]
+<workbook-sols-ZZC.pdf, id=2410, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZC.pdf Graphic file (type pdf)
+<use workbook-sols-ZZC.pdf>
+Package pdftex.def Info: workbook-sols-ZZC.pdf  used on input line 93.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZC.pdf Graphic file (type pdf)
+<use workbook-sols-ZZC.pdf>
+Package pdftex.def Info: workbook-sols-ZZC.pdf  used on input line 93.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZZC.pdf, id=2413, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZC.pdf Graphic file (type pdf)
+<use workbook-sols-ZZC.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZC.pdf , page1 used on input line 93.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZC.pdf Graphic file (type pdf)
+<use workbook-sols-ZZC.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZC.pdf , page1 used on input line 93.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZC.pdf Graphic file (type pdf)
+<use workbook-sols-ZZC.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZC.pdf , page1 used on input line 93.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZC.pdf Graphic file (type pdf)
+<use workbook-sols-ZZC.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZC.pdf , page1 used on input line 93.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZC.pdf Graphic file (type pdf)
+<use workbook-sols-ZZC.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZC.pdf , page1 used on input line 93.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+
+[55 <./workbook-sols-ZZC.pdf>]
+<workbook-sols-ZZD.pdf, id=2473, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZD.pdf Graphic file (type pdf)
+<use workbook-sols-ZZD.pdf>
+Package pdftex.def Info: workbook-sols-ZZD.pdf  used on input line 94.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZD.pdf Graphic file (type pdf)
+<use workbook-sols-ZZD.pdf>
+Package pdftex.def Info: workbook-sols-ZZD.pdf  used on input line 94.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZZD.pdf, id=2476, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZD.pdf Graphic file (type pdf)
+<use workbook-sols-ZZD.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZD.pdf , page1 used on input line 94.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZD.pdf Graphic file (type pdf)
+<use workbook-sols-ZZD.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZD.pdf , page1 used on input line 94.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZD.pdf Graphic file (type pdf)
+<use workbook-sols-ZZD.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZD.pdf , page1 used on input line 94.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZD.pdf Graphic file (type pdf)
+<use workbook-sols-ZZD.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZD.pdf , page1 used on input line 94.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZD.pdf Graphic file (type pdf)
+<use workbook-sols-ZZD.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZD.pdf , page1 used on input line 94.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [56 <./workbook-sols-ZZD.pdf>]
+<workbook-sols-ZZE.pdf, id=2525, 614.295pt x 794.97pt>
+File: workbook-sols-ZZE.pdf Graphic file (type pdf)
+<use workbook-sols-ZZE.pdf>
+Package pdftex.def Info: workbook-sols-ZZE.pdf  used on input line 95.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: workbook-sols-ZZE.pdf Graphic file (type pdf)
+<use workbook-sols-ZZE.pdf>
+Package pdftex.def Info: workbook-sols-ZZE.pdf  used on input line 95.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+<workbook-sols-ZZE.pdf, id=2528, page=1, 614.295pt x 794.97pt>
+File: workbook-sols-ZZE.pdf Graphic file (type pdf)
+<use workbook-sols-ZZE.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZE.pdf , page1 used on input line 95.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: workbook-sols-ZZE.pdf Graphic file (type pdf)
+<use workbook-sols-ZZE.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZE.pdf , page1 used on input line 95.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: workbook-sols-ZZE.pdf Graphic file (type pdf)
+<use workbook-sols-ZZE.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZE.pdf , page1 used on input line 95.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: workbook-sols-ZZE.pdf Graphic file (type pdf)
+<use workbook-sols-ZZE.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZE.pdf , page1 used on input line 95.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: workbook-sols-ZZE.pdf Graphic file (type pdf)
+<use workbook-sols-ZZE.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZE.pdf , page1 used on input line 95.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [57 <./workbook-sols-ZZE.pdf, page is rotated 270 degrees>]
+<workbook-sols-ZZF.pdf, id=2546, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZF.pdf Graphic file (type pdf)
+<use workbook-sols-ZZF.pdf>
+Package pdftex.def Info: workbook-sols-ZZF.pdf  used on input line 96.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZF.pdf Graphic file (type pdf)
+<use workbook-sols-ZZF.pdf>
+Package pdftex.def Info: workbook-sols-ZZF.pdf  used on input line 96.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZZF.pdf, id=2549, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZF.pdf Graphic file (type pdf)
+<use workbook-sols-ZZF.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZF.pdf , page1 used on input line 96.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZF.pdf Graphic file (type pdf)
+<use workbook-sols-ZZF.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZF.pdf , page1 used on input line 96.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZF.pdf Graphic file (type pdf)
+<use workbook-sols-ZZF.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZF.pdf , page1 used on input line 96.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZF.pdf Graphic file (type pdf)
+<use workbook-sols-ZZF.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZF.pdf , page1 used on input line 96.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZF.pdf Graphic file (type pdf)
+<use workbook-sols-ZZF.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZF.pdf , page1 used on input line 96.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [58 <./workbook-sols-ZZF.pdf>]
+<workbook-sols-ZZG.pdf, id=2608, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZG.pdf Graphic file (type pdf)
+<use workbook-sols-ZZG.pdf>
+Package pdftex.def Info: workbook-sols-ZZG.pdf  used on input line 98.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZG.pdf Graphic file (type pdf)
+<use workbook-sols-ZZG.pdf>
+Package pdftex.def Info: workbook-sols-ZZG.pdf  used on input line 98.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZZG.pdf, id=2611, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZG.pdf Graphic file (type pdf)
+<use workbook-sols-ZZG.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZG.pdf , page1 used on input line 98.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZG.pdf Graphic file (type pdf)
+<use workbook-sols-ZZG.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZG.pdf , page1 used on input line 98.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZG.pdf Graphic file (type pdf)
+<use workbook-sols-ZZG.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZG.pdf , page1 used on input line 98.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZG.pdf Graphic file (type pdf)
+<use workbook-sols-ZZG.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZG.pdf , page1 used on input line 98.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZG.pdf Graphic file (type pdf)
+<use workbook-sols-ZZG.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZG.pdf , page1 used on input line 98.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+
+[59 <./workbook-sols-ZZG.pdf>]
+<workbook-sols-ZZH.pdf, id=2670, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZH.pdf Graphic file (type pdf)
+<use workbook-sols-ZZH.pdf>
+Package pdftex.def Info: workbook-sols-ZZH.pdf  used on input line 99.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZH.pdf Graphic file (type pdf)
+<use workbook-sols-ZZH.pdf>
+Package pdftex.def Info: workbook-sols-ZZH.pdf  used on input line 99.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZZH.pdf, id=2673, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZH.pdf Graphic file (type pdf)
+<use workbook-sols-ZZH.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZH.pdf , page1 used on input line 99.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZH.pdf Graphic file (type pdf)
+<use workbook-sols-ZZH.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZH.pdf , page1 used on input line 99.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZH.pdf Graphic file (type pdf)
+<use workbook-sols-ZZH.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZH.pdf , page1 used on input line 99.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZH.pdf Graphic file (type pdf)
+<use workbook-sols-ZZH.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZH.pdf , page1 used on input line 99.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZH.pdf Graphic file (type pdf)
+<use workbook-sols-ZZH.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZH.pdf , page1 used on input line 99.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [60 <./workbook-sols-ZZH.pdf>]
+<workbook-sols-ZZI.pdf, id=2731, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZI.pdf Graphic file (type pdf)
+<use workbook-sols-ZZI.pdf>
+Package pdftex.def Info: workbook-sols-ZZI.pdf  used on input line 101.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZI.pdf Graphic file (type pdf)
+<use workbook-sols-ZZI.pdf>
+Package pdftex.def Info: workbook-sols-ZZI.pdf  used on input line 101.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZZI.pdf, id=2734, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZI.pdf Graphic file (type pdf)
+<use workbook-sols-ZZI.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZI.pdf , page1 used on input line 101.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZI.pdf Graphic file (type pdf)
+<use workbook-sols-ZZI.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZI.pdf , page1 used on input line 101.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZI.pdf Graphic file (type pdf)
+<use workbook-sols-ZZI.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZI.pdf , page1 used on input line 101.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZI.pdf Graphic file (type pdf)
+<use workbook-sols-ZZI.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZI.pdf , page1 used on input line 101.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZI.pdf Graphic file (type pdf)
+<use workbook-sols-ZZI.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZI.pdf , page1 used on input line 101.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [61 <./workbook-sols-ZZI.pdf, page is rotated 270 degrees>]
+<workbook-sols-ZZJ.pdf, id=2768, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZJ.pdf Graphic file (type pdf)
+<use workbook-sols-ZZJ.pdf>
+Package pdftex.def Info: workbook-sols-ZZJ.pdf  used on input line 102.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZJ.pdf Graphic file (type pdf)
+<use workbook-sols-ZZJ.pdf>
+Package pdftex.def Info: workbook-sols-ZZJ.pdf  used on input line 102.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZZJ.pdf, id=2771, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZJ.pdf Graphic file (type pdf)
+<use workbook-sols-ZZJ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZJ.pdf , page1 used on input line 102.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZJ.pdf Graphic file (type pdf)
+<use workbook-sols-ZZJ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZJ.pdf , page1 used on input line 102.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZJ.pdf Graphic file (type pdf)
+<use workbook-sols-ZZJ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZJ.pdf , page1 used on input line 102.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZJ.pdf Graphic file (type pdf)
+<use workbook-sols-ZZJ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZJ.pdf , page1 used on input line 102.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZJ.pdf Graphic file (type pdf)
+<use workbook-sols-ZZJ.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZJ.pdf , page1 used on input line 102.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [62 <./workbook-sols-ZZJ.pdf, page is rotated 270 degrees>]
+<workbook-sols-ZZK.pdf, id=2810, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZK.pdf Graphic file (type pdf)
+<use workbook-sols-ZZK.pdf>
+Package pdftex.def Info: workbook-sols-ZZK.pdf  used on input line 103.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZK.pdf Graphic file (type pdf)
+<use workbook-sols-ZZK.pdf>
+Package pdftex.def Info: workbook-sols-ZZK.pdf  used on input line 103.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZZK.pdf, id=2813, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZK.pdf Graphic file (type pdf)
+<use workbook-sols-ZZK.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZK.pdf , page1 used on input line 103.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZK.pdf Graphic file (type pdf)
+<use workbook-sols-ZZK.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZK.pdf , page1 used on input line 103.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZK.pdf Graphic file (type pdf)
+<use workbook-sols-ZZK.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZK.pdf , page1 used on input line 103.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZK.pdf Graphic file (type pdf)
+<use workbook-sols-ZZK.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZK.pdf , page1 used on input line 103.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZK.pdf Graphic file (type pdf)
+<use workbook-sols-ZZK.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZK.pdf , page1 used on input line 103.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [63 <./workbook-sols-ZZK.pdf, page is rotated 270 degrees>]
+<workbook-sols-ZZL.pdf, id=2846, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZL.pdf Graphic file (type pdf)
+<use workbook-sols-ZZL.pdf>
+Package pdftex.def Info: workbook-sols-ZZL.pdf  used on input line 104.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZL.pdf Graphic file (type pdf)
+<use workbook-sols-ZZL.pdf>
+Package pdftex.def Info: workbook-sols-ZZL.pdf  used on input line 104.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<workbook-sols-ZZL.pdf, id=2849, page=1, 597.23125pt x 845.1575pt>
+File: workbook-sols-ZZL.pdf Graphic file (type pdf)
+<use workbook-sols-ZZL.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZL.pdf , page1 used on input line 104.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: workbook-sols-ZZL.pdf Graphic file (type pdf)
+<use workbook-sols-ZZL.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZL.pdf , page1 used on input line 104.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZL.pdf Graphic file (type pdf)
+<use workbook-sols-ZZL.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZL.pdf , page1 used on input line 104.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZL.pdf Graphic file (type pdf)
+<use workbook-sols-ZZL.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZL.pdf , page1 used on input line 104.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: workbook-sols-ZZL.pdf Graphic file (type pdf)
+<use workbook-sols-ZZL.pdf, page 1>
+Package pdftex.def Info: workbook-sols-ZZL.pdf , page1 used on input line 104.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [64 <./workbook-sols-ZZL.pdf, page is rotated 270 degrees>]
+(./workbook-sols.aux) ) 
+Here is how much of TeX's memory you used:
+ 3507 strings out of 483183
+ 60817 string characters out of 5966292
+ 274813 words of memory out of 5000000
+ 18394 multiletter control sequences out of 15000+600000
+ 532338 words of font info for 24 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 40i,18n,45p,267b,423s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb>
+Output written on workbook-sols.pdf (64 pages, 3981899 bytes).
+PDF statistics:
+ 2885 PDF objects out of 2984 (max. 8388607)
+ 1677 compressed objects within 17 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 1281 words of extra memory for PDF output out of 10000 (max. 10000000)
+

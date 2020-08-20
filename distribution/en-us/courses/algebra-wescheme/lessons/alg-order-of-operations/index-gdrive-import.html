@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Order of Operations</title>
+<style>
+/* Overall document font */
+* {font-family: Lato, Arial, Helvetica, sans-serif;}
+
+/* document headings */
+h1,.lesson-section-1 {color: #75328A;}
+h1{font-size: 32px; font-family: sans-serif;}
+table.section-heading *, .lesson-section-1 h2{font-size: 32px; font-weight: 100;}
+table.section-heading{width: 100%;}
+table.section-heading td:last-child{text-align: right; color: #d9d2e9;}
+
+/* preamble section */
+table.preamble td {padding: 10px;}
+table.preamble td:first-child{background: #b7d893; width: 25%;}
+table.preamble td:first-child p {font-weight: bold; margin: 5px;}
+
+/* content used throughout the body */
+table{ border-collapse: collapse; border: none; }
+table.grid-all.frame-all {border: solid 1px black;}
+table.grid-none.frame-none {border-width: 0px;}
+
+.big {font-size: 30pt;}
+.vocab{font-weight: bold; font-style: italic;}
+.right{text-align: right;}
+.acknowledgment {
+  border-top: solid 1px black; 
+  font-style: italic; 
+  font-size: 8pt;
+}
+.lesson-point {
+  border-top: solid 1px black; 
+  border-bottom: solid 1px black; 
+  color: black;
+  font-weight: bold;
+}
+
+.web-page-only, #footer { display: none; visibility: hidden; }
+
+/* Callout boxes */
+.strategy-box, .notice-box {
+  background: #efefef;
+  border: solid 5px !important;
+  margin: 15px auto;
+  width: 100%;
+}
+.strategy-box { border-color: #1a73b5 !important; }
+.notice-box   { border-color: #7747a5 !important; }
+.strategy-box td, .notice-box td{ padding: 10px; }
+.strategy-box .title, .notice-box .title{
+  width: 100%;
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+  clear: both;
+  margin: 100px;
+}
+.strategy-box p.tableblock:first-child, .notice-box p.tableblock:first-child{
+  text-align: center;
+  padding-bottom: 15px;
+}
+.strategy-box .title { color: #1a73b5; }
+.notice-box   .title { color: #7747a5; }
+.strategy-box a, .notice-box a { color: blue; text-decoration: underline; }
+
+/* "Tables" of Evaluation */
+.operator{border-bottom: solid 1px black; text-align: center;}
+.operator * {text-align: center;}
+td {padding: 0px 10px; font-size: 14px;}
+table.expression {
+    font-family:"Courier New", Monaco, monospace;
+    border:     solid 1px black;
+    font-size:  1px;
+    max-width:  400px;
+    color:      #666666;
+    display:    inline-block;
+}
+table.args {border: none; text-align: center;}
+
+.wescheme-string,     .cm-scheme-string    {color: green;}
+.wescheme-number,     .cm-scheme-number    {color: blue;}
+.wescheme-boolean,    .cm-scheme-boolean   {color: darkred;}
+.wescheme-character,  .cm-scheme-character {color: orange;}
+.wescheme-symbol,     .cm-scheme-symbol    {color: steelblue;}
+.wescheme-comment,    .cm-scheme-comment   {color: orange; }
+
+.racket, .pyret, .studentAnswerCode, .studentAnswer, .pyretkeyword, .keyword_only {
+    font-family:"Courier New", Monaco, monospace !important; 
+    color: black;
+}
+
+/* Design Recipe */
+.recipe_instructions { font-style: italic; }
+table.recipe_title {
+  color:              white;
+  background:         gray;
+  display:            block;
+  padding:            0px;
+  font-size:          1.1rem;
+  font-weight:        bold;
+}</style>
+      <script type="text/javascript" src="../../../../lib/MathJax-2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2Clocal%2Fmathjaxlocal.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:window.location.href,
+    filename:"Order of Operations",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article LessonPlan wescheme" onload="renderSaveToDrive()">
+<!-- Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46088504-1', 'bootstrapworld.org');
+ga('send', 'pageview');
+
+</script>
+<span id="body" onload="renderSaveToDrive()">
+<span id="header">
+<h1>Order of Operations</h1>
+
+  <span id="savetodrive-div"></span>
+
+</span>
+<span id="content">
+<span id="preamble_disabled">
+<span class="sectionbody">
+<span class="paragraph">
+<p><span class="other-proglang"><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../../algebra-pyret/lessons/alg-order-of-operations/index.shtml">(Also available for Pyret)</a></span></p>
+</span>
+<style>
+.embedded {min-width: 550px; width: 80%; margin: 0px auto;}
+</style>
+<span class="paragraph">
+<p>Students learn to model arithmetic expressions with a visual tool for order of operations, known as "Circles of Evaluation".</p>
+</span>
+<table class="tableblock frame-all grid-all stripes-none stretch left-header preamble">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Prerequisites</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-coordinates/index.shtml">Coordinates and Game Design</a></p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><script>
+function showStandardsAlignment() {
+  const selectTag = document.getElementsByClassName('standardsAlignmentSelect')[0];
+  const options = selectTag && selectTag.options;
+  const stdTables = document.getElementsByClassName('alignedStandards');
+  const intro = document.getElementsByClassName('alignedStandardsIntro')[0];
+  let introNeeded = true;
+  for (let i = 0; i < stdTables.length; i++) {
+    const stdTable = stdTables[i];
+    stdTable.style.display = 'none';
+  }
+  for (let i = 0; i < options.length; i++) {
+    const opt = options[i];
+    if (opt.selected) {
+      const optStd = opt.value;
+      for (let j = 0; j < stdTables.length; j++) {
+        const stdTable = stdTables[j];
+        if (stdTable.classList.contains(optStd)) {
+          stdTable.style.display = 'block';
+          introNeeded = false;
+        }
+      }
+    }
+  }
+  intro.style.display = introNeeded ? 'block' : 'none';
+}
+</script>
+<span class="paragraph">
+<p>Standards</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph ">
+</span>
+<span class="dlist standards-CC-Math standards-hierarchical-table">
+<span class="title">Common Core Math Standards</span>
+<dl>
+<dt class="hdlist1"><br/>HSA.SSE.A.2</dt>
+<dd>
+<p>Use the structure of an expression to identify ways to rewrite it.</p>
+</dd>
+<dt class="hdlist1"><br/>HSA.SSE.B</dt>
+<dd>
+<p>Write expressions in equivalent forms to solve problems.</p>
+</dd>
+<dt class="hdlist1"><br/>MP.1</dt>
+<dd>
+<p>Make sense of problems and persevere in solving them</p>
+</dd>
+<dt class="hdlist1"><br/>MP.2</dt>
+<dd>
+<p>Reason abstractly and quantitatively</p>
+</dd>
+</dl>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Lesson Goals</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Students will be able to:</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>Model an arithmetic expression using <span class="vocab">Circles of Evaluation</span>.</p>
+</li>
+<li>
+<p>Translate Circles of Evaluation into code.</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Student-facing Goals</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>I can write Circles of Evaluation for a given arithmetic <span class="vocab">expression</span>.</p>
+</li>
+<li>
+<p>I can translate a Circle of Evaluation model into code.</p>
+</li>
+<li>
+<p>I can use numbers and operations in a programming environment.</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Materials</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Lesson slides (<a href="https://docs.google.com/presentation/d/1f2sE20VEHYZ4IYOF43DCqd5wpvoRV6uUUl2tGa4KO9I/edit?usp=sharing" target="_blank" rel="noopener">Google Slides</a>)</p>
+</li>
+<li>
+<p>Circles of Evaluation template (<a href="https://docs.google.com/document/d/12xlIyo1Iu7VZfk2tIQUPex6sP3Zs0ZeQFAZOaJmfVFs/edit?usp=sharing" target="_blank" rel="noopener">Google Doc</a>)</p>
+</li>
+<li>
+<p>Circles of Evaluation Mixed Review (<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/translate-coe-to-code.html" target="_blank" rel="noopener">original (Page 13)</a>, <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/solution-pages/translate-coe-to-code.html" target="_blank" rel="noopener">solution</a>)</p>
+</li>
+<li>
+<p>Circles of Evaluation with Square Roots (<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/translate-coe-to-code-w-sqrts.html" target="_blank" rel="noopener">original (Page 16)</a>, <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/solution-pages/translate-coe-to-code-w-sqrts.html" target="_blank" rel="noopener">solution</a>)</p>
+</li>
+<li>
+<p>Multiple Representations - Order of Operations (<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/OrderOfOperations-Multiple-Representations.pdf" target="_blank" rel="noopener">PDF</a>)</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Preparation</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Make sure all materials have been gathered</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Supplemental Resources</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Coordinates, Circles of Evaluation, and Code (<a href="https://quizizz.com/admin/quiz/5d9919a36c6f17001a9dc796" target="_blank" rel="noopener">Quizizz</a>)</p>
+</li>
+<li>
+<p>Order of Operations (<a href="https://quizizz.com/admin/quiz/5d994ec89c7e5d001a207aff" target="_blank" rel="noopener">Quizizz</a>)</p>
+</li>
+<li>
+<p>Data Types &amp; Circles of Evaluation (<a href="https://teacher.desmos.com/activitybuilder/custom/5d991b064febfc7e0ff8cb1d" target="_blank" rel="noopener">Desmos Activity</a>)</p>
+</li>
+<li>
+<p>Circles of Evaluation Review - Blank Template (<a href="https://teacher.desmos.com/activitybuilder/custom/5d991a674febfc7e0ff8cb15" target="_blank" rel="noopener">Desmos Activity</a>)</p>
+</li>
+<li>
+<p>Circles of Evaluation Review - Scaffolded (<a href="https://teacher.desmos.com/activitybuilder/custom/5ef7a04591cf0a7595e2cc40" target="_blank" rel="noopener">Desmos Activity</a>)</p>
+</li>
+<li>
+<p>Data Types, Circles of Evaluation, and Contracts (<a href="https://teacher.desmos.com/activitybuilder/custom/5d991ae71172d473178c9816" target="_blank" rel="noopener">Desmos Activity</a>)</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Key Points For The Facilitator</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Error messages are the computer trying to give us a clue that something is wrong.  Model reacting to <span class="vocab">error message</span>s with interest to demonstrate to students that the messages are a helpful tool.</p>
+</li>
+<li>
+<p>After the first few exercises in creating Circles of Evaluation, ask students whether they create them from the 'inside-out' (drawing the inner circles first) or from the 'outside-in.'  After they&#8217;ve given their responses, have them try using the OTHER way!</p>
+</li>
+<li>
+<p>Up until now, we didn&#8217;t have a visual spatial model for explaining the order of operations. Ask students to compare Circles of Evaluation to previous methods they&#8217;ve learned (PEMDAS, GEMAS, etc)</p>
+</li>
+<li>
+<p>For a memory hook, model the "bug that crawls through the circle" explanation.</p>
+</li>
+<li>
+<p>Students may benefit from using multiple colors to distinguish between the different smaller expressions and parentheses.</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+</tbody>
+</table>
+<span class="paragraph old-materials">
+<p>For a textbook-like version of materials similar to these, you may wish to see the <a href="https://www.bootstrapworld.org/materials/spring2020/courses/algebra/en-us/units/unit1/index.html" target="_blank" rel="noopener">prior unit-based version</a>.</p>
+</span>
+<span class="dlist glossary">
+<span class="title">Glossary</span>
+<dl>
+<dt class="hdlist1"><br/>circle of evaluation</dt>
+<dd>
+<p>a diagram of the structure of an expression (arithmetic or code)</p>
+</dd>
+<dt class="hdlist1"><br/>definitions area</dt>
+<dd>
+<p>the left-most text box in the Editor where definitions for values and functions are written</p>
+</dd>
+<dt class="hdlist1"><br/>editor</dt>
+<dd>
+<p>software in which you can write and evaluate code</p>
+</dd>
+<dt class="hdlist1"><br/>error message</dt>
+<dd>
+<p>information from the computer about errors in code</p>
+</dd>
+<dt class="hdlist1"><br/>expression</dt>
+<dd>
+<p>a computation written in the rules of some language (such as arithmetic, code, or a Circle of Evaluation)</p>
+</dd>
+<dt class="hdlist1"><br/>function</dt>
+<dd>
+<p>a mathematical object that consumes inputs and produces an output</p>
+</dd>
+<dt class="hdlist1"><br/>interactions area</dt>
+<dd>
+<p>the right-most text box in the Editor, where expressions are entered to evaluate</p>
+</dd>
+<dt class="hdlist1"><br/>value</dt>
+<dd>
+<p>a specific piece of data, like 5 or "hello"</p>
+</dd>
+</dl>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<h2 id="_warmup"><span class="section-link"><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/#_warmup"><span class="section-link-symbol">&#128279;</span></a></span>Warmup</h2>
+<span class="sectionbody">
+<span class="paragraph">
+<p>Students should open <a href="https://www.wescheme.org" target="_blank" rel="noopener">WeScheme</a> in their browser, and click "Log In". This will ask them to log in with a valid Google account (Gmail, Google Classroom, YouTube, etc.), and then show them the "My Programs" page. This page is empty - they don&#8217;t have any programs yet! Have them click "Start a New Program".</p>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">Numbers </td><td width="35%">10 minutes</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview">Overview</h3>
+<span class="paragraph">
+<p>Students experiment with the Editor, exploring the different kinds of numbers and how they behave in this programming language.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch">Launch</h3>
+<span class="paragraph">
+<span class="image"><img src="../../lessons/alg-order-of-operations/images/editor.png" alt="Our Editing Environment" width="300" height=""></span><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/images/editor.png" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span></span>
+This screen is called the <span class="vocab">Editor</span>, and it looks something like the diagram you see here. There are a few buttons at the top, but most of the screen is taken up by two large boxes: the <span class="vocab">Definitions Area</span> on the left and the <span class="vocab">Interactions Area</span> on the right.</p>
+</span>
+<span class="paragraph">
+<p>The <span class="vocab">Definitions Area</span> is where programmers define values and functions that they want to keep, while the <span class="vocab">Interactions Area</span> allows them to experiment with those values and functions. This is like writing function definitions on a blackboard, and having students use those functions to compute answers on scrap paper.</p>
+</span>
+<div class="paragraph lesson-point">
+<p>For now, we will only be writing programs in the <strong>Interactions Area</strong> on the right.</p>
+</div>
+<span class="paragraph">
+<p><span class="clear"></span></p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate">Investigate</h3>
+<span class="paragraph">
+<p>Math is a language, just like English, Spanish, or any other language. We use nouns, like "bread", "tomato", "mustard" and "cheese" to describe physical objects. Math has <span class="vocab">values</span>, like the numbers 1, 2 or 3, to describe quantities.</p>
+</span>
+<span class="openblock lesson-instruction">
+<span class="content">
+<span class="paragraph">
+<p>Try typing the number <code><span class="racket">42</span></code> on the right, and then hitting "Enter" or "Return". What did this number evaluate to? (Hint: Numbers should evaluate to themselves - if you didn&#8217;t get back the same number you put in, something is very wrong!)</p>
+</span>
+<span class="paragraph">
+<p>If working in pairs, make sure you each take a turn at the keyboard. Suggestions:</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>How <em>large</em> of a number can you enter?</p>
+</li>
+<li>
+<p>How <em>small</em> of a number can you enter?</p>
+</li>
+<li>
+<p>What happens if you type two numbers on the same line?</p>
+</li>
+<li>
+<p>Do fractions work? Decimals?</p>
+</li>
+<li>
+<p>Do negative numbers work?</p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p>Remember, we&#8217;re only trying <em>numbers</em> for now, not operations like <span class="gdrive-only">3 - 6</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 3 - 6</script><span class="end-ignore-for-gdrive"></span>-->, <span class="gdrive-only">&radic;16</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle \sqrt{16}</script><span class="end-ignore-for-gdrive"></span>--> or <span class="gdrive-only">4^2</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 4^2</script><span class="end-ignore-for-gdrive"></span>--></p>
+</span>
+</span>
+</span>
+<table class="tableblock frame-all grid-none stripes-none stretch notice-box">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="title">Notice &amp; Wonder</span></p>
+<p class="tableblock">In pairs, students will each try entering a variety of numbers in the Interactions Area, hitting "Enter" each time to see what the computer does. Then they will write down what they Notice and Wonder on <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/NoticeAndWonder.html" target="_blank" rel="noopener">Notice and Wonder (Page 8)</a>.</p></td>
+</tr>
+</tbody>
+</table>
+<span class="ulist">
+<ul>
+<li>
+<p>What did you Notice? What do you Wonder?</p>
+</li>
+<li>
+<p>Did you get any error messages? If so, read it carefully - what do you think it means?</p>
+</li>
+</ul>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_student_misconceptions">Student Misconceptions</h3>
+<span class="ulist">
+<ul>
+<li>
+<p>Students who try division by writing <code><span class="racket">3/2</span></code> and get an answer may falsely assume that they&#8217;ve performed division. In fact, what they&#8217;ve done is entered a <em>rational number</em>. ("Two-thirds" is <em>equivalent</em> to the expression  "two divided by three", but only insofar as they result in the same value. "2" is equivelent to expression "10 minus 8", for the same reason!)</p>
+</li>
+<li>
+<p>Rational numbers can be converted back and forth between fraction and decimal forms by clicking on them.</p>
+</li>
+</ul>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize">Synthesize</h3>
+<span class="paragraph">
+<p>Our programming language knows about many types of numbers, and they behave pretty much the way they do in math. Our Editor is also pretty smart, and can automatically switch between showing a rational number as a fraction or a decimal, just by clicking on it!</p>
+</span>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">Order of Operations </td><td width="35%">30 minutes</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview_2">Overview</h3>
+<span class="paragraph">
+<p>Students are given a challenging expression that exposes common misconceptions about order of operations. The goal is to demonstrate that a brittle, fixed notion of order of operations is <em>not good enough</em>, and lead students to a deeper understanding of Order of Operations as a grammatical device. The Circles of Evaluation are introduced as "sentence diagramming for arithmetic".</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch_2">Launch</h3>
+<span class="paragraph">
+<p>Humans also use verbs like "throw", "run", "build" and "jump" to describe operations on these nouns. Mathematics has <span class="vocab">functions</span> - or "operations" - like addition and subtraction, which are operations performed on values. Just as you can "<strong>spread</strong> <em>mustard</em> on <em>bread</em>", a person can also "<strong>add</strong> <em>four</em> and <em>five</em>".</p>
+</span>
+<span class="paragraph">
+<p>A mathematical expression is like a sentence: it’s an instruction for doing something. The expression 4+5 tells us to add 4 and 5. To evaluate an expression, we follow the instructions in the expression. The expression <span class="gdrive-only">4 + 5</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 4 + 5</script><span class="end-ignore-for-gdrive"></span>--> evaluates to 9.</p>
+</span>
+<span class="paragraph">
+<p><span class="right"><span class="image"><img src="../../lessons/alg-order-of-operations/images/pemdas.png" alt="" width="300" height=""></span><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/images/pemdas.png" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span>
+Sometimes, we need multiple expressions to accomplish a task, and it will matter in which order they come. For exmple, if you were to write instructions for making a sandwich, it would matter very much which instruction came first: melting the cheese, slicing the bread, spreading the mustard, etc. The order of functions matters in mathematics, too.</p>
+</span>
+<span class="paragraph">
+<p>Mathematicians didn’t always agree on the order of operations, but now we have a common set of rules for how to evaluate expressions. The pyramid on the right summarizes the order. When evaluating an expression, we begin by applying the operations written at the top of the pyramid (multiplication and division). Only after we have completed all of those operations can we move down to the lower level. If both operations are present (as in <span class="gdrive-only">4 + 2 − 1</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 4 + 2 − 1</script><span class="end-ignore-for-gdrive"></span>-->), we read the expression from left to right, applying the operations in the order in which they appear.</p>
+</span>
+<span class="paragraph">
+<p><span class="clear"></span></p>
+</span>
+<span class="paragraph lesson-instruction">
+<p>But this set of rules is brittle, and doesn&#8217;t always make it clear what we need to do. Check out the expression below. What do you think the answer is?  This math problem went viral on social media recently, with math teachers arguing about what the answer was! Why might they disagree on the solution?</p>
+</span>
+<style>
+.centered-image.big, .centered-image.big p {margin-top: 0px; padding-top: 0px;}
+.big .MathJax {font-size: 6em; color: black;}
+</style>
+<span class="paragraph centered-image big">
+<p><span class="gdrive-only">6 &divide; 2(1 + 2)</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 6 \div 2(1 + 2)</script><span class="end-ignore-for-gdrive"></span>--></p>
+</span>
+<span class="paragraph">
+<p>Order of Operations mneumonic devices like PEMDAS, GEMDAS, etc focus on how to get the answer. What we need is a <em>better way to read math</em>.</p>
+</span>
+<span class="paragraph">
+<p>Instead of a rule for computing answers, let&#8217;s start by diagramming the math itself! We can <em>draw the structure</em> of this grammer in mathematics using something called the <strong>Circles of Evaluation</strong>. The rules are simple:</p>
+</span>
+<div class="paragraph lesson-point">
+<p>1) Every Circle must have one - and only one! - function, written at the top</p>
+</div>
+<span class="paragraph">
+<p>That means that Numbers (e.g. - <code><span class="racket">3</tt></code>, <code><tt class="racket">-29</tt></code>, <code><tt class="racket">77.01</span></code>&#8230;&#8203;) are still written by themselves. It&#8217;s only when we want to <em>do something</em> like add, subtract, etc. that we need to draw a Circle.</p>
+</span>
+<div class="paragraph lesson-point">
+<p>2) The inputs to the function are written left-to-right, in the middle of the Circle.</p>
+</div>
+<span class="paragraph">
+<p>If we want to draw the Circle of Evaluation for <span class="gdrive-only">6 &divide; 3</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 6 \div 3</script><span class="end-ignore-for-gdrive"></span>-->, the division function (<code><span class="racket">/</tt></code>) is written at the top, with the <code><tt class="racket">6</tt></code> on the left and the <code><tt class="racket">3</span></code> on the right.</p>
+</span>
+<span class="paragraph centered-image">
+<p><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">/</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">6</span></td><td class="arg"><span class="value wescheme-number">3</span></td></tr></table></td></tr></table><!--<span class="begin-ignore-for-gdrive"></span><span class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">/</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">6</span><span class="hspace">&#160;</span><span class="value wescheme-number">3</span><span class="rParen">)</span></span></span><span class="end-ignore-for-gdrive"></span>-->
+<span class="clear"></span></p>
+</span>
+<span class="paragraph">
+<p>What if we want to use multiple functions? How would we draw the Circle of Evaluation for <span class="gdrive-only">6 &divide; (1 + 2)</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 6 \div (1 + 2)</script><span class="end-ignore-for-gdrive"></span>-->? Drawing the Circle of Evaluation for the <span class="gdrive-only">1 + 2</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 1 + 2</script><span class="end-ignore-for-gdrive"></span>--> is easy. But how do divide 6 by that circle?</p>
+</span>
+<span class="paragraph">
+<p><strong>Circles can contain other Circles</strong></p>
+</span>
+<span class="paragraph">
+<p>We basically replace the <code><span class="racket">3</span></code> from our earlier Circle of Evaluation with <em>another</em> Circle, which adds 1 and 2!</p>
+</span>
+<span class="paragraph centered-image">
+<p><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">/</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">6</span></td><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&#43;</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">1</span></td><td class="arg"><span class="value wescheme-number">2</span></td></tr></table></td></tr></table></td></tr></table></td></tr></table><!--<span class="begin-ignore-for-gdrive"></span><span class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">/</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">6</span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&#43;</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">1</span><span class="hspace">&#160;</span><span class="value wescheme-number">2</span><span class="rParen">)</span></span><span class="rParen">)</span></span></span><span class="end-ignore-for-gdrive"></span>-->
+<span class="clear"></span></p>
+</span>
+<span class="paragraph">
+<p><strong>Circles of Evaluation <em>help us write code</em></strong></p>
+</span>
+<span class="paragraph">
+<p>When converting a Circle of Evaluation to code, it&#8217;s useful to imagine a spider crawling through the circle from the left and exiting on the right. The first thing the spider does is cross over a curved line (an open parenthesis!), then visit the operation - also called the <em>function</em> - at the top. After that, she crawls from left to right, visiting each of the inputs to the function. Finally, she has to leave the circle by crossing another curved line (a close parenthesis).</p>
+</span>
+<table class="tableblock frame-none grid-none stripes-none stretch embedded">
+<colgroup>
+<col style="width: 42.8571%;">
+<col style="width: 14.2857%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Expression</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&rarr;</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="gdrive-only">3 + 8</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 3 + 8</script><span class="end-ignore-for-gdrive"></span>--></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Circle of Evaluation</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&rarr;</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&#43;</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">3</span></td><td class="arg"><span class="value wescheme-number">8</span></td></tr></table></td></tr></table><!--<span class="begin-ignore-for-gdrive"></span><span class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&#43;</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">3</span><span class="hspace">&#160;</span><span class="value wescheme-number">8</span><span class="rParen">)</span></span></span><span class="end-ignore-for-gdrive"></span>--></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Code</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&rarr;</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="racket">(+ 3 8)</span></p></td>
+</tr>
+</tbody>
+</table>
+<span class="paragraph">
+<p>All of the expressions that follow the function name are called arguments to the function. The following diagram summarizes the shape of an expression that uses a function.
+<span class="image"><img src="../../lessons/alg-order-of-operations/images/wescheme-code-diagram.png" alt="Diagram of a WeScheme Expression" width="400"></span><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/images/wescheme-code-diagram.png" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span></span></p>
+</span>
+<span class="paragraph">
+<p>Practice creating Circles of Evaluation using the common operators (<code><span class="racket">+</tt></code>, <code><tt class="racket">-</tt></code>, <code><tt class="racket">*</tt></code>, <code><tt class="racket">/</span></code>).</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>Do spaces matter when typing in functions?</p>
+</li>
+<li>
+<p>Does the order of the numbers matter in the functions? Which functions?</p>
+</li>
+<li>
+<p>What do the error messages tell us?</p>
+</li>
+<li>
+<p>What connections do you see between the expression, circle, and code?</p>
+</li>
+</ul>
+</span>
+<table class="tableblock frame-none grid-none stripes-none stretch embedded">
+<colgroup>
+<col style="width: 42.8571%;">
+<col style="width: 14.2857%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Expression</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&rarr;</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="gdrive-only">2 &times; (3 + 8)</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 2 \;\times\; (3 + 8)</script><span class="end-ignore-for-gdrive"></span>--></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Circle of Evaluation</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&rarr;</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&#8203;*</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">2</span></td><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&#43;</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">3</span></td><td class="arg"><span class="value wescheme-number">8</span></td></tr></table></td></tr></table></td></tr></table></td></tr></table><!--<span class="begin-ignore-for-gdrive"></span><span class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&#8203;*</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">2</span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&#43;</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">3</span><span class="hspace">&#160;</span><span class="value wescheme-number">8</span><span class="rParen">)</span></span><span class="rParen">)</span></span></span><span class="end-ignore-for-gdrive"></span>--></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Code</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&rarr;</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="racket">(* 2 (+ 3 8))</span></p></td>
+</tr>
+</tbody>
+</table>
+<span class="ulist">
+<ul>
+<li>
+<p>Why are there two closing parentheses in a row, at the end of the code?</p>
+</li>
+<li>
+<p>If an expression has three sets of parentheses, how many Circles of Evaluation do you expect to need?</p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p><strong>Circles of Evaluation <em>help us get the correct answer</em></strong></p>
+</span>
+<span class="paragraph">
+<p>Aside from helping us catch mistakes before they happen, Circles of Evaluation are also a useful way to think about <em>transformation</em> in mathematics. For example, you may have heard that "any subtraction can be transformed to a negative addition." For example, <span class="gdrive-only">1 - 2</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 1 - 2</script><span class="end-ignore-for-gdrive"></span>--> can be transformed to <span class="gdrive-only">1 + -2</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 1 + (-2)</script><span class="end-ignore-for-gdrive"></span>-->.</p>
+</span>
+<span class="paragraph">
+<p>Suppose someone tells you that <span class="gdrive-only">1 - 2 * 3 + 4</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 1 - 2 * 3 + 4</script><span class="end-ignore-for-gdrive"></span>--> can be rewritten as <span class="gdrive-only">1 + -2 * 3 + 4</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 1 + (-2) * 3 + 4</script><span class="end-ignore-for-gdrive"></span>-->. These two expressions will definitely give us the same answer, but this transformation is actually <em>incorrect</em>! It doesn&#8217;t not use the negative addition rule at all! <strong>Take a moment to think: what&#8217;s the problem?</strong></p>
+</span>
+<span class="paragraph">
+<p>We can use the Circles of Evaluation to figure it out!</p>
+</span>
+<span class="paragraph">
+<p>The first Circle is just the original expression. The multiplication happens first, so let&#8217;s see how multiplication changes this circle:</p>
+</span>
+<table class="tableblock frame-none grid-none stripes-none stretch embedded">
+<colgroup>
+<col style="width: 42.8571%;">
+<col style="width: 14.2857%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&#43;</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&#8203;-</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">1</span></td><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&#8203;*</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">2</span></td><td class="arg"><span class="value wescheme-number">3</span></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td><td class="arg"><span class="value wescheme-number">4</span></td></tr></table></td></tr></table><!--<span class="begin-ignore-for-gdrive"></span><span class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&#43;</span></span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&#8203;-</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">1</span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&#8203;*</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">2</span><span class="hspace">&#160;</span><span class="value wescheme-number">3</span><span class="rParen">)</span></span><span class="rParen">)</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">4</span><span class="rParen">)</span></span></span><span class="end-ignore-for-gdrive"></span>--></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><em>multiplication</em> &rarr;</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&#43;</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><table class="gdrive-only expression"><tr><td class="operator"><span class="operator"><span class="value wescheme-symbol">&#8203;-</span></span></td></tr><tr><td><table class="args"><tr><td class="arg"><span class="value wescheme-number">1</span></td><td class="arg"><span class="value wescheme-number">6</span></td></tr></table></td></tr></table></td><td class="arg"><span class="value wescheme-number">4</span></td></tr></table></td></tr></table><!--<span class="begin-ignore-for-gdrive"></span><span class="circleevalsexp"><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&#43;</span></span><span class="hspace">&#160;</span><span class="expression"><span class="lParen">(</span><span class="operator"><span class="value wescheme-symbol">&#8203;-</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">1</span><span class="hspace">&#160;</span><span class="value wescheme-number">6</span><span class="rParen">)</span></span><span class="hspace">&#160;</span><span class="value wescheme-number">4</span><span class="rParen">)</span></span></span><span class="end-ignore-for-gdrive"></span>--></p></td>
+</tr>
+</tbody>
+</table>
+<span class="paragraph">
+<p>As you can see, replacing the subtraction with a negative addition happens to the <em>result</em> of the multiplication. We can&#8217;t actually change the <code><span class="racket">2</tt></code> into a <code><tt class="racket">-2</tt></code>, because it isn&#8217;t actually being subtracted from <code><tt class="racket">1</span></code>!</p>
+</span>
+<span class="paragraph">
+<p>Sure, we got the same answer - but that doesn&#8217;t mean the way we got it was correct. If all that mattered was getting the right answer, we could just as easily have replaced the whole expression with <span class="gdrive-only">5 - 6</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 5 - 6</script><span class="end-ignore-for-gdrive"></span>-->. And that is <em>definitely</em> not a correct transformation!</p>
+</span>
+<span class="paragraph">
+<p>Any time you make a transformation in math (replacing <span class="gdrive-only">10 - 2</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 10 - 2</script><span class="end-ignore-for-gdrive"></span>--> with <span class="gdrive-only">8</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 8</script><span class="end-ignore-for-gdrive"></span>--> because of subtraction, or replacing <span class="gdrive-only">2 + 6</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 2 + 6</script><span class="end-ignore-for-gdrive"></span>--> with <span class="gdrive-only">6 + 2</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle 6 + 2</script><span class="end-ignore-for-gdrive"></span>--> because of commutativity), you need to make sure the transformation is <em>correct</em>. The Circles of Evaluation help us see these transformation <em>visually</em>, rather than forcing us to keep them in our heads.</p>
+</span>
+<table class="tableblock frame-all grid-none stripes-none stretch strategy-box">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="title">Circles of Evaluation</span></p>
+<p class="tableblock">The Circles of Evaluation are a critical pedagogical tool in this course. They place the focus on the <em>structure</em> of mathematical expressions, as a means of combating the harmful student belief that the only thing that matters is the <em>answer</em>. They can be used to diagram arithmetic sentences to expose common misconceptions about Order of Operations, and make an excellent scaffold for tracing mistakes when a student applies the Order of Operations incorrectly. They are also a bridge representation, which naturally connects to function composition and converting arithmetic into code.</p></td>
+</tr>
+</tbody>
+</table>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate_2">Investigate</h3>
+<span class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Students complete <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/translate-arithmetic-to-circles-and-code.html" target="_blank" rel="noopener">Arithmetic Expressions to Circles of Evaluation &amp; Code (Page 15)</a> page in their workbook. They should <em>draw all of the Circles first</em> and check their work, before converting to code.</p>
+</li>
+<li>
+<p>Students complete the <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/translate-coe-to-code.html" target="_blank" rel="noopener">Translating Circles of Evaluation to Code (Page 13)</a>.</p>
+</li>
+<li>
+<p>If time allows, partners should take turns entering the code into the editor.</p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p>The Circles of Evaluation are a great way to visualize <em>other</em> functions you already know, such as square and square root!</p>
+</span>
+<span class="paragraph">
+<p><strong>Note:</strong> In WeScheme, we use <code><span class="racket">sqrt</tt></code> as the name of the square root function, and <code><tt class="racket">sqr</span></code> as the function that squares its input.</p>
+</span>
+<span class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Students complete <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/translate-coe-to-code-w-sqrts.html" target="_blank" rel="noopener">Translating Circles of Evaluation to Code - w/Square Roots (Page 16)</a> with their partners and test their code in the editor.</p>
+</li>
+<li>
+<p>OPTIONAL: Using <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/OrderOfOperations-Multiple-Representations.pdf" target="_blank" rel="noopener">this graphic organizer</a>, (1) create the code that represents this Circle of Evaluation, (2) translate this into code, (3) evaluate the expression using the order of operations, and (4) then compare and contrast the three methods.</p>
+</li>
+</ul>
+</span>
+<table class="tableblock frame-all grid-none stripes-none stretch strategy-box">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="title">Strategies For English Language Learners</span></p>
+<p class="tableblock">MLR 7 - Compare and Connect: Gather students' graphic organizers to highlight and analyze a few of them as a class, asking students to compare and connect different representations.</p></td>
+</tr>
+</tbody>
+</table>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<h2 id="_closing"><span class="section-link"><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/#_closing"><span class="section-link-symbol">&#128279;</span></a></span>Closing</h2>
+<span class="sectionbody">
+<span class="paragraph">
+<p>Have students share back what they learned from the Circles of Evaluation. You may want to assign traditional Order of Operations problems from your math book, but instead of asking them simply to compute the answer - or even list the steps - have them <em>draw the circle</em>.</p>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<h2 id="_additional_exercises"><span class="section-link"><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/#_additional_exercises"><span class="section-link-symbol">&#128279;</span></a></span>Additional Exercises</h2>
+<span class="sectionbody">
+<span class="ulist">
+<ul>
+<li>
+<p>Completing Circles of Evaluation from Math Expressions (1)
+(<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/complete-coe-from-arith1.html" target="_blank" rel="noopener">original</a> ,
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/solution-pages/complete-coe-from-arith1.html" target="_blank" rel="noopener">answers</a>)</p>
+</li>
+<li>
+<p>Completing Circles of Evaluation from Math Expressions (2)
+(<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/complete-coe-from-arith2.html" target="_blank" rel="noopener">original (Page 9)</a> ,
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/solution-pages/complete-coe-from-arith2.html" target="_blank" rel="noopener">answers (Page 9)</a>)</p>
+</li>
+<li>
+<p>Creating Circles of Evaluation from Math Expressions (1)
+(<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/arith-to-coe1.html" target="_blank" rel="noopener">original</a> ,
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/solution-pages/arith-to-coe1.html" target="_blank" rel="noopener">answers</a>)</p>
+</li>
+<li>
+<p>Creating Circles of Evaluation from Math Expressions (2)
+(<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/arith-to-coe2.html" target="_blank" rel="noopener">original</a> ,
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/solution-pages/arith-to-coe2.html" target="_blank" rel="noopener">answers</a>)</p>
+</li>
+<li>
+<p>Creating Circles of Evaluation from Math Expressions (3)
+(<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/arith-to-coe3.html" target="_blank" rel="noopener">original (Page 10)</a> ,
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/solution-pages/arith-to-coe3.html" target="_blank" rel="noopener">answers (Page 10)</a>)</p>
+</li>
+<li>
+<p>Converting Circles of Evaluation to Math Expressions (1)
+(<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/coe-to-arith1.html" target="_blank" rel="noopener">original</a> ,
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/solution-pages/coe-to-arith1.html" target="_blank" rel="noopener">answers</a>)</p>
+</li>
+<li>
+<p>Converting Circles of Evaluation to Math Expressions (2)
+(<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/coe-to-arith2.html" target="_blank" rel="noopener">original</a> ,
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/solution-pages/coe-to-arith2.html" target="_blank" rel="noopener">answers</a>)</p>
+</li>
+<li>
+<p>Matching Circles of Evaluation and Math Expressions
+(<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/match-arith-coe1.html" target="_blank" rel="noopener">original (Page 11)</a> ,
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/solution-pages/match-arith-coe1.html" target="_blank" rel="noopener">answers (Page 11)</a>)</p>
+</li>
+<li>
+<p>Evaluating Circles of Evaluation (1)
+(<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/coe-to-math-answer1.html" target="_blank" rel="noopener">original</a> ,
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/solution-pages/coe-to-math-answer1.html" target="_blank" rel="noopener">answers</a>)</p>
+</li>
+<li>
+<p>Evaluating Circles of Evaluation (2)
+(<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/coe-to-math-answer2.html" target="_blank" rel="noopener">original</a> ,
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/solution-pages/coe-to-math-answer2.html" target="_blank" rel="noopener">answers</a>)</p>
+</li>
+<li>
+<p>Completing Code from Circles of Evaluation
+(<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/complete-code-from-coe1.html" target="_blank" rel="noopener">original (Page 12)</a> ,
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/solution-pages/complete-code-from-coe1.html" target="_blank" rel="noopener">answers (Page 12)</a>)</p>
+</li>
+<li>
+<p>Converting Circles of Evaluation to Code (1)
+(<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/coe-to-code1.html" target="_blank" rel="noopener">original</a> ,
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/solution-pages/coe-to-code1.html" target="_blank" rel="noopener">answers</a>)</p>
+</li>
+<li>
+<p>Converting Circles of Evaluation to Code (2)
+(<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/coe-to-code2.html" target="_blank" rel="noopener">original</a> ,
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/solution-pages/coe-to-code2.html" target="_blank" rel="noopener">answers</a>)</p>
+</li>
+<li>
+<p>Matching Circles of Evaluation and Code
+(<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/pages/match-coe-to-code.html" target="_blank" rel="noopener">original (Page 14)</a> ,
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/../../lessons/alg-order-of-operations/solution-pages/match-coe-to-code.html" target="_blank" rel="noopener">answers (Page 14)</a>)</p>
+</li>
+</ul>
+</span>
+<span class="openblock acknowledgment"><hr/>
+<span class="content">
+<span class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Algebra by Emmanuel Schanzer, Jen Poole, Ed Campos Jr, Flannery Denny, and Dorai Sitaram
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-wescheme/lessons/alg-order-of-operations/mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+<span id="footer">
+<span id="footer-text">
+Last updated 2020-08-19 20:13:45 -0400
+</span>
+</span>
+</span>
+</body>
+</html>

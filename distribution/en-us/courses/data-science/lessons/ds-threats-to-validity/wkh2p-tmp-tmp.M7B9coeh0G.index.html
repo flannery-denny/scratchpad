@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Threats to Validity</title>
+<link rel="stylesheet" href="./../../../../lib/curriculum.css">
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Threats to Validity",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article LessonPlan pyret" onload="renderSaveToDrive()">
+<!--#include virtual="/menubar.ssi"-->
+<!-- Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46088504-1', 'bootstrapworld.org');
+ga('send', 'pageview');
+
+</script>
+<div id="body" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Threats to Validity</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div id="preamble_disabled">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Students consider possible threats to the validity of their analysis.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-none stretch left-header preamble">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Prerequisites</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../../lessons/ds-linear-regression/index.shtml">Linear Regression</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><script>
+function showStandardsAlignment() {
+  const selectTag = document.getElementsByClassName('standardsAlignmentSelect')[0];
+  const options = selectTag && selectTag.options;
+  const stdTables = document.getElementsByClassName('alignedStandards');
+  const intro = document.getElementsByClassName('alignedStandardsIntro')[0];
+  let introNeeded = true;
+  for (let i = 0; i < stdTables.length; i++) {
+    const stdTable = stdTables[i];
+    stdTable.style.display = 'none';
+  }
+  for (let i = 0; i < options.length; i++) {
+    const opt = options[i];
+    if (opt.selected) {
+      const optStd = opt.value;
+      for (let j = 0; j < stdTables.length; j++) {
+        const stdTable = stdTables[j];
+        if (stdTable.classList.contains(optStd)) {
+          stdTable.style.display = 'block';
+          introNeeded = false;
+        }
+      }
+    }
+  }
+  intro.style.display = introNeeded ? 'block' : 'none';
+}
+</script>
+<div class="paragraph">
+<p>Relevant Standards<select class="standardsAlignmentSelect"  multiple onchange="showStandardsAlignment()" style="height: 150px"><option value="standards-OK">OK</option><option value="standards-K12CS">K12CS</option><option value="standards-CSTA">CSTA</option><option value="standards-NGSS">NGSS</option><option value="standards-CC-Math">CC-Math</option></select></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph alignedStandardsIntro">
+<p><em>Select one or more standards from the menu on the left (⌘-click on Mac, Ctrl-click elsewhere).</em></p>
+</div>
+<div class="dlist alignedStandards standards-CC-Math standards-hierarchical-table">
+<div class="title">Common Core Math Standards</div>
+<dl>
+<dt class="hdlist1">HSS.IC.B.6</dt>
+<dd>
+<p>Evaluate reports based on data.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-CSTA standards-hierarchical-table">
+<div class="title">CSTA Standards</div>
+<dl>
+<dt class="hdlist1">3B-NI-07</dt>
+<dd>
+<p>Evaluate the ability of models and simulations to test and support the refinement of hypotheses.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-K12CS standards-hierarchical-table">
+<div class="title">K-12CS Standards</div>
+<dl>
+<dt class="hdlist1">6-8.Data and Analysis.Collection</dt>
+<dd>
+<p>People design algorithms and tools to automate the collection of data by computers. When data collection is automated, data is sampled and converted into a form that a computer can process. For example, data from an analog sensor must be converted into a digital form. The method used to automate data collection is influenced by the availability of tools and the intended use of the data.</p>
+</dd>
+<dt class="hdlist1">9-12.Data and Analysis.Inference and Models</dt>
+<dd>
+<p>The accuracy of predictions or inferences depends upon the limitations of the computer model and the data the model is built upon. The amount, quality, and diversity of data and the features chosen can affect the quality of a model and ability to understand a system. Predictions or inferences are tested to validate models.</p>
+</dd>
+<dt class="hdlist1">P1</dt>
+<dd>
+<p>Fostering an Inclusive Computing Culture</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-NGSS standards-hierarchical-table">
+<div class="title">Next-Gen Science Standards</div>
+<dl>
+<dt class="hdlist1">HS-SEP1-7</dt>
+<dd>
+<p>Ask and/or evaluate questions that challenge the premise(s) of an argument, the interpretation of a data set, or the suitability of the design.</p>
+</dd>
+<dt class="hdlist1">HS-SEP4-3</dt>
+<dd>
+<p>Consider limitations of data analysis (e.g., measurement error, sample selection) when analyzing and interpreting data.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist alignedStandards standards-OK standards-hierarchical-table">
+<div class="title">Oklahoma Standards</div>
+<dl>
+<dt class="hdlist1">OK.L1.IC.C.02</dt>
+<dd>
+<p>Test and refine computational artifacts to reduce bias and equity deficits.</p>
+</dd>
+</dl>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Lesson Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Students will be able to&#8230;&#8203;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Define several types of Threats to Validity</p>
+</li>
+<li>
+<p>Identify those threats by reading the description of an analysis</p>
+</li>
+<li>
+<p>Identify those threats in their own analysis</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Student-facing Lesson Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Let&#8217;s identify issues that could affect our data analysis.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Materials</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Lesson Slides (<a href="https://docs.google.com/presentation/d/1GNT_r6UvdKSMktU3iq1a2eP-lsJv2OC0ZYldaz3MP7Y/" target="_blank" rel="noopener">Google Slides</a>)</p>
+</li>
+<li>
+<p>Computer for each student (or pair), with access to the internet</p>
+</li>
+<li>
+<p><a href="../..//workbook/workbook.pdf">Student workbook</a>, and something to write with</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Preparation</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Make sure all materials have been gathered</p>
+</li>
+<li>
+<p>Decide how students will be grouped in pairs</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Supplemental Resources</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Language Table</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><table class="tableblock frame-all grid-all stretch lang-features-table">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 66.6666%;">
+<col style="width: 16.6668%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Types</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Functions</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Values</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Number</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>num-sqrt, num-sqr, mean, median, modes</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>4, -1.2, 2/3</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>String</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>string-repeat, string-contains</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>"hello", "91"</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Boolean</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>==, &lt;, &lt;=, &gt;=, string-equal</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>true, false</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Image</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>triangle, circle, star, rectangle, ellipse, square, text, overlay, bar-chart, pie-chart, bar-chart-summarized, pie-chart-summarized, histogram, scatter-plot, lr-plot</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>🔵🔺🔶</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Table</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>count, .row-n, .order-by, .filter, .build-column</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist glossary">
+<div class="title">Glossary</div>
+<dl>
+<dt class="hdlist1">threats to validity</dt>
+<dd>
+<p>factors that can undermine the conclusion of a study</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_threats_to_validity_duration_20_minutes_"><span class="section-link"><a href="#_threats_to_validity_duration_20_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Threats to Validity <span class="duration">20 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview">Overview</h3>
+<div class="paragraph">
+<p>Students are introduced to the concept of <em>validity</em>, and a number of possible threats that might make an analysis invalid.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch">Launch</h3>
+<div class="paragraph lesson-point">
+<p>Survey says: “People prefer cats to dogs”</p>
+</div>
+<div class="paragraph">
+<p>As good Data Scientists, the staff at the animal shelter is constantly gathering data about their animals, their volunteers, and the people who come to visit. But just because they have data doesn’t mean the conclusions they draw from it are correct! For example: suppose they surveyed 1,000 cat-owners and found that 95% of them thought cats were the best pet. Could they really claim that people generally prefer cats to dogs?</p>
+</div>
+<div class="paragraph">
+<p>Have students share back what they think. The issue here is that cat-owners are not a representative sample of the population, so the claim is invalid.</p>
+</div>
+<div class="paragraph">
+<p>There’s more to data analysis than simply collecting data and crunching numbers. In the example of the cat-owning survey, the claim that “people prefer cats to dogs” is <strong>invalid</strong> because the data itself wasn’t representative of the whole population (of course cat-owners are partial to cats!). This is just one example of what are called <span class="vocab">Threats to Validity</span>.</p>
+</div>
+<div class="paragraph">
+<p>There are several major threats to validity you should be on guard against:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Selection bias</strong> - Data was gathered from a biased, non-representative sample of the population. This is the problem with surveying cat owners to find out which animal is most loved. <em>Remember that, in general, randomness is the key to obtaining unbiased samples!</em></p>
+</li>
+<li>
+<p><strong>Bias in the study design</strong> - Suppose you survey a random sample of pet owners that includes representative numbers of both cat and dog owners. But you ask them a “loaded” question like “Since annual vet care comes to about $300 for dogs and only about half of that for cats, would you say that owning a cat is less of a burden than owning a dog?” This could easily lead to a misrepresentation of people’s true opinions.</p>
+</li>
+<li>
+<p><strong>Poor choice of summary</strong> - Even if the selection is unbiased, sometimes outliers are so extreme that they shift the results of our analysis (such as the mean) in ways that don’t represent the population as a whole. For example, if the shelter happened to house a 100-year-old tortoise, and summarized its animals’ ages with the mean, this would inflate our perception of what age is typical.</p>
+</li>
+<li>
+<p><strong>Sample error</strong> - Even if the selection is unbiased and has a large enough sample size, sometimes outliers are so extreme that they shift the results of our analysis in ways that don&#8217;t represent the population as a whole.</p>
+</li>
+<li>
+<p><strong>Confounding variables</strong> - The gathered data does not take into account other factors that might influence a relationship. For example, a study might conclude that cat owners are more environmentally conscious: they’re more likely to use public transportation than dog owners. The confounding variable here could be urban versus rural dwelling: people who live in big cities are more likely to use public transportation and also more likely to own cats.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This is just a small list of different threats to validity. There are plenty more!</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate">Investigate</h3>
+<div class="paragraph">
+<p>On <a href="../../lessons/ds-threats-to-validity/pages/threats-to-validity-1.html" target="_blank" rel="noopener">Identifying Threats to Validity (Page 84)</a> and <a href="../../lessons/ds-threats-to-validity/pages/threats-to-validity-2.html" target="_blank" rel="noopener">Identifying Threats to Validity (Page 85)</a>, you’ll find four different claims backed by four different datasets. Each one of those claims suffers from a serious threat to validity. Can you figure out what those threats are?</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_synthesize">Synthesize</h3>
+<div class="paragraph">
+<p>Give students time to discuss and share back.</p>
+</div>
+<div class="paragraph">
+<p>Life is messy, and there are <em>always</em> threats to validity. Data Science is about doing the best you can to minimize those threats, and to be up front about what they are whenever you publish a finding. When you do your own analysis, make sure you include a discussion of the threats to validity!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_fake_news_duration_20_minutes_"><span class="section-link"><a href="#_fake_news_duration_20_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Fake News! <span class="duration">20 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview_2">Overview</h3>
+<div class="paragraph">
+<p>Students are asked to consider the ways in which statistics are misused in popular culture, and become critical consumers of some statistical claims. Finally, they are given the opportunity to misuse their <em>own</em> statistics, to better understand how someone might distort data for their own ends.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch_2">Launch</h3>
+<div class="paragraph">
+<p>You&#8217;ve already seen a number of ways that statistics can be misused:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Intentionally using the wrong chart</p>
+</li>
+<li>
+<p>Changing the scale of a chart</p>
+</li>
+<li>
+<p>Using the mean instead of the median with heavily-skewed data</p>
+</li>
+<li>
+<p>Using the wrong language when describing a Linear Regression</p>
+</li>
+<li>
+<p>Using a correlation to imply causation</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>With all the news being shared through newspapers, television, radio, and social media, it’s important to be critical consumers of information!</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate_2">Investigate</h3>
+<div class="ulist lesson-instruction">
+<ul>
+<li>
+<p>On <a href="../../lessons/ds-threats-to-validity/pages/fake-news.html" target="<em>blank">Fake News! (Page 86)</a>, you’ll find some deliberately misleading claims made by slimy Data Scientists. Can you figure out <em>why these claims should not be trusted</em></em> ?</p>
+</li>
+<li>
+<p>Once you’ve finished, consider your own dataset and analysis: what misleading claims could someone make about your work? Turn to <a href="../../lessons/ds-threats-to-validity/pages/lies-darned-lies-n-statistics.html" target="_blank" rel="noopener">Lies&#x2c; Darned Lies&#x2c; and Statistics (Page 87)</a>, and come up with four misleading claims based on data or displays from your work.</p>
+</li>
+<li>
+<p>Trade papers with another group, and see if you can figure out why each other’s claims are not to be trusted!</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_synthesize_2">Synthesize</h3>
+<div class="paragraph">
+<p>Have students share back their "lies". Was anyone able to stump the other group?</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_your_analysis_duration_flexible_"><span class="section-link"><a href="#_your_analysis_duration_flexible_"><span class="section-link-symbol">&#128279;</span></a></span>Your Analysis <span class="duration">flexible</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview_3">Overview</h3>
+<div class="paragraph">
+<p>Students repeat the previous activity, this time applying it to their own dataset and interpreting their own results. <strong>Note: this activity can be done briefly as a homework assignment, but we recommend giving students an <em>additional class period</em> to work on this.</strong></p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch_3">Launch</h3>
+<div class="paragraph">
+<p>In every analysis, there are always threats to validity. It&#8217;s important to always be upfront about what those threats are, so that anyone who reads your analysis can make their own decision.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate_3">Investigate</h3>
+<div class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Students should fill in the <a href="https://docs.google.com/document/d/1_ZEIgM4zvxI7JizViVFZojnpd3Yr2rYe8puPk8pjOcs/edit#heading=h.oibhqmncl1g1" target="_blank" rel="noopener">Findings</a> portion of their Research Paper, discussing threats to validity and drawing conclusions from their linear regression results.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_additional_exercises"><span class="section-link"><a href="#_additional_exercises"><span class="section-link-symbol">&#128279;</span></a></span>Additional Exercises:</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../lessons/ds-threats-to-validity/pages/identifying-threats-1.html" target="_blank" rel="noopener">Identifying Threats to Validity (Part 1)</a></p>
+</li>
+<li>
+<p><a href="../../lessons/ds-threats-to-validity/pages/identifying-threats-2.html" target="_blank" rel="noopener">Identifying Threats to Validity (Part 2)</a></p>
+</li>
+<li>
+<p><a href="../../lessons/ds-threats-to-validity/pages/identifying-threats-3.html" target="_blank" rel="noopener">Identifying Threats to Validity (Part 3)</a></p>
+</li>
+<li>
+<p>Project: <a href="../../lessons/ds-threats-to-validity/pages/threats-to-validity-project.html" target="_blank" rel="noopener">Project: Threats to Validity</a></p>
+</li>
+</ul>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:34:24 -0400
+</div>
+</div>
+</div>
+</body>
+</html>

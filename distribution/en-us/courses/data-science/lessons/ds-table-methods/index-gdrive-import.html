@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Table Methods</title>
+<style>
+/* Overall document font */
+* {font-family: Lato, Arial, Helvetica, sans-serif;}
+
+/* document headings */
+h1,.lesson-section-1 {color: #75328A;}
+h1{font-size: 32px; font-family: sans-serif;}
+table.section-heading *, .lesson-section-1 h2{font-size: 32px; font-weight: 100;}
+table.section-heading{width: 100%;}
+table.section-heading td:last-child{text-align: right; color: #d9d2e9;}
+
+/* preamble section */
+table.preamble td {padding: 10px;}
+table.preamble td:first-child{background: #b7d893; width: 25%;}
+table.preamble td:first-child p {font-weight: bold; margin: 5px;}
+
+/* content used throughout the body */
+table{ border-collapse: collapse; border: none; }
+table.grid-all.frame-all {border: solid 1px black;}
+table.grid-none.frame-none {border-width: 0px;}
+
+.big {font-size: 30pt;}
+.vocab{font-weight: bold; font-style: italic;}
+.right{text-align: right;}
+.acknowledgment {
+  border-top: solid 1px black; 
+  font-style: italic; 
+  font-size: 8pt;
+}
+.lesson-point {
+  border-top: solid 1px black; 
+  border-bottom: solid 1px black; 
+  color: black;
+  font-weight: bold;
+}
+
+.web-page-only, #footer { display: none; visibility: hidden; }
+
+/* Callout boxes */
+.strategy-box, .notice-box {
+  background: #efefef;
+  border: solid 5px !important;
+  margin: 15px auto;
+  width: 100%;
+}
+.strategy-box { border-color: #1a73b5 !important; }
+.notice-box   { border-color: #7747a5 !important; }
+.strategy-box td, .notice-box td{ padding: 10px; }
+.strategy-box .title, .notice-box .title{
+  width: 100%;
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+  clear: both;
+  margin: 100px;
+}
+.strategy-box p.tableblock:first-child, .notice-box p.tableblock:first-child{
+  text-align: center;
+  padding-bottom: 15px;
+}
+.strategy-box .title { color: #1a73b5; }
+.notice-box   .title { color: #7747a5; }
+.strategy-box a, .notice-box a { color: blue; text-decoration: underline; }
+
+/* "Tables" of Evaluation */
+.operator{border-bottom: solid 1px black; text-align: center;}
+.operator * {text-align: center;}
+td {padding: 0px 10px; font-size: 14px;}
+table.expression {
+    font-family:"Courier New", Monaco, monospace;
+    border:     solid 1px black;
+    font-size:  1px;
+    max-width:  400px;
+    color:      #666666;
+    display:    inline-block;
+}
+table.args {border: none; text-align: center;}
+
+.wescheme-string,     .cm-scheme-string    {color: green;}
+.wescheme-number,     .cm-scheme-number    {color: blue;}
+.wescheme-boolean,    .cm-scheme-boolean   {color: darkred;}
+.wescheme-character,  .cm-scheme-character {color: orange;}
+.wescheme-symbol,     .cm-scheme-symbol    {color: steelblue;}
+.wescheme-comment,    .cm-scheme-comment   {color: orange; }
+
+.racket, .pyret, .studentAnswerCode, .studentAnswer, .pyretkeyword, .keyword_only {
+    font-family:"Courier New", Monaco, monospace !important; 
+    color: black;
+}
+
+/* Design Recipe */
+.recipe_instructions { font-style: italic; }
+table.recipe_title {
+  color:              white;
+  background:         gray;
+  display:            block;
+  padding:            0px;
+  font-size:          1.1rem;
+  font-weight:        bold;
+}</style>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:window.location.href,
+    filename:"Table Methods",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article LessonPlan pyret" onload="renderSaveToDrive()">
+<!-- Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46088504-1', 'bootstrapworld.org');
+ga('send', 'pageview');
+
+</script>
+<span id="body" onload="renderSaveToDrive()">
+<span id="header">
+<h1>Table Methods</h1>
+
+  <span id="savetodrive-div"></span>
+
+</span>
+<span id="content">
+<span id="preamble_disabled">
+<span class="sectionbody">
+<span class="paragraph">
+<p>Students learn about <em>table methods</em>, which allow them to order, filter, and build columns to extend the animals table.</p>
+</span>
+<table class="tableblock frame-all grid-all stripes-none stretch left-header preamble">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Prerequisites</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-table-methods/../../lessons/ds-defining-functions/index.shtml">Defining Functions</a></p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><script>
+function showStandardsAlignment() {
+  const selectTag = document.getElementsByClassName('standardsAlignmentSelect')[0];
+  const options = selectTag && selectTag.options;
+  const stdTables = document.getElementsByClassName('alignedStandards');
+  const intro = document.getElementsByClassName('alignedStandardsIntro')[0];
+  let introNeeded = true;
+  for (let i = 0; i < stdTables.length; i++) {
+    const stdTable = stdTables[i];
+    stdTable.style.display = 'none';
+  }
+  for (let i = 0; i < options.length; i++) {
+    const opt = options[i];
+    if (opt.selected) {
+      const optStd = opt.value;
+      for (let j = 0; j < stdTables.length; j++) {
+        const stdTable = stdTables[j];
+        if (stdTable.classList.contains(optStd)) {
+          stdTable.style.display = 'block';
+          introNeeded = false;
+        }
+      }
+    }
+  }
+  intro.style.display = introNeeded ? 'block' : 'none';
+}
+</script>
+<span class="paragraph">
+<p>Standards</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph ">
+</span>
+<span class="dlist standards-CSTA standards-hierarchical-table">
+<span class="title">CSTA Standards</span>
+<dl>
+<dt class="hdlist1"><br/>2-DA-08</dt>
+<dd>
+<p>Collect data using computational tools and transform the data to make it more useful and reliable.</p>
+</dd>
+</dl>
+</span>
+<span class="dlist standards-NGSS standards-hierarchical-table">
+<span class="title">Next-Gen Science Standards</span>
+<dl>
+<dt class="hdlist1"><br/>HS-SEP4-6</dt>
+<dd>
+<p>Analyze data to identify design features or characteristics of the components of a proposed process or system to optimize it relative to criteria for success.</p>
+</dd>
+</dl>
+</span>
+<span class="dlist standards-OK standards-hierarchical-table">
+<span class="title">Oklahoma Standards</span>
+<dl>
+<dt class="hdlist1"><br/>OK.L1.AP.M.02</dt>
+<dd>
+<p>Create computational artifacts by systematically organizing, manipulating and/or processing data.</p>
+</dd>
+</dl>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Lesson Goals</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Students will be able to&#8230;&#8203;</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>order the Animals Dataset by a number of criteria</p>
+</li>
+<li>
+<p>filter the Animals Dataset by species, fixed status, and age</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Student-facing Lesson Goals</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Let’s learn how to start with one table and transform it into another.</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Materials</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Lesson Slides (<a href="https://docs.google.com/presentation/d/1N_B0npxLkwbQLGtCXSwDHxQJUHj5dFSislVNBftKZEc/" target="_blank" rel="noopener">Google Slides</a>)</p>
+</li>
+<li>
+<p>"Function Purpose cards" which describe simple boolean functions to apply to students</p>
+</li>
+<li>
+<p>Computer for each student (or pair), with access to the internet</p>
+</li>
+<li>
+<p><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-table-methods/../..//workbook/workbook.pdf">Student workbook</a>, and something to write with</p>
+</li>
+<li>
+<p>All students should log into <a href="https://code.pyret.org" target="_blank" rel="noopener">CPO</a> and open the <a href="https://code.pyret.org/editor#share=1IWPbJK_hsxIGtbUJLz59tLeL_NE1p9FG&v=ebd213d" target="_blank" rel="noopener">Table Methods Starter File</a></p>
+</li>
+<li>
+<p>One copy of <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-table-methods/pages/function-cards.html" target="_blank" rel="noopener">Function Cards</a> printed and cut.</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Preparation</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Make sure all materials have been gathered</p>
+</li>
+<li>
+<p>Decide how students will be grouped in pairs</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Supplemental Resources</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Language Table</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><table class="tableblock frame-all grid-all stretch lang-features-table">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 66.6666%;">
+<col style="width: 16.6668%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Types</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Functions</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Values</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Number</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>num-sqrt, num-sqr</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>4, -1.2, 2/3</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>String</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>string-repeat, string-contains</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>"hello", "91"</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Boolean</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>==, &lt;, &lt;=, &gt;=, string-equal</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>true, false</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Image</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>triangle, circle, star, rectangle, ellipse, square, text, overlay</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>🔵🔺🔶</p>
+</span></span></td>
+</tr>
+</tbody>
+</table></span></td>
+</tr>
+</tbody>
+</table>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">Review Function Definitions </td><td width="35%">15 minutes</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview">Overview</h3>
+<span class="paragraph">
+<p>Students get some practice reading function definitions, and in the process they build knowledge that&#8217;s needed later on in the lesson.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch">Launch</h3>
+<span class="paragraph">
+<p>Let&#8217;s see how much you remember about function definitions! Load the <a href="https://code.pyret.org/editor#share=1IWPbJK_hsxIGtbUJLz59tLeL_NE1p9FG&v=ebd213d" target="_blank" rel="noopener">Table Methods Starter File</a>, go to the File menu, and click "Save a Copy".</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate">Investigate</h3>
+<span class="paragraph lesson-instruction">
+<p>Students complete <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-table-methods/../../lessons/ds-table-methods/pages/reading-functions.html" target="_blank" rel="noopener">Reading Function Definitions (Page 27)</a> in their student workbooks.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize">Synthesize</h3>
+<span class="paragraph">
+<p>Can students explain what each function does?</p>
+</span>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">Ordering Tables </td><td width="35%">10 minutes</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview_2">Overview</h3>
+<span class="paragraph">
+<p>Students learn a second table method, which allows them to sort rows in ascending or descending order, according to one column.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch_2">Launch</h3>
+<span class="paragraph">
+<p>Have students find the contract for <code><span class="pyret">.order-by</tt></code> in their contracts pages. The <code><tt class="pyret">.order-by</span></code> method consumes a String (the name of the column by which we want to order) and a Boolean (true for ascending, false for descending). But what does it produce?</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate_2">Investigate</h3>
+<span class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Type <code><span class="pyret">animals-table.order-by("name", true)</span></code> into the Interactions Area. What do you get?</p>
+</li>
+<li>
+<p>Type <code><span class="pyret">animals-table.order-by("age", false)</span></code> into the Interactions Area. What do you get?</p>
+</li>
+<li>
+<p>Sort the animals table from heaviest-to-lightest.</p>
+</li>
+<li>
+<p>Sort the animals table alphabetically by species.</p>
+</li>
+<li>
+<p>Sort the animals table by how long it took for each animal to be adopted, in ascending order.</p>
+</li>
+</ul>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize_2">Synthesize</h3>
+<span class="paragraph">
+<p>Answer any questions students may have. Class discussion: what do <code><span class="pyret">.order-by</tt></code> and <code><tt class="pyret">.row-n</span></code> have in common? How are they different?</p>
+</span>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">Filtering Tables </td><td width="35%">20 minutes</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview_3">Overview</h3>
+<span class="paragraph">
+<p>Students learn how to <em>filter</em> tables, by removing rows.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch_3">Launch</h3>
+<span class="paragraph">
+<p>Explain to students that you have "Function Cards", which describe the purpose statement of a function that consumes a Row from a table of students, and produces a Boolean (e.g. - "this student is wearing glasses"). Select a volunteer to be the "filter method", and have them <em>randomly choose</em> a <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-table-methods/pages/function-cards.html" target="_blank" rel="noopener">Function Card</a>, and make sure they read it without showing it to anyone else.</p>
+</span>
+<span class="paragraph">
+<p>Have ~10 students line up in front of the classroom, and have the filter method go to each student and say "stay" or "sit" depending on whether their function would return true or false for that student. If they say "sit", the student sits down. If they say true, the student stays standing.</p>
+</span>
+<span class="paragraph">
+<p>Ask the class: based on who sat and who stayed, <em>what function was on the card?</em></p>
+</span>
+<div class="paragraph lesson-point">
+<p>The <code><span class="pyret">.filter</tt></code> method takes a function, and produces a <em>new table</em> containing only rows for which the function returns <code><tt class="pyret">true</span></code>.</p>
+</div>
+<span class="paragraph">
+<p>Suppose we want to get a table of only animals that have been fixed? Have students find the contract for <code><span class="pyret">.filter</tt></code> in their contracts pages. The <code><tt class="pyret">.filter</span></code> method is taking in a <em>function</em>. What is the contract for that function? Where have we seen functions-taking-functions before?</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate_3">Investigate</h3>
+<span class="ulist lesson-instruction">
+<ul>
+<li>
+<p>In the Interactions Area, type <code><span class="pyret">animals-table.filter(is-fixed)</span></code>. What did you get?</p>
+</li>
+<li>
+<p>What do you expect <code><span class="pyret">animals-table</span></code> to produce, and why? Try it out. What happened?</p>
+</li>
+<li>
+<p>In the Interactions Area, type <code><span class="pyret">animals-table.filter(is-old)</span></code>. What did you get?</p>
+</li>
+<li>
+<p>In the Interactions Area, type <code><span class="pyret">animals-table.filter(is-dog)</span></code>. What did you get?</p>
+</li>
+<li>
+<p>In the Interactions Area, type <code><span class="pyret">animals-table.filter(lookup-name)</span></code>. What did you get?</p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p>The <code><span class="pyret">.filter</tt></code> method walks through the table, applying whatever function it was given to each row, and producing a new table containing all the rows for which the function returned <code><tt class="pyret">true</tt></code>. Notice that the Domain for <code><tt class="pyret">.filter</tt></code> says that test must be a function (that’s the arrow), which consumes a <code><tt class="pyret">Row</tt></code> and produces a <code><tt class="pyret">Boolean</tt></code>. If it consumes anything besides a single <code><tt class="pyret">Row</tt></code>, or if it produces anything else besides a <code><tt class="pyret">Boolean</span></code>, we&#8217;ll get an error.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_possible_misconceptions">Possible Misconceptions</h3>
+<span class="paragraph">
+<p>Students often think that filtering a table <em>changes</em> the table. In Pyret, all table methods produce a <em>brand new table</em>. If we want to save that table, we need to define it. For example: <code><span class="pyret">cats = animals-table.filter(is-cat)</span></code>.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize_3">Synthesize</h3>
+<span class="paragraph">
+<p>Debrief with students. Some guiding questions on filtering:</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>Suppose we wanted to determine whether cats or dogs get adopted faster. How might using the <code><span class="pyret">.filter</span></code> method help?</p>
+</li>
+<li>
+<p>If the shelter is purchasing food for older cats, what filter would we write to determine how many cats to buy for?</p>
+</li>
+<li>
+<p>Can you think of a situation where filtering fixed animals would be helpful?</p>
+</li>
+</ul>
+</span>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">Building Columns </td><td width="35%">10 minutes</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview_4">Overview</h3>
+<span class="paragraph">
+<p>Students learn how to <em>build columns</em>, using the <code><span class="pyret">.build-column</span></code> table method.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch_4">Launch</h3>
+<span class="paragraph">
+<p>Suppose we want to <em>transform</em> our table, converting <code><span class="pyret">pounds</tt></code> to <code><tt class="pyret">kilograms</tt></code> or <code><tt class="pyret">weeks</tt></code> to <code><tt class="pyret">days</tt></code>. Or perhaps we want to add a "cute" column that just identifies the puppies and kittens? Have students find the contract for <code><tt class="pyret">.build-column</tt></code> in their contracts pages. The <code><tt class="pyret">.build-column</span></code> method is taking in a <em>function</em> and a <em>string</em>. What is the contract for that function?</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate_4">Investigate</h3>
+<span class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Try typing <code><span class="pyret">animals-table.build-column("old", is-old)</span></code> into the Interactions Area.</p>
+</li>
+<li>
+<p>Try typing <code><span class="pyret">animals-table.build-column("sticker", label)</span></code> into the Interactions Area.</p>
+</li>
+<li>
+<p>What do you get? What do you think is going on?</p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p>The <code><span class="pyret">.build-column</tt></code> method walks through the table, applying whatever function it was given to each row. Whatever the function produces for that row becomes the value of our new column, which is named based on the string it was given. In the first example, we gave it the <code><tt class="pyret">is-old</tt></code> function, so the new table had an extra Boolean column for every animal, indicating whether or not it was young. Notice that the Domain for <code><tt class="pyret">.build-column</tt></code> says that the builder must be a function which consumes a <code><tt class="pyret">Row</tt></code> and produces some other value. If it consumes anything besides a single <code><tt class="pyret">Row</span></code>, we&#8217;ll get an error.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize_4">Synthesize</h3>
+<span class="paragraph">
+<p>Debrief with students. Ask them if they think of a situation where they would want to use this. Some ideas:</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>A dataset about school might include columns for how many students are in the school and how many pass the state exam. But when comparing schools of different sizes, what we really want is a column showing what <em>percentage</em> passed the exam. We could use <code><span class="pyret">.build-column</span></code> to compute that for every row in the table.</p>
+</li>
+<li>
+<p>The animals shelter might want to print nametags for every animal. They could build a column using the <code><span class="pyret">text</span></code> function to have every animal&#8217;s name in big, purple letters.</p>
+</li>
+<li>
+<p>A dataset from Europe might list everything in metric (centimeters, kilograms, etc), so we could build a column to convert that to imperial units (inches, pounds, etc).</p>
+</li>
+</ul>
+</span>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<h2 id="_additional_exercises"><span class="section-link"><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-table-methods/#_additional_exercises"><span class="section-link-symbol">&#128279;</span></a></span>Additional Exercises:</h2>
+<span class="sectionbody">
+<span class="paragraph">
+<p><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-table-methods/../../lessons/ds-table-methods/pages/what-table-do-we-get.html" target="_blank" rel="noopener">What Table Do We Get?</a></p>
+</span>
+<span class="openblock acknowledgment"><hr/>
+<span class="content">
+<span class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/data-science/lessons/ds-table-methods/mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+<span id="footer">
+<span id="footer-text">
+Last updated 2020-08-19 20:34:25 -0400
+</span>
+</span>
+</span>
+</body>
+</html>

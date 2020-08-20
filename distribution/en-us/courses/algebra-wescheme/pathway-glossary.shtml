@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Glossary</title>
+<link rel="stylesheet" href="./../../lib/curriculum.css">
+</head>
+<body class="article">
+<!--#include virtual="/menubar.ssi"-->
+<div id="body">
+<div id="header">
+<h1>Glossary</h1>
+</div>
+<div id="content">
+<div class="dlist glossary">
+<dl>
+<dt class="hdlist1">Boolean</dt>
+<dd>
+<p>a type of data with two values: true and false</p>
+</dd>
+<dt class="hdlist1">circle of evaluation</dt>
+<dd>
+<p>a diagram of the structure of an expression (arithmetic or code)</p>
+</dd>
+<dt class="hdlist1">conditional</dt>
+<dd>
+<p>a code expression made of questions and answers</p>
+</dd>
+<dt class="hdlist1">contract</dt>
+<dd>
+<p>a statement of the name, domain, and range of a function</p>
+</dd>
+<dt class="hdlist1">coordinate</dt>
+<dd>
+<p>a number or set of numbers describing an object&#8217;s location</p>
+</dd>
+<dt class="hdlist1">datatypes</dt>
+<dd>
+<p>a way of classifying values, such as: Number, String, Image, Boolean, or any user-defined data structure</p>
+</dd>
+<dt class="hdlist1">debug</dt>
+<dd>
+<p>to find and fix errors in one&#8217;s code</p>
+</dd>
+<dt class="hdlist1">define</dt>
+<dd>
+<p>to associate a descriptive name with a value</p>
+</dd>
+<dt class="hdlist1">definitions area</dt>
+<dd>
+<p>the left-most text box in the Editor where definitions for values and functions are written</p>
+</dd>
+<dt class="hdlist1">design recipe</dt>
+<dd>
+<p>a sequence of steps that helps people document, test, and write functions</p>
+</dd>
+<dt class="hdlist1">domain</dt>
+<dd>
+<p>the type or set of inputs that a function expects</p>
+</dd>
+<dt class="hdlist1">editor</dt>
+<dd>
+<p>software in which you can write and evaluate code</p>
+</dd>
+<dt class="hdlist1">error message</dt>
+<dd>
+<p>information from the computer about errors in code</p>
+</dd>
+<dt class="hdlist1">example</dt>
+<dd>
+<p>shows the use of a function on specific inputs and the computation the function should perform on those inputs</p>
+</dd>
+<dt class="hdlist1">expression</dt>
+<dd>
+<p>a computation written in the rules of some language (such as arithmetic, code, or a Circle of Evaluation)</p>
+</dd>
+<dt class="hdlist1">function</dt>
+<dd>
+<p>a mathematical object that consumes inputs and produces an output</p>
+</dd>
+<dt class="hdlist1">horizontal axis</dt>
+<dd>
+<p>axis on a coordinate plane that runs from left to right</p>
+</dd>
+<dt class="hdlist1">Image</dt>
+<dd>
+<p>a type of data for pictures</p>
+</dd>
+<dt class="hdlist1">interactions area</dt>
+<dd>
+<p>the right-most text box in the Editor, where expressions are entered to evaluate</p>
+</dd>
+<dt class="hdlist1">Number</dt>
+<dd>
+<p>a data type representing a real number</p>
+</dd>
+<dt class="hdlist1">piecewise function</dt>
+<dd>
+<p>a function that computes different expressions based on its input</p>
+</dd>
+<dt class="hdlist1">pixel</dt>
+<dd>
+<p>the smallest unit that makes up a digital image. The more pixels, the more detailed an image or video can appear.</p>
+</dd>
+<dt class="hdlist1">purpose statement</dt>
+<dd>
+<p>a brief description of what a function does</p>
+</dd>
+<dt class="hdlist1">range</dt>
+<dd>
+<p>the type or set of outputs that a function produces</p>
+</dd>
+<dt class="hdlist1">String</dt>
+<dd>
+<p>a data type for any sequence of characters between quotation marks (examples: "hello", "42", "this is a string!")</p>
+</dd>
+<dt class="hdlist1">syntax</dt>
+<dd>
+<p>the set of rules that defines a language, whether it be spoken, written, or programmed.</p>
+</dd>
+<dt class="hdlist1">value</dt>
+<dd>
+<p>a specific piece of data, like 5 or "hello"</p>
+</dd>
+<dt class="hdlist1">variable</dt>
+<dd>
+<p>a letter, symbol, or term that stands in for a value or expression</p>
+</dd>
+<dt class="hdlist1">vertical axis</dt>
+<dd>
+<p>number line on a coordinate plane that runs from bottom to top, indicating values in that direction</p>
+</dd>
+</dl>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:13:50 -0400
+</div>
+</div>
+</div>
+</body>
+</html>

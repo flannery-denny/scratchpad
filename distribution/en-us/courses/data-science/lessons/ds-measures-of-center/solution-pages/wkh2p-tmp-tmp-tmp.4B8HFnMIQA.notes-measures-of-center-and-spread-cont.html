@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Measures of Center and Spread (continued)</title>
+<link rel="stylesheet" href="./../../../../../lib/curriculum.css">
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Measures of Center and Spread (continued)",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article pyret" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Measures of Center and Spread (continued)</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div class="paragraph">
+<p><span class="web-page-only">Referenced from lesson <a href="../../../lessons/ds-measures-of-center/index.shtml">Measures of Center</a></p>
+</div>
+<div class="paragraph">
+<p></span>
+<span class="vspace" style="height: 1ex"></span></p>
+</div>
+<div class="paragraph">
+<p>The <strong>five-number summary</strong> can be used to draw a <strong>box plot</strong>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Each of the four sections of the box plot contains 25% of the data. <em>If the values are distributed evenly across the range, the four sections of the box plot will be equal in width.</em> Uneven distributions will show up as differently-sized sections of a box plot.</p>
+</li>
+<li>
+<p>The left <strong>whisker</strong> extends from the minimum to Q1.</p>
+</li>
+<li>
+<p>The <strong>box</strong>, or <strong>interquartile range</strong>, extends from Q1 to Q3. It is divided into 2 parts by the <strong>median</strong>. Each of those parts contains 25% of the data, so the whole box contains the central 50% of the data.</p>
+</li>
+<li>
+<p>The right <strong>whisker</strong> extends from Q3 to the maximum.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="centered-image"><span class="image"><img src="../../../lessons/ds-measures-of-center/solution-pages/box-n-whisker-plot.png" alt="" width="400"></span><a href="box-n-whisker-plot.png" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span></p>
+</div>
+<div class="paragraph">
+<p>The box plot above, for example, tells us that:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The minimum weight is about 165 pounds. The median weight is about 220 pounds. The maximum weight is about 310 pounds.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1/4 of the players weigh roughly between 165 and 195 pounds</p>
+</li>
+<li>
+<p>1/4 of the players weigh roughly between 195 and 220 pounds</p>
+</li>
+<li>
+<p>1/4 of the players weigh roughly between 220 and 235 pounds</p>
+</li>
+<li>
+<p>1/4 of the players weigh roughly between 235 and 310 pounds</p>
+</li>
+<li>
+<p>50% of the players weigh roughly between 165 and 220 pounds</p>
+</li>
+<li>
+<p>50% of the players weigh roughly between 195 and 235 pounds</p>
+</li>
+<li>
+<p>50% of the players weigh roughly between 220 and 310 pounds</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The densest concentration of players' weights is between 220 and 235 pounds.</p>
+</li>
+<li>
+<p>Because the widest section of the box plot is between 235 and 310 pounds, we understand that the weights of the heaviest 25% fall across a wider span than the others. 310 may be an outlier, the weights of the players weighing between 235 pounds and 310 pound could be evenly distributed across the range, or all of the players weighing over 235 pounds may weigh around 310 pounds.</p>
+</li>
+</ul>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:32:05 -0400
+</div>
+</div>
+</body>
+</html>

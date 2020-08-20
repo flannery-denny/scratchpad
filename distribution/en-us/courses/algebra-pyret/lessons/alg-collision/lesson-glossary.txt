@@ -1,0 +1,3 @@
+"Boolean"
+"circle of evaluation"
+"pixel"

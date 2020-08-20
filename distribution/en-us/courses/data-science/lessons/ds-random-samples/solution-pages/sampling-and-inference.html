@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Sampling and Inference</title>
+<link rel="stylesheet" href="./../../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="../../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="../../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="../../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="../../../../../lib/bootstraplesson.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Sampling and Inference",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article pyret" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Sampling and Inference</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div class="paragraph">
+<p><span class="web-page-only">Referenced from lesson <a href="../../../lessons/ds-random-samples/index.shtml">Randomness and Sample Size</a></p>
+</div>
+<div class="paragraph">
+<p></span>
+1) Evaluate the <code><tt class="pyret">big-animals-table</tt></code> in the Interactions Area. This is the <em>complete</em> population of animals from the shelter! Below is a true statement about that population:</p>
+</div>
+<div class="paragraph lesson-point">
+<p>The population is 47.7% fixed and 52.3% unfixed.</p>
+</div>
+<div class="paragraph">
+<p>2) How close to these percentages do we get with random samples?</p>
+</div>
+<div class="paragraph">
+<p>Type each of the following lines into the Interactions Area and hit “Enter".</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><tt class="pyret">random-rows(big-animals-table, 10)
+random-rows(big-animals-table, 40)</tt></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>3) What do you get? <span class="fitb" style="width: 92ex">Two tables, with 10 and 40 rows. Rows seem randomly chosen.</span></p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 2ex"></span></p>
+</div>
+<div class="paragraph">
+<p>4) What is the contract for <code><tt class="pyret">random-rows</tt></code>? <span class="fitb" style="width: 70ex"># random-rows :: (t :: Table, size :: Number) -&gt; Table</span></p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 2ex"></span></p>
+</div>
+<div class="paragraph">
+<p>5) What does the <code><tt class="pyret">random-rows</tt></code> function do?</p>
+</div>
+<div class="paragraph">
+<p><span class="blankline">Given a table and a sample size, it randomly selects that many rows from the table.</span></p>
+</div>
+<div class="paragraph">
+<p><span class="blankline"></p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 2ex"></span></p>
+</div>
+<div class="paragraph">
+<p>6) In the Definitions Area, define <code><tt class="pyret">tiny-sample</tt></code> and <code><tt class="pyret">small-sample</tt></code> to be these two random samples.</p>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 2ex"></span></p>
+</div>
+<div class="paragraph">
+<p>7) Make a <code><tt class="pyret">pie-chart</tt></code> for the animals in each sample, showing percentages of fixed and unfixed.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The percentage of fixed animals in the entire populations is <span class="fitb" style="width: 20ex"><strong>47.7%</strong></span>.</p>
+</li>
+<li>
+<p>The percentage of fixed animals in <code><tt class="pyret">tiny-sample</tt></code> is <span class="fitb" style="width: 20ex">(answers will vary)</span>.</p>
+</li>
+<li>
+<p>The percentage of fixed animals in <code><tt class="pyret">small-sample</tt></code> is <span class="fitb" style="width: 20ex">(answers will vary <em>less</em>)</span>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 2ex"></span></p>
+</div>
+<div class="paragraph">
+<p>8) Make a <code><tt class="pyret">pie-chart</tt></code> for the animals in each sample, showing percentages for each species.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The percentage of tarantulas in the entire population is <span class="fitb" style="width: 20ex"><strong>roughly 5%</strong></span>.</p>
+</li>
+<li>
+<p>The percentage of tarantulas in <code><tt class="pyret">tiny-sample</tt></code> is <span class="fitb" style="width: 20ex">(answers will vary)</span>.</p>
+</li>
+<li>
+<p>The percentage of tarantulas in <code><tt class="pyret">small-sample</tt></code> is <span class="fitb" style="width: 20ex">(answers will vary <em>less</em>)</span>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 2ex"></span></p>
+</div>
+<div class="paragraph">
+<p>9) Click "Run" to direct the computer to generate a different set of random samples of these sizes. Make a new <code><tt class="pyret">pie-chart</tt></code> for each sample, showing percentages for each species.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The percentage of tarantulas in the entire population is <span class="fitb" style="width: 20ex"><strong>roughly 5%</strong></span>.</p>
+</li>
+<li>
+<p>The percentage of tarantulas in <code><tt class="pyret">tiny-sample</tt></code> is <span class="fitb" style="width: 20ex">(answers will vary)</span>.</p>
+</li>
+<li>
+<p>The percentage of tarantulas in <code><tt class="pyret">small-sample</tt></code> is <span class="fitb" style="width: 20ex">(answers will vary <em>less</em>)</span>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="vspace" style="height: 2ex"></span></p>
+</div>
+<div class="paragraph">
+<p>10) Which repeated sample gave us a more accurate inference about the whole population? Why?</p>
+</div>
+<div class="paragraph">
+<p><span class="blankline">The small-sample was more accurate, because larger samples are more likely to represent the population they are drawn from.</span></p>
+</div>
+<div class="paragraph">
+<p><span class="blankline"></p>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Data Science by Emmanuel Schanzer, Nancy Pfenning, Emma Youndtsmith, Jennifer Poole, Shriram Krishnamurthi, Joe Politz, Ben Lerner, Flannery Denny, and Dorai Sitaram with help from Eric Allatta and Joy Straub
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:30:57 -0400
+</div>
+</div>
+</body>
+</html>

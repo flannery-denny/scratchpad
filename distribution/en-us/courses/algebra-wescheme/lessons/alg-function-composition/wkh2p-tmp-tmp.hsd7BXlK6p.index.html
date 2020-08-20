@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Function Composition</title>
+<link rel="stylesheet" href="./../../../../lib/curriculum.css">
+    <link rel="stylesheet" href="../../../../lib/codemirror.css" />
+    <script type="text/javascript" src="../../../../lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../../../lib/runmode.js"></script>
+    <script type="text/javascript" src="../../../../lib/scheme2.js"></script>
+    <script type="text/javascript" src="../../../../lib/pyret-mode.js"></script>
+    <script type="text/javascript" src="../../../../lib/bootstraplesson.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:(window.location.href.match(/\/$/)?(window.location.href+'index-gdrive-import.html'):(window.location.href.replace(/([^\/]+)\.([^.\/]+)$/, '$1-gdrive-import.html'))),
+    filename:"Function Composition",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article LessonPlan wescheme" onload="renderSaveToDrive()">
+<!--#include virtual="/menubar.ssi"-->
+<!-- Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46088504-1', 'bootstrapworld.org');
+ga('send', 'pageview');
+
+</script>
+<div id="body" onload="renderSaveToDrive()">
+<div id="header">
+<h1>Function Composition</h1>
+
+  <div id="savetodrive-div"></div>
+
+</div>
+<div id="content">
+<div id="preamble_disabled">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="other-proglang"><a href="../../../algebra-pyret/lessons/alg-function-composition/index.shtml">(Also available for Pyret)</a></span></p>
+</div>
+<div class="paragraph">
+<p>Students encounter new image transformation functions and strengthen their understanding of Circles of Evaluation by using functions within other functions.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-none stretch left-header preamble">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Prerequisites</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../../lessons/alg-domain-and-range/index.shtml">Domain and Range</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Lesson Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Students will be able to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Demonstrate understanding of the Order of Operations</p>
+</li>
+<li>
+<p>Use <span class="vocab">Circles of Evaluation</span> to combine multiple <span class="vocab">function</span>s, including non-Number producing functions</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Student-facing Goals</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>I can use Circles of Evaluation to combine many kinds of functions.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Materials</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Lesson slides template (<a href="https://docs.google.com/presentation/d/1ZnZzX8bKGcrig2iUzggQDnhpmPiyuS0tDTI3YIMhEV4/edit?usp=sharing" target="_blank" rel="noopener">Google Slides</a>)</p>
+</li>
+<li>
+<p>Function cards (<a href="pages/function-cards.html" target="_blank" rel="noopener">print and cut</a>)</p>
+</li>
+<li>
+<p>Composing Image Functions (<a href="../../lessons/alg-function-composition/pages/composing-image-functions.html" target="_blank" rel="noopener">original (Page 19)</a>, <a href="solution-pages/composing-image-functions.html" target="_blank" rel="noopener">solutions</a>)</p>
+</li>
+<li>
+<p>Making Stars (<a href="../../lessons/alg-function-composition/pages/function-composition-practice.html" target="_blank" rel="noopener">original (Page 20)</a>, <a href="solution-pages/composing-image-functions.html" target="_blank" rel="noopener">solutions</a>)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Supplemental Resources</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Circles of Evaluation Review - Blank Template (<a href="https://teacher.desmos.com/activitybuilder/custom/5d991a674febfc7e0ff8cb15" target="_blank" rel="noopener">Desmos Activity</a>)</p>
+</li>
+<li>
+<p>Function Composition Dynamic Illustrator I (<a href="https://www.geogebra.org/m/nqymeFc4" target="_blank" rel="noopener">Geogebra</a>)</p>
+</li>
+<li>
+<p>Composition of Functions (<a href="https://quizizz.com/admin/quiz/58a61a2cf0b089151011ef50/composition-of-functions" target="_blank" rel="noopener">Quizizz</a>)</p>
+</li>
+<li>
+<p>Composition of Function (<a href="https://www.geogebra.org/m/h3qdzW3W" target="_blank" rel="noopener">Geogebra Quiz</a>)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Preparation</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Make sure all materials have been gathered</p>
+</li>
+<li>
+<p>Decide how students will be grouped in pairs</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Key Points For The Facilitator</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Check frequently for understanding of <span class="vocab">data types</span> and <span class="vocab">contracts</span> during this lesson and throughout subsequent lessons.</p>
+</li>
+<li>
+<p>When students encounter errors, encourage them to check their Contracts page and show their work using Circles of Evaluation.</p>
+</li>
+<li>
+<p>Students will use their Contracts page frequently, so it should be kept in an accessible, convenient location.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph old-materials">
+<p>For a textbook-like version of materials similar to these, you may wish to see the <a href="https://www.bootstrapworld.org/materials/spring2020/courses/algebra/en-us/units/unit2/index.html" target="_blank" rel="noopener">prior unit-based version</a>.</p>
+</div>
+<div class="dlist glossary">
+<div class="title">Glossary</div>
+<dl>
+<dt class="hdlist1">circle of evaluation</dt>
+<dd>
+<p>a diagram of the structure of an expression (arithmetic or code)</p>
+</dd>
+<dt class="hdlist1">contract</dt>
+<dd>
+<p>a statement of the name, domain, and range of a function</p>
+</dd>
+<dt class="hdlist1">datatypes</dt>
+<dd>
+<p>a way of classifying values, such as: Number, String, Image, Boolean, or any user-defined data structure</p>
+</dd>
+<dt class="hdlist1">definitions area</dt>
+<dd>
+<p>the left-most text box in the Editor where definitions for values and functions are written</p>
+</dd>
+<dt class="hdlist1">function</dt>
+<dd>
+<p>a mathematical object that consumes inputs and produces an output</p>
+</dd>
+<dt class="hdlist1">Image</dt>
+<dd>
+<p>a type of data for pictures</p>
+</dd>
+<dt class="hdlist1">interactions area</dt>
+<dd>
+<p>the right-most text box in the Editor, where expressions are entered to evaluate</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_warmup"><span class="section-link"><a href="#_warmup"><span class="section-link-symbol">&#128279;</span></a></span>Warmup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Students should be logged into
+ <a href="https://www.wescheme.org" target="_blank" rel="noopener">WeScheme</a>
+and have their workbooks with a pen or pencil.</p>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_composing_functions_duration_20_minutes_"><span class="section-link"><a href="#_composing_functions_duration_20_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Composing Functions <span class="duration">20 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview">Overview</h3>
+<div class="paragraph">
+<p>Students are given a scaffolded activity that forces them to use the output of one function as the input to another - to <em>compose</em> them. The Circles of Evaluation are extended to provide a visual-spatial metaphor for function composition, in addition to Order of Operations.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch">Launch</h3>
+<div class="paragraph">
+<p>Divide students into groups of 3-4, and distribute a set of function cards to each group. Write down pairs of integers on the board, representing the "starting numbers" and "ending numbers". These integers should range from -50 to +50, but you can change the difficulty of the activity by making that span wider (more difficult) or more narrow (less difficulty). You can find a random integer generator <a href="https://www.google.com/search?q=random+number" target="_blank" rel="noopener">here</a>.</p>
+</div>
+<div class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Each group has a set of functions, each of which takes an input and produces an output. I can start with the number <tt class="racket">4</tt>, for example, and give it to the function <tt class="racket">add6</tt>. What will the output be? (<em>10</em>!)</p>
+</li>
+<li>
+<p>I can also <em>compose</em> functions, meaning that the output of one is immediately passed into another. For example, I could compose <tt class="racket">add6</tt> and <tt class="racket">double</tt>, so the <tt class="racket">10</tt> gets passed into the next function, and doubled to produce <tt class="racket">20</tt>. What would happen if I composed <tt class="racket">add6</tt> with <tt class="racket">double</tt> <em>and</em> with <tt class="racket">half</tt>? (<em>10</em>!)</p>
+</li>
+<li>
+<p>For each of the starting numbers on the board, your job is to figure out which functions to compose in order to get to the end. <em>You will need to use some functions more than once, and that&#8217;s ok!</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Give students time to experiment with this. You can make the activity more challenging by asking them to find the <em>shortest path</em> from start to end, using the smallest number of compositions. If two groups come up with different compositions that achieve the same end result, have them share their ideas!</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate">Investigate</h3>
+<div class="paragraph">
+<p>The contracts page in your workbook is just like the Function Cards from this activity. Your job as a programmer is to figure out how to compose those functions to get where you want to go, in the most clever or elegant way possible.</p>
+</div>
+<div class="paragraph">
+<p>Have students open to <a href="../../lessons/alg-function-composition/pages/composing-image-functions.html" target="_blank" rel="noopener">Composing Image Functions (Page 19)</a>.  Students create a text <span class="vocab">image</span> of their name and experiment with their choice of these new functions.</p>
+</div>
+<div class="paragraph">
+<p>While students are exploring, be available for support but encourage student discussion to solve problems.  Make sure students are using the <span class="vocab">Definitions area</span> (left side) for code they want to keep and are using the <span class="vocab">Interactions area</span> (right side) to test code or try out new ideas.</p>
+</div>
+<div class="paragraph">
+<p>Many questions can be addressed with these responses:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Did you try drawing the Circle of Evaluation first?</strong></p>
+</li>
+<li>
+<p><strong>Did you check the contract?</strong></p>
+</li>
+<li>
+<p><strong>Have you pressed the Run button to save your Definitions changes?</strong></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_synthesize">Synthesize</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What do all of these functions have in common?</strong>
+<em>They all produce images, they all change some element of the original image</em></p>
+</li>
+<li>
+<p><strong>Does using one of these functions change the original image?</strong>
+<em>No, it creates a whole new image</em></p>
+</li>
+<li>
+<p><strong>What does the number in <tt class="racket">scale</tt> represent?</strong>
+<em>The scale factor, the percent by which the image should grow or shrink</em></p>
+</li>
+<li>
+<p><strong>What does the number in <tt class="racket">rotate</tt> represent?</strong>
+<em>The rotation angle, measured counterclockwise</em></p>
+</li>
+<li>
+<p><strong>Suppose I wrote the code</strong>
+<tt class="racket">(scale 3 (star 50 “solid” “red”))</tt>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>What’s another line of code I could write that would produce the exact same image?*</p>
+</div>
+<div class="paragraph">
+<p><tt class="racket">(star 150 "solid" "red")</tt></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>The domain and range for <tt class="racket">flip-horizontal</tt> is Image -&gt; Image.  Why can I use the <tt class="racket">text</tt> function as an input for <tt class="racket">flip-horizontal</tt>?</strong>
+<em>Because the <tt class="racket">text</tt> function produces an Image, which is then used as the input for <tt class="racket">flip-horizontal</tt>.</em></p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-none stripes-none stretch strategy-box">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="title">Strategies for English Language Learners</span></p>
+<p class="tableblock">MLR 1 - Stronger and Clearer Each Time: As an alternative, display the discussion questions during the last 5 minutes of the Explore and ask students to discuss the questions with their partner, asking each other for explanation and details and coming up with the clearest, most precise answer they can.
+Student pairs can then share with another pair and compare their responses before moving into a full class discussion.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_decomposing_image_problems_duration_25_minutes_"><span class="section-link"><a href="#_decomposing_image_problems_duration_25_minutes_"><span class="section-link-symbol">&#128279;</span></a></span>Decomposing Image Problems <span class="duration">25 minutes</span></h2>
+<div class="sectionbody">
+<div class="sect2 lesson-section-2">
+<h3 id="_overview_2">Overview</h3>
+<div class="paragraph">
+<p>Students are given (simple, highly-structured) word problems involving creating images, and must map from the word problems to the names and order of functions needed to solve them. At this stage, the skill is quite brittle and hardly resembles the generalized problem-decomposition skill needed to solve complex word problems in algebra. This is merely the first introduction, and other lessons will deepen and broaden the idea.</p>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_launch_2">Launch</h3>
+<div class="paragraph">
+<p>Create the Circles of Evaluation and write the code for the following images.  Write a new line of code for each exercise.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a solid, green <tt class="racket">star</tt> of size 50</p>
+</li>
+<li>
+<p>a solid, green <tt class="racket">star</tt> that is 3 times as large as the original (using the <tt class="racket">scale</tt> function)</p>
+</li>
+<li>
+<p>a solid, green <tt class="racket">star</tt> that is ½ the size of the original (using the <tt class="racket">scale</tt> function)</p>
+</li>
+<li>
+<p>a solid, green <tt class="racket">star</tt> of size 50 that is rotated 45 degrees (using the <tt class="racket">rotate</tt> function)</p>
+</li>
+<li>
+<p>a solid, green <tt class="racket">star</tt> that is 3 times as large as the original and rotated 45 degrees.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2 lesson-section-2">
+<h3 id="_investigate_2">Investigate</h3>
+<div class="paragraph">
+<p>Students complete <a href="../../lessons/alg-function-composition/pages/function-composition-practice.html" target="_blank" rel="noopener">Function Composition&#8201;&#8212;&#8201;Practice (Page 20)</a>, practicing drawing Circles of Evaluation and writing code with their partner using different functions.</p>
+</div>
+<div class="paragraph">
+<p>When students are finished, check their work, and ask them to change the color of all of the stars to “gold” or another color of your choosing.</p>
+</div>
+<div class="paragraph lesson-instruction">
+<p>Create an Image that uses the text function and at least 3 of the following functions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><tt class="racket">rotate</tt></p>
+</li>
+<li>
+<p><tt class="racket">scale</tt></p>
+</li>
+<li>
+<p><tt class="racket">overlay</tt></p>
+</li>
+<li>
+<p><tt class="racket">flip-horizontal</tt></p>
+</li>
+<li>
+<p><tt class="racket">flip-vertical</tt></p>
+</li>
+<li>
+<p>any other image producing function (<tt class="racket">triangle</tt>, <tt class="racket">star</tt>, <tt class="racket">circle</tt>, <tt class="racket">rectangle</tt>, etc..)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Students should practice writing <strong>comments</strong> in the code to describe what is being produced.</p>
+</div>
+<div class="paragraph">
+<p>Use <tt class="racket">;</tt> at the beginning of a line to write a comment.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 lesson-section-1">
+<h2 id="_additional_exercises"><span class="section-link"><a href="#_additional_exercises"><span class="section-link-symbol">&#128279;</span></a></span>Additional Exercises:</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.geogebra.org/m/nqymeFc4" target="_blank" rel="noopener">Function Composition Dynamic Illustrator I</a> (Geogebra)</p>
+</li>
+<li>
+<p><a href="https://www.geogebra.org/m/h3qdzW3W" target="_blank" rel="noopener">Composition of Functions</a> (Geogebra Quiz)</p>
+</li>
+<li>
+<p><a href="https://quizizz.com/admin/quiz/58a61a2cf0b089151011ef50/composition-of-functions" target="_blank" rel="noopener">Composite Functions</a> (Quizizz)</p>
+</li>
+</ul>
+</div>
+<div class="openblock acknowledgment">
+<div class="content">
+<div class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Algebra by Emmanuel Schanzer, Jen Poole, Ed Campos Jr, Flannery Denny, and Dorai Sitaram
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-08-19 20:13:45 -0400
+</div>
+</div>
+</div>
+</body>
+</html>

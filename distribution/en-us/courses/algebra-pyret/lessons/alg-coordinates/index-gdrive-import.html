@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Coordinates and Game Design</title>
+<style>
+/* Overall document font */
+* {font-family: Lato, Arial, Helvetica, sans-serif;}
+
+/* document headings */
+h1,.lesson-section-1 {color: #75328A;}
+h1{font-size: 32px; font-family: sans-serif;}
+table.section-heading *, .lesson-section-1 h2{font-size: 32px; font-weight: 100;}
+table.section-heading{width: 100%;}
+table.section-heading td:last-child{text-align: right; color: #d9d2e9;}
+
+/* preamble section */
+table.preamble td {padding: 10px;}
+table.preamble td:first-child{background: #b7d893; width: 25%;}
+table.preamble td:first-child p {font-weight: bold; margin: 5px;}
+
+/* content used throughout the body */
+table{ border-collapse: collapse; border: none; }
+table.grid-all.frame-all {border: solid 1px black;}
+table.grid-none.frame-none {border-width: 0px;}
+
+.big {font-size: 30pt;}
+.vocab{font-weight: bold; font-style: italic;}
+.right{text-align: right;}
+.acknowledgment {
+  border-top: solid 1px black; 
+  font-style: italic; 
+  font-size: 8pt;
+}
+.lesson-point {
+  border-top: solid 1px black; 
+  border-bottom: solid 1px black; 
+  color: black;
+  font-weight: bold;
+}
+
+.web-page-only, #footer { display: none; visibility: hidden; }
+
+/* Callout boxes */
+.strategy-box, .notice-box {
+  background: #efefef;
+  border: solid 5px !important;
+  margin: 15px auto;
+  width: 100%;
+}
+.strategy-box { border-color: #1a73b5 !important; }
+.notice-box   { border-color: #7747a5 !important; }
+.strategy-box td, .notice-box td{ padding: 10px; }
+.strategy-box .title, .notice-box .title{
+  width: 100%;
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+  clear: both;
+  margin: 100px;
+}
+.strategy-box p.tableblock:first-child, .notice-box p.tableblock:first-child{
+  text-align: center;
+  padding-bottom: 15px;
+}
+.strategy-box .title { color: #1a73b5; }
+.notice-box   .title { color: #7747a5; }
+.strategy-box a, .notice-box a { color: blue; text-decoration: underline; }
+
+/* "Tables" of Evaluation */
+.operator{border-bottom: solid 1px black; text-align: center;}
+.operator * {text-align: center;}
+td {padding: 0px 10px; font-size: 14px;}
+table.expression {
+    font-family:"Courier New", Monaco, monospace;
+    border:     solid 1px black;
+    font-size:  1px;
+    max-width:  400px;
+    color:      #666666;
+    display:    inline-block;
+}
+table.args {border: none; text-align: center;}
+
+.wescheme-string,     .cm-scheme-string    {color: green;}
+.wescheme-number,     .cm-scheme-number    {color: blue;}
+.wescheme-boolean,    .cm-scheme-boolean   {color: darkred;}
+.wescheme-character,  .cm-scheme-character {color: orange;}
+.wescheme-symbol,     .cm-scheme-symbol    {color: steelblue;}
+.wescheme-comment,    .cm-scheme-comment   {color: orange; }
+
+.racket, .pyret, .studentAnswerCode, .studentAnswer, .pyretkeyword, .keyword_only {
+    font-family:"Courier New", Monaco, monospace !important; 
+    color: black;
+}
+
+/* Design Recipe */
+.recipe_instructions { font-style: italic; }
+table.recipe_title {
+  color:              white;
+  background:         gray;
+  display:            block;
+  padding:            0px;
+  font-size:          1.1rem;
+  font-weight:        bold;
+}</style>
+      <script type="text/javascript" src="../../../../lib/MathJax-2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2Clocal%2Fmathjaxlocal.js"></script>
+
+  <script>window.___gcfg = {
+  parsetags: 'explicit'
+  };
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>function renderSaveToDrive() {
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    gapi.savetodrive.render('savetodrive-div', {
+    src:window.location.href,
+    filename:"Coordinates and Game Design",
+    sitename:"Bootstrap, Brown University"
+  });
+  if(isSafari){
+    var warning = document.createElement("div");
+    warning.id = "safariWarning";
+    warning.innerHTML = "You appear to be using Safari, which interferes with Google's Save-to-Drive button. You can fix it by going to Preferences, clicking 'Privacy', and making sure that 'Prevent cross-site tracking' is <b>not</b> checked."
+    var button = document.getElementById("savetodrive-div");
+    button.parentNode.insertBefore(warning, warning.nextSibling);
+  }
+}
+</script>
+</head>
+<body class="article LessonPlan pyret" onload="renderSaveToDrive()">
+<!-- Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46088504-1', 'bootstrapworld.org');
+ga('send', 'pageview');
+
+</script>
+<span id="body" onload="renderSaveToDrive()">
+<span id="header">
+<h1>Coordinates and Game Design</h1>
+
+  <span id="savetodrive-div"></span>
+
+</span>
+<span id="content">
+<span id="preamble_disabled">
+<span class="sectionbody">
+<span class="paragraph">
+<p><span class="other-proglang"><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-pyret/lessons/alg-coordinates/../../../algebra-wescheme/lessons/alg-coordinates/index.shtml">(Also available for WeScheme)</a></span></p>
+</span>
+<span class="paragraph">
+<p>Students review the importance and need for coordinates in the context of a video game and brainstorm a game of their own.</p>
+</span>
+<table class="tableblock frame-all grid-all stripes-none stretch left-header preamble">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Prerequisites</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>None</p>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><script>
+function showStandardsAlignment() {
+  const selectTag = document.getElementsByClassName('standardsAlignmentSelect')[0];
+  const options = selectTag && selectTag.options;
+  const stdTables = document.getElementsByClassName('alignedStandards');
+  const intro = document.getElementsByClassName('alignedStandardsIntro')[0];
+  let introNeeded = true;
+  for (let i = 0; i < stdTables.length; i++) {
+    const stdTable = stdTables[i];
+    stdTable.style.display = 'none';
+  }
+  for (let i = 0; i < options.length; i++) {
+    const opt = options[i];
+    if (opt.selected) {
+      const optStd = opt.value;
+      for (let j = 0; j < stdTables.length; j++) {
+        const stdTable = stdTables[j];
+        if (stdTable.classList.contains(optStd)) {
+          stdTable.style.display = 'block';
+          introNeeded = false;
+        }
+      }
+    }
+  }
+  intro.style.display = introNeeded ? 'block' : 'none';
+}
+</script>
+<span class="paragraph">
+<p>Standards</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph ">
+</span>
+<span class="dlist standards-CC-Math standards-hierarchical-table">
+<span class="title">Common Core Math Standards</span>
+<dl>
+<dt class="hdlist1"><br/>MP.2</dt>
+<dd>
+<p>Reason abstractly and quantitatively</p>
+</dd>
+</dl>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Lesson Goals</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Students will be able to:</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>Explain the need for <span class="vocab">coordinates</span> in a given situation.</p>
+</li>
+<li>
+<p>Estimate coordinates in a bounded area.</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Student-Facing Lesson Goals</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>I can estimate the positions of objects using coordinates.</p>
+</li>
+<li>
+<p>I can collaborate with a partner to brainstorm a video game.</p>
+</li>
+<li>
+<p>I can create a sample mock-up (proof of concept) of my video game.</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Materials</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Lesson slides template (<a href="https://docs.google.com/presentation/d/1k9BhcOf0-0qgVjQzINC414SNDi1UlxzS-MSkZQNynUg/" target="_blank" rel="noopener">Google Slides</a>)</p>
+</li>
+<li>
+<p>Estimating Coordinates worksheet (<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-pyret/lessons/alg-coordinates/../../lessons/alg-coordinates/pages/Estimation.html" target="_blank" rel="noopener">HTML (Page 4)</a>)</p>
+</li>
+<li>
+<p>Game Brainstorming organizer (<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-pyret/lessons/alg-coordinates/../../lessons/alg-coordinates/pages/BrainstormGame.html" target="_blank" rel="noopener">HTML (Page 6)</a>)</p>
+</li>
+<li>
+<p>Optional: cutouts of the <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-pyret/lessons/alg-coordinates/images/cat.png" target="_blank" rel="noopener">Cat</a>, <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-pyret/lessons/alg-coordinates/images/dog.png" target="_blank" rel="noopener">Dog</a>, and <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-pyret/lessons/alg-coordinates/images/ruby.png" target="_blank" rel="noopener">Ruby</a> from the NinjaCat game.</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Preparation</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Make sure all materials have been gathered</p>
+</li>
+<li>
+<p>Decide how students will be grouped in pairs</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Supplemental Resources</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>Coordinates (<a href="https://quizizz.com/admin/quiz/5739e1b55752be78da03a648/coordinates" target="_blank" rel="noopener">Quizizz</a>)</p>
+</li>
+<li>
+<p>The Awesome Coordinate Plane Activity (<a href="https://teacher.desmos.com/activitybuilder/custom/563d705f36a7843710aba2ce" target="_blank" rel="noopener">Desmos Activity</a>)</p>
+</li>
+<li>
+<p>Submarine Coordinate Game (<a href="https://www.geogebra.org/m/dyaxqKdP" target="_blank" rel="noopener">Geogebra</a>)</p>
+</li>
+<li>
+<p>Coordinate Grid Exploration (<a href="https://t.co/2lIf5Yofmj" target="_blank" rel="noopener">Geogebra</a>)</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="paragraph">
+<p>Key Points for the Facilitator</p>
+</span></span></td>
+<td class="tableblock halign-left valign-top"><span class="content"><span class="ulist">
+<ul>
+<li>
+<p>The launch activity should create and reinforce the need for coordinates and to attend to precision.</p>
+</li>
+<li>
+<p>Continue to use the same "Estimating Coordinates" page so students can track their pattern of estimation over time.</p>
+</li>
+</ul>
+</span></span></td>
+</tr>
+</tbody>
+</table>
+<span class="paragraph old-materials">
+<p>For a textbook-like version of materials similar to these, you may wish to see the <a href="https://www.bootstrapworld.org/materials/spring2020/courses/algebra/en-us/units/unit1/index.html" target="_blank" rel="noopener">prior unit-based version</a>.</p>
+</span>
+<span class="dlist glossary">
+<span class="title">Glossary</span>
+<dl>
+<dt class="hdlist1"><br/>coordinate</dt>
+<dd>
+<p>a number or set of numbers describing an object&#8217;s location</p>
+</dd>
+<dt class="hdlist1"><br/>horizontal axis</dt>
+<dd>
+<p>axis on a coordinate plane that runs from left to right</p>
+</dd>
+<dt class="hdlist1"><br/>vertical axis</dt>
+<dd>
+<p>number line on a coordinate plane that runs from bottom to top, indicating values in that direction</p>
+</dd>
+</dl>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">Navigating a Grid </td><td width="35%">20 minutes</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview">Overview</h3>
+<span class="paragraph">
+<p>Students are asked to come up with a way of identifying location on a grid, which provides the justification for coordinates.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch">Launch</h3>
+<span class="paragraph">
+<span class="image"><img src="../../lessons/alg-coordinates/images/1dPosition.png" alt="Placing a Character on a number line"></span><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-pyret/lessons/alg-coordinates/images/1dPosition.png" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span></span>
+Computers use numbers to represent a character’s position onscreen, using number lines as rulers to measure the distance from the bottom-left corner of the screen. For our videogame, we will draw the number line so that the screen runs from 0 (on the left) to 1000 (on the right).</p>
+</span>
+<span class="paragraph">
+<p>We can take the image of the Dog, stick it anywhere on the line, and measure the distance back to the left-hand edge. Anyone else who knows about our number line will be able to duplicate the exact position of the Dog, as long as they know the number.</p>
+</span>
+<span class="ulist lesson-instruction">
+<ul>
+<li>
+<p>What is the coordinate of the Dog, if it&#8217;s on the left-hand edge of the screen?</p>
+</li>
+<li>
+<p>What is the coordinate of the Dog, if it&#8217;s on the right-hand edge of the screen?</p>
+</li>
+<li>
+<p>What is the coordinate of the Dog, if it&#8217;s in the center of the screen?</p>
+</li>
+<li>
+<p>What coordinate would place the Dog beyond the left-hand edge of the screen?</p>
+</li>
+<li>
+<p>What coordinate would place the Dog beyond the right-hand edge of the screen?</p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p>OPTIONAL: Draw a number line on the board, and select a volunteer to leave the room for a moment. Place the printed Dog image somewhere on that line, and have the class quietly choose the number that represents the Dog&#8217;s location. Remove the Dog and invite the student back into the room. Can they position the Dog at the right place, based on the number chosen by the class?</p>
+</span>
+<span class="paragraph">
+<p>This number line lets us communicate the position of the Dog using a single number! Unfortunately, it only represents the distance from the left-hand edge of the screen. That means the dog could be at any <em>height</em> in the center of the screen, and it would always have the same number to represent its position.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate">Investigate</h3>
+<span class="paragraph">
+<p>By adding a second number line, we can locate a character <em>anywhere</em> on the screen in either direction. The first line we drews is called the <span class="vocab">x-axis</span>, which runs from left to right. The second line, which runs up and down, is called the <span class="vocab">y-axis</span>. A 2-dimensional <span class="vocab">coordinate</span> consists of both the x- and y-locations on the axes.</p>
+</span>
+<span class="paragraph">
+<span class="image"><img src="../../lessons/alg-coordinates/images/2dPosition.png" alt="Placing a Character in two dimensions"></span><a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-pyret/lessons/alg-coordinates/images/2dPosition.png" class="gdrive-only"><span class="big">&#x1f5bc;</span>Show image</a></span></span>
+Suppose we wanted to locate NinjaCat’s position on the screen. We can find the x-coordinate by dropping a line down from NinjaCat and read the position on the number line. The y-coordinate is found by running a line to the y-axis.</p>
+</span>
+<span class="paragraph">
+<p>A coordinate pair is always written in the form of (x, y). When we write down these coordinates, we always put the x before the y (just like in the alphabet!). Most of the time, you’ll see coordinates written like this: <span class="gdrive-only">(200, 50)</span><!--<span class="begin-ignore-for-gdrive"></span><script type="math/tex">\displaystyle (200, 50)</script><span class="end-ignore-for-gdrive"></span>--> meaning that the x-coordinate is 200 and the y-coordinate is 50.</p>
+</span>
+<span class="paragraph lesson-instruction">
+<p>To develop an intuition for coordinates, have students complete <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-pyret/lessons/alg-coordinates/../../lessons/alg-coordinates/pages/Estimation.html" target="_blank" rel="noopener">Estimating Coordinates (Page 4)</a>.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_common_misconceptions">Common Misconceptions</h3>
+<span class="paragraph">
+<p>Math-phobic students often fail to realize that <em>common sense</em> and <em>intuition</em> can be helpful in exercises where the answer is a number! The first two prompts in the "Synthesize" section directly get at this misconception, but you may want to pay special attention to those students while they are working on this workbook page.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize">Synthesize</h3>
+<span class="ulist">
+<ul>
+<li>
+<p>Should any of the characters have x-coordinates that are very similar? How come?</p>
+</li>
+<li>
+<p>Should any of the characters have y-coordinates that are very similar? How come?</p>
+</li>
+<li>
+<p>How do you think this concept relates to a video game? <em>Answers vary: we need to know where characters are on the screen, we need a way for players to interact with certain parts of the screen, etc</em></p>
+</li>
+</ul>
+</span>
+</span>
+</span>
+</span>
+<span class="sect1 lesson-section-1"><hr/>
+<table class="grid-none frame-none section-heading"><tr><td width="65%">Bridging to video games </td><td width="35%">30 minutes</td></tr></table>
+<span class="sectionbody">
+<span class="sect2 lesson-section-2">
+<h3 id="_overview_2">Overview</h3>
+<span class="paragraph">
+<p>Students explore a coordinate activity in which a cartesian point is used to compute the position of a character in a game. From there, they brainstorm a game of their own.</p>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_launch_2">Launch</h3>
+<span class="paragraph">
+<p>In pairs, have students explore the <a href="https://www.desmos.com/calculator/pbm9nxr2rd" target="_blank" rel="noopener">Ninja Cat Desmos graph</a>.</p>
+</span>
+<table class="tableblock frame-all grid-none stripes-none stretch notice-box">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="title">Notice and Wonder</span>
+As one partner explores the graph, the other student will write down what they Notice on <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-pyret/lessons/alg-coordinates/../../lessons/alg-coordinates/pages/NoticeAndWonder.html" target="_blank" rel="noopener">Notice and Wonder (Page 5)</a>.</p>
+<p class="tableblock">As one partner explores the graph, the other student will write down what they Wonder.</p></td>
+</tr>
+</tbody>
+</table>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_investigate_2">Investigate</h3>
+<span class="ulist lesson-instruction">
+<ul>
+<li>
+<p>Students complete the <a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-pyret/lessons/alg-coordinates/../../lessons/alg-coordinates/pages/BrainstormGame.html" target="_blank" rel="noopener">Brainstorm Your Own Game</a> worksheet and decide on a Player, Target, Danger, and Background for their game.</p>
+</li>
+<li>
+<p>Students will use a <a href="https://docs.google.com/drawings/d/1xXNWcbJ7KOgTClFQeHq-tIy0xmeZds9N3OktvEBaO4c/copy" target="_blank" rel="noopener">Google Draw template</a> (click "Make a copy" when prompted) to create a sample "screenshot" of their game by inserting images via Google Search.</p>
+</li>
+</ul>
+</span>
+<span class="paragraph">
+<p>Screenshot should include:</p>
+</span>
+<span class="ulist">
+<ul>
+<li>
+<p>Labeled estimates of coordinates for each character.</p>
+</li>
+<li>
+<p>2 characters that have the same x-coordinate.</p>
+</li>
+<li>
+<p>2 different characters that have the same y-coordinate.</p>
+</li>
+</ul>
+</span>
+</span>
+<span class="sect2 lesson-section-2">
+<h3 id="_synthesize_2">Synthesize</h3>
+<span class="ulist">
+<ul>
+<li>
+<p>When the "Game Over" screen is supposed to be off screen, what coordinates might hide it?</p>
+</li>
+<li>
+<p>What would be the coordinate of the dog <em>before it gets onscreen?</em></p>
+</li>
+<li>
+<p>Why do we estimate? <em>Practice number sense, get better at working with numbers</em></p>
+</li>
+<li>
+<p>What constitutes a good estimate?</p>
+</li>
+<li>
+<p>How can we improve our estimation skills? <em>Practice, get more comfortable with numbers and more comfortable with making guesses</em></p>
+</li>
+</ul>
+</span>
+<span class="openblock acknowledgment"><hr/>
+<span class="content">
+<span class="paragraph">
+<p>These materials were developed partly through support of the National Science Foundation,
+(awards 1042210, 1535276, 1648684, and 1738598). <a href="https://www.creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener"><span class="image"><img src="../../../../lib/CCbadge.png" alt="CCbadge"></span></a>
+Bootstrap:Algebra by Emmanuel Schanzer, Jen Poole, Ed Campos Jr, Flannery Denny, and Dorai Sitaram
+is licensed under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 4.0 Unported License</a>.
+Based on a work at <a href="https://www.bootstrapworld.org">www.BootstrapWorld.org</a>.
+Permissions beyond the scope of this license may be available by contacting
+<a href="https://www.bootstrapworld.org/materials/fall2020/en-us/courses/algebra-pyret/lessons/alg-coordinates/mailto:schanzer@BootstrapWorld.org">schanzer@BootstrapWorld.org</a>.</p>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+<span id="footer">
+<span id="footer-text">
+Last updated 2020-08-19 20:23:47 -0400
+</span>
+</span>
+</span>
+</body>
+</html>

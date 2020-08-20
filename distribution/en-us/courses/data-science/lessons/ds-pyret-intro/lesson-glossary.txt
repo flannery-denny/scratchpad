@@ -1,0 +1,6 @@
+"data row"
+"definitions area"
+"editor"
+"header"
+"identifier column"
+"interactions area"
