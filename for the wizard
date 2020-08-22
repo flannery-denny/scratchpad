@@ -1,0 +1,1857 @@
+Flannerys-MacBook-Air:curriculum flannery$ git pull
+remote: Enumerating objects: 19, done.
+remote: Counting objects: 100% (19/19), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 19 (delta 7), reused 19 (delta 7), pack-reused 0
+Unpacking objects: 100% (19/19), done.
+From https://github.com/bootstrapworld/curriculum
+   b9b938f5..887eb686  master     -> origin/master
+Updating b9b938f5..887eb686
+Fast-forward
+ build-pathway                                      | 237 ++++++++++++++-------
+ ...> Dist-1j3-to-5j0-Multiple-Representations.pdf} | Bin
+ .../langs/en-us/pages/workbook-pages.txt           |   4 +-
+ ...> Dist-1j3-to-5j0-Multiple-Representations.pdf} | Bin
+ ...> Dist-1j3-to-5j0-Multiple-Representations.pdf} | Bin
+ lib/make-workbook.rkt                              |   6 +
+ lib/preproc.rkt                                    |  49 +++--
+ 7 files changed, 188 insertions(+), 108 deletions(-)
+ rename lessons/alg-distance-formula/langs/en-us/pages/{Dist-1,3-to-5,0-Multiple-Representations.pdf => Dist-1j3-to-5j0-Multiple-Representations.pdf} (100%)
+ rename lessons/alg-distance-formula/langs/en-us/solution-pages/pyret/{Dist-1,3-to-5,0-Multiple-Representations.pdf => Dist-1j3-to-5j0-Multiple-Representations.pdf} (100%)
+ rename lessons/alg-distance-formula/langs/en-us/solution-pages/wescheme/{Dist-1,3-to-5,0-Multiple-Representations.pdf => Dist-1j3-to-5j0-Multiple-Representations.pdf} (100%)
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway -f  algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+
+^C
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway data-science
+
+BUILDING PATHWAY: en-us/data-science 💀
+-----------------------------------------------------------
+
+^C
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway -f data-science
+
+BUILDING PATHWAY: en-us/data-science 💀
+-----------------------------------------------------------
+building lesson plan: lessons/ds-threats-to-validity
+WARNING: Lesson plan lessons/ds-defining-functions: @link refers to nonexistent file ../ds-if-expressions/index.shtml
+
+WARNING: Lesson lessons/ds-intro: @workbook-link refers to nonexistent file ../../lessons/ds-intro/pages/exploring-animals-dataset.adoc
+
+WARNING: Lesson lessons/ds-intro: @workbook-link refers to nonexistent file ../../lessons/ds-intro/pages/exploring-animals-dataset.adoc
+
+WARNING: Lesson lessons/ds-intro: @workbook-link refers to nonexistent file ../../lessons/ds-intro/pages/exploring-animals-dataset.adoc
+
+building pathway narrative: data-science
+building teacher resources: data-science → resources → index.adoc
+
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway -f algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-collision
+WARNING: Lesson lessons/alg-distance-formula: @exercise-link refers to nonexistent file ../../lessons/alg-distance-formula/pages/Distance-Multiple-Representations.pdf
+
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+WARNING: Lesson lessons/alg-distance-formula: @exercise-link refers to nonexistent file ../../lessons/alg-distance-formula/pages/Distance-Multiple-Representations.pdf
+
+building pathway narrative: algebra-wescheme
+building teacher resources: algebra-wescheme → resources → index.adoc
+WARNING: Page resources: @link refers to nonexistent file BuggyRecipes/pages
+
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building lesson plan: lessons/alg-collision
+WARNING: Lesson lessons/alg-distance-formula: @exercise-link refers to nonexistent file ../../lessons/alg-distance-formula/pages/Distance-Multiple-Representations.pdf
+
+WARNING: Lesson lessons/alg-distance-formula: @exercise-link refers to nonexistent file ../../lessons/alg-distance-formula/pages/Distance-Multiple-Representations.pdf
+
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+building pathway narrative: algebra-pyret
+building teacher resources: algebra-pyret → resources → index.adoc
+WARNING: Page resources: @link refers to nonexistent file BuggyRecipes/pages
+
+
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+^C
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway --nopdf algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-game-intro
+ERROR: call-with-output-file: file exists
+  path: /Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-game-intro/index-extra-mat.asc in "/Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-game-intro//index.asciidoc"
+
+mv: index.html: No such file or directory
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building lesson plan: lessons/alg-game-intro
+ERROR: call-with-output-file: file exists
+  path: /Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-pyret/lessons/alg-game-intro/index-extra-mat.asc in "/Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-pyret/lessons/alg-game-intro//index.asciidoc"
+
+mv: index.html: No such file or directory
+
+Flannerys-MacBook-Air:curriculum flannery$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   lessons/alg-game-intro/langs/en-us/index.adoc
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Flannerys-MacBook-Air:curriculum flannery$ git checkout -- lessons/alg-game-intro/langs/en-us/index.adoc
+Flannerys-MacBook-Air:curriculum flannery$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway --nopdf algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-game-intro
+ERROR: call-with-output-file: file exists
+  path: /Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-game-intro/index-extra-mat.asc in "/Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-game-intro//index.asciidoc"
+
+mv: index.html: No such file or directory
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building lesson plan: lessons/alg-game-intro
+ERROR: call-with-output-file: file exists
+  path: /Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-pyret/lessons/alg-game-intro/index-extra-mat.asc in "/Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-pyret/lessons/alg-game-intro//index.asciidoc"
+
+mv: index.html: No such file or directory
+
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+
+building all PDF files
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+
+building all PDF files
+
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway -f algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-collision
+WARNING: Lesson lessons/alg-distance-formula: @exercise-link refers to nonexistent file ../../lessons/alg-distance-formula/pages/Distance-Multiple-Representations.pdf
+
+WARNING: Lesson lessons/alg-distance-formula: @exercise-link refers to nonexistent file ../../lessons/alg-distance-formula/pages/Distance-Multiple-Representations.pdf
+
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+building pathway narrative: algebra-wescheme
+building teacher resources: algebra-wescheme → resources → index.adoc
+WARNING: Page resources: @link refers to nonexistent file BuggyRecipes/pages
+
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building /lessons/alg-order-of-operations/solution-pages/translate-coe-to-code.ad
+^Cuser break
+  context...:
+   default-load-handler
+   standard-module-name-resolver
+   module-path-index-resolve
+   namespace-module-instantiate!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   ...
+user break
+  context...:
+   default-load-handleruser break
+
+  context...:
+      standard-module-name-resolver"/Applications/Racket v7.7/collects/setup/dirs.rkt": 
+[running body]
+   temp35_0
+   for-loop
+   run-module-instance!
+   for-loop
+      module-path-index-resolve[repeats 1 more time]
+   
+namespace-module-instantiate!   
+run-module-instance!   
+for-loop   
+for-loop   
+[repeats 1 more time]   
+[repeats 1 more time]   
+run-module-instance!
+      for-looprun-module-instance!
+
+   for-loop   
+[repeats 1 more time]
+      [repeats 1 more time]
+run-module-instance!
+   run-module-instance!   
+for-loop
+      for-loop[repeats 1 more time]
+
+      [repeats 1 more time]run-module-instance!
+
+      run-module-instance!for-loop
+   ...
+
+   [repeats 1 more time]
+   run-module-instance!
+   ...
+Flannerys-MacBook-Air:curriculum flannery$ user break
+  context...:
+   default-load-handler
+   standard-module-name-resolver
+   module-path-index-resolve
+   namespace-module-instantiate!
+user break
+  context...:
+   temp35_0
+      for-loop
+for-loop   
+   [repeats 1 more time]
+run-module-instance!
+      run-module-instance!
+for-loop
+      for-loop[repeats 1 more time]
+
+      [repeats 1 more time]run-module-instance!
+
+   run-module-instance!   
+for-loop
+      for-loop[repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+
+   run-module-instance!   
+[repeats 1 more time]
+   for-loop   
+run-module-instance!
+   [repeats 1 more time]   
+for-loop   
+run-module-instance!
+      perform-require![repeats 1 more time]
+   ...
+
+   run-module-instance!
+   ...
+user break
+  context...:
+   deserialize-module-path-indexes
+   data: [running body]
+   compiled-module->dh+h+data-instance+declaration-instance
+   eval-module
+   standard-module-name-resolver
+   module-path-index-resolve
+   namespace-module-instantiate!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   ...
+user break
+  context...:
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   user break[repeats 1 more time]
+  context...:
+   
+standard-module-name-resolver   
+run-module-instance!
+      for-loop
+   [repeats 1 more time]
+   module-path-index-resolverun-module-instance!
+
+      namespace-module-instantiate!perform-require!
+
+   ...   
+for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   ...user break
+
+  context...:
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   ...
+user break
+  context...:
+   root-module-path?
+   standard-module-name-resolver
+   module-path-index-resolve
+   namespace-module-instantiate!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   ...
+user break
+  context...:
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   ...
+user break
+  context...:
+   read-dispatch
+   read
+   [repeats 1 more time]
+   default-load-handler
+   standard-module-name-resolver
+   module-path-index-resolve
+   namespace-module-instantiate!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   ...
+user break
+  context...:
+   default-load/use-compiled
+   standard-module-name-resolver
+   module-path-index-resolve
+   namespace-module-instantiate!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   ...
+user break
+  context...:
+   read-dispatch
+   read
+   [repeats 1 more time]
+   default-load-handler
+   standard-module-name-resolver
+   module-path-index-resolve
+   namespace-module-instantiate!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   ...
+user break
+  context...:
+   default-load-handler
+   standard-module-name-resolver
+   module-path-index-resolve
+   namespace-module-instantiate!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   perform-require!
+   expand-module
+   expand-capturing-lifts
+   ...
+user break
+  context...:
+   "/Applications/Racket v7.7/collects/racket/contract/private/list.rkt": [running body]
+   temp35_0
+   for-loop
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   ...
+user breakuser break
+  context...:
+   read-dispatch
+   read
+   [repeats 1 more time]
+   default-load-handler
+   standard-module-name-resolver
+   module-path-index-resolve
+   namespace-module-instantiate!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   ...
+
+  context...:
+   default-load/use-compiled
+   standard-module-name-resolver
+   module-path-index-resolve
+   namespace-module-instantiate!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   ...
+user break
+  context...:
+   read-dispatch
+   read
+   [repeats 1 more time]
+   default-load-handler
+   standard-module-name-resolver
+   module-path-index-resolve
+   namespace-module-instantiate!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   perform-require!
+   expand-module
+   expand-capturing-lifts
+   ...
+
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway --nopdf --proglang wecheme algebra
+
+BUILDING PATHWAY: en-us/algebra-wecheme 💀
+-----------------------------------------------------------
+building /lessons/alg-game-intro/pages/notes-intro.adoc
+ERROR: function-directives: Unknown proglang wecheme
+  context...:
+   "/Users/flannery/Documents/Bootstrap/curriculum/prog/function-directives.rkt": [running body]
+   temp35_0
+   for-loop
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   perform-require!
+ERROR: function-directives: Unknown proglang wecheme
+  context...:
+   "/Users/flannery/Documents/Bootstrap/curriculum/prog/function-directives.rkt": [running body]
+   temp35_0
+   for-loop
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   perform-require!
+ERROR: function-directives: Unknown proglang wecheme
+  context...:
+   "/Users/flannery/Documents/Bootstrap/curriculum/prog/function-directives.rkt": [running body]
+   temp35_0
+   for-loop
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+building /lessons/alg-game-intro/solution-pages/notes-intro.adoc
+ERROR: function-directives: Unknown proglang wecheme
+  context...:
+   "/Users/flannery/Documents/Bootstrap/curriculum/prog/function-directives.rkt": [running body]
+   temp35_0
+   for-loop
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   perform-require!
+ERROR: function-directives: Unknown proglang wecheme
+  context...:
+   "/Users/flannery/Documents/Bootstrap/curriculum/prog/function-directives.rkt": [running body]
+   temp35_0
+   for-loop
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   perform-require!
+ERROR: function-directives: Unknown proglang wecheme
+  context...:
+   "/Users/flannery/Documents/Bootstrap/curriculum/prog/function-directives.rkt": [running body]
+   temp35_0
+   for-loop
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+building /lessons/alg-coordinates/pages/NoticeAndWonder.adoc
+ERROR: function-directives: Unknown proglang wecheme
+  context...:
+   "/Users/flannery/Documents/Bootstrap/curriculum/prog/function-directives.rkt": [running body]
+   temp35_0
+   for-loop
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   perform-require!
+ERROR: function-directives: Unknown proglang wecheme
+  context...:
+   "/Users/flannery/Documents/Bootstrap/curriculum/prog/function-directives.rkt": [running body]
+   temp35_0
+   for-loop
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   perform-require!
+ERROR: function-directives: Unknown proglang wecheme
+  context...:
+   "/Users/flannery/Documents/Bootstrap/curriculum/prog/function-directives.rkt": [running body]
+   temp35_0
+   for-loop
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+building /lessons/alg-coordinates/solution-pages/Estimation.adoc
+^Cuser breakuser break
+  context...:
+   loop
+   gf
+   .get-syntax-literal!
+   "/Applications/Racket v7.7/collects/syntax/parse.rkt": [running body]
+   temp35_0
+   for-loop
+   run-module-instance!
+   for-loop
+   loop
+   [repeats 1 more time]
+   finish
+   [repeats 6 more times]
+   pass-1-and-2-loop
+
+  context...:
+      run-module-instance!module-begin-k
+
+      expand-modulefor-loop
+
+   expand-capturing-lifts   
+   ...loop
+
+   [repeats 1 more time]
+   finish
+   [repeats 6 more times]
+   pass-1-and-2-loop
+   module-begin-k
+   expand-module
+   expand-capturing-lifts
+   temp98_0
+   temp71_0
+   compile
+   temp65_0
+   standard-module-name-resolver
+   module-path-index-resolve
+   ...
+Flannerys-MacBook-Air:curriculum flannery$ user break
+  context...:
+   module-path-index-shift
+   namespace-module-use->module+linklet-instances
+   for-loop
+   temp35_0
+   for-loop
+   run-module-instance!
+   for-loop
+   loop
+   [repeats 1 more time]
+   finish
+   [repeats 6 more times]
+   pass-1-and-2-loop
+   module-begin-k
+   expand-module
+   expand-capturing-lifts
+   temp98_0
+   ...
+
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway --nopdf --proglang wescheme algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-game-intro
+ERROR: call-with-output-file: file exists
+  path: /Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-game-intro/index-extra-mat.asc in "/Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-game-intro//index.asciidoc"
+
+mv: index.html: No such file or directory
+
+Flannerys-MacBook-Air:curriculum flannery$ git mv lessons/alg-distance-formula/langs/en-us/pages/Dist-1j3-to-5j0-Multiple-Representations.pdf lessons/alg-distance-formula/langs/en-us/pages/Distance-Between-2-Points-Multiple-Representations.pdf 
+Flannerys-MacBook-Air:curriculum flannery$ git mv lessons/alg-distance-formula/langs/en-us/solution-pages/Dist-1j3-to-5j0-Multiple-Representations.pdf lessons/alg-distance-formula/langs/en-us/solution-pages/Distance-Between-2-Points-Multiple-Representations.pdf
+fatal: bad source, source=lessons/alg-distance-formula/langs/en-us/solution-pages/Dist-1j3-to-5j0-Multiple-Representations.pdf, destination=lessons/alg-distance-formula/langs/en-us/solution-pages/Distance-Between-2-Points-Multiple-Representations.pdf
+Flannerys-MacBook-Air:curriculum flannery$ git mv lessons/alg-distance-formula/langs/en-us/solution-pages/pyret/Dist-1j3-to-5j0-Multiple-Representations.pdf lessons/alg-distance-formula/langs/en-us/solution-pages/pyret/Distance-Between-2-Points-Multiple-Representations.pdf
+Flannerys-MacBook-Air:curriculum flannery$ git mv lessons/alg-distance-formula/langs/en-us/solution-pages/wescheme/Dist-1j3-to-5j0-Multiple-Representations.pdf lessons/alg-distance-formula/langs/en-us/solution-pages/wescheme/Distance-Between-2-Points-Multiple-Representations.pdf
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-distance-formula
+WARNING: Lesson lessons/alg-distance-formula: @exercise-link refers to nonexistent file ../../lessons/alg-distance-formula/pages/Distance-Multiple-Representations.pdf
+
+ERROR: call-with-output-file: file exists
+  path: /Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-distance-formula/index-extra-mat.asc in "/Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-distance-formula//index.asciidoc"
+
+mv: index.html: No such file or directory
+building all PDF files
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building /resources/BuggyRecipes/pages/buggy-recipes.adoc
+^Cuser break
+  context...:
+   default-load-handler
+   standard-module-name-resolver
+   module-path-index-resolve
+   perform-require!
+   for-loop
+   finish
+   [repeats 4 more times]
+   pass-1-and-2-loop
+   module-begin-k
+   expand-module
+   expand-capturing-lifts
+   temp98_0
+   temp71_0
+   compile
+   temp65_0
+   standard-module-name-resolver
+   ...
+user break
+  context...:
+   /Applications/Racket v7.7/collects/racket/promise.rkt:77:user break
+  context...:
+   /Applications/Racket v7.7/collects/racket/contract/private/provide.rkt:493:0: do-partial-app
+   "/Applications/Racket v7.7/collects/syntax/id-table.rkt": [running body]
+   temp35_0
+   for-loop
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   ...
+15
+   /Applications/Racket v7.7/collects/racket/private/more-scheme.rkt:265:2: call-with-exception-handler
+   Flannerys-MacBook-Air:curriculum flannery$ /Applications/Racket v7.7/collects/racket/promise.rkt:45:2
+   /Applications/Racket v7.7/collects/setup/private/dirs.rkt:53:15: config:installation-name
+   /Applications/Racket v7.7/collects/racket/promise.rkt:77:15
+   /Applications/Racket v7.7/collects/racket/private/more-scheme.rkt:265:2: call-with-exception-handler
+   /Applications/Racket v7.7/collects/racket/promise.rkt:45:2
+   /Applications/Racket v7.7/collects/setup/private/dirs.rkt:102:0: get-installation-name
+   "/Applications/Racket v7.7/collects/planet/config.rkt": [running body]
+   temp35_0
+   for-loop
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   ...
+user break
+  context...:
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   ...
+user break
+  context...:
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   ...
+user break
+  context...:
+   resolve+shift
+   free-identifier=?
+   /Applications/Racket v7.7/collects/racket/private/kw.rkt:1119:23: can-opt?
+   /Applications/Racket v7.7/collects/racket/private/kw.rkt:1113:2: new-define
+   apply-transformer-in-context
+   apply-transformer
+   dispatch-transformer
+   do-local-expand
+   /Applications/Racket v7.7/collects/syntax/wrap-modbeg.rkt:46:4: do-wrapping-module-begin
+   apply-transformer-in-context
+   apply-transformer
+   dispatch-transformer
+   loop
+   finish
+   [repeats 1 more time]
+   pass-1-and-2-loop
+   ...
+user break
+  context...:
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   ...
+user break
+  context...:
+   for-loop
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   ...
+user break
+  context...:
+   for-loop
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   ...
+
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-distance-formula
+ERROR: call-with-output-file: file exists
+  path: /Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-game-intro/index-extra-mat.asc in "/Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-game-intro//index.asciidoc"
+
+ERROR: call-with-output-file: file exists
+  path: /Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-distance-formula/index-extra-mat.asc in "/Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-distance-formula//index.asciidoc"
+
+mv: index.html: No such file or directory
+mv: index.html: No such file or directory
+building all PDF files
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building lesson plan: lessons/alg-collision
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+building pathway narrative: algebra-pyret
+building all PDF files
+^CFlannerys-MacBook-Air:curriculum flannery$ ./build-pathway -f algebra
+^C
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway -f --proglang wescheme algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-collision
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+building pathway narrative: algebra-wescheme
+building teacher resources: algebra-wescheme → resources → index.adoc
+WARNING: Page resources: @link refers to nonexistent file BuggyRecipes/pages
+
+
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway -f
+
+BUILDING PATHWAY: en-us/__sample 💀
+-----------------------------------------------------------
+building /lessons/__sample-lesson/pages/pageA1.adoc
+doing racket do
+asciidoctor: ERROR: fragments/exerciseA1.asc: line 2: level 0 sections can only bbuilding lesson plan: lessons/__sample-lesson
+WARNING: Lesson lessons/__sample-lesson: @workbook-link refers to nonexistent file ../../lessons/__sample-lesson/pages/pageThatDoesntExist.adoc
+
+WARNING: Lesson lessons/__sample-lesson: @workbook-link refers to nonexistent file ../../lessons/__sample-lesson/pages/pointer-URL
+
+WARNING: Lesson lessons/__sample-lesson: @workbook-link used for non-workbook page ../../lessons/__sample-lesson/pages/PiecewiseFunctions-EX1.html
+
+WARNING: Lesson lessons/lessonA: @workbook-link refers to nonexistent file ../../lessons/lessonA/pages/exerciseA1.html
+
+WARNING: Lesson lessons/lessonA: @workbook-link refers to nonexistent file ../../lessons/lessonA/pages/pageA1.pdf
+
+WARNING: Lesson lessons/__sample-lesson: @workbook-link used for non-workbook page ../../lessons/__sample-lesson/pages/exerciseA1.html
+
+building pathway narrative: __sample
+WARNING: Lesson lessons/lessonB: @workbook-link refers to nonexistent file ./lessons/lessonB/pages/pageB2.pdf
+
+building teacher resources: __sample → resources → index.adoc
+
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-collision
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+building pathway narrative: algebra-wescheme
+building teacher resources: algebra-wescheme → resources → index.adoc
+WARNING: Page resources: @link refers to nonexistent file BuggyRecipes/pages
+
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building lesson plan: lessons/alg-collision
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+building pathway narrative: algebra-pyret
+building teacher resources: algebra-pyret → resources → index.adoc
+WARNING: Page resources: @link refers to nonexistent file BuggyRecipes/pages
+
+
+
+BUILDING PATHWAY: en-us/data-science 💀
+-----------------------------------------------------------
+building lesson plan: lessons/ds-threats-to-validity
+WARNING: Lesson plan lessons/ds-defining-functions: @link refers to nonexistent file ../ds-if-expressions/index.shtml
+
+WARNING: Lesson lessons/ds-intro: @workbook-link refers to nonexistent file ../../lessons/ds-intro/pages/exploring-animals-dataset.adoc
+
+WARNING: Lesson lessons/ds-intro: @workbook-link refers to nonexistent file ../../lessons/ds-intro/pages/exploring-animals-dataset.adoc
+
+WARNING: Lesson lessons/ds-intro: @workbook-link refers to nonexistent file ../../lessons/ds-intro/pages/exploring-animals-dataset.adoc
+
+building pathway narrative: data-science
+building teacher resources: data-science → resources → index.adoc
+
+
+BUILDING PATHWAY: en-us/flags 💀
+-----------------------------------------------------------
+building lesson plan: lessons/fl-image-transformations
+WARNING: Lesson plan lessons/fl-image-transformations: Standard N-Q&1&3 not found
+
+WARNING: Lesson plan lessons/fl-image-transformations: Standard 6.NS.5-8 not found
+
+WARNING: Lesson plan lessons/fl-image-transformations: Standard F-IF.1-3 not found
+
+WARNING: Lesson plan lessons/fl-intro-to-dilations: Standard N-Q&1&3 not found
+
+WARNING: Lesson plan lessons/fl-intro-to-dilations: Standard 6.NS.5-8 not found
+
+WARNING: Lesson plan lessons/fl-intro-to-dilations: Standard F-IF.1-3 not found
+
+WARNING: Lesson lessons/fl-intro-to-dilations: @workbook-link used for non-workbook page ../../lessons/fl-intro-to-dilations/pages/intro-to-dilations-wb1.pdf
+
+WARNING: Lesson lessons/fl-intro-to-dilations: @workbook-link used for non-workbook page ../../lessons/fl-intro-to-dilations/pages/intro-to-dilations-ex1.pdf
+
+WARNING: Lesson plan lessons/fl-flags-of-the-world: Standard N-Q&1&3 not found
+
+WARNING: Lesson plan lessons/fl-flags-of-the-world: Standard 6.NS.5-8 not found
+
+WARNING: Lesson plan lessons/fl-flags-of-the-world: Standard F-IF.1-3 not found
+
+WARNING: Incorrect² @workbook-link pages/fragments/late-to-class-design-recipe-assess.adoc
+
+building pathway narrative: flags
+WARNING: Pathway narrative flags: @link refers to nonexistent file lessons/fl-flags-of-the-world/fragments/update-player.adoc
+
+WARNING: Pathway narrative flags: @link refers to nonexistent file lessons/fl-flags-of-the-world/index.html
+
+WARNING: Pathway narrative flags: @link refers to nonexistent file workbook/workbook.pdf
+
+building teacher resources: flags → resources → teacheronly.adoc
+
+
+BUILDING PATHWAY: en-us/hour-of-code 💀
+-----------------------------------------------------------
+
+WARNING: missing lessons/hoc-winter/pages/workbook-pages.txt
+
+WARNING: missing lessons/hoc-wescheme-intro/pages/workbook-pages.txt
+
+WARNING: lessons/hoc-winter missing pages
+WARNING: lessons/hoc-wescheme-intro missing pages
+building pathway narrative: hour-of-code
+building all PDF files
+WARNING: No teacher resource files in pathway hour-of-code
+
+
+BUILDING PATHWAY: en-us/ok 💀
+-----------------------------------------------------------
+building lesson plan: lessons/fl-flags-of-the-world
+WARNING: Lesson lessons/OK-IntroToContracts's prerequisite IntroToPyret not found or in incorrect order
+
+WARNING: Lesson lessons/OK-IntroToContracts's prerequisite IntroToCoE not found or in incorrect order
+
+WARNING: Lesson plan lessons/OK-IntroToContracts: No standards specified
+
+WARNING: Incorrect @workbook-link exercises/contract-practice-1.adoc
+
+WARNING: Incorrect @workbook-link exercises/contract-practice-2.adoc
+
+WARNING: Incorrect @workbook-link exercises/error-checking-practice.adoc
+
+WARNING: Lesson plan lessons/OK-IntroToPyret: No standards specified
+
+WARNING: Lesson plan lessons/OK-IntroToContracts: @link refers to nonexistent file bit.ly/FunctionExplorers
+
+WARNING: Lesson plan lessons/fl-flags-of-the-world: Standard N-Q&1&3 not found
+
+WARNING: Lesson plan lessons/fl-flags-of-the-world: Standard 6.NS.5-8 not found
+
+WARNING: Lesson plan lessons/fl-flags-of-the-world: Standard F-IF.1-3 not found
+
+WARNING: Incorrect² @workbook-link pages/fragments/late-to-class-design-recipe-assess.adoc
+
+building pathway narrative: ok
+building teacher resources: ok → resources → index.adoc
+
+
+BUILDING PATHWAY: en-us/physics 💀
+-----------------------------------------------------------
+
+building pathway narrative: physics
+building teacher resources: physics → resources → index.adoc
+
+
+BUILDING PATHWAY: en-us/reactive 💀
+-----------------------------------------------------------
+building lesson plan: lessons/re-timers
+WARNING: Lesson plan lessons/re-build-your-own-animation: No standards specified
+
+WARNING: Lesson plan lessons/re-timers: No standards specified
+
+WARNING: Lesson plan lessons/re-key-events: No standards specified
+
+WARNING: Lesson plan lessons/re-refactoring: No standards specified
+
+WARNING: Lesson plan lessons/re-algebra-review: No standards specified
+
+WARNING: Lesson plan lessons/re-structures-reactors-animations: No standards specified
+
+WARNING: Lesson plan lessons/re-intro-to-data-structures: No standards specified
+
+WARNING: Item "data" not found in glossary
+
+WARNING: Lesson plan lessons/re-scoring: No standards specified
+
+WARNING: Lesson plan lessons/re-adding-collisions: No standards specified
+
+WARNING: Lesson plan lessons/re-adding-levels: No standards specified
+
+WARNING: Lesson plan lessons/re-your-own-drawing-functions: No standards specified
+
+WARNING: Lesson plan lessons/re-nested-structures: No standards specified
+
+WARNING: Lesson plan lessons/re-making-pong: No standards specified
+
+WARNING: Lesson plan lessons/re-functions-that-ask-questions: No standards specified
+
+building pathway narrative: reactive
+building all PDF files
+WARNING: No teacher resource files in pathway reactive
+
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway --nopdf --proglang wescheme algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-distance-formula
+ERROR: call-with-output-file: file exists
+  path: /Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-distance-formula/index-extra-mat.asc in "/Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-distance-formula//index.asciidoc"
+
+mv: index.html: No such file or directory
+
+Flannerys-MacBook-Air:curriculum flannery$ git pull
+remote: Enumerating objects: 167, done.
+remote: Counting objects: 100% (167/167), done.
+remote: Compressing objects: 100% (51/51), done.
+remote: Total 115 (delta 19), reused 108 (delta 12), pack-reused 0
+Receiving objects: 100% (115/115), 122.10 KiB | 463.00 KiB/s, done.
+Resolving deltas: 100% (19/19), completed with 10 local objects.
+From https://github.com/bootstrapworld/curriculum
+   887eb686..8360c7da  master     -> origin/master
+Updating 887eb686..8360c7da
+error: Your local changes to the following files would be overwritten by merge:
+	lessons/alg-distance-formula/langs/en-us/index.adoc
+	lessons/alg-game-intro/langs/en-us/index.adoc
+Please commit your changes or stash them before you merge.
+Aborting
+Flannerys-MacBook-Air:curriculum flannery$ git stash
+Saved working directory and index state WIP on master: 887eb686 Merge branch 'master' into timesaver
+Flannerys-MacBook-Air:curriculum flannery$ git stash
+Saved working directory and index state WIP on master: 887eb686 Merge branch 'master' into timesaver
+Flannerys-MacBook-Air:curriculum flannery$ git status
+On branch master
+Your branch is behind 'origin/master' by 3 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+Flannerys-MacBook-Air:curriculum flannery$ git pull
+Updating 887eb686..8360c7da
+Fast-forward
+ lessons/__sample-lesson/langs/en-us/index.adoc                                                   |   5 ++++-
+ lessons/alg-character-animation/langs/en-us/index.adoc                                           |   3 ++-
+ lessons/alg-collision/langs/en-us/index.adoc                                                     |   3 ++-
+ lessons/alg-compound-inequalities/langs/en-us/index.adoc                                         |   3 ++-
+ lessons/alg-coordinates/langs/en-us/index.adoc                                                   |   3 ++-
+ lessons/alg-creating-functions/langs/en-us/index.adoc                                            |   3 ++-
+ lessons/alg-defining-functions/langs/en-us/index.adoc                                            |   3 ++-
+ lessons/alg-defining-values/langs/en-us/index.adoc                                               |   5 +++--
+ lessons/alg-distance-formula/langs/en-us/index.adoc                                              |   3 ++-
+ lessons/alg-domain-and-range/langs/en-us/index.adoc                                              |   3 ++-
+ lessons/alg-error-analysis/langs/en-us/index.adoc                                                |   3 ++-
+ lessons/alg-function-composition/langs/en-us/index.adoc                                          |   3 ++-
+ lessons/alg-game-intro/langs/en-us/index.adoc                                                    |   3 ++-
+ lessons/alg-making-game-images/langs/en-us/index.adoc                                            |   7 ++++---
+ lessons/alg-order-of-operations/langs/en-us/index.adoc                                           |  15 ++++++++-------
+ lessons/alg-order-of-operations/langs/en-us/pages/OrderOfOperations-Multiple-Representations.pdf | Bin 33366 -> 52292 bytes
+ lessons/alg-piecewise-functions/langs/en-us/index.adoc                                           |   3 ++-
+ lessons/alg-player-animation/langs/en-us/index.adoc                                              |   3 ++-
+ lessons/alg-problem-decomposition/langs/en-us/index.adoc                                         |   3 ++-
+ lessons/alg-restating-the-problem/langs/en-us/index.adoc                                         |   3 ++-
+ lessons/alg-simple-inequalities/langs/en-us/index.adoc                                           |   7 ++++---
+ lessons/alg-solving-word-problems/langs/en-us/index.adoc                                         |   7 ++++---
+ lib/preproc.rkt                                                                                  |   3 ++-
+ 23 files changed, 59 insertions(+), 35 deletions(-)
+Flannerys-MacBook-Air:curriculum flannery$ git stash
+No local changes to save
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+
+^C
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway --nopdf --proglang wescheme algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-collision
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+WARNING: Lesson lessons/alg-distance-formula: @exercise-link refers to nonexistent file ../../lessons/alg-distance-formula/pages/Distance-Multiple-Representations.pdf
+
+WARNING: Lesson lessons/alg-distance-formula: @exercise-link refers to nonexistent file ../../lessons/alg-distance-formula/pages/Distance-Multiple-Representations.pdf
+
+
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway --nopdf --proglang wescheme algebr
+^C
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+
+building all PDF files
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building lesson plan: lessons/alg-distance-formula
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+WARNING: Lesson lessons/alg-distance-formula: @exercise-link refers to nonexistent file ../../lessons/alg-distance-formula/pages/Distance-Multiple-Representations.pdf
+
+WARNING: Lesson lessons/alg-distance-formula: @exercise-link refers to nonexistent file ../../lessons/alg-distance-formula/pages/Distance-Multiple-Representations.pdf
+
+building all PDF files
+
+Flannerys-MacBook-Air:curriculum flannery$ git mv lessons/alg-distance-formula/lange/en-us/pages/Dist-1j3-to5j0-Multiple-Representations.pdf lessons/alg-distance-formula/lange/en-us/pages/Distance-bw-Two-Points-Multiple-Representations.pdf
+fatal: bad source, source=lessons/alg-distance-formula/lange/en-us/pages/Dist-1j3-to5j0-Multiple-Representations.pdf, destination=lessons/alg-distance-formula/lange/en-us/pages/Distance-bw-Two-Points-Multiple-Representations.pdf
+Flannerys-MacBook-Air:curriculum flannery$ git mv lessons/alg-distance-formula/lange/en-us/solution-pages/wescheme/Dist-1j3-to5j0-Multiple-Representations.pdf lessons/alg-distance-formula/lange/en-us/solution-pages/wescheme/Distance-bw-Two-Points-Multiple-Representations.pdf
+fatal: bad source, source=lessons/alg-distance-formula/lange/en-us/solution-pages/wescheme/Dist-1j3-to5j0-Multiple-Representations.pdf, destination=lessons/alg-distance-formula/lange/en-us/solution-pages/wescheme/Distance-bw-Two-Points-Multiple-Representations.pdf
+Flannerys-MacBook-Air:curriculum flannery$ git mv lessons/alg-distance-formula/lange/en-us/solution-pages/pyret/Dist-1j3-to5j0-Multiple-Representations.pdf lessons/alg-distance-formula/lange/en-us/solution-pages/pyret/Distance-bw-Two-Points-Multiple-Representations.pdf
+fatal: bad source, source=lessons/alg-distance-formula/lange/en-us/solution-pages/pyret/Dist-1j3-to5j0-Multiple-Representations.pdf, destination=lessons/alg-distance-formula/lange/en-us/solution-pages/pyret/Distance-bw-Two-Points-Multiple-Representations.pdf
+Flannerys-MacBook-Air:curriculum flannery$ git mv lessons/alg-distance-formula/langs/en-us/solution-pages/pyret/Dist-1j3-to5j0-Multiple-Representations.pdf lessons/alg-distance-formula/langs/en-us/solution-pages/pyret/Distance-bw-Two-Points-Multiple-Representations.pdf
+fatal: bad source, source=lessons/alg-distance-formula/langs/en-us/solution-pages/pyret/Dist-1j3-to5j0-Multiple-Representations.pdf, destination=lessons/alg-distance-formula/langs/en-us/solution-pages/pyret/Distance-bw-Two-Points-Multiple-Representations.pdf
+Flannerys-MacBook-Air:curriculum flannery$ git mv lessons/alg-distance-formula/langs/en-us/solution-pages/pyret/Dist-1j3-to-5j0-Multiple-Representations.pdf lessons/alg-distance-formula/langs/en-us/solution-pages/pyret/Distance-bw-Two-Points-Multiple-Representations.pdf
+Flannerys-MacBook-Air:curriculum flannery$ git mv lessons/alg-distance-formula/langs/en-us/solution-pages/wescheme/Dist-1j3-to-5j0-Multiple-Representations.pdf lessons/alg-distance-formula/langs/en-us/solution-pages/wescheme/Distance-bw-Two-Points-Multiple-Representations.pdf
+Flannerys-MacBook-Air:curriculum flannery$ git mv lessons/alg-distance-formula/langs/en-us/pages/Dist-1j3-to-5j0-Multiple-Representations.pdf lessons/alg-distance-formula/langs/en-us/pages/Distance-bw-Two-Points-Multiple-Representations.pdf
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-distance-formula
+building all PDF files
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building lesson plan: lessons/alg-distance-formula
+building all PDF files
+
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-domain-and-range
+building all PDF files
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building lesson plan: lessons/alg-domain-and-range
+building all PDF files
+
+Flannerys-MacBook-Air:curriculum flannery$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    lessons/alg-distance-formula/langs/en-us/pages/Dist-1j3-to-5j0-Multiple-Representations.pdf -> lessons/alg-distance-formula/langs/en-us/pages/Distance-bw-Two-Points-Multiple-Representations.pdf
+	renamed:    lessons/alg-distance-formula/langs/en-us/solution-pages/pyret/Dist-1j3-to-5j0-Multiple-Representations.pdf -> lessons/alg-distance-formula/langs/en-us/solution-pages/pyret/Distance-bw-Two-Points-Multiple-Representations.pdf
+	renamed:    lessons/alg-distance-formula/langs/en-us/solution-pages/wescheme/Dist-1j3-to-5j0-Multiple-Representations.pdf -> lessons/alg-distance-formula/langs/en-us/solution-pages/wescheme/Distance-bw-Two-Points-Multiple-Representations.pdf
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   lessons/alg-coordinates/langs/en-us/index.adoc
+	modified:   lessons/alg-distance-formula/langs/en-us/index.adoc
+	modified:   lessons/alg-distance-formula/langs/en-us/pages/workbook-pages.txt
+	modified:   lessons/alg-domain-and-range/langs/en-us/index.adoc
+	modified:   lessons/alg-game-intro/langs/en-us/index.adoc
+	modified:   lessons/alg-order-of-operations/langs/en-us/index.adoc
+
+Flannerys-MacBook-Air:curriculum flannery$ git add lessons/alg-distance-formula/langs/en-us/index.adoc
+Flannerys-MacBook-Air:curriculum flannery$ git add lessons/alg-distance-formula/langs/en-us/pages/workbook-pages.txt
+Flannerys-MacBook-Air:curriculum flannery$ git commmit -m "[A] distance naming fix (see #368)"
+git: 'commmit' is not a git command. See 'git --help'.
+
+The most similar command is
+	commit
+Flannerys-MacBook-Air:curriculum flannery$ commmit -m "[A] distance naming fix (see #368)"
+-bash: commmit: command not found
+Flannerys-MacBook-Air:curriculum flannery$ git commit -m "[A] distance naming fix (see #368)"
+[master ed22c9ff] [A] distance naming fix (see #368)
+ 5 files changed, 2 insertions(+), 17 deletions(-)
+ rename lessons/alg-distance-formula/langs/en-us/pages/{Dist-1j3-to-5j0-Multiple-Representations.pdf => Distance-bw-Two-Points-Multiple-Representations.pdf} (100%)
+ rename lessons/alg-distance-formula/langs/en-us/solution-pages/pyret/{Dist-1j3-to-5j0-Multiple-Representations.pdf => Distance-bw-Two-Points-Multiple-Representations.pdf} (100%)
+ rename lessons/alg-distance-formula/langs/en-us/solution-pages/wescheme/{Dist-1j3-to-5j0-Multiple-Representations.pdf => Distance-bw-Two-Points-Multiple-Representations.pdf} (100%)
+Flannerys-MacBook-Air:curriculum flannery$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   lessons/alg-coordinates/langs/en-us/index.adoc
+	modified:   lessons/alg-domain-and-range/langs/en-us/index.adoc
+	modified:   lessons/alg-game-intro/langs/en-us/index.adoc
+	modified:   lessons/alg-order-of-operations/langs/en-us/index.adoc
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Flannerys-MacBook-Air:curriculum flannery$ git add -u
+Flannerys-MacBook-Air:curriculum flannery$ git commit -m "[A] first round of materials list fixes (see #367)"
+[master f49a3eb4] [A] first round of materials list fixes (see #367)
+ 4 files changed, 19 insertions(+), 71 deletions(-)
+Flannerys-MacBook-Air:curriculum flannery$ git push
+Counting objects: 31, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (21/21), done.
+Writing objects: 100% (31/31), 21.95 KiB | 4.39 MiB/s, done.
+Total 31 (delta 10), reused 0 (delta 0)
+remote: Resolving deltas: 100% (10/10), completed with 8 local objects.
+To https://github.com/bootstrapworld/curriculum.git
+   8360c7da..f49a3eb4  master -> master
+Flannerys-MacBook-Air:curriculum flannery$ git pull
+Already up to date.
+Flannerys-MacBook-Air:curriculum flannery$ git pull
+Already up to date.
+Flannerys-MacBook-Air:curriculum flannery$ git pull
+Already up to date.
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-player-animation
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+building all PDF files
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building lesson plan: lessons/alg-player-animation
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+Read so far: "- @link{https://quizizz.com/admin/quiz/5cdcb3907f8c98001a203c1b, Bootstrap:Algebra - Contracts, Domain/Range, Data Types, & Functions } (Quizizz) - @link{https://teacher.desmos.com/activitybuilder/custom/5cdcb288f41b366950eba1e1, Bootstrap:Algebra - Data Types & Circles of Evaluation} (Desmos Activity) - @link{https://teacher.desmos.com/activitybuilder/custom/5cdcb3f555e3fb606a1f1ba2, Bootstrap:Algebra - Data Types, Circles of Evaluation, and Contracts} (Desmos Activity) - (@exercise-link{pages/id-expr-pieces1.adoc, Identifying Parts of Expressions} , - (@exercise-link{pages/id-expr-pieces2.adoc, Identifying Parts of Expressions (2)} - (@exercise-link{pages/match-contracts-exprs1.adoc, Matching Expressions & Contracts}"
+ERROR: ERROR: read-group: Runaway directive ifproglang in "/Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-pyret/lessons/alg-domain-and-range//index.asciidoc"
+
+mv: index.html: No such file or directory
+building all PDF files
+
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-collision
+building all PDF files
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building lesson plan: lessons/alg-collision
+building all PDF files
+
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-distance-formula
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+building all PDF files
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building lesson plan: lessons/alg-distance-formula
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+building all PDF files
+
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway -f algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-collision
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+building pathway narrative: algebra-wescheme
+building teacher resources: algebra-wescheme → resources → index.adoc
+WARNING: Page resources: @link refers to nonexistent file BuggyRecipes/pages
+
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building lesson plan: lessons/alg-collision
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+building pathway narrative: algebra-pyret
+building teacher resources: algebra-pyret → resources → index.adoc
+WARNING: Page resources: @link refers to nonexistent file BuggyRecipes/pages
+
+
+Flannerys-MacBook-Air:curriculum flannery$ git pull
+Already up to date.
+Flannerys-MacBook-Air:curriculum flannery$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   lessons/alg-character-animation/langs/en-us/index.adoc
+	modified:   lessons/alg-collision/langs/en-us/index.adoc
+	modified:   lessons/alg-compound-inequalities/langs/en-us/index.adoc
+	modified:   lessons/alg-coordinates/langs/en-us/index.adoc
+	modified:   lessons/alg-defining-functions/langs/en-us/index.adoc
+	modified:   lessons/alg-defining-values/langs/en-us/index.adoc
+	modified:   lessons/alg-distance-formula/langs/en-us/index.adoc
+	modified:   lessons/alg-domain-and-range/langs/en-us/index.adoc
+	modified:   lessons/alg-domain-and-range/langs/en-us/pages/id-expr-pieces2.adoc
+	modified:   lessons/alg-error-analysis/langs/en-us/index.adoc
+	modified:   lessons/alg-function-composition/langs/en-us/index.adoc
+	modified:   lessons/alg-game-intro/langs/en-us/index.adoc
+	modified:   lessons/alg-making-game-images/langs/en-us/index.adoc
+	modified:   lessons/alg-order-of-operations/langs/en-us/index.adoc
+	modified:   lessons/alg-piecewise-functions/langs/en-us/index.adoc
+	modified:   lessons/alg-player-animation/langs/en-us/index.adoc
+	modified:   lessons/alg-problem-decomposition/langs/en-us/index.adoc
+	modified:   lessons/alg-restating-the-problem/langs/en-us/index.adoc
+	modified:   lessons/alg-simple-inequalities/langs/en-us/index.adoc
+	modified:   lessons/alg-simple-inequalities/langs/en-us/pages/keeping-ninjacat-in-the-game.adoc
+	modified:   lessons/alg-solving-word-problems/langs/en-us/index.adoc
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Flannerys-MacBook-Air:curriculum flannery$ git add -u
+Flannerys-MacBook-Air:curriculum flannery$ git commit -m "[A] Algebra Lesson Plan Materials update (see #368)"
+[master fdfcb7c2] [A] Algebra Lesson Plan Materials update (see #368)
+ 21 files changed, 119 insertions(+), 272 deletions(-)
+Flannerys-MacBook-Air:curriculum flannery$ git push
+Counting objects: 83, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (45/45), done.
+Writing objects: 100% (83/83), 72.34 KiB | 4.52 MiB/s, done.
+Total 83 (delta 8), reused 0 (delta 0)
+remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
+To https://github.com/bootstrapworld/curriculum.git
+   f49a3eb4..fdfcb7c2  master -> master
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-collision
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+Read so far: "* @link{https://docs.google.com/presentation/d/1X9xZb68iwRI6E8jskUZ8lEfhwqIqKlFTlJGJq6wEAJc/edit?usp=sharing, Lesson Slides} * {@link{https://code.pyret.org/editor#share=1qUY9u9j_NfZM8PJwT9QKJKNlD3RPbSDE, Chinese flag starter file}} @material-links * @link{pages/flags-of-the-world-resource.pdf, (Flags of the World)} (optional) | Preparation | * Make sure all materials have been gathered * Decide how students will be grouped in pairs | Key Points For The Facilitator | * Learning how to define values is a big milestone! It will be used consistently throughout other lessons, so be sure to give students plenty of time to practice this new skill. * Check frequently for understanding of @vocab{data types} and @vocab{contract}s during this lesson and throughout subsequent lessons. * Students will use their Contracts page frequently, so it should be kept in an accessible, convenient location. |=== [.old-materials] For a textbook-like version of materials similar to these, you may wish to see the @link{https://www.bootstrapworld.org/materials/spring2020/courses/algebra/en-us/units/unit3/index.html, prior unit-based version}. == Warmup Students should be logged into @ifproglang{wescheme}{ @link{https://www.wescheme.org, WeScheme }. } @ifproglang{pyret}{ @link{https://code.pyret.org, code.pyret.org }. } == What's in Common? @duration{30 minutes} === Overview This activity introduces the problem with duplicate code, leveraging *Mathematical Practice 7 - Identify and Make Use of Structure*. Students identify a common structure in a series of expressions, and discover how to bind that expression to a name that can be re-used. === Launch Take a look at the expressions below: @ifproglang{wescheme}{ ``` (star 50 \"solid\" \"green\") (scale 3 (star 50 \"solid\" \"green\")) (scale .5 (star 50 \"solid\" \"green\")) (rotate 45 (star 50 \"solid\" \"green\")) (rotate 45 (scale 3 (star 50 \"solid\" \"green\"))) ``` - *What code do they all have in common?* `(star 50 \"solid\" \"green\")` } @ifproglang{pyret}{ ``` star(50, \"solid\", \"green\") scale(3, star(50, \"solid\", \"green\")) scale(0.5, star(50, \"solid\", \"green\")) rotate(45, star(50, \"solid\", \"green\")) rotate(45, scale(3, star(50, \"solid\", \"green\"))) ``` - *What code do they all have in common?* `star(50, \"solid\", \"green\")` } - *What happened when you were asked to change the color of the star to gold?* _We had to change it everywhere it appeared._ [.lesson-point] Duplicate code is almost always bad! There are lots of potential problems with duplicate code: - *Readability:* The more code there is, the harder it can be to read. - *Performance:* Why re-evaluate the same code a dozen times, when we can evaluate it _once_ and use the result as many times as we need? - *Maintainability:* Suppose we needed to change the size of the stars in the examples above. We would have to make sure every line is changed, which leaves a lot of room for error. Since we're using that star over and over again, wouldn't it be nice if we could define a \"nickname\" for that code, and then use the nickname over and over in place of the expression? === Investigate You already know how to do this in math: @math{x = 4 + 2} evaluates the expression, and _defines_ the nickname @math{x} to be the value 6. @ifproglang{wescheme}{ WeScheme uses the word \"define\" to make this even clearer! We can type `(define x (+ 4 2))` to define `x` to be the value 6. } @ifproglang{pyret}{ Pyret is no different! We type `x = 4 + 2` to define `x` to be the value 6. } [.lesson-instruction] - Start a new program, and type this code into the Interactions Area. - What happens when you hit Enter? - Can you explain what happened or didn't happen? [.lesson-point] Expressions evaluate to answers. Definitions don't. Think back to math: @math{x = 4 + 2} doesn't have an \"answer\". All it does is tell us that anytime we see @math{x}, we know it stands for 6. We only see a result when we _use_ that definition, for example @math{x \\times 5} will evaluate to 30. [.lesson-instruction] On the computer, try using the definition of `x` by multiplying it by 5. - *What is the usefulness of defining values?* _Lets the programmer reuse code, saves time, lets the programmer make changes easily, allows us to more easily use elements inside other functions_ - *What datatypes can we define values for?* _All of them - Number, String, Image_ [.strategy-box, cols=\"1\", grid=\"none\", stripes=\"none\"] |=== | @span{.title}{Support for English Language Learners} MLR 8 - Discussion Supports: As students discuss, rephrase responses as questions and encourage precision in the words being used to reinforce the meanings behind some of the programming-specific language, such as \"define\" and \"value\". |=== Of course, the whole point of defining a value is so that it sticks around and can be used later! That's why programmers put their definitions on the _left-hand side_, known as the @vocab{Definitions Area}. [.lesson-instruction] - Complete @workbook-link{pages/defining-values-explore.adoc} in your student workbook. What else can you define? - Complete @workbook-link{pages/defining-values-practice.adoc} with their partner. == Cleaning Up Code @duration{20 minutes} === Overview This activity is a chance to _play_ with new concepts, combining value definitions and function composition to create new shapes or to clean up code that generates shapes. The engaging nature of the activity is designed to motivate lots of experiments, each of which gives students a chance to practice applying those concepts. === Launch The ability to define values allows us to look for - and make use of - structure in our code or in our equations. What structure is repeated in this expression? @span{.center}{@math{(x + 1)^2 - \\frac{4}{(x + 1)} * -2(x + 1)}} === Investigate Have students open @ifproglang{wescheme}{@link{https://www.wescheme.org/openEditor?publicId=c5SB38KcVD, this file}} @ifproglang{pyret}{@link{https://code.pyret.org/editor#share=1qUY9u9j_NfZM8PJwT9QKJKNlD3RPbSDE, this file}} , which draws the Chinese flag. . This file uses a function students haven't seen before! What is it? . What is it its contract? . Have them change the color of all the stars from yellow to black . Have them identify what structure is repeated . Have them use a value definition to simplify the code . Have them change the stars from black back to yellow *Optional* (for a longer time commitment): Have students choose a flag from this list of images: @link{pages/flags-of-the-world-resource.pdf, (Flags of the World)}, and recreate one (or more!) of the flags using `define` and any of the other functions they've learned so far. === Synthesize How many reasons can students come up with for why defining values is useful?"
+ERROR: ERROR: read-group: Runaway directive ifproglang in "/Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-defining-values//index.asciidoc"
+
+mv: index.html: No such file or directory
+building all PDF files
+^CFlannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-defining-values
+Read so far: "* @link{https://docs.google.com/presentation/d/1X9xZb68iwRI6E8jskUZ8lEfhwqIqKlFTlJGJq6wEAJc/edit?usp=sharing, Lesson Slides} @ifproglang{pyret}{ * {@link{https://code.pyret.org/editor#share=1qUY9u9j_NfZM8PJwT9QKJKNlD3RPbSDE, Chinese flag starter file}} @material-links * @link{pages/flags-of-the-world-resource.pdf, (Flags of the World)} (optional) | Preparation | * Make sure all materials have been gathered * Decide how students will be grouped in pairs | Key Points For The Facilitator | * Learning how to define values is a big milestone! It will be used consistently throughout other lessons, so be sure to give students plenty of time to practice this new skill. * Check frequently for understanding of @vocab{data types} and @vocab{contract}s during this lesson and throughout subsequent lessons. * Students will use their Contracts page frequently, so it should be kept in an accessible, convenient location. |=== [.old-materials] For a textbook-like version of materials similar to these, you may wish to see the @link{https://www.bootstrapworld.org/materials/spring2020/courses/algebra/en-us/units/unit3/index.html, prior unit-based version}. == Warmup Students should be logged into @ifproglang{wescheme}{ @link{https://www.wescheme.org, WeScheme }. } @ifproglang{pyret}{ @link{https://code.pyret.org, code.pyret.org }. } == What's in Common? @duration{30 minutes} === Overview This activity introduces the problem with duplicate code, leveraging *Mathematical Practice 7 - Identify and Make Use of Structure*. Students identify a common structure in a series of expressions, and discover how to bind that expression to a name that can be re-used. === Launch Take a look at the expressions below: @ifproglang{wescheme}{ ``` (star 50 \"solid\" \"green\") (scale 3 (star 50 \"solid\" \"green\")) (scale .5 (star 50 \"solid\" \"green\")) (rotate 45 (star 50 \"solid\" \"green\")) (rotate 45 (scale 3 (star 50 \"solid\" \"green\"))) ``` - *What code do they all have in common?* `(star 50 \"solid\" \"green\")` } @ifproglang{pyret}{ ``` star(50, \"solid\", \"green\") scale(3, star(50, \"solid\", \"green\")) scale(0.5, star(50, \"solid\", \"green\")) rotate(45, star(50, \"solid\", \"green\")) rotate(45, scale(3, star(50, \"solid\", \"green\"))) ``` - *What code do they all have in common?* `star(50, \"solid\", \"green\")` } - *What happened when you were asked to change the color of the star to gold?* _We had to change it everywhere it appeared._ [.lesson-point] Duplicate code is almost always bad! There are lots of potential problems with duplicate code: - *Readability:* The more code there is, the harder it can be to read. - *Performance:* Why re-evaluate the same code a dozen times, when we can evaluate it _once_ and use the result as many times as we need? - *Maintainability:* Suppose we needed to change the size of the stars in the examples above. We would have to make sure every line is changed, which leaves a lot of room for error. Since we're using that star over and over again, wouldn't it be nice if we could define a \"nickname\" for that code, and then use the nickname over and over in place of the expression? === Investigate You already know how to do this in math: @math{x = 4 + 2} evaluates the expression, and _defines_ the nickname @math{x} to be the value 6. @ifproglang{wescheme}{ WeScheme uses the word \"define\" to make this even clearer! We can type `(define x (+ 4 2))` to define `x` to be the value 6. } @ifproglang{pyret}{ Pyret is no different! We type `x = 4 + 2` to define `x` to be the value 6. } [.lesson-instruction] - Start a new program, and type this code into the Interactions Area. - What happens when you hit Enter? - Can you explain what happened or didn't happen? [.lesson-point] Expressions evaluate to answers. Definitions don't. Think back to math: @math{x = 4 + 2} doesn't have an \"answer\". All it does is tell us that anytime we see @math{x}, we know it stands for 6. We only see a result when we _use_ that definition, for example @math{x \\times 5} will evaluate to 30. [.lesson-instruction] On the computer, try using the definition of `x` by multiplying it by 5. - *What is the usefulness of defining values?* _Lets the programmer reuse code, saves time, lets the programmer make changes easily, allows us to more easily use elements inside other functions_ - *What datatypes can we define values for?* _All of them - Number, String, Image_ [.strategy-box, cols=\"1\", grid=\"none\", stripes=\"none\"] |=== | @span{.title}{Support for English Language Learners} MLR 8 - Discussion Supports: As students discuss, rephrase responses as questions and encourage precision in the words being used to reinforce the meanings behind some of the programming-specific language, such as \"define\" and \"value\". |=== Of course, the whole point of defining a value is so that it sticks around and can be used later! That's why programmers put their definitions on the _left-hand side_, known as the @vocab{Definitions Area}. [.lesson-instruction] - Complete @workbook-link{pages/defining-values-explore.adoc} in your student workbook. What else can you define? - Complete @workbook-link{pages/defining-values-practice.adoc} with their partner. == Cleaning Up Code @duration{20 minutes} === Overview This activity is a chance to _play_ with new concepts, combining value definitions and function composition to create new shapes or to clean up code that generates shapes. The engaging nature of the activity is designed to motivate lots of experiments, each of which gives students a chance to practice applying those concepts. === Launch The ability to define values allows us to look for - and make use of - structure in our code or in our equations. What structure is repeated in this expression? @span{.center}{@math{(x + 1)^2 - \\frac{4}{(x + 1)} * -2(x + 1)}} === Investigate Have students open @ifproglang{wescheme}{@link{https://www.wescheme.org/openEditor?publicId=c5SB38KcVD, this file}} @ifproglang{pyret}{@link{https://code.pyret.org/editor#share=1qUY9u9j_NfZM8PJwT9QKJKNlD3RPbSDE, this file}} , which draws the Chinese flag. . This file uses a function students haven't seen before! What is it? . What is it its contract? . Have them change the color of all the stars from yellow to black . Have them identify what structure is repeated . Have them use a value definition to simplify the code . Have them change the stars from black back to yellow *Optional* (for a longer time commitment): Have students choose a flag from this list of images: @link{pages/flags-of-the-world-resource.pdf, (Flags of the World)}, and recreate one (or more!) of the flags using `define` and any of the other functions they've learned so far. === Synthesize How many reasons can students come up with for why defining values is useful?"
+ERROR: ERROR: read-group: Runaway directive ifproglang in "/Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-defining-values//index.asciidoc"
+
+mv: index.html: No such file or directory
+building all PDF files
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building lesson plan: lessons/alg-collision
+Read so far: "-@exercise-link{pages/id-expr-pieces1.adoc, Identifying Parts of Expressions} - @exercise-link{pages/id-expr-pieces2.adoc, Identifying Parts of Expressions (2)} - @exercise-link{pages/match-contracts-exprs1.adoc, Matching Expressions & Contracts}"
+ERROR: ERROR: read-group: Runaway directive ifproglang in "/Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-pyret/lessons/alg-domain-and-range//index.asciidoc"
+
+mv: index.html: No such file or directory
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+Read so far: "*{@link{https://www.wescheme.org/openEditor?publicId=c5SB38KcVD, Chinese flag starter file}} @ifproglang{pyret}{ * @link{https://docs.google.com/presentation/d/1X9xZb68iwRI6E8jskUZ8lEfhwqIqKlFTlJGJq6wEAJc/edit?usp=sharing, Lesson Slides} @ifproglang{pyret}{ * {@link{https://code.pyret.org/editor#share=1qUY9u9j_NfZM8PJwT9QKJKNlD3RPbSDE, Chinese flag starter file}} @material-links * @link{pages/flags-of-the-world-resource.pdf, (Flags of the World)} (optional) | Preparation | * Make sure all materials have been gathered * Decide how students will be grouped in pairs | Key Points For The Facilitator | * Learning how to define values is a big milestone! It will be used consistently throughout other lessons, so be sure to give students plenty of time to practice this new skill. * Check frequently for understanding of @vocab{data types} and @vocab{contract}s during this lesson and throughout subsequent lessons. * Students will use their Contracts page frequently, so it should be kept in an accessible, convenient location. |=== [.old-materials] For a textbook-like version of materials similar to these, you may wish to see the @link{https://www.bootstrapworld.org/materials/spring2020/courses/algebra/en-us/units/unit3/index.html, prior unit-based version}. == Warmup Students should be logged into @ifproglang{wescheme}{ @link{https://www.wescheme.org, WeScheme }. } @ifproglang{pyret}{ @link{https://code.pyret.org, code.pyret.org }. } == What's in Common? @duration{30 minutes} === Overview This activity introduces the problem with duplicate code, leveraging *Mathematical Practice 7 - Identify and Make Use of Structure*. Students identify a common structure in a series of expressions, and discover how to bind that expression to a name that can be re-used. === Launch Take a look at the expressions below: @ifproglang{wescheme}{ ``` (star 50 \"solid\" \"green\") (scale 3 (star 50 \"solid\" \"green\")) (scale .5 (star 50 \"solid\" \"green\")) (rotate 45 (star 50 \"solid\" \"green\")) (rotate 45 (scale 3 (star 50 \"solid\" \"green\"))) ``` - *What code do they all have in common?* `(star 50 \"solid\" \"green\")` } @ifproglang{pyret}{ ``` star(50, \"solid\", \"green\") scale(3, star(50, \"solid\", \"green\")) scale(0.5, star(50, \"solid\", \"green\")) rotate(45, star(50, \"solid\", \"green\")) rotate(45, scale(3, star(50, \"solid\", \"green\"))) ``` - *What code do they all have in common?* `star(50, \"solid\", \"green\")` } - *What happened when you were asked to change the color of the star to gold?* _We had to change it everywhere it appeared._ [.lesson-point] Duplicate code is almost always bad! There are lots of potential problems with duplicate code: - *Readability:* The more code there is, the harder it can be to read. - *Performance:* Why re-evaluate the same code a dozen times, when we can evaluate it _once_ and use the result as many times as we need? - *Maintainability:* Suppose we needed to change the size of the stars in the examples above. We would have to make sure every line is changed, which leaves a lot of room for error. Since we're using that star over and over again, wouldn't it be nice if we could define a \"nickname\" for that code, and then use the nickname over and over in place of the expression? === Investigate You already know how to do this in math: @math{x = 4 + 2} evaluates the expression, and _defines_ the nickname @math{x} to be the value 6. @ifproglang{wescheme}{ WeScheme uses the word \"define\" to make this even clearer! We can type `(define x (+ 4 2))` to define `x` to be the value 6. } @ifproglang{pyret}{ Pyret is no different! We type `x = 4 + 2` to define `x` to be the value 6. } [.lesson-instruction] - Start a new program, and type this code into the Interactions Area. - What happens when you hit Enter? - Can you explain what happened or didn't happen? [.lesson-point] Expressions evaluate to answers. Definitions don't. Think back to math: @math{x = 4 + 2} doesn't have an \"answer\". All it does is tell us that anytime we see @math{x}, we know it stands for 6. We only see a result when we _use_ that definition, for example @math{x \\times 5} will evaluate to 30. [.lesson-instruction] On the computer, try using the definition of `x` by multiplying it by 5. - *What is the usefulness of defining values?* _Lets the programmer reuse code, saves time, lets the programmer make changes easily, allows us to more easily use elements inside other functions_ - *What datatypes can we define values for?* _All of them - Number, String, Image_ [.strategy-box, cols=\"1\", grid=\"none\", stripes=\"none\"] |=== | @span{.title}{Support for English Language Learners} MLR 8 - Discussion Supports: As students discuss, rephrase responses as questions and encourage precision in the words being used to reinforce the meanings behind some of the programming-specific language, such as \"define\" and \"value\". |=== Of course, the whole point of defining a value is so that it sticks around and can be used later! That's why programmers put their definitions on the _left-hand side_, known as the @vocab{Definitions Area}. [.lesson-instruction] - Complete @workbook-link{pages/defining-values-explore.adoc} in your student workbook. What else can you define? - Complete @workbook-link{pages/defining-values-practice.adoc} with their partner. == Cleaning Up Code @duration{20 minutes} === Overview This activity is a chance to _play_ with new concepts, combining value definitions and function composition to create new shapes or to clean up code that generates shapes. The engaging nature of the activity is designed to motivate lots of experiments, each of which gives students a chance to practice applying those concepts. === Launch The ability to define values allows us to look for - and make use of - structure in our code or in our equations. What structure is repeated in this expression? @span{.center}{@math{(x + 1)^2 - \\frac{4}{(x + 1)} * -2(x + 1)}} === Investigate Have students open @ifproglang{wescheme}{@link{https://www.wescheme.org/openEditor?publicId=c5SB38KcVD, this file}} @ifproglang{pyret}{@link{https://code.pyret.org/editor#share=1qUY9u9j_NfZM8PJwT9QKJKNlD3RPbSDE, this file}} , which draws the Chinese flag. . This file uses a function students haven't seen before! What is it? . What is it its contract? . Have them change the color of all the stars from yellow to black . Have them identify what structure is repeated . Have them use a value definition to simplify the code . Have them change the stars from black back to yellow *Optional* (for a longer time commitment): Have students choose a flag from this list of images: @link{pages/flags-of-the-world-resource.pdf, (Flags of the World)}, and recreate one (or more!) of the flags using `define` and any of the other functions they've learned so far. === Synthesize How many reasons can students come up with for why defining values is useful?"
+ERROR: ERROR: read-group: Runaway directive ifproglang in "/Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-pyret/lessons/alg-defining-values//index.asciidoc"
+
+mv: index.html: No such file or directory
+building all PDF files
+
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway -f algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building /lessons/alg-coordinates/pages/NoticeAndWonder.adoc
+^Cuser break
+  context...:
+   default-load-handler
+   standard-module-name-resolver
+   module-path-index-resolve
+   namespace-module-instantiate!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   ...
+user break
+  context...:
+   loop
+   [repeats 1 more time]
+   find-col-file
+   standard-module-name-resolver
+   module-path-index-resolve
+   namespace-module-instantiate!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   ...
+Flannerys-MacBook-Air:curriculum flannery$ user break
+  context...:
+   read-dispatch
+   read
+   [repeats 1 more time]
+   default-load-handler
+   standard-module-name-resolver
+   module-path-index-resolve
+   namespace-module-instantiate!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   for-loop
+   [repeats 1 more time]
+   run-module-instance!
+   ...
+
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway -f algebra
+^C
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-distance-formula
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+Read so far: "* @link{https://docs.google.com/presentation/d/1X9xZb68iwRI6E8jskUZ8lEfhwqIqKlFTlJGJq6wEAJc/edit?usp=sharing, Lesson Slides} @ifproglang{pyret}{ * {@link{https://code.pyret.org/editor#share=1qUY9u9j_NfZM8PJwT9QKJKNlD3RPbSDE, Chinese flag starter file}} @material-links * @link{pages/flags-of-the-world-resource.pdf, (Flags of the World)} (optional) | Preparation | * Make sure all materials have been gathered * Decide how students will be grouped in pairs | Key Points For The Facilitator | * Learning how to define values is a big milestone! It will be used consistently throughout other lessons, so be sure to give students plenty of time to practice this new skill. * Check frequently for understanding of @vocab{data types} and @vocab{contract}s during this lesson and throughout subsequent lessons. * Students will use their Contracts page frequently, so it should be kept in an accessible, convenient location. |=== [.old-materials] For a textbook-like version of materials similar to these, you may wish to see the @link{https://www.bootstrapworld.org/materials/spring2020/courses/algebra/en-us/units/unit3/index.html, prior unit-based version}. == Warmup Students should be logged into @ifproglang{wescheme}{ @link{https://www.wescheme.org, WeScheme }. } @ifproglang{pyret}{ @link{https://code.pyret.org, code.pyret.org }. } == What's in Common? @duration{30 minutes} === Overview This activity introduces the problem with duplicate code, leveraging *Mathematical Practice 7 - Identify and Make Use of Structure*. Students identify a common structure in a series of expressions, and discover how to bind that expression to a name that can be re-used. === Launch Take a look at the expressions below: @ifproglang{wescheme}{ ``` (star 50 \"solid\" \"green\") (scale 3 (star 50 \"solid\" \"green\")) (scale .5 (star 50 \"solid\" \"green\")) (rotate 45 (star 50 \"solid\" \"green\")) (rotate 45 (scale 3 (star 50 \"solid\" \"green\"))) ``` - *What code do they all have in common?* `(star 50 \"solid\" \"green\")` } @ifproglang{pyret}{ ``` star(50, \"solid\", \"green\") scale(3, star(50, \"solid\", \"green\")) scale(0.5, star(50, \"solid\", \"green\")) rotate(45, star(50, \"solid\", \"green\")) rotate(45, scale(3, star(50, \"solid\", \"green\"))) ``` - *What code do they all have in common?* `star(50, \"solid\", \"green\")` } - *What happened when you were asked to change the color of the star to gold?* _We had to change it everywhere it appeared._ [.lesson-point] Duplicate code is almost always bad! There are lots of potential problems with duplicate code: - *Readability:* The more code there is, the harder it can be to read. - *Performance:* Why re-evaluate the same code a dozen times, when we can evaluate it _once_ and use the result as many times as we need? - *Maintainability:* Suppose we needed to change the size of the stars in the examples above. We would have to make sure every line is changed, which leaves a lot of room for error. Since we're using that star over and over again, wouldn't it be nice if we could define a \"nickname\" for that code, and then use the nickname over and over in place of the expression? === Investigate You already know how to do this in math: @math{x = 4 + 2} evaluates the expression, and _defines_ the nickname @math{x} to be the value 6. @ifproglang{wescheme}{ WeScheme uses the word \"define\" to make this even clearer! We can type `(define x (+ 4 2))` to define `x` to be the value 6. } @ifproglang{pyret}{ Pyret is no different! We type `x = 4 + 2` to define `x` to be the value 6. } [.lesson-instruction] - Start a new program, and type this code into the Interactions Area. - What happens when you hit Enter? - Can you explain what happened or didn't happen? [.lesson-point] Expressions evaluate to answers. Definitions don't. Think back to math: @math{x = 4 + 2} doesn't have an \"answer\". All it does is tell us that anytime we see @math{x}, we know it stands for 6. We only see a result when we _use_ that definition, for example @math{x \\times 5} will evaluate to 30. [.lesson-instruction] On the computer, try using the definition of `x` by multiplying it by 5. - *What is the usefulness of defining values?* _Lets the programmer reuse code, saves time, lets the programmer make changes easily, allows us to more easily use elements inside other functions_ - *What datatypes can we define values for?* _All of them - Number, String, Image_ [.strategy-box, cols=\"1\", grid=\"none\", stripes=\"none\"] |=== | @span{.title}{Support for English Language Learners} MLR 8 - Discussion Supports: As students discuss, rephrase responses as questions and encourage precision in the words being used to reinforce the meanings behind some of the programming-specific language, such as \"define\" and \"value\". |=== Of course, the whole point of defining a value is so that it sticks around and can be used later! That's why programmers put their definitions on the _left-hand side_, known as the @vocab{Definitions Area}. [.lesson-instruction] - Complete @workbook-link{pages/defining-values-explore.adoc} in your student workbook. What else can you define? - Complete @workbook-link{pages/defining-values-practice.adoc} with their partner. == Cleaning Up Code @duration{20 minutes} === Overview This activity is a chance to _play_ with new concepts, combining value definitions and function composition to create new shapes or to clean up code that generates shapes. The engaging nature of the activity is designed to motivate lots of experiments, each of which gives students a chance to practice applying those concepts. === Launch The ability to define values allows us to look for - and make use of - structure in our code or in our equations. What structure is repeated in this expression? @span{.center}{@math{(x + 1)^2 - \\frac{4}{(x + 1)} * -2(x + 1)}} === Investigate Have students open @ifproglang{wescheme}{@link{https://www.wescheme.org/openEditor?publicId=c5SB38KcVD, this file} @ifproglang{pyret}{@link{https://code.pyret.org/editor#share=1qUY9u9j_NfZM8PJwT9QKJKNlD3RPbSDE, this file} , which draws the Chinese flag. . This file uses a function students haven't seen before! What is it? . What is it its contract? . Have them change the color of all the stars from yellow to black . Have them identify what structure is repeated . Have them use a value definition to simplify the code . Have them change the stars from black back to yellow *Optional* (for a longer time commitment): Have students choose a flag from this list of images: @link{pages/flags-of-the-world-resource.pdf, (Flags of the World)}, and recreate one (or more!) of the flags using `define` and any of the other functions they've learned so far. === Synthesize How many reasons can students come up with for why defining values is useful?"
+ERROR: ERROR: read-group: Runaway directive ifproglang in "/Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-defining-values//index.asciidoc"
+
+mv: rename index.html to index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+grep: index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+grep: index.shtml: No such file or directory
+grep: index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+grep: index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+cp: index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+grep: index-gdrive-import.html: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+building pathway narrative: algebra-wescheme
+asciidoctor: ERROR: lessons/alg-defining-values/index.asc: line 51: include file not found: /Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-defining-values/pathway-standards.asc
+asciidoctor: WARNING: lessons/alg-defining-values/index.asc: line 75: section title out of sequence: expected level 1, got level 2
+asciidoctor: ERROR: lessons/alg-making-game-images/index.asc: line 96: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-making-game-images/index.asc: line 137: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-making-game-images/index.asc: line 165: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-making-game-images/index.asc: line 186: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-making-game-images/index.asc: line 223: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-defining-functions/index.asc: line 89: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-defining-functions/index.asc: line 142: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-defining-functions/index.asc: line 235: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-solving-word-problems/index.asc: line 98: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-solving-word-problems/index.asc: line 133: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-restating-the-problem/index.asc: line 94: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-restating-the-problem/index.asc: line 141: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-character-animation/index.asc: line 91: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-character-animation/index.asc: line 170: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-problem-decomposition/index.asc: line 93: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-problem-decomposition/index.asc: line 124: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-problem-decomposition/index.asc: line 149: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-simple-inequalities/index.asc: line 100: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-compound-inequalities/index.asc: line 98: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-compound-inequalities/index.asc: line 157: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-compound-inequalities/index.asc: line 216: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-piecewise-functions/index.asc: line 90: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-piecewise-functions/index.asc: line 155: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-piecewise-functions/index.asc: line 187: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-piecewise-functions/index.asc: line 243: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-piecewise-functions/index.asc: line 288: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-player-animation/index.asc: line 87: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-player-animation/index.asc: line 132: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-player-animation/index.asc: line 200: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-distance-formula/index.asc: line 87: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-distance-formula/index.asc: line 170: table missing leading separator; recovering automatically
+asciidoctor: ERROR: lessons/alg-distance-formula/index.asc: line 213: table missing leading separator; recovering automatically
+asciidoctor: WARNING: lessons/alg-collision/index.asc: line 88: unterminated table block
+asciidoctor: ERROR: lessons/alg-collision/index.asc: line 90: table missing leading separator; recovering automatically
+building all PDF files
+^CFlannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-defining-values
+Read so far: "* @link{https://docs.google.com/presentation/d/1X9xZb68iwRI6E8jskUZ8lEfhwqIqKlFTlJGJq6wEAJc/edit?usp=sharing, Lesson Slides} @ifproglang{pyret}{ * @link{https://code.pyret.org/editor#share=1qUY9u9j_NfZM8PJwT9QKJKNlD3RPbSDE, Chinese flag starter file}} @material-links * @link{pages/flags-of-the-world-resource.pdf, (Flags of the World)} (optional) | Preparation | * Make sure all materials have been gathered * Decide how students will be grouped in pairs | Key Points For The Facilitator | * Learning how to define values is a big milestone! It will be used consistently throughout other lessons, so be sure to give students plenty of time to practice this new skill. * Check frequently for understanding of @vocab{data types} and @vocab{contract}s during this lesson and throughout subsequent lessons. * Students will use their Contracts page frequently, so it should be kept in an accessible, convenient location. |=== [.old-materials] For a textbook-like version of materials similar to these, you may wish to see the @link{https://www.bootstrapworld.org/materials/spring2020/courses/algebra/en-us/units/unit3/index.html, prior unit-based version}. == Warmup Students should be logged into @ifproglang{wescheme}{ @link{https://www.wescheme.org, WeScheme }. } @ifproglang{pyret}{ @link{https://code.pyret.org, code.pyret.org }. } == What's in Common? @duration{30 minutes} === Overview This activity introduces the problem with duplicate code, leveraging *Mathematical Practice 7 - Identify and Make Use of Structure*. Students identify a common structure in a series of expressions, and discover how to bind that expression to a name that can be re-used. === Launch Take a look at the expressions below: @ifproglang{wescheme}{ ``` (star 50 \"solid\" \"green\") (scale 3 (star 50 \"solid\" \"green\")) (scale .5 (star 50 \"solid\" \"green\")) (rotate 45 (star 50 \"solid\" \"green\")) (rotate 45 (scale 3 (star 50 \"solid\" \"green\"))) ``` - *What code do they all have in common?* `(star 50 \"solid\" \"green\")` } @ifproglang{pyret}{ ``` star(50, \"solid\", \"green\") scale(3, star(50, \"solid\", \"green\")) scale(0.5, star(50, \"solid\", \"green\")) rotate(45, star(50, \"solid\", \"green\")) rotate(45, scale(3, star(50, \"solid\", \"green\"))) ``` - *What code do they all have in common?* `star(50, \"solid\", \"green\")` } - *What happened when you were asked to change the color of the star to gold?* _We had to change it everywhere it appeared._ [.lesson-point] Duplicate code is almost always bad! There are lots of potential problems with duplicate code: - *Readability:* The more code there is, the harder it can be to read. - *Performance:* Why re-evaluate the same code a dozen times, when we can evaluate it _once_ and use the result as many times as we need? - *Maintainability:* Suppose we needed to change the size of the stars in the examples above. We would have to make sure every line is changed, which leaves a lot of room for error. Since we're using that star over and over again, wouldn't it be nice if we could define a \"nickname\" for that code, and then use the nickname over and over in place of the expression? === Investigate You already know how to do this in math: @math{x = 4 + 2} evaluates the expression, and _defines_ the nickname @math{x} to be the value 6. @ifproglang{wescheme}{ WeScheme uses the word \"define\" to make this even clearer! We can type `(define x (+ 4 2))` to define `x` to be the value 6. } @ifproglang{pyret}{ Pyret is no different! We type `x = 4 + 2` to define `x` to be the value 6. } [.lesson-instruction] - Start a new program, and type this code into the Interactions Area. - What happens when you hit Enter? - Can you explain what happened or didn't happen? [.lesson-point] Expressions evaluate to answers. Definitions don't. Think back to math: @math{x = 4 + 2} doesn't have an \"answer\". All it does is tell us that anytime we see @math{x}, we know it stands for 6. We only see a result when we _use_ that definition, for example @math{x \\times 5} will evaluate to 30. [.lesson-instruction] On the computer, try using the definition of `x` by multiplying it by 5. - *What is the usefulness of defining values?* _Lets the programmer reuse code, saves time, lets the programmer make changes easily, allows us to more easily use elements inside other functions_ - *What datatypes can we define values for?* _All of them - Number, String, Image_ [.strategy-box, cols=\"1\", grid=\"none\", stripes=\"none\"] |=== | @span{.title}{Support for English Language Learners} MLR 8 - Discussion Supports: As students discuss, rephrase responses as questions and encourage precision in the words being used to reinforce the meanings behind some of the programming-specific language, such as \"define\" and \"value\". |=== Of course, the whole point of defining a value is so that it sticks around and can be used later! That's why programmers put their definitions on the _left-hand side_, known as the @vocab{Definitions Area}. [.lesson-instruction] - Complete @workbook-link{pages/defining-values-explore.adoc} in your student workbook. What else can you define? - Complete @workbook-link{pages/defining-values-practice.adoc} with their partner. == Cleaning Up Code @duration{20 minutes} === Overview This activity is a chance to _play_ with new concepts, combining value definitions and function composition to create new shapes or to clean up code that generates shapes. The engaging nature of the activity is designed to motivate lots of experiments, each of which gives students a chance to practice applying those concepts. === Launch The ability to define values allows us to look for - and make use of - structure in our code or in our equations. What structure is repeated in this expression? @span{.center}{@math{(x + 1)^2 - \\frac{4}{(x + 1)} * -2(x + 1)}} === Investigate Have students open @ifproglang{wescheme}{@link{https://www.wescheme.org/openEditor?publicId=c5SB38KcVD, this file} @ifproglang{pyret}{@link{https://code.pyret.org/editor#share=1qUY9u9j_NfZM8PJwT9QKJKNlD3RPbSDE, this file} , which draws the Chinese flag. . This file uses a function students haven't seen before! What is it? . What is it its contract? . Have them change the color of all the stars from yellow to black . Have them identify what structure is repeated . Have them use a value definition to simplify the code . Have them change the stars from black back to yellow *Optional* (for a longer time commitment): Have students choose a flag from this list of images: @link{pages/flags-of-the-world-resource.pdf, (Flags of the World)}, and recreate one (or more!) of the flags using `define` and any of the other functions they've learned so far. === Synthesize How many reasons can students come up with for why defining values is useful?"
+ERROR: ERROR: read-group: Runaway directive ifproglang in "/Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-defining-values//index.asciidoc"
+
+mv: rename index.html to index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+grep: index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+grep: index.shtml: No such file or directory
+grep: index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+grep: index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+cp: index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+grep: index-gdrive-import.html: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+building teacher resources: algebra-wescheme → resources → index.adoc
+WARNING: Page resources: @link refers to nonexistent file BuggyRecipes/pages
+
+^C
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+
+^C
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-defining-values
+Read so far: "@link{https://code.pyret.org/editor#share=1qUY9u9j_NfZM8PJwT9QKJKNlD3RPbSDE, this file} , which draws the Chinese flag. . This file uses a function students haven't seen before! What is it? . What is it its contract? . Have them change the color of all the stars from yellow to black . Have them identify what structure is repeated . Have them use a value definition to simplify the code . Have them change the stars from black back to yellow *Optional* (for a longer time commitment): Have students choose a flag from this list of images: @link{pages/flags-of-the-world-resource.pdf, (Flags of the World)}, and recreate one (or more!) of the flags using `define` and any of the other functions they've learned so far. === Synthesize How many reasons can students come up with for why defining values is useful?"
+ERROR: ERROR: read-group: Runaway directive ifproglang in "/Users/flannery/Documents/Bootstrap/curriculum/distribution/en-us/courses/algebra-wescheme/lessons/alg-defining-values//index.asciidoc"
+
+mv: rename index.html to index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+grep: index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+grep: index.shtml: No such file or directory
+grep: index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+grep: index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+cp: index.shtml: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+gsed: can't read index-gdrive-import.html: No such file or directory
+grep: index-gdrive-import.html: No such file or directory
+gsed: can't read index.shtml: No such file or directory
+building all PDF files
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+
+^C
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-defining-values
+building all PDF files
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building lesson plan: lessons/alg-defining-values
+building all PDF files
+
+Flannerys-MacBook-Air:curriculum flannery$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   lessons/alg-defining-values/langs/en-us/index.adoc
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Flannerys-MacBook-Air:curriculum flannery$ git add -u
+Flannerys-MacBook-Air:curriculum flannery$ git commit -m "bug fix"
+[master 7b7a1802] bug fix
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+Flannerys-MacBook-Air:curriculum flannery$ git push
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (7/7), 632 bytes | 632.00 KiB/s, done.
+Total 7 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/bootstrapworld/curriculum.git
+   fdfcb7c2..7b7a1802  master -> master
+Flannerys-MacBook-Air:curriculum flannery$ git pull
+remote: Enumerating objects: 96, done.
+remote: Counting objects: 100% (96/96), done.
+remote: Compressing objects: 100% (20/20), done.
+remote: Total 58 (delta 20), reused 58 (delta 20), pack-reused 0
+Unpacking objects: 100% (58/58), done.
+From https://github.com/bootstrapworld/curriculum
+   7b7a1802..983785d2  master     -> origin/master
+Updating 7b7a1802..983785d2
+Fast-forward
+ lessons/alg-defining-functions/langs/en-us/index.adoc                                    |   6 +++---
+ lessons/alg-distance-formula/langs/en-us/{images => pages}/circles-of-distance.png       | Bin
+ lessons/alg-distance-formula/langs/en-us/pages/distance-scaffold.adoc                    |   3 +--
+ lessons/alg-distance-formula/langs/en-us/solution-pages/distance-scaffold.adoc           |  32 ++++++++++++++++++++++++++++++++
+ lessons/alg-distance-formula/langs/en-us/solution-pages/pyret/circles-of-distance.png    | Bin 0 -> 52429 bytes
+ lessons/alg-distance-formula/langs/en-us/solution-pages/wescheme/circles-of-distance.png | Bin 0 -> 48812 bytes
+ lessons/alg-domain-and-range/langs/en-us/index.adoc                                      |  10 +++-------
+ lessons/alg-order-of-operations/langs/en-us/index.adoc                                   |  28 ++++++++++++++--------------
+ lessons/alg-order-of-operations/langs/en-us/pages/arith-to-coe3.adoc                     |   2 +-
+ lessons/alg-order-of-operations/langs/en-us/pages/coe-to-arith2.adoc                     |   2 +-
+ lessons/alg-order-of-operations/langs/en-us/pages/coe-to-math-answer1.adoc               |   2 +-
+ lessons/alg-order-of-operations/langs/en-us/pages/complete-coe-from-arith1.adoc          |   2 +-
+ lessons/alg-order-of-operations/langs/en-us/pages/complete-coe-from-arith2.adoc          |   2 +-
+ lessons/alg-player-animation/langs/en-us/solution-pages/pyret/challenges.adoc            |  18 +++++++++---------
+ lessons/alg-player-animation/langs/en-us/solution-pages/wescheme/challenges.adoc         |  16 ++++++++--------
+ lessons/alg-simple-inequalities/langs/en-us/index.adoc                                   |   6 +++---
+ lessons/alg-solving-word-problems/langs/en-us/index.adoc                                 |  27 +++++++--------------------
+ lessons/ds-applying-functions/langs/en-us/pages/matching-expressions-2.adoc              |   2 +-
+ lessons/ds-applying-functions/langs/en-us/pages/practicing-contracts-2.adoc              |   2 +-
+ lessons/ds-applying-functions/langs/en-us/solution-pages/matching-expressions-2.adoc     |   2 +-
+ lessons/ds-applying-functions/langs/en-us/solution-pages/practicing-contracts-2.adoc     |   2 +-
+ 21 files changed, 89 insertions(+), 75 deletions(-)
+ rename lessons/alg-distance-formula/langs/en-us/{images => pages}/circles-of-distance.png (100%)
+ create mode 100644 lessons/alg-distance-formula/langs/en-us/solution-pages/distance-scaffold.adoc
+ create mode 100644 lessons/alg-distance-formula/langs/en-us/solution-pages/pyret/circles-of-distance.png
+ create mode 100644 lessons/alg-distance-formula/langs/en-us/solution-pages/wescheme/circles-of-distance.png
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-simple-inequalities
+building all PDF files
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building lesson plan: lessons/alg-simple-inequalities
+building all PDF files
+
+Flannerys-MacBook-Air:curriculum flannery$ ./build-pathway -f algebra
+
+BUILDING PATHWAY: en-us/algebra-wescheme 🥾
+-----------------------------------------------------------
+building lesson plan: lessons/alg-collision
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+building pathway narrative: algebra-wescheme
+building teacher resources: algebra-wescheme → resources → index.adoc
+WARNING: Page resources: @link refers to nonexistent file BuggyRecipes/pages
+
+
+
+BUILDING PATHWAY: en-us/algebra-pyret 💀
+-----------------------------------------------------------
+building lesson plan: lessons/alg-collision
+WARNING: Lesson plan lessons/alg-function-composition: No standards specified
+
+building pathway narrative: algebra-pyret
+building teacher resources: algebra-pyret → resources → index.adoc
+WARNING: Page resources: @link refers to nonexistent file BuggyRecipes/pages
+
+
+Flannerys-MacBook-Air:curriculum flannery$ 
